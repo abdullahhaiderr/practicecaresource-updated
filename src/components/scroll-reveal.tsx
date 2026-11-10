@@ -44,21 +44,21 @@ export function ScrollReveal({
       };
 
   return (
-    <motion.div
-      className={className}
-      initial={reducedMotion ? false : "hidden"}
-      whileInView="visible"
-      viewport={{ once: true, amount }}
-      variants={{ hidden, visible }}
-      {...props}
-    >
-      {stagger
-        ? Children.map(children, (child, index) => (
-            <motion.div key={index} variants={childVariants}>
-              {child}
-            </motion.div>
-          ))
-        : children}
-    </motion.div>
+    <div className={className} {...props}>
+      <motion.div
+        initial={reducedMotion ? false : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true, amount }}
+        variants={{ hidden, visible }}
+      >
+        {stagger
+          ? Children.map(children, (child, index) => (
+              <motion.div key={index} variants={childVariants}>
+                {child}
+              </motion.div>
+            ))
+          : children}
+      </motion.div>
+    </div>
   );
 }
