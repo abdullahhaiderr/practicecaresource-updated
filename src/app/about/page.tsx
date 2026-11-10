@@ -1,8 +1,404 @@
 import type { Metadata } from "next";
-import { PlaceholderPage } from "@/components/placeholder-page";
+import Link from "next/link";
+import {
+  ArrowRight,
+  Check,
+  ClipboardCheck,
+  Eye,
+  Handshake,
+  HeartHandshake,
+  ListChecks,
+  UserRound,
+  Workflow,
+} from "lucide-react";
+import { Button } from "@/components/button";
+import { Container } from "@/components/container";
+import { ScrollReveal } from "@/components/scroll-reveal";
+import { SectionHeading } from "@/components/section-heading";
 
-export const metadata: Metadata = { title: "About" };
+export const metadata: Metadata = {
+  title: "About CareSource",
+  description:
+    "Learn how CareSource brings medical billing and practice support together for US healthcare providers.",
+};
+
+const values = [
+  {
+    title: "Accuracy",
+    description:
+      "We work from the information and workflows your practice provides, and flag questions for your team to review.",
+    icon: ClipboardCheck,
+  },
+  {
+    title: "Transparency",
+    description:
+      "Responsibilities, communication, and review points are agreed with your practice before work begins.",
+    icon: Eye,
+  },
+  {
+    title: "Partnership",
+    description:
+      "Support is planned around your team's existing processes, preferences, and priorities.",
+    icon: Handshake,
+  },
+];
+
+const onboardingSteps = [
+  {
+    title: "Listen",
+    description:
+      "We learn what your practice wants to improve and how your current workflow operates.",
+  },
+  {
+    title: "Define the scope",
+    description:
+      "Together, we clarify the tasks, responsibilities, and decisions that stay with your team.",
+  },
+  {
+    title: "Agree on handoffs",
+    description:
+      "We set expectations for communication, questions, approvals, and the information needed to begin.",
+  },
+  {
+    title: "Start with the agreed work",
+    description:
+      "Support begins within the scope and process your practice has reviewed.",
+  },
+  {
+    title: "Review together",
+    description:
+      "We check in on open items and discuss any adjustments with the appropriate practice contact.",
+  },
+];
+
+const vendorChallenges = [
+  "Repeat background and instructions across different contacts",
+  "Coordinate handoffs between separate service providers",
+  "Track who owns the next step for each open item",
+];
+
+const connectedSupport = [
+  "Choose the service mix that fits your practice",
+  "Keep agreed responsibilities and handoffs visible",
+  "Coordinate related support through one CareSource relationship",
+];
 
 export default function AboutPage() {
-  return <PlaceholderPage title="About CareSource" />;
+  return (
+    <main id="main-content">
+      <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-14 sm:py-20 lg:py-24">
+        <div
+          className="pointer-events-none absolute -right-8 top-1/2 hidden h-[28rem] w-[31rem] -translate-y-1/2 lg:block"
+          aria-hidden="true"
+        >
+          <div className="absolute right-0 top-7 size-[25rem] rounded-[44%_56%_61%_39%/41%_48%_52%_59%] bg-brand-dark" />
+          <div className="absolute right-14 top-1/2 size-72 -translate-y-1/2 rounded-full border border-brand-accent/55" />
+          <div className="absolute right-16 top-12 size-16 rounded-full bg-brand-accent" />
+          <div className="absolute left-4 top-1/2 grid size-24 -translate-y-1/2 place-items-center rounded-full border border-brand-background/35 bg-brand-dark-soft text-brand-accent">
+            <HeartHandshake size={42} strokeWidth={1.35} />
+          </div>
+          <div className="absolute bottom-12 right-24 h-1.5 w-32 rounded-full bg-brand-accent" />
+        </div>
+
+        <Container className="relative grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+          <ScrollReveal className="max-w-3xl lg:max-w-none">
+            <nav aria-label="Breadcrumb" className="mb-7">
+              <ol className="flex items-center gap-2 text-sm font-semibold text-brand-slate">
+                <li>
+                  <Link
+                    href="/"
+                    className="rounded-sm transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink"
+                  >
+                    Home
+                  </Link>
+                </li>
+                <li aria-hidden="true">/</li>
+                <li aria-current="page" className="text-brand-dark">
+                  About
+                </li>
+              </ol>
+            </nav>
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">
+              About CareSource
+            </p>
+            <h1 className="text-balance font-display text-5xl font-semibold leading-[0.98] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
+              The source of care for providers.
+            </h1>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
+              CareSource brings medical billing and practice support together
+              for US healthcare providers, with clear responsibilities and
+              thoughtful coordination around your team's way of working.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <Button href="/contact" size="lg" showArrow>
+                Book a Free Audit
+              </Button>
+              <Button href="#our-story" variant="ghost" size="lg">
+                Meet the founder
+              </Button>
+            </div>
+          </ScrollReveal>
+          <div className="hidden min-h-[24rem] lg:block" aria-hidden="true" />
+        </Container>
+      </section>
+
+      <section id="our-story" className="py-16 sm:py-20 lg:py-24">
+        <Container className="grid items-center gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
+          <ScrollReveal className="mx-auto w-full max-w-sm lg:max-w-none">
+            <div
+              role="img"
+              aria-label="[PLACEHOLDER: add founder photo]"
+              className="group relative aspect-[4/5] overflow-hidden rounded-3xl border border-brand-border bg-brand-background-wash/50 p-6 shadow-card transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-card-hover motion-reduce:transition-none"
+            >
+              <div className="absolute -right-12 -top-12 size-48 rounded-full border border-brand-accent/35" />
+              <div className="absolute -bottom-16 -left-12 size-56 rounded-full bg-brand-background-wash" />
+              <div className="relative flex h-full flex-col items-center justify-center rounded-2xl border border-dashed border-brand-slate/35 bg-brand-background/70 text-center">
+                <span className="grid size-20 place-items-center rounded-full bg-brand-dark text-brand-accent">
+                  <UserRound size={38} strokeWidth={1.5} aria-hidden="true" />
+                </span>
+                <span className="mt-5 max-w-[14rem] text-sm font-bold leading-relaxed text-brand-dark">
+                  [PLACEHOLDER: add founder photo]
+                </span>
+              </div>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <SectionHeading
+              eyebrow="Our story"
+              title="Practice support, shaped around people."
+              description="CareSource brings medical billing and related practice support under one roof for US healthcare providers."
+            />
+            <p className="mt-6 text-base leading-relaxed text-brand-slate sm:text-lg">
+              Irtiza Hassan is the owner of CareSource. The business supports
+              practices with medical billing, credentialing, administrative
+              coordination, and digital services, with the scope agreed
+              directly with each practice.
+            </p>
+            <div className="mt-7 rounded-2xl border border-brand-border bg-brand-background-wash/40 p-5 sm:p-6">
+              <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand-accent-ink">
+                Add Irtiza's story
+              </p>
+              <p className="mt-2 text-base leading-relaxed text-brand-dark">
+                [PLACEHOLDER: add real story]
+              </p>
+            </div>
+            <p className="mt-5 text-sm font-semibold text-brand-dark">
+              Irtiza Hassan{" "}
+              <span className="font-normal text-brand-slate">· Founder &amp; Owner</span>
+            </p>
+          </ScrollReveal>
+        </Container>
+      </section>
+
+      <section className="border-y border-brand-border/75 bg-brand-background-wash/30 py-16 sm:py-20 lg:py-24">
+        <Container>
+          <ScrollReveal>
+            <SectionHeading
+              eyebrow="What guides us"
+              title="A steady approach to practice support"
+              description="Our working principles keep the scope clear and make it easier for your team to stay involved where its input is needed."
+            />
+          </ScrollReveal>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {values.map(({ title, description, icon: Icon }, index) => (
+              <ScrollReveal key={title} delay={index * 0.06} className="h-full">
+                <article className="group h-full rounded-2xl border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-7">
+                  <span className="grid size-12 place-items-center rounded-xl bg-brand-dark text-brand-accent transition-transform duration-300 group-hover:rotate-3 motion-reduce:transition-none">
+                    <Icon size={23} strokeWidth={1.8} aria-hidden="true" />
+                  </span>
+                  <h2 className="mt-6 font-display text-2xl font-semibold text-brand-dark sm:text-3xl">
+                    {title}
+                  </h2>
+                  <p className="mt-3 text-base leading-relaxed text-brand-slate">
+                    {description}
+                  </p>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-brand-dark py-16 text-brand-background sm:py-20 lg:py-24">
+        <Container>
+          <ScrollReveal>
+            <div className="max-w-3xl">
+              <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">
+                Connected practice support
+              </p>
+              <h2 className="text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-background sm:text-5xl lg:text-6xl">
+                Why bring it under one roof?
+              </h2>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-background/75 sm:text-lg">
+                Practices can choose support across billing, enrollment,
+                administrative coordination, and online presence. A connected
+                relationship can make responsibilities and handoffs easier to
+                discuss.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <div className="mt-10 grid gap-4 lg:grid-cols-2">
+            <ScrollReveal className="h-full">
+              <article className="h-full rounded-2xl border border-brand-background/15 bg-brand-background/5 p-6 transition-[border-color,background-color,transform] duration-300 hover:-translate-y-1 hover:border-brand-background/30 hover:bg-brand-background/[0.08] motion-reduce:transition-none sm:p-8">
+                <div className="flex items-center gap-3">
+                  <span className="grid size-11 place-items-center rounded-xl border border-brand-background/20 text-brand-background/80">
+                    <ListChecks size={21} aria-hidden="true" />
+                  </span>
+                  <h3 className="font-display text-2xl font-semibold text-brand-background sm:text-3xl">
+                    Juggling separate vendors
+                  </h3>
+                </div>
+                <ul className="mt-6 space-y-4">
+                  {vendorChallenges.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-base leading-relaxed text-brand-background/75">
+                      <ArrowRight size={18} className="mt-1 shrink-0 text-brand-accent" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.08} className="h-full">
+              <article className="h-full rounded-2xl border border-brand-accent/45 bg-brand-background/10 p-6 transition-[border-color,background-color,transform] duration-300 hover:-translate-y-1 hover:border-brand-accent/75 hover:bg-brand-background/[0.13] motion-reduce:transition-none sm:p-8">
+                <div className="flex items-center gap-3">
+                  <span className="grid size-11 place-items-center rounded-xl bg-brand-accent text-brand-dark">
+                    <Workflow size={21} aria-hidden="true" />
+                  </span>
+                  <h3 className="font-display text-2xl font-semibold text-brand-background sm:text-3xl">
+                    One connected team
+                  </h3>
+                </div>
+                <ul className="mt-6 space-y-4">
+                  {connectedSupport.map((item) => (
+                    <li key={item} className="flex items-start gap-3 text-base leading-relaxed text-brand-background/85">
+                      <Check size={18} className="mt-1 shrink-0 text-brand-accent" aria-hidden="true" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            </ScrollReveal>
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-20 lg:py-24">
+        <Container>
+          <ScrollReveal>
+            <SectionHeading
+              eyebrow="How we work with you"
+              title="A clear path from first conversation to ongoing work"
+              description="We agree on scope and communication with your practice before support begins. Each step leaves room for your team's review and decisions."
+            />
+          </ScrollReveal>
+          <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {onboardingSteps.map(({ title, description }, index) => (
+              <li key={title} className="h-full">
+                <ScrollReveal delay={index * 0.045} className="h-full">
+                  <article className="group h-full rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
+                    <span className="grid size-11 place-items-center rounded-full bg-brand-dark text-sm font-bold text-brand-accent transition-transform duration-300 group-hover:scale-105 motion-reduce:transition-none">
+                      0{index + 1}
+                    </span>
+                    <h3 className="mt-5 font-display text-xl font-semibold leading-tight text-brand-dark sm:text-2xl">
+                      {title}
+                    </h3>
+                    <p className="mt-3 text-base leading-relaxed text-brand-slate">
+                      {description}
+                    </p>
+                  </article>
+                </ScrollReveal>
+              </li>
+            ))}
+          </ol>
+        </Container>
+      </section>
+
+      <section className="border-y border-brand-border/75 bg-brand-background-wash/30 py-16 sm:py-20 lg:py-24">
+        <Container>
+          <ScrollReveal>
+            <SectionHeading
+              eyebrow="A relationship built on clarity"
+              title="Care for your practice information"
+              description="We handle practice information with care and discuss appropriate scope, access, and communication expectations with your team before work begins."
+            />
+          </ScrollReveal>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            <ScrollReveal className="h-full">
+              <article className="h-full rounded-2xl border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none">
+                <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-brand-accent-ink">
+                  [STAT]
+                </p>
+                <h2 className="mt-3 font-display text-2xl font-semibold text-brand-dark">
+                  Practices supported
+                </h2>
+                <p className="mt-3 text-base leading-relaxed text-brand-slate">
+                  [PLACEHOLDER: add a verified count and the period it covers]
+                </p>
+              </article>
+            </ScrollReveal>
+            <ScrollReveal delay={0.05} className="h-full">
+              <article className="h-full rounded-2xl border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none">
+                <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-brand-accent-ink">
+                  [STAT]
+                </p>
+                <h2 className="mt-3 font-display text-2xl font-semibold text-brand-dark">
+                  Years of experience
+                </h2>
+                <p className="mt-3 text-base leading-relaxed text-brand-slate">
+                  [PLACEHOLDER: add a verified experience figure and its basis]
+                </p>
+              </article>
+            </ScrollReveal>
+            <ScrollReveal delay={0.1} className="h-full">
+              <article className="h-full rounded-2xl border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none">
+                <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-brand-accent-ink">
+                  [CREDENTIAL]
+                </p>
+                <h2 className="mt-3 font-display text-2xl font-semibold text-brand-dark">
+                  Verified credentials
+                </h2>
+                <p className="mt-3 text-base leading-relaxed text-brand-slate">
+                  [PLACEHOLDER: add a credential only after confirming its name,
+                  issuer, and current status]
+                </p>
+              </article>
+            </ScrollReveal>
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-brand-dark py-16 text-brand-background sm:py-20 lg:py-24">
+        <Container>
+          <ScrollReveal>
+            <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+              <div className="max-w-3xl">
+                <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">
+                  The source of care for your practice
+                </p>
+                <h2 className="text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-background sm:text-5xl lg:text-6xl">
+                  Let's talk about the support your team needs.
+                </h2>
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-background/75 sm:text-lg">
+                  Share what your practice would like to improve, and we can
+                  discuss a practical next step together.
+                </p>
+              </div>
+              <Button
+                href="/contact"
+                size="lg"
+                showArrow
+                className="shrink-0 self-start"
+              >
+                Book a Free Audit
+              </Button>
+            </div>
+          </ScrollReveal>
+        </Container>
+      </section>
+    </main>
+  );
 }
+
