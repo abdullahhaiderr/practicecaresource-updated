@@ -1,0 +1,23 @@
+{
+  "brand": "CareSource",
+  "palette": {
+    "accent": "#FF771C",
+    "background": "#F5EDE0",
+    "dark": "#161311",
+    "slate": "#546877"
+  },
+  "decisions": [
+    {
+      "decision": "Keep the warm cream and dark ink as the core canvas, using orange for action and emphasis.",
+      "reason": "This preserves the supplied palette while making primary actions distinct."
+    },
+    {
+      "decision": "Use a condensed display face, a neutral body face, and a handwritten script face.",
+      "reason": "The combination adds healthcare editorial character without leaning on generic technology styling."
+    },
+    {
+      "decision": "Use motion for hierarchy and feedback, with reduced-motion behavior built into shared primitives.",
+      "reason": "The interface can feel responsive while remaining comfortable and accessible."
+    }
+  ]
+}
