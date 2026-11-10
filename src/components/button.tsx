@@ -102,9 +102,9 @@ export function Button(props: ButtonProps) {
     >
       <span>{children}</span>
       {showArrow ? (
-        <motion.span {...arrowMotion} aria-hidden="true">
+        <span className="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
           <ArrowRight size={18} strokeWidth={2.2} />
-        </motion.span>
+        </span>
       ) : null}
     </button>
   );
