@@ -143,7 +143,7 @@ function ServicesSection() {
               description={service.description}
               imageSrc={service.imageSrc}
               imageAlt={service.imageAlt}
-              iconName={service.iconName}
+              icon={service.icon}
               href={`/services/${service.slug}`}
             />
           ))}
