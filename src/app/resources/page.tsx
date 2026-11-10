@@ -1,8 +1,76 @@
 import type { Metadata } from "next";
-import { PlaceholderPage } from "@/components/placeholder-page";
+import { ArrowDown, BookOpenText } from "lucide-react";
+import { Container } from "@/components/container";
+import { ResourcesExplorer } from "@/components/resources/resources-explorer";
+import { ScrollReveal } from "@/components/scroll-reveal";
+import { SectionHeading } from "@/components/section-heading";
+import { resourceArticles, resourceCategories, getReadingMinutes } from "@/data/resources/articles";
 
-export const metadata: Metadata = { title: "Resources" };
+export const metadata: Metadata = {
+  title: "Practice Resources",
+  description:
+    "Practical, general information about medical billing, credentialing, denials, accounts receivable, and practice support.",
+  openGraph: {
+    title: "Practice Resources | CareSource",
+    description:
+      "Explore practical resources about medical billing, credentialing, denials, AR follow-up, and practice support.",
+    type: "website",
+  },
+};
+
+const resourceCards = resourceArticles.map((article) => ({
+  slug: article.slug,
+  title: article.title,
+  excerpt: article.excerpt,
+  category: article.category,
+  publishedAt: article.publishedAt,
+  coverImage: article.coverImage,
+  coverAlt: article.coverAlt,
+  readingMinutes: getReadingMinutes(article),
+}));
 
 export default function ResourcesPage() {
-  return <PlaceholderPage title="Resources" />;
+  return (
+    <main id="main-content">
+      <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background-wash/30 py-16 sm:py-20 lg:py-24">
+        <div className="pointer-events-none absolute -right-20 -top-16 -z-10 size-72 rounded-full border-[3rem] border-brand-accent/10 sm:size-96" aria-hidden="true" />
+        <Container className="relative grid items-end gap-8 lg:grid-cols-[1fr_auto] lg:gap-12">
+          <ScrollReveal>
+            <div className="mb-6 inline-flex min-h-10 items-center gap-2 rounded-pill border border-brand-border bg-brand-background/70 px-4 text-sm font-bold text-brand-dark">
+              <BookOpenText size={17} className="text-brand-accent-ink" aria-hidden="true" />
+              CareSource resource library
+            </div>
+            <h1 className="max-w-4xl text-balance font-display text-5xl font-semibold leading-[0.98] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
+              Clear answers for the work behind <span className="text-brand-accent-ink">your practice.</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
+              Practical, general information to help your team understand billing, enrollment, denials, and the workflows that support a practice.
+            </p>
+          </ScrollReveal>
+          <a href="#resource-library" className="inline-flex min-h-12 items-center gap-2 self-start rounded-pill border border-brand-slate/35 px-5 text-sm font-bold text-brand-dark transition-colors hover:border-brand-accent-ink hover:bg-brand-background/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink lg:self-end">
+            Browse articles <ArrowDown size={16} aria-hidden="true" />
+          </a>
+        </Container>
+      </section>
+
+      <section id="resource-library" className="scroll-mt-24 py-16 sm:py-20 lg:py-24" aria-label="Resource library">
+        <Container>
+          <ScrollReveal>
+            <SectionHeading
+              eyebrow="Browse the library"
+              title="Useful context, organized by topic"
+              description="Search the articles or choose a topic to find information for your practice workflow."
+              className="mb-8 sm:mb-10"
+            />
+          </ScrollReveal>
+          <ResourcesExplorer
+            articles={resourceCards}
+            categories={resourceCategories}
+            featuredSlug={resourceArticles[0].slug}
+          />
+        </Container>
+      </section>
+    </main>
+  );
 }
+
