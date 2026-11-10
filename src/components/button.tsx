@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 
@@ -51,7 +50,7 @@ function buttonClass(
   className: string,
 ) {
   return [
-    "inline-flex items-center justify-center rounded-pill font-bold leading-none",
+    "group inline-flex items-center justify-center rounded-pill font-bold leading-none",
     "transition-[transform,background-color,color,box-shadow,border-color] duration-200 ease-brand-out",
     "hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background",
     variants[variant],
@@ -72,9 +71,7 @@ export function Button(props: ButtonProps) {
     ariaLabel,
     ...rest
   } = props;
-  const reducedMotion = useReducedMotion();
   const classes = buttonClass(variant, size, className);
-  const arrowMotion = reducedMotion ? {} : { whileHover: { x: 3 } };
 
   if (props.href) {
     const linkProps = rest as Omit<LinkProps, keyof SharedProps>;
@@ -87,9 +84,9 @@ export function Button(props: ButtonProps) {
       >
         <span>{children}</span>
         {showArrow ? (
-          <motion.span {...arrowMotion} aria-hidden="true">
+          <span className="transition-transform duration-200 group-hover:translate-x-1" aria-hidden="true">
             <ArrowRight size={18} strokeWidth={2.2} />
-          </motion.span>
+          </span>
         ) : null}
       </Link>
     );
@@ -97,12 +94,11 @@ export function Button(props: ButtonProps) {
 
   const buttonProps = rest as Omit<NativeButtonProps, keyof SharedProps>;
   return (
-    <motion.button
+    <button
       type={buttonProps.type ?? "button"}
       className={classes}
       aria-label={ariaLabel}
       {...buttonProps}
-      whileTap={reducedMotion ? undefined : { scale: 0.98 }}
     >
       <span>{children}</span>
       {showArrow ? (
@@ -110,6 +106,6 @@ export function Button(props: ButtonProps) {
           <ArrowRight size={18} strokeWidth={2.2} />
         </motion.span>
       ) : null}
-    </motion.button>
+    </button>
   );
 }
