@@ -50,7 +50,7 @@ export function Footer() {
               {services.map((service) => (
                 <li key={service.slug}>
                   <Link
-                    href={"/services#" + service.slug}
+                    href={"/services/" + service.slug}
                     className="text-sm text-brand-background/75 transition-colors hover:text-brand-accent focus-visible:outline-none"
                   >
                     {service.shortTitle}
@@ -103,3 +103,4 @@ export function Footer() {
     </footer>
   );
 }
+
