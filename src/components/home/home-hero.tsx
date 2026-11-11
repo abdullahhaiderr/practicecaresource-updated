@@ -34,7 +34,8 @@ export function HomeHero({ heroImage }: HomeHeroProps) {
       <Container className="relative grid items-center gap-8 py-6 sm:py-8 lg:min-h-[calc(100svh-5.5rem)] lg:grid-cols-[0.96fr_1.04fr] lg:gap-3 lg:py-8 xl:gap-8">
         <div className="relative z-10 max-w-2xl">
 
-            initial={reducedMotion ? false : { opacity: 0, y: 22 }}
+            <motion.h1
+          initial={reducedMotion ? false : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reducedMotion ? 0 : 0.62, delay: reducedMotion ? 0 : 0.08, ease: "easeOut" }}
             className="mt-4 text-balance font-display text-[clamp(3.25rem,7.1vw,6.3rem)] font-semibold leading-[0.9] tracking-[-0.045em] text-brand-dark"
