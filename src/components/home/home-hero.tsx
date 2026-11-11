@@ -105,6 +105,7 @@ export function HomeHero({ heroImage }: HomeHeroProps) {
           </motion.ul>
 
 
+        </div>
 
         <HeroVisual heroImage={heroImage} />
       </Container>
