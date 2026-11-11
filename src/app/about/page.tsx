@@ -86,7 +86,7 @@ const connectedSupport = [
 export default function AboutPage() {
   return (
     <main id="main-content">
-      <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-14 sm:py-20 lg:py-24">
+      <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-8 sm:py-10 lg:py-12">
         <div
           className="pointer-events-none absolute -right-8 top-1/2 hidden h-[28rem] w-[31rem] -translate-y-1/2 lg:block"
           aria-hidden="true"
@@ -102,7 +102,7 @@ export default function AboutPage() {
 
         <Container className="relative grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
           <ScrollReveal className="max-w-3xl lg:max-w-none">
-            <nav aria-label="Breadcrumb" className="mb-7">
+            <nav aria-label="Breadcrumb" className="mb-4">
               <ol className="flex items-center gap-2 text-sm font-semibold text-brand-slate">
                 <li>
                   <Link
@@ -124,12 +124,12 @@ export default function AboutPage() {
             <h1 className="text-balance font-display text-5xl font-semibold leading-[0.98] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
               The source of care for providers.
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
               CareSource brings medical billing and practice support together
               for US healthcare providers, with clear responsibilities and
               thoughtful coordination around your team's way of working.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button href="/contact" size="lg" showArrow>
                 Book a Free Audit
               </Button>
@@ -138,11 +138,11 @@ export default function AboutPage() {
               </Button>
             </div>
           </ScrollReveal>
-          <div className="hidden min-h-[24rem] lg:block" aria-hidden="true" />
+          <div className="hidden min-h-[18rem] lg:block" aria-hidden="true" />
         </Container>
       </section>
 
-      <section id="our-story" className="py-16 sm:py-20 lg:py-24">
+      <section id="our-story" className="py-10 sm:py-12 lg:py-16">
         <Container className="grid items-center gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
           <ScrollReveal className="mx-auto w-full max-w-sm lg:max-w-none">
             <div
@@ -191,7 +191,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="border-y border-brand-border/75 bg-brand-background-wash/30 py-16 sm:py-20 lg:py-24">
+      <section className="border-y border-brand-border/75 bg-brand-background-wash/30 py-10 sm:py-12 lg:py-16">
         <Container>
           <ScrollReveal>
             <SectionHeading
@@ -200,7 +200,7 @@ export default function AboutPage() {
               description="Our working principles keep the scope clear and make it easier for your team to stay involved where its input is needed."
             />
           </ScrollReveal>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
             {values.map(({ title, description, icon: Icon }, index) => (
               <ScrollReveal key={title} delay={index * 0.06} className="h-full">
                 <article className="group h-full rounded-2xl border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-7">
@@ -220,7 +220,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-brand-dark py-16 text-brand-background sm:py-20 lg:py-24">
+      <section className="bg-brand-dark py-10 text-brand-background sm:py-12 lg:py-16">
         <Container>
           <ScrollReveal>
             <div className="max-w-3xl">
@@ -239,7 +239,7 @@ export default function AboutPage() {
             </div>
           </ScrollReveal>
 
-          <div className="mt-10 grid gap-4 lg:grid-cols-2">
+          <div className="mt-8 grid gap-4 lg:grid-cols-2">
             <ScrollReveal className="h-full">
               <article className="h-full rounded-2xl border border-brand-background/15 bg-brand-background/5 p-6 transition-[border-color,background-color,transform] duration-300 hover:-translate-y-1 hover:border-brand-background/30 hover:bg-brand-background/[0.08] motion-reduce:transition-none sm:p-8">
                 <div className="flex items-center gap-3">
@@ -285,7 +285,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-10 sm:py-12 lg:py-16">
         <Container>
           <ScrollReveal>
             <SectionHeading
@@ -294,7 +294,7 @@ export default function AboutPage() {
               description="We agree on scope and communication with your practice before support begins. Each step leaves room for your team's review and decisions."
             />
           </ScrollReveal>
-          <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {onboardingSteps.map(({ title, description }, index) => (
               <li key={title} className="h-full">
                 <ScrollReveal delay={index * 0.045} className="h-full">
@@ -316,7 +316,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="border-y border-brand-border/75 bg-brand-background-wash/30 py-16 sm:py-20 lg:py-24">
+      <section className="border-y border-brand-border/75 bg-brand-background-wash/30 py-10 sm:py-12 lg:py-16">
         <Container>
           <ScrollReveal>
             <SectionHeading
@@ -325,7 +325,7 @@ export default function AboutPage() {
               description="We handle practice information with care and discuss appropriate scope, access, and communication expectations with your team before work begins."
             />
           </ScrollReveal>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
             <ScrollReveal className="h-full">
               <article className="h-full rounded-2xl border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none">
                 <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-brand-accent-ink">
@@ -370,7 +370,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-brand-dark py-16 text-brand-background sm:py-20 lg:py-24">
+      <section className="bg-brand-dark py-10 text-brand-background sm:py-12 lg:py-16">
         <Container>
           <ScrollReveal>
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">

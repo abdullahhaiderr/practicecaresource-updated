@@ -42,7 +42,7 @@ export function ServiceExplorer() {
 
   return (
     <div className="overflow-hidden rounded-3xl border border-brand-border bg-brand-background shadow-card">
-      <div className="hidden min-h-[29rem] lg:grid lg:grid-cols-[18rem_minmax(0,1fr)]">
+      <div className="hidden min-h-[25rem] lg:grid lg:grid-cols-[18rem_minmax(0,1fr)]">
         <div
           role="tablist"
           aria-label="Explore CareSource services"

@@ -113,7 +113,7 @@ function ArticleContent({ article }: { article: ResourceArticle }) {
         </ul>
       </section>
 
-      <div className="mt-10 space-y-12 sm:mt-14 sm:space-y-14">
+      <div className="mt-8 space-y-8 sm:mt-10 sm:space-y-10">
         {article.sections.map((section) => (
           <section key={section.id} id={section.id} className="scroll-mt-32">
             <h2 className="font-display text-3xl font-semibold leading-tight text-brand-dark sm:text-4xl">{section.title}</h2>
@@ -140,7 +140,7 @@ function ArticleContent({ article }: { article: ResourceArticle }) {
         ))}
       </div>
 
-      <p className="mt-12 border-t border-brand-border pt-6 text-sm font-semibold leading-relaxed text-brand-accent-ink">
+      <p className="mt-8 border-t border-brand-border pt-5 text-sm font-semibold leading-relaxed text-brand-accent-ink">
         {article.closingNote}
       </p>
     </div>
@@ -149,7 +149,7 @@ function ArticleContent({ article }: { article: ResourceArticle }) {
 
 function AuthorBox() {
   return (
-    <aside className="mt-12 flex flex-col gap-4 rounded-2xl border border-brand-border bg-brand-background-wash/25 p-5 sm:flex-row sm:items-center sm:p-6">
+    <aside className="mt-8 flex flex-col gap-4 rounded-2xl border border-brand-border bg-brand-background-wash/25 p-5 sm:flex-row sm:items-center sm:p-6">
       <div className="grid size-14 shrink-0 place-items-center rounded-full bg-brand-dark font-display text-xl font-semibold text-brand-accent" aria-hidden="true">IH</div>
       <div>
         <p className="text-xs font-bold uppercase tracking-[0.13em] text-brand-accent-ink">About the author</p>
@@ -177,9 +177,9 @@ export default async function ResourceArticlePage({ params }: ArticlePageProps) 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
       />
-      <section className="border-b border-brand-border/70 bg-brand-background-wash/25 py-10 sm:py-14 lg:py-16">
+      <section className="border-b border-brand-border/70 bg-brand-background-wash/25 py-8 sm:py-10 lg:py-12">
         <Container>
-          <nav aria-label="Breadcrumb" className="mb-7">
+          <nav aria-label="Breadcrumb" className="mb-4">
             <ol className="flex flex-wrap items-center gap-2 text-sm font-semibold text-brand-slate">
               <li><Link href="/" className="rounded-sm hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Home</Link></li>
               <li aria-hidden="true">/</li>
@@ -193,7 +193,7 @@ export default async function ResourceArticlePage({ params }: ArticlePageProps) 
               <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">{article.category}</p>
               <h1 className="mt-3 text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-dark sm:text-5xl lg:text-6xl">{article.title}</h1>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">{article.description}</p>
-              <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm font-semibold text-brand-slate">
+              <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm font-semibold text-brand-slate">
                 <span className="inline-flex items-center gap-2"><CalendarDays size={16} aria-hidden="true" />{article.publishedAt}</span>
                 <span className="inline-flex items-center gap-2"><Clock3 size={16} aria-hidden="true" />{getReadingMinutes(article)} min read</span>
                 <span>By Irtiza Hassan</span>
@@ -215,7 +215,7 @@ export default async function ResourceArticlePage({ params }: ArticlePageProps) 
 
       <ArticleReadingProgress />
 
-      <section className="py-10 sm:py-14 lg:py-16">
+      <section className="py-8 sm:py-10 lg:py-12">
         <Container className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-16">
           <article>
             <p className="mb-8 max-w-[70ch] text-lg leading-[1.8] text-brand-dark sm:text-xl">{article.introduction}</p>
@@ -242,10 +242,10 @@ export default async function ResourceArticlePage({ params }: ArticlePageProps) 
         </Container>
       </section>
 
-      <section className="border-y border-brand-border/75 bg-brand-background-wash/25 py-14 sm:py-18 lg:py-20" aria-label="Related articles">
+      <section className="border-y border-brand-border/75 bg-brand-background-wash/25 py-8 sm:py-10 lg:py-12" aria-label="Related articles">
         <Container>
           <ScrollReveal>
-            <div className="mb-8 flex flex-wrap items-end justify-between gap-5 sm:mb-10">
+            <div className="mb-6 flex flex-wrap items-end justify-between gap-5 sm:mb-8">
               <div>
                 <p className="mb-2 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">Keep exploring</p>
                 <h2 className="font-display text-3xl font-semibold text-brand-dark sm:text-4xl">Related resources</h2>
@@ -265,7 +265,7 @@ export default async function ResourceArticlePage({ params }: ArticlePageProps) 
         </Container>
       </section>
 
-      <section className="py-14 sm:py-18 lg:py-20">
+      <section className="py-8 sm:py-10 lg:py-12">
         <Container>
           <ScrollReveal>
             <div className="relative isolate overflow-hidden rounded-3xl bg-brand-dark px-6 py-10 text-brand-background sm:px-10 sm:py-14 lg:px-16">

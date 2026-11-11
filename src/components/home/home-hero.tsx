@@ -39,7 +39,7 @@ export function HomeHero({ heroImage }: HomeHeroProps) {
         className="pointer-events-none absolute -left-28 top-1/2 hidden size-72 -translate-y-1/2 rounded-full border-[3rem] border-brand-accent/10 lg:block"
         aria-hidden="true"
       />
-      <Container className="relative grid items-center gap-8 py-12 sm:py-16 lg:min-h-[calc(100svh-5.5rem)] lg:grid-cols-[0.96fr_1.04fr] lg:gap-3 lg:py-10 xl:gap-8">
+      <Container className="relative grid items-center gap-8 py-6 sm:py-8 lg:min-h-[calc(100svh-5.5rem)] lg:grid-cols-[0.96fr_1.04fr] lg:gap-3 lg:py-8 xl:gap-8">
         <div className="relative z-10 max-w-2xl">
           <motion.div
             {...reveal}
@@ -56,7 +56,7 @@ export function HomeHero({ heroImage }: HomeHeroProps) {
             initial={reducedMotion ? false : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reducedMotion ? 0 : 0.62, delay: reducedMotion ? 0 : 0.08, ease: "easeOut" }}
-            className="mt-6 text-balance font-display text-[clamp(3.25rem,7.1vw,6.3rem)] font-semibold leading-[0.9] tracking-[-0.045em] text-brand-dark"
+            className="mt-4 text-balance font-display text-[clamp(3.25rem,7.1vw,6.3rem)] font-semibold leading-[0.9] tracking-[-0.045em] text-brand-dark"
           >
             <span className="block">The Source of</span>
             <span className="block">Care</span>
@@ -67,7 +67,7 @@ export function HomeHero({ heroImage }: HomeHeroProps) {
             initial={reducedMotion ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reducedMotion ? 0 : 0.52, delay: reducedMotion ? 0 : 0.17, ease: "easeOut" }}
-            className="mt-6 max-w-xl text-base leading-relaxed text-brand-slate sm:text-lg"
+            className="mt-4 max-w-xl text-base leading-relaxed text-brand-slate sm:text-lg"
           >
             Billing, credentialing, AR recovery and more, all under one roof. We
             handle the revenue cycle so US healthcare providers can focus on
@@ -78,7 +78,7 @@ export function HomeHero({ heroImage }: HomeHeroProps) {
             initial={reducedMotion ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reducedMotion ? 0 : 0.48, delay: reducedMotion ? 0 : 0.23, ease: "easeOut" }}
-            className="mt-7 flex flex-col gap-4 sm:flex-row sm:items-center"
+            className="mt-5 flex flex-col gap-4 sm:flex-row sm:items-center"
           >
             <Button href="/contact" size="lg" showArrow>
               Book a Free Audit
@@ -98,13 +98,13 @@ export function HomeHero({ heroImage }: HomeHeroProps) {
             initial={reducedMotion ? false : { opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reducedMotion ? 0 : 0.48, delay: reducedMotion ? 0 : 0.3, ease: "easeOut" }}
-            className="mt-9 grid grid-cols-2 border-t border-brand-border/80 sm:grid-cols-4 lg:mt-10"
+            className="mt-6 grid grid-cols-2 border-t border-brand-border/80 sm:grid-cols-4 lg:mt-8"
           >
             {features.map(({ label, icon: Icon }, index) => (
               <li
                 key={label}
                 className={[
-                  "flex min-h-24 flex-col items-start gap-2 py-4 pr-3",
+                  "flex min-h-20 flex-col items-start gap-2 py-3 pr-3",
                   index % 2 === 0 ? "border-r border-brand-border/80" : "pl-4",
                   index < 2 ? "border-b border-brand-border/80 sm:border-b-0" : "",
                   index === 2 ? "sm:border-l sm:border-brand-border/80 sm:pl-4" : "",
@@ -125,7 +125,7 @@ export function HomeHero({ heroImage }: HomeHeroProps) {
             initial={reducedMotion ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reducedMotion ? 0 : 0.5, delay: reducedMotion ? 0 : 0.38 }}
-            className="relative mt-5 inline-block font-script text-2xl font-semibold text-brand-dark sm:ml-1 sm:text-3xl"
+            className="relative mt-3 inline-block font-script text-2xl font-semibold text-brand-dark sm:ml-1 sm:text-3xl"
           >
             Let&apos;s grow your practice together.
             <svg

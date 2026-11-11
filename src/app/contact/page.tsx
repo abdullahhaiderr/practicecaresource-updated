@@ -48,7 +48,7 @@ const faqs = [
 export default function ContactPage() {
   return (
     <main id="main-content">
-      <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-14 sm:py-20 lg:py-24">
+      <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-8 sm:py-10 lg:py-12">
         <div className="pointer-events-none absolute -right-20 top-1/2 hidden h-[26rem] w-[32rem] -translate-y-1/2 lg:block" aria-hidden="true">
           <div className="absolute right-0 top-6 size-[24rem] rounded-[44%_56%_61%_39%/41%_48%_52%_59%] bg-brand-dark" />
           <div className="absolute right-12 top-1/2 size-72 -translate-y-1/2 rounded-full border border-brand-accent/55" />
@@ -61,7 +61,7 @@ export default function ContactPage() {
 
         <Container className="relative grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
           <ScrollReveal className="max-w-3xl lg:max-w-none">
-            <nav aria-label="Breadcrumb" className="mb-7">
+            <nav aria-label="Breadcrumb" className="mb-4">
               <ol className="flex items-center gap-2 text-sm font-semibold text-brand-slate">
                 <li>
                   <Link
@@ -83,11 +83,11 @@ export default function ContactPage() {
             <h1 className="text-balance font-display text-5xl font-semibold leading-[0.98] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
               Let’s talk about your practice.
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
               Tell us what kind of support you are exploring. We can learn more
               about your practice and discuss a practical next step together.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button href="#contact-form" size="lg" showArrow>
                 Send a message
               </Button>
@@ -100,11 +100,11 @@ export default function ContactPage() {
               </a>
             </div>
           </ScrollReveal>
-          <div className="hidden min-h-[22rem] lg:block" aria-hidden="true" />
+          <div className="hidden min-h-[18rem] lg:block" aria-hidden="true" />
         </Container>
       </section>
 
-      <section id="contact-form" className="scroll-mt-24 py-16 sm:py-20 lg:py-24">
+      <section id="contact-form" className="scroll-mt-24 py-10 sm:py-12 lg:py-16">
         <Container className="grid items-start gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
           <ScrollReveal className="space-y-5">
             <div>
@@ -186,7 +186,7 @@ export default function ContactPage() {
 
           <ScrollReveal delay={0.06}>
             <div className="rounded-3xl border border-brand-border bg-brand-background p-5 shadow-card sm:p-8 lg:p-9">
-              <div className="mb-7">
+              <div className="mb-4">
                 <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">
                   Contact form
                 </p>
@@ -211,7 +211,7 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="border-y border-brand-border/75 bg-brand-background-wash/30 py-16 sm:py-20 lg:py-24">
+      <section className="border-y border-brand-border/75 bg-brand-background-wash/30 py-10 sm:py-12 lg:py-16">
         <Container>
           <ScrollReveal>
             <SectionHeading
@@ -221,7 +221,7 @@ export default function ContactPage() {
             />
           </ScrollReveal>
 
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
+          <div className="mt-8 grid gap-4 md:grid-cols-2">
             {faqs.map(({ question, answer }, index) => (
               <ScrollReveal key={question} delay={index * 0.05} className="h-full">
                 <article className="h-full rounded-2xl border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-7">
@@ -238,7 +238,7 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="bg-brand-dark py-16 text-brand-background sm:py-20 lg:py-24">
+      <section className="bg-brand-dark py-10 text-brand-background sm:py-12 lg:py-16">
         <Container>
           <ScrollReveal>
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">

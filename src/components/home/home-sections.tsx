@@ -125,14 +125,14 @@ function TrustPlaceholders() {
 
 function ServicesSection() {
   return (
-    <section className="py-20 sm:py-24 lg:py-28" aria-label="CareSource services">
+    <section className="py-12 sm:py-14 lg:py-16" aria-label="CareSource services">
       <Container>
         <ScrollReveal>
           <SectionHeading
             eyebrow="Support for your practice"
             title={<>The right help, <span className="text-brand-accent-ink">under one roof.</span></>}
             description="Choose the support that fits your practice today. We can also discuss how services may work together through clearly agreed responsibilities."
-            className="mb-10 sm:mb-14"
+            className="mb-7 sm:mb-9"
           />
         </ScrollReveal>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -149,7 +149,7 @@ function ServicesSection() {
           ))}
         </div>
         <ScrollReveal>
-          <div className="mt-10 flex justify-center">
+          <div className="mt-7 flex justify-center">
             <Button href="/services" variant="ghost" showArrow>
               Explore all services
             </Button>
@@ -162,17 +162,17 @@ function ServicesSection() {
 
 function OneRoofSection() {
   return (
-    <section className="overflow-hidden bg-brand-dark py-20 text-brand-background sm:py-24 lg:py-28" aria-labelledby="one-roof-heading">
+    <section className="overflow-hidden bg-brand-dark py-12 text-brand-background sm:py-14 lg:py-16" aria-labelledby="one-roof-heading">
       <Container className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
         <ScrollReveal>
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">One coordinated team</p>
           <h2 id="one-roof-heading" className="text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight sm:text-5xl lg:text-6xl">
             Connected support. <span className="text-brand-accent">Clear handoffs.</span>
           </h2>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-brand-background/70 sm:text-lg">
+          <p className="mt-4 max-w-xl text-base leading-relaxed text-brand-background/70 sm:text-lg">
             Bring the right practice support into a shared conversation. We agree who owns each step, what needs your review, and how updates should move between teams.
           </p>
-          <Button href="/contact" className="mt-8" showArrow>
+          <Button href="/contact" className="mt-6" showArrow>
             Talk through your needs
           </Button>
         </ScrollReveal>
@@ -180,7 +180,7 @@ function OneRoofSection() {
         <ScrollReveal>
           <div className="relative mx-auto w-full max-w-2xl rounded-[2rem] border border-brand-background/15 bg-brand-dark-soft p-5 sm:p-8">
             <div className="absolute left-1/2 top-16 hidden h-[calc(100%-8rem)] w-px -translate-x-1/2 bg-brand-accent/45 sm:block" aria-hidden="true" />
-            <div className="relative mx-auto mb-7 flex min-h-16 max-w-xs items-center justify-center gap-3 rounded-2xl border border-brand-accent/40 bg-brand-dark px-4 text-center shadow-card">
+            <div className="relative mx-auto mb-5 flex min-h-16 max-w-xs items-center justify-center gap-3 rounded-2xl border border-brand-accent/40 bg-brand-dark px-4 text-center shadow-card">
               <span className="grid size-9 place-items-center rounded-full bg-brand-accent text-brand-dark"><Check size={19} aria-hidden="true" /></span>
               <span className="text-sm font-bold sm:text-base">Your practice &amp; shared goals</span>
             </div>
@@ -203,10 +203,10 @@ function OneRoofSection() {
 
 function ProcessSection() {
   return (
-    <section id="process" className="scroll-mt-24 py-20 sm:py-24 lg:py-28" aria-label="How we work">
+    <section id="process" className="scroll-mt-24 py-12 sm:py-14 lg:py-16" aria-label="How we work">
       <Container>
         <ScrollReveal>
-          <div className="mb-12 flex flex-col gap-6 sm:mb-16 sm:flex-row sm:items-end sm:justify-between">
+          <div className="mb-8 flex flex-col gap-5 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading
               eyebrow="How we work"
               title={<>A practical path to <span className="text-brand-accent-ink">working together.</span></>}
@@ -237,14 +237,14 @@ function ProcessSection() {
 
 function ComparisonSection() {
   return (
-    <section className="bg-brand-background-wash/35 py-20 sm:py-24 lg:py-28" aria-labelledby="comparison-heading">
+    <section className="bg-brand-background-wash/35 py-12 sm:py-14 lg:py-16" aria-labelledby="comparison-heading">
       <Container>
         <ScrollReveal>
           <SectionHeading
             eyebrow="A thoughtful fit"
             title={<>Compare the way <span className="text-brand-accent-ink">work gets coordinated.</span></>}
             description="Every practice is different. Use this as a conversation starter, then decide what makes sense for your team."
-            className="mb-10 sm:mb-12"
+            className="mb-7 sm:mb-9"
           />
         </ScrollReveal>
         <ScrollReveal>
@@ -279,10 +279,10 @@ function ComparisonSection() {
 
 function TestimonialSection() {
   return (
-    <section className="py-20 sm:py-24 lg:py-28" aria-label="Practice testimonials">
+    <section className="py-12 sm:py-14 lg:py-16" aria-label="Practice testimonials">
       <Container>
         <ScrollReveal>
-          <div className="mb-10 flex items-end justify-between gap-6 sm:mb-12">
+          <div className="mb-7 flex items-end justify-between gap-6 sm:mb-9">
             <SectionHeading
               eyebrow="Practice voices"
               title={<>Built around <span className="text-brand-accent-ink">real partnerships.</span></>}
@@ -315,7 +315,7 @@ function TestimonialSection() {
 
 function FaqSection() {
   return (
-    <section className="bg-brand-background-wash/35 py-20 sm:py-24 lg:py-28" aria-label="Frequently asked questions">
+    <section className="bg-brand-background-wash/35 py-12 sm:py-14 lg:py-16" aria-label="Frequently asked questions">
       <Container className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
         <ScrollReveal>
           <SectionHeading
@@ -346,15 +346,15 @@ function FaqSection() {
 
 function ContactCta() {
   return (
-    <section className="py-20 sm:py-24 lg:py-28">
+    <section className="py-12 sm:py-14 lg:py-16">
       <Container>
         <ScrollReveal>
-          <div className="relative isolate overflow-hidden rounded-[2rem] bg-brand-dark px-6 py-12 text-center text-brand-background sm:px-12 sm:py-16 lg:px-20 lg:py-20">
+          <div className="relative isolate overflow-hidden rounded-[2rem] bg-brand-dark px-6 py-8 text-center text-brand-background sm:px-12 sm:py-10 lg:px-20 lg:py-12">
             <div className="pointer-events-none absolute -right-16 -top-24 -z-10 size-72 rounded-full border-[3rem] border-brand-accent/15" aria-hidden="true" />
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">Start a conversation</p>
             <h2 className="mx-auto mt-4 max-w-3xl text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight sm:text-5xl lg:text-6xl">Let&apos;s find the right support for your practice.</h2>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-brand-background/70 sm:text-lg">Tell us what your team is looking for. We&apos;ll learn about your workflow and discuss a sensible next step.</p>
-            <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button href="/contact" size="lg" showArrow>Book a Free Audit</Button>
               <Link href={`mailto:${footerContact.email}`} className="rounded-pill px-5 py-3 text-sm font-bold text-brand-background underline decoration-brand-accent/70 underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">Email {footerContact.email}</Link>
             </div>

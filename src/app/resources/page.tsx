@@ -32,7 +32,7 @@ const resourceCards = resourceArticles.map((article) => ({
 export default function ResourcesPage() {
   return (
     <main id="main-content">
-      <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background-wash/30 py-16 sm:py-20 lg:py-24">
+      <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background-wash/30 py-8 sm:py-10 lg:py-12">
         <div className="pointer-events-none absolute -right-20 -top-16 -z-10 size-72 rounded-full border-[3rem] border-brand-accent/10 sm:size-96" aria-hidden="true" />
         <Container className="relative grid items-end gap-8 lg:grid-cols-[1fr_auto] lg:gap-12">
           <ScrollReveal>
@@ -43,7 +43,7 @@ export default function ResourcesPage() {
             <h1 className="max-w-4xl text-balance font-display text-5xl font-semibold leading-[0.98] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
               Clear answers for the work behind <span className="text-brand-accent-ink">your practice.</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
               Practical, general information to help your team understand billing, enrollment, denials, and the workflows that support a practice.
             </p>
           </ScrollReveal>
@@ -53,7 +53,7 @@ export default function ResourcesPage() {
         </Container>
       </section>
 
-      <section id="resource-library" className="scroll-mt-24 py-16 sm:py-20 lg:py-24" aria-label="Resource library">
+      <section id="resource-library" className="scroll-mt-24 py-10 sm:py-12 lg:py-16" aria-label="Resource library">
         <Container>
           <ScrollReveal>
             <SectionHeading

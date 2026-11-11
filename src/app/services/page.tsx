@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <main id="main-content">
-      <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-14 sm:py-20 lg:py-24">
+      <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-8 sm:py-10 lg:py-12">
         <div
           className="pointer-events-none absolute -right-8 top-1/2 hidden h-[28rem] w-[31rem] -translate-y-1/2 lg:block"
           aria-hidden="true"
@@ -34,7 +34,7 @@ export default function ServicesPage() {
 
         <Container className="relative grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
           <ScrollReveal className="max-w-3xl lg:max-w-none">
-            <nav aria-label="Breadcrumb" className="mb-7">
+            <nav aria-label="Breadcrumb" className="mb-4">
               <ol className="flex items-center gap-2 text-sm font-semibold text-brand-slate">
                 <li>
                   <Link href="/" className="rounded-sm transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
@@ -51,10 +51,10 @@ export default function ServicesPage() {
             <h1 className="text-balance font-display text-5xl font-semibold leading-[0.98] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
               Everything Your Practice Needs, <span className="text-brand-accent-ink">Under One Roof</span>
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
               From billing and enrollment to patient-facing digital support, CareSource helps US practices bring important administrative work into one coordinated conversation.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button href="/contact" size="lg" showArrow>
                 Book a Free Audit
               </Button>
@@ -63,11 +63,11 @@ export default function ServicesPage() {
               </Button>
             </div>
           </ScrollReveal>
-          <div className="hidden lg:block lg:min-h-[24rem]" aria-hidden="true" />
+          <div className="hidden lg:block lg:min-h-[18rem]" aria-hidden="true" />
         </Container>
       </section>
 
-      <section id="all-services" className="py-16 sm:py-20 lg:py-24">
+      <section id="all-services" className="py-10 sm:py-12 lg:py-16">
         <Container>
           <ScrollReveal>
             <SectionHeading
@@ -76,7 +76,7 @@ export default function ServicesPage() {
               description="Choose a service to see how the day-to-day work can be organized around your practice and its existing processes."
             />
           </ScrollReveal>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {serviceCatalog.map((service, index) => (
               <ScrollReveal key={service.slug} delay={index * 0.035}>
                 <ServiceCard
@@ -93,7 +93,7 @@ export default function ServicesPage() {
         </Container>
       </section>
 
-      <section className="border-y border-brand-border/75 bg-brand-background-wash/30 py-16 sm:py-20 lg:py-24">
+      <section className="border-y border-brand-border/75 bg-brand-background-wash/30 py-10 sm:py-12 lg:py-16">
         <Container>
           <ScrollReveal>
             <SectionHeading
@@ -102,13 +102,13 @@ export default function ServicesPage() {
               description="Select a service to review what it can include and who it may be useful for. Details and responsibilities are confirmed with your team before work starts."
             />
           </ScrollReveal>
-          <ScrollReveal className="mt-9 sm:mt-12">
+          <ScrollReveal className="mt-7 sm:mt-9">
             <ServiceExplorer />
           </ScrollReveal>
         </Container>
       </section>
 
-      <section className="bg-brand-dark py-16 text-brand-background sm:py-20 lg:py-24">
+      <section className="bg-brand-dark py-10 text-brand-background sm:py-12 lg:py-16">
         <Container className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-16">
           <ScrollReveal>
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">

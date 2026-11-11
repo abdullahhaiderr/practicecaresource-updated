@@ -46,7 +46,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
   return (
     <main id="main-content">
-      <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-12 sm:py-16 lg:py-20">
+      <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-8 sm:py-10 lg:py-12">
         <div className="pointer-events-none absolute -right-20 top-1/2 hidden size-[27rem] -translate-y-1/2 rounded-[47%_53%_65%_35%/46%_43%_57%_54%] bg-brand-dark lg:block" aria-hidden="true">
           <div className="absolute inset-8 rounded-full border border-brand-accent/50" />
           <div className="absolute right-6 top-8 size-16 rounded-full bg-brand-accent" />
@@ -56,7 +56,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         </div>
         <Container className="relative grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
           <ScrollReveal className="max-w-3xl">
-            <nav aria-label="Breadcrumb" className="mb-6">
+            <nav aria-label="Breadcrumb" className="mb-4">
               <ol className="flex flex-wrap items-center gap-2 text-sm font-semibold text-brand-slate">
                 <li>
                   <Link href="/" className="rounded-sm transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Home</Link>
@@ -80,21 +80,21 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 {service.title}
               </h1>
             </div>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
               {service.overview}
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button href="/contact" size="lg" showArrow>Book a Free Audit</Button>
               <Link href="/services" className="inline-flex min-h-12 items-center gap-2 px-3 text-sm font-bold text-brand-dark transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
                 View all services <ArrowRight size={17} aria-hidden="true" />
               </Link>
             </div>
           </ScrollReveal>
-          <div className="hidden lg:block lg:min-h-[22rem]" aria-hidden="true" />
+          <div className="hidden lg:block lg:min-h-[18rem]" aria-hidden="true" />
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-10 sm:py-12 lg:py-16">
         <Container className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
           <ScrollReveal>
             <SectionHeading
@@ -102,7 +102,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               title="A clear scope, built around your workflow"
               description="The exact tasks are agreed with your practice. Common areas of support may include:"
             />
-            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
               {service.whatsIncluded.map((item) => (
                 <li key={item} className="flex items-start gap-3 rounded-2xl border border-brand-border bg-brand-background/70 p-4 text-sm leading-relaxed text-brand-slate transition-colors hover:border-brand-accent/45 hover:bg-brand-background">
                   <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-brand-accent/15 text-brand-accent-ink" aria-hidden="true">
@@ -114,7 +114,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             </ul>
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
-            <aside className="h-full rounded-3xl border border-brand-border bg-brand-background-wash/40 p-7 sm:p-9">
+            <aside className="h-full rounded-3xl border border-brand-border bg-brand-background-wash/40 p-5 sm:p-6">
               <p className="text-sm font-bold uppercase tracking-[0.15em] text-brand-accent-ink">Who it's for</p>
               <h2 className="mt-3 font-display text-3xl font-semibold leading-tight text-brand-dark sm:text-4xl">
                 Built for real practice workflows
@@ -136,7 +136,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         </Container>
       </section>
 
-      <section className="border-y border-brand-border/75 bg-brand-background-wash/30 py-16 sm:py-20 lg:py-24">
+      <section className="border-y border-brand-border/75 bg-brand-background-wash/30 py-10 sm:py-12 lg:py-16">
         <Container>
           <ScrollReveal>
             <SectionHeading
@@ -146,7 +146,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               align="center"
             />
           </ScrollReveal>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {service.howWeWork.map((step, index) => (
               <ScrollReveal key={step.title} delay={index * 0.04}>
                 <article className="h-full rounded-2xl border border-brand-border bg-brand-background p-5 transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card sm:p-6">
@@ -162,7 +162,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-10 sm:py-12 lg:py-16">
         <Container size="narrow">
           <ScrollReveal>
             <SectionHeading
@@ -170,7 +170,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               title={`A few things to know about ${service.shortTitle.toLowerCase()}`}
               align="center"
             />
-            <div className="mt-8 divide-y divide-brand-border border-y border-brand-border">
+            <div className="mt-6 divide-y divide-brand-border border-y border-brand-border">
               {service.faqs.map((faq) => (
                 <details key={faq.question} className="group py-1">
                   <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-5 py-4 font-bold text-brand-dark transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
@@ -187,7 +187,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         </Container>
       </section>
 
-      <section className="border-y border-brand-border/75 bg-brand-background-wash/30 py-16 sm:py-20 lg:py-24">
+      <section className="border-y border-brand-border/75 bg-brand-background-wash/30 py-10 sm:py-12 lg:py-16">
         <Container>
           <ScrollReveal>
             <SectionHeading
@@ -196,7 +196,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               description="Explore other areas that may fit alongside this work."
             />
           </ScrollReveal>
-          <div className="mt-9 grid gap-5 md:grid-cols-2">
+          <div className="mt-7 grid gap-5 md:grid-cols-2">
             {relatedServices.map((related, index) => (
               <ScrollReveal key={related.slug} delay={index * 0.05}>
                 <ServiceCard
@@ -213,10 +213,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         </Container>
       </section>
 
-      <section className="py-16 sm:py-20 lg:py-24">
+      <section className="py-10 sm:py-12 lg:py-16">
         <Container>
           <ScrollReveal>
-            <div className="relative overflow-hidden rounded-3xl bg-brand-dark px-7 py-10 text-brand-background sm:px-10 sm:py-14 lg:px-16">
+            <div className="relative overflow-hidden rounded-3xl bg-brand-dark px-7 py-8 text-brand-background sm:px-10 sm:py-10 lg:px-16 lg:py-12">
               <div className="pointer-events-none absolute -right-10 -top-20 size-64 rounded-full border border-brand-accent/35" aria-hidden="true" />
               <div className="relative max-w-3xl">
                 <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">The source of care for your practice</p>

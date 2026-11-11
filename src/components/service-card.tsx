@@ -47,7 +47,7 @@ export function ServiceCard({
           <h3 className="font-display text-2xl font-semibold leading-tight text-brand-dark sm:text-3xl">
             {title}
           </h3>
-          <p className="mt-3 line-clamp-3 min-h-[4.8rem] text-base leading-relaxed text-brand-slate">
+          <p className="mt-3 line-clamp-3 min-h-[4rem] text-base leading-relaxed text-brand-slate">
             {description}
           </p>
           <span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-brand-accent-ink">

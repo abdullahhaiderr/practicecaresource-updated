@@ -8,9 +8,9 @@ type PlaceholderPageProps = {
 
 export function PlaceholderPage({ title }: PlaceholderPageProps) {
   return (
-    <main id="main-content" className="flex min-h-[58vh] items-center py-20">
+    <main id="main-content" className="flex min-h-[58vh] items-center py-12">
       <Container size="narrow">
-        <div className="rounded-3xl border border-brand-border bg-brand-background-wash/40 px-7 py-12 text-center sm:px-12 sm:py-16">
+        <div className="rounded-3xl border border-brand-border bg-brand-background-wash/40 px-7 py-8 text-center sm:px-10 sm:py-10">
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">
             CareSource
           </p>

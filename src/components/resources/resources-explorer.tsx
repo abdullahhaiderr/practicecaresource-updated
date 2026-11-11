@@ -74,12 +74,12 @@ export function ResourcesExplorer({ articles, categories, featuredSlug }: Resour
       </div>
 
       {isDefaultView && featuredArticle ? (
-        <ScrollReveal className="mt-10 sm:mt-14">
+        <ScrollReveal className="mt-7 sm:mt-9">
           <ResourceCard article={featuredArticle} featured />
         </ScrollReveal>
       ) : null}
 
-      <div className="mb-5 mt-10 flex flex-wrap items-center justify-between gap-3 sm:mt-14">
+      <div className="mb-4 mt-7 flex flex-wrap items-center justify-between gap-3 sm:mt-9">
         <p className="text-sm font-semibold text-brand-slate" aria-live="polite">
           {filteredArticles.length} {filteredArticles.length === 1 ? "article" : "articles"} found
         </p>
