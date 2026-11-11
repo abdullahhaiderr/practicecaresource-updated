@@ -7,7 +7,6 @@ import {
   ClipboardCheck,
   Headset,
   Play,
-  ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
@@ -26,14 +25,7 @@ type HomeHeroProps = {
 
 export function HomeHero({ heroImage }: HomeHeroProps) {
   const reducedMotion = useReducedMotion();
-  const reveal = reducedMotion
-    ? { initial: false as const, animate: { opacity: 1, y: 0 } }
-    : {
-        initial: { opacity: 0, y: 18 },
-        animate: { opacity: 1, y: 0 },
-      };
 
-  return (
     <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background">
       <div
         className="pointer-events-none absolute -left-28 top-1/2 hidden size-72 -translate-y-1/2 rounded-full border-[3rem] border-brand-accent/10 lg:block"
@@ -41,18 +33,7 @@ export function HomeHero({ heroImage }: HomeHeroProps) {
       />
       <Container className="relative grid items-center gap-8 py-6 sm:py-8 lg:min-h-[calc(100svh-5.5rem)] lg:grid-cols-[0.96fr_1.04fr] lg:gap-3 lg:py-8 xl:gap-8">
         <div className="relative z-10 max-w-2xl">
-          <motion.div
-            {...reveal}
-            transition={{ duration: reducedMotion ? 0 : 0.45, ease: "easeOut" }}
-            className="inline-flex min-h-10 items-center gap-2 rounded-pill border border-brand-accent/35 bg-brand-background-wash/40 px-4 text-sm font-bold tracking-wide text-brand-dark"
-          >
-            <span className="grid size-6 place-items-center rounded-full bg-brand-accent text-brand-dark">
-              <ShieldCheck size={15} aria-hidden="true" />
-            </span>
-            Accurate. Reliable. Transparent.
-          </motion.div>
 
-          <motion.h1
             initial={reducedMotion ? false : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reducedMotion ? 0 : 0.62, delay: reducedMotion ? 0 : 0.08, ease: "easeOut" }}
@@ -121,28 +102,7 @@ export function HomeHero({ heroImage }: HomeHeroProps) {
             ))}
           </motion.ul>
 
-          <motion.p
-            initial={reducedMotion ? false : { opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: reducedMotion ? 0 : 0.5, delay: reducedMotion ? 0 : 0.38 }}
-            className="relative mt-3 inline-block font-script text-2xl font-semibold text-brand-dark sm:ml-1 sm:text-3xl"
-          >
-            Let&apos;s grow your practice together.
-            <svg
-              viewBox="0 0 360 16"
-              className="absolute -bottom-2 left-0 h-3 w-full text-brand-accent"
-              aria-hidden="true"
-            >
-              <path
-                d="M4 10C74 2 181 3 268 8c31 2 58 3 88 0"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeWidth="4"
-              />
-            </svg>
-          </motion.p>
-        </div>
+
 
         <HeroVisual heroImage={heroImage} />
       </Container>
