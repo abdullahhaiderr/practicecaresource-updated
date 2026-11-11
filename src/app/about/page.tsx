@@ -331,7 +331,7 @@ export default function AboutPage() {
             ))}
           </div>
         </Container>
-      </section>    </section>
+      </section>
 
       <section className="bg-brand-dark py-10 text-brand-background sm:py-12 lg:py-16">
         <Container>
