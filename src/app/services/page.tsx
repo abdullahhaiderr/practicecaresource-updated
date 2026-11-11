@@ -122,7 +122,7 @@ export default function ServicesPage() {
             </p>
             <Link
               href="/contact"
-              className="group mt-7 inline-flex min-h-12 items-center gap-2 rounded-pill bg-brand-accent px-6 text-sm font-bold text-brand-dark transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-brand-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-background focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
+              className="group mt-7 inline-flex min-h-12 items-center gap-2 rounded-pill bg-brand-accent px-6 text-sm font-bold text-brand-background transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-brand-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-background focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
             >
               Talk through your needs
               <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
@@ -139,7 +139,7 @@ export default function ServicesPage() {
                       href={`/services/${service.slug}`}
                       className="group flex min-h-[5.25rem] items-center gap-3 rounded-2xl border border-brand-background/15 bg-brand-background/5 p-4 transition-[background-color,border-color,transform] hover:-translate-y-0.5 hover:border-brand-accent/55 hover:bg-brand-background/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
                     >
-                      <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-brand-accent text-brand-dark" aria-hidden="true">
+                      <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-brand-accent text-brand-background" aria-hidden="true">
                         <Icon size={19} strokeWidth={1.9} />
                       </span>
                       <span className="min-w-0">

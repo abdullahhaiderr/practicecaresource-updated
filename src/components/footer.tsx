@@ -87,7 +87,7 @@ export function Footer() {
             </ul>
             <Link
               href="/contact"
-              className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-pill bg-brand-accent px-5 text-sm font-bold text-brand-dark transition-transform hover:-translate-y-0.5 focus-visible:outline-none"
+              className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-pill bg-brand-accent px-5 text-sm font-bold text-brand-background transition-transform hover:-translate-y-0.5 focus-visible:outline-none"
             >
               Book a Free Audit
               <ArrowUpRight size={16} aria-hidden="true" />

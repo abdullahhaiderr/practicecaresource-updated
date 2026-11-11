@@ -181,7 +181,7 @@ function OneRoofSection() {
           <div className="relative mx-auto w-full max-w-2xl rounded-[2rem] border border-brand-background/15 bg-brand-dark-soft p-5 sm:p-8">
             <div className="absolute left-1/2 top-16 hidden h-[calc(100%-8rem)] w-px -translate-x-1/2 bg-brand-accent/45 sm:block" aria-hidden="true" />
             <div className="relative mx-auto mb-5 flex min-h-16 max-w-xs items-center justify-center gap-3 rounded-2xl border border-brand-accent/40 bg-brand-dark px-4 text-center shadow-card">
-              <span className="grid size-9 place-items-center rounded-full bg-brand-accent text-brand-dark"><Check size={19} aria-hidden="true" /></span>
+              <span className="grid size-9 place-items-center rounded-full bg-brand-accent text-brand-background"><Check size={19} aria-hidden="true" /></span>
               <span className="text-sm font-bold sm:text-base">Your practice &amp; shared goals</span>
             </div>
             <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">

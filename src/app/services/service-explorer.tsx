@@ -77,7 +77,7 @@ export function ServiceExplorer() {
                   className={[
                     "grid size-9 shrink-0 place-items-center rounded-xl transition-colors",
                     selected
-                      ? "bg-brand-accent text-brand-dark"
+                      ? "bg-brand-accent text-brand-background"
                       : "bg-brand-background text-brand-accent-ink group-hover:bg-brand-accent/15",
                   ].join(" ")}
                   aria-hidden="true"

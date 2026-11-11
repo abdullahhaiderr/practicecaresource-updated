@@ -19,7 +19,7 @@ function BillingDashboard() {
       <div className="overflow-hidden rounded-t-xl border border-brand-background/10 bg-brand-dark-soft">
         <div className="flex items-center justify-between border-b border-brand-background/10 px-3 py-2 sm:px-4 sm:py-3">
           <div className="flex items-center gap-2">
-            <span className="grid size-7 place-items-center rounded-lg bg-brand-accent text-brand-dark">
+            <span className="grid size-7 place-items-center rounded-lg bg-brand-accent text-brand-background">
               <ClipboardCheck size={15} aria-hidden="true" />
             </span>
             <span className="text-[10px] font-bold text-brand-background sm:text-xs">Practice dashboard</span>
@@ -129,7 +129,7 @@ export function HeroVisual({ heroImage }: HeroVisualProps) {
         >
           <div className="rounded-[0.9rem] bg-brand-background-wash/45 p-2 sm:rounded-[1.1rem] sm:p-3">
             <div className="mx-auto mb-3 h-1 w-7 rounded-full bg-brand-slate/40" />
-            <span className="grid size-7 place-items-center rounded-full bg-brand-accent text-brand-dark sm:size-9">
+            <span className="grid size-7 place-items-center rounded-full bg-brand-accent text-brand-background sm:size-9">
               <BadgeCheck size={18} aria-hidden="true" />
             </span>
             <p className="mt-2 text-[8px] font-bold leading-tight text-brand-dark sm:text-[10px]">Claim Approved</p>

@@ -37,7 +37,7 @@ export function ServiceCard({
             className="object-cover transition-transform duration-700 ease-brand-out group-hover:scale-[1.04] motion-reduce:transition-none"
           />
           <span
-            className="absolute -bottom-5 right-5 z-10 grid size-14 place-items-center rounded-full bg-brand-accent text-brand-dark shadow-lg ring-4 ring-brand-background transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105 motion-reduce:transition-none"
+            className="absolute -bottom-5 right-5 z-10 grid size-14 place-items-center rounded-full bg-brand-accent text-brand-background shadow-lg ring-4 ring-brand-background transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105 motion-reduce:transition-none"
             aria-hidden="true"
           >
             <Icon size={24} strokeWidth={1.8} />
