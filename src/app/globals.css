@@ -4,17 +4,17 @@
 
 :root {
   color-scheme: light;
-  --cs-accent: 255 119 28;
-  --cs-accent-hover: 224 91 16;
-  --cs-accent-ink: 161 62 8;
-  --cs-background: 245 237 224;
-  --cs-background-wash: 231 218 199;
+  --cs-accent: 176 224 230;
+  --cs-accent-hover: 136 198 208;
+  --cs-accent-ink: 39 98 107;
+  --cs-background: 255 255 255;
+  --cs-background-wash: 248 251 252;
   --cs-dark: 22 19 17;
   --cs-dark-soft: 39 34 30;
   --cs-slate: 84 104 119;
   --cs-slate-light: 110 126 138;
-  --cs-border: 218 205 186;
-  --cs-peach: 247 206 175;
+  --cs-border: 220 230 232;
+  --cs-peach: 217 241 244;
 }
 
 * {
