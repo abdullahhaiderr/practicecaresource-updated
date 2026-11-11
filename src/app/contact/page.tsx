@@ -2,10 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
-  Clock3,
   HelpCircle,
   Mail,
-  MapPin,
   Phone,
   ShieldCheck,
 } from "lucide-react";
@@ -153,33 +151,13 @@ export default function ContactPage() {
               <ArrowRight size={18} className="mt-1 shrink-0 text-brand-accent-ink transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </a>
 
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
-              <div className="flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background-wash/35 p-5">
-                <MapPin size={21} className="mt-0.5 shrink-0 text-brand-accent-ink" aria-hidden="true" />
-                <div>
-                  <h3 className="text-sm font-bold text-brand-dark">Business address</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-brand-slate">
-                    [PLACEHOLDER: add business address]
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background-wash/35 p-5">
-                <Clock3 size={21} className="mt-0.5 shrink-0 text-brand-accent-ink" aria-hidden="true" />
-                <div>
-                  <h3 className="text-sm font-bold text-brand-dark">Working hours</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-brand-slate">
-                    [PLACEHOLDER: add working hours and timezone]
-                  </p>
-                </div>
-              </div>
-            </div>
-
             <div className="rounded-2xl border border-brand-border bg-brand-dark p-5 text-brand-background sm:p-6">
-              <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand-accent">
-                Reply time
-              </p>
+              <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand-accent">Next step</p>
               <p className="mt-2 font-display text-2xl font-semibold leading-tight sm:text-3xl">
-                Typically replies within [PLACEHOLDER: add response time].
+                Tell us what support you&apos;re exploring.
+              </p>
+              <p className="mt-3 text-sm leading-relaxed text-brand-background/75">
+                Share the services or workflow you have in mind. We&apos;ll use the contact details you provide to follow up about your request.
               </p>
             </div>
           </ScrollReveal>

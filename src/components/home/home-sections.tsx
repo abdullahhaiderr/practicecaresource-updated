@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowDown, ArrowRight, Check, Minus, Plus } from "lucide-react";
+import { ArrowDown, Check, Minus, Plus } from "lucide-react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { ScrollReveal } from "@/components/scroll-reveal";
@@ -95,33 +95,6 @@ const comparisonRows = [
     careSource: "Discuss the support needed and agree on a practical starting scope.",
   },
 ];
-
-function TrustPlaceholders() {
-  return (
-    <section aria-label="Practice outcomes" className="border-y border-brand-border bg-brand-background-wash/35">
-      <Container className="py-8 sm:py-10">
-        <ScrollReveal>
-          <div className="grid gap-6 sm:grid-cols-3 sm:gap-4">
-            {[
-              { value: "[STAT]", label: "Claims supported" },
-              { value: "[STAT]", label: "Providers supported" },
-              { value: "[STAT]", label: "Practice partnerships" },
-            ].map((item) => (
-              <div key={item.label} className="flex items-center gap-4 sm:justify-center">
-                <p className="font-display text-3xl font-semibold tracking-tight text-brand-accent-ink sm:text-4xl">
-                  {item.value}
-                </p>
-                <p className="max-w-32 text-sm font-semibold leading-snug text-brand-slate">
-                  {item.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </ScrollReveal>
-      </Container>
-    </section>
-  );
-}
 
 function ServicesSection() {
   return (
@@ -277,42 +250,6 @@ function ComparisonSection() {
   );
 }
 
-function TestimonialSection() {
-  return (
-    <section className="py-12 sm:py-14 lg:py-16" aria-label="Practice testimonials">
-      <Container>
-        <ScrollReveal>
-          <div className="mb-7 flex items-end justify-between gap-6 sm:mb-9">
-            <SectionHeading
-              eyebrow="Practice voices"
-              title={<>Built around <span className="text-brand-accent-ink">real partnerships.</span></>}
-              description="Hear from practice teams about their experience working with CareSource."
-            />
-            <div className="hidden gap-2 sm:flex" aria-hidden="true">
-              <span className="grid size-11 place-items-center rounded-full border border-brand-border text-brand-slate"><ArrowRight className="rotate-180" size={18} /></span>
-              <span className="grid size-11 place-items-center rounded-full bg-brand-dark text-brand-background"><ArrowRight size={18} /></span>
-            </div>
-          </div>
-        </ScrollReveal>
-        <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 [scrollbar-color:rgb(var(--cs-border))_transparent]">
-          {[1, 2, 3].map((item) => (
-            <article key={item} className="w-[min(88vw,26rem)] shrink-0 snap-start rounded-2xl border border-brand-border bg-brand-background-wash/30 p-6 sm:w-[calc((100%-2rem)/3)] sm:p-7">
-              <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-accent-ink">Practice story · [PLACEHOLDER]</p>
-              <p className="mt-5 font-display text-xl font-semibold leading-snug text-brand-dark">&ldquo;[TESTIMONIAL]&rdquo;</p>
-              <div className="mt-7 border-t border-brand-border pt-5">
-                <p className="font-bold text-brand-dark">[CLIENT NAME]</p>
-                <p className="text-sm text-brand-slate">[ROLE, PRACTICE]</p>
-              </div>
-            </article>
-          ))}
-        </div>
-        <p className="mt-2 text-center text-xs text-brand-slate sm:hidden">Swipe to view more stories</p>
-        <p className="mt-4 text-center text-xs text-brand-slate">Replace placeholders with approved, verified client feedback before publication.</p>
-      </Container>
-    </section>
-  );
-}
-
 function FaqSection() {
   return (
     <section className="bg-brand-background-wash/35 py-12 sm:py-14 lg:py-16" aria-label="Frequently asked questions">
@@ -369,12 +306,10 @@ function ContactCta() {
 export function HomeSections() {
   return (
     <>
-      <TrustPlaceholders />
       <ServicesSection />
       <OneRoofSection />
       <ProcessSection />
       <ComparisonSection />
-      <TestimonialSection />
       <FaqSection />
       <ContactCta />
     </>

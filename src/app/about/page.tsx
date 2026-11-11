@@ -8,7 +8,6 @@ import {
   Handshake,
   HeartHandshake,
   ListChecks,
-  UserRound,
   Workflow,
 } from "lucide-react";
 import { Button } from "@/components/button";
@@ -145,20 +144,19 @@ export default function AboutPage() {
       <section id="our-story" className="py-10 sm:py-12 lg:py-16">
         <Container className="grid items-center gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
           <ScrollReveal className="mx-auto w-full max-w-sm lg:max-w-none">
-            <div
-              role="img"
-              aria-label="[PLACEHOLDER: add founder photo]"
-              className="group relative aspect-[4/5] overflow-hidden rounded-3xl border border-brand-border bg-brand-background-wash/50 p-6 shadow-card transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-card-hover motion-reduce:transition-none"
-            >
-              <div className="absolute -right-12 -top-12 size-48 rounded-full border border-brand-accent/35" />
-              <div className="absolute -bottom-16 -left-12 size-56 rounded-full bg-brand-background-wash" />
-              <div className="relative flex h-full flex-col items-center justify-center rounded-2xl border border-dashed border-brand-slate/35 bg-brand-background/70 text-center">
-                <span className="grid size-20 place-items-center rounded-full bg-brand-dark text-brand-accent">
-                  <UserRound size={38} strokeWidth={1.5} aria-hidden="true" />
-                </span>
-                <span className="mt-5 max-w-[14rem] text-sm font-bold leading-relaxed text-brand-dark">
-                  [PLACEHOLDER: add founder photo]
-                </span>
+            <div className="relative overflow-hidden rounded-3xl border border-brand-border bg-brand-dark p-6 text-brand-background shadow-card sm:p-8">
+              <div className="absolute -right-12 -top-12 size-48 rounded-full border border-brand-accent/35" aria-hidden="true" />
+              <div className="relative">
+                <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand-accent">Practice support</p>
+                <h2 className="mt-3 font-display text-3xl font-semibold leading-tight">Services shaped around your workflow</h2>
+                <ul className="mt-6 space-y-3 text-sm font-semibold text-brand-background/85">
+                  {["Medical billing", "Credentialing & enrollment", "AR and denial follow-up", "Administrative and digital support"].map((service) => (
+                    <li key={service} className="flex items-center gap-3">
+                      <Check size={17} className="shrink-0 text-brand-accent" aria-hidden="true" />
+                      {service}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </ScrollReveal>
@@ -175,14 +173,6 @@ export default function AboutPage() {
               coordination, and digital services, with the scope agreed
               directly with each practice.
             </p>
-            <div className="mt-7 rounded-2xl border border-brand-border bg-brand-background-wash/40 p-5 sm:p-6">
-              <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand-accent-ink">
-                Add Irtiza's story
-              </p>
-              <p className="mt-2 text-base leading-relaxed text-brand-dark">
-                [PLACEHOLDER: add real story]
-              </p>
-            </div>
             <p className="mt-5 text-sm font-semibold text-brand-dark">
               Irtiza Hassan{" "}
               <span className="font-normal text-brand-slate">· Founder &amp; Owner</span>
@@ -320,55 +310,28 @@ export default function AboutPage() {
         <Container>
           <ScrollReveal>
             <SectionHeading
-              eyebrow="A relationship built on clarity"
-              title="Care for your practice information"
-              description="We handle practice information with care and discuss appropriate scope, access, and communication expectations with your team before work begins."
+              eyebrow="A clear working arrangement"
+              title="Know what happens at each step"
+              description="Before work begins, your practice and CareSource can agree on scope, information access, review points, and how open questions are handed off."
             />
           </ScrollReveal>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
-            <ScrollReveal className="h-full">
-              <article className="h-full rounded-2xl border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none">
-                <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-brand-accent-ink">
-                  [STAT]
-                </p>
-                <h2 className="mt-3 font-display text-2xl font-semibold text-brand-dark">
-                  Practices supported
-                </h2>
-                <p className="mt-3 text-base leading-relaxed text-brand-slate">
-                  [PLACEHOLDER: add a verified count and the period it covers]
-                </p>
-              </article>
-            </ScrollReveal>
-            <ScrollReveal delay={0.05} className="h-full">
-              <article className="h-full rounded-2xl border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none">
-                <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-brand-accent-ink">
-                  [STAT]
-                </p>
-                <h2 className="mt-3 font-display text-2xl font-semibold text-brand-dark">
-                  Years of experience
-                </h2>
-                <p className="mt-3 text-base leading-relaxed text-brand-slate">
-                  [PLACEHOLDER: add a verified experience figure and its basis]
-                </p>
-              </article>
-            </ScrollReveal>
-            <ScrollReveal delay={0.1} className="h-full">
-              <article className="h-full rounded-2xl border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none">
-                <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-brand-accent-ink">
-                  [CREDENTIAL]
-                </p>
-                <h2 className="mt-3 font-display text-2xl font-semibold text-brand-dark">
-                  Verified credentials
-                </h2>
-                <p className="mt-3 text-base leading-relaxed text-brand-slate">
-                  [PLACEHOLDER: add a credential only after confirming its name,
-                  issuer, and current status]
-                </p>
-              </article>
-            </ScrollReveal>
+            {[
+              { title: "Scope", description: "List the tasks included, what is outside the scope, and which systems or workflows they involve." },
+              { title: "Practice review", description: "Identify which details need your team's confirmation, approval, or decision before moving forward." },
+              { title: "Handoffs", description: "Agree how questions, updates, and next steps should be shared with the right practice contact." },
+            ].map((item, index) => (
+              <ScrollReveal key={item.title} delay={index * 0.05} className="h-full">
+                <article className="h-full rounded-2xl border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none">
+                  <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-brand-accent-ink">0{index + 1}</p>
+                  <h2 className="mt-3 font-display text-2xl font-semibold text-brand-dark">{item.title}</h2>
+                  <p className="mt-3 text-base leading-relaxed text-brand-slate">{item.description}</p>
+                </article>
+              </ScrollReveal>
+            ))}
           </div>
         </Container>
-      </section>
+      </section>    </section>
 
       <section className="bg-brand-dark py-10 text-brand-background sm:py-12 lg:py-16">
         <Container>

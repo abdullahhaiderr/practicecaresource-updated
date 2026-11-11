@@ -8,12 +8,14 @@ type HeroVisualProps = {
 };
 
 const floatCards = [
-  { title: "Claims Paid", value: "[SAMPLE]", className: "left-0 top-[14%]" },
-  { title: "Denials Resolved", value: "[SAMPLE]", className: "right-0 top-[41%]" },
-  { title: "Faster Collections", value: "[SAMPLE]", className: "bottom-[13%] left-[5%]" },
+  { title: "Medical billing", value: "Claims workflow", className: "left-0 top-[14%]" },
+  { title: "Credentialing", value: "Enrollment support", className: "right-0 top-[41%]" },
+  { title: "Denial follow-up", value: "Organized next steps", className: "bottom-[13%] left-[5%]" },
 ];
 
 function BillingDashboard() {
+  const tasks = ["Claim preparation", "Payment posting", "Denial follow-up"];
+
   return (
     <div className="relative z-20 mx-auto w-[91%] max-w-[34rem] -rotate-2 rounded-t-2xl border border-brand-background/30 bg-brand-dark p-2 shadow-card sm:w-[88%] sm:p-3">
       <div className="overflow-hidden rounded-t-xl border border-brand-background/10 bg-brand-dark-soft">
@@ -22,44 +24,41 @@ function BillingDashboard() {
             <span className="grid size-7 place-items-center rounded-lg bg-brand-accent text-brand-background">
               <ClipboardCheck size={15} aria-hidden="true" />
             </span>
-            <span className="text-[10px] font-bold text-brand-background sm:text-xs">Practice dashboard</span>
+            <span className="text-[10px] font-bold text-brand-background sm:text-xs">Practice workflow</span>
           </div>
           <span className="rounded-pill border border-brand-accent/35 px-2 py-1 text-[8px] font-bold uppercase tracking-[0.12em] text-brand-accent sm:text-[9px]">
-            Sample data
+            Agreed scope
           </span>
         </div>
 
         <div className="grid grid-cols-[1.15fr_0.85fr] gap-2 p-3 sm:gap-3 sm:p-4">
           <div className="rounded-xl border border-brand-background/10 bg-brand-background/[0.06] p-3 sm:p-4">
-            <p className="text-[9px] font-semibold text-brand-background/60 sm:text-[10px]">Total Collections</p>
-            <p className="mt-1 font-display text-xl font-semibold tracking-tight text-brand-background sm:text-3xl">$[SAMPLE]</p>
-            <svg viewBox="0 0 220 58" className="mt-3 h-10 w-full sm:h-14" role="img" aria-label="Illustrative sample trend line">
-              <path d="M4 46C28 43 28 31 53 34s28-18 51-13 29 7 48-3 38-8 64-15" fill="none" stroke="rgb(var(--cs-accent))" strokeLinecap="round" strokeWidth="3" />
-              <path d="M4 46C28 43 28 31 53 34s28-18 51-13 29 7 48-3 38-8 64-15v54H4Z" fill="rgb(var(--cs-accent) / 0.12)" />
-            </svg>
-            <div className="mt-2 flex justify-between text-[8px] font-semibold text-brand-background/45 sm:text-[9px]">
-              <span>[SAMPLE PERIOD]</span><span>Illustration only</span>
-            </div>
+            <p className="text-[9px] font-semibold text-brand-background/60 sm:text-[10px]">Billing support</p>
+            <ul className="mt-3 space-y-3">
+              {tasks.map((task) => (
+                <li key={task} className="flex items-center gap-2 text-[9px] font-semibold text-brand-background/85 sm:text-[11px]">
+                  <span className="grid size-5 shrink-0 place-items-center rounded-md bg-brand-accent/15 text-brand-accent">
+                    <ClipboardCheck size={12} aria-hidden="true" />
+                  </span>
+                  {task}
+                </li>
+              ))}
+            </ul>
           </div>
 
           <div className="rounded-xl border border-brand-background/10 bg-brand-background/[0.06] p-3 sm:p-4">
-            <p className="text-[9px] font-semibold text-brand-background/60 sm:text-[10px]">Claims status</p>
-            <div className="mx-auto mt-3 grid size-16 place-items-center rounded-full border-[9px] border-brand-accent border-r-brand-background/20 border-b-brand-background/10 sm:size-20 sm:border-[11px]">
-              <span className="text-[8px] font-bold text-brand-background/75">[SAMPLE]</span>
+            <p className="text-[9px] font-semibold text-brand-background/60 sm:text-[10px]">Practice review</p>
+            <div className="mt-3 grid aspect-square place-items-center rounded-full border border-brand-accent/60 p-2 text-center">
+              <span className="text-[9px] font-bold leading-snug text-brand-background sm:text-[11px]">Questions<br />and handoffs</span>
             </div>
-            <ul className="mt-3 space-y-1.5 text-[8px] font-semibold text-brand-background/75 sm:text-[9px]">
-              <li className="flex items-center justify-between gap-1"><span className="flex items-center gap-1.5"><i className="size-1.5 rounded-full bg-brand-accent" />Submitted</span><span>[SAMPLE]</span></li>
-              <li className="flex items-center justify-between gap-1"><span className="flex items-center gap-1.5"><i className="size-1.5 rounded-full bg-brand-background/65" />Paid</span><span>[SAMPLE]</span></li>
-              <li className="flex items-center justify-between gap-1"><span className="flex items-center gap-1.5"><i className="size-1.5 rounded-full bg-brand-slate-light" />Denied</span><span>[SAMPLE]</span></li>
-            </ul>
+            <p className="mt-2 text-center text-[8px] leading-snug text-brand-background/60 sm:text-[9px]">For your team to review</p>
           </div>
         </div>
 
         <div className="mx-3 mb-3 grid grid-cols-3 gap-2 sm:mx-4 sm:mb-4">
-          {["Submitted", "Paid", "Denied"].map((status) => (
-            <div key={status} className="rounded-lg border border-brand-background/10 bg-brand-background/[0.04] px-2 py-2">
-              <p className="text-[8px] text-brand-background/55 sm:text-[9px]">{status}</p>
-              <p className="mt-1 text-[10px] font-bold text-brand-background sm:text-xs">[SAMPLE]</p>
+          {["Billing", "Credentialing", "Admin support"].map((service) => (
+            <div key={service} className="rounded-lg border border-brand-background/10 bg-brand-background/[0.04] px-2 py-2">
+              <p className="text-[8px] leading-snug text-brand-background/75 sm:text-[9px]">{service}</p>
             </div>
           ))}
         </div>
@@ -104,7 +103,7 @@ export function HeroVisual({ heroImage }: HeroVisualProps) {
         {heroImage ? (
           <div
             role="img"
-            aria-label="CareSource practice support dashboard illustration"
+            aria-label="Illustration of a practice billing workflow"
             className="absolute bottom-[20%] left-[3%] z-20 h-[54%] w-[83%] -rotate-2 rounded-2xl border border-brand-background/35 bg-brand-background bg-cover bg-center shadow-card"
             style={{ backgroundImage: `url("${heroImage}")` }}
           />
@@ -125,15 +124,15 @@ export function HeroVisual({ heroImage }: HeroVisualProps) {
           transition={{ duration: reducedMotion ? 0 : 0.55, delay: reducedMotion ? 0 : 0.35 }}
           className="absolute bottom-[19%] right-[2%] z-30 w-[26%] min-w-20 rounded-[1.25rem] border-[3px] border-brand-dark bg-brand-background p-1.5 shadow-card sm:w-[25%] sm:rounded-[1.5rem] sm:border-4 sm:p-2"
           role="img"
-          aria-label="Illustrative phone showing a sample claim notification"
+          aria-label="Illustration of a practice team handoff"
         >
           <div className="rounded-[0.9rem] bg-brand-background-wash/45 p-2 sm:rounded-[1.1rem] sm:p-3">
             <div className="mx-auto mb-3 h-1 w-7 rounded-full bg-brand-slate/40" />
             <span className="grid size-7 place-items-center rounded-full bg-brand-accent text-brand-background sm:size-9">
               <BadgeCheck size={18} aria-hidden="true" />
             </span>
-            <p className="mt-2 text-[8px] font-bold leading-tight text-brand-dark sm:text-[10px]">Claim Approved</p>
-            <p className="mt-1 text-[7px] leading-tight text-brand-slate sm:text-[8px]">Sample notification</p>
+            <p className="mt-2 text-[8px] font-bold leading-tight text-brand-dark sm:text-[10px]">Team handoff</p>
+            <p className="mt-1 text-[7px] leading-tight text-brand-slate sm:text-[8px]">Questions routed for review</p>
           </div>
         </motion.div>
 
@@ -147,12 +146,12 @@ export function HeroVisual({ heroImage }: HeroVisualProps) {
           >
             <p className="text-[9px] font-semibold text-brand-slate sm:text-[10px]">{title}</p>
             <p className="mt-1 font-display text-base font-semibold text-brand-dark sm:text-lg">{value}</p>
-            <p className="mt-0.5 text-[8px] font-bold uppercase tracking-wide text-brand-accent-ink">Sample</p>
+            <p className="mt-0.5 text-[8px] font-bold uppercase tracking-wide text-brand-accent-ink">Agreed scope</p>
           </motion.div>
         ))}
 
         <figcaption className="absolute bottom-0 right-1 text-right text-[10px] font-semibold text-brand-slate sm:text-xs">
-          Illustrative dashboard · Sample data only
+          Illustrative workflow · Tasks depend on agreed scope
         </figcaption>
       </div>
     </figure>

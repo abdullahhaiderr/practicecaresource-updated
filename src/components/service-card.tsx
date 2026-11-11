@@ -28,7 +28,7 @@ export function ServiceCard({
         aria-label={"Learn more about " + title}
       >
         <div className="relative aspect-[16/10] overflow-hidden bg-brand-background-wash">
-          {/* Replaceable Unsplash placeholder image. Use a licensed project image before launch. */}
+          {/* Service illustration */}
           <Image
             src={imageSrc}
             alt={imageAlt}
