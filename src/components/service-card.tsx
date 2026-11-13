@@ -37,10 +37,10 @@ export function ServiceCard({
             className="object-cover transition-transform duration-700 ease-brand-out group-hover:scale-[1.04] motion-reduce:transition-none"
           />
           <span
-            className="absolute bottom-3 right-5 z-10 grid size-14 place-items-center rounded-full border border-brand-accent/15 bg-brand-accent/10 text-brand-accent-ink shadow-card ring-4 ring-brand-background transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105 motion-reduce:transition-none"
+            className="absolute bottom-3 right-4 z-10 grid size-12 place-items-center rounded-full border border-[#d7e6fb] bg-[#eaf2ff] text-brand-accent-ink shadow-md ring-2 ring-brand-background transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105 motion-reduce:transition-none"
             aria-hidden="true"
           >
-            <Icon size={24} strokeWidth={1.8} />
+            <Icon size={20} strokeWidth={1.8} />
           </span>
         </div>
         <div className="px-6 pb-6 pt-9 sm:px-7 sm:pb-7">
