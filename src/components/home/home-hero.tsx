@@ -15,7 +15,7 @@ import { HeroVisual } from "@/components/home/hero-visual";
 const features = [
   { label: "Medical Billing & Coding", icon: ClipboardCheck },
   { label: "Credentialing", icon: BadgeCheck },
-  { label: "AR & Denial Recovery", icon: ArrowRight },
+  { label: "AR & Denial Recovery", icon: CircleDollarSign },
   { label: "Dedicated Support", icon: Headset },
 ];
 
