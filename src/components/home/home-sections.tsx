@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowDown, Headset, MapPin, Minus, Plus, Stethoscope, Workflow } from "lucide-react";
+import { ArrowDown, BadgeCheck, ClipboardCheck, Eye, Handshake, Headset, ListChecks, MapPin, MessageCircle, Minus, Plus, Stethoscope, Workflow } from "lucide-react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { ScrollReveal } from "@/components/scroll-reveal";
@@ -73,26 +73,46 @@ const faqs = [
   },
 ];
 
-const comparisonRows = [
+const supportHighlights = [
   {
-    area: "Day-to-day coordination",
-    inHouse: "Your team coordinates work across its existing roles and tools.",
-    careSource: "Agree on a point of contact and handoff routine with CareSource.",
+    title: "Medical billing",
+    description: "Clear billing tasks, reviewed within your agreed workflow.",
+    icon: ClipboardCheck,
   },
   {
-    area: "Service scope",
-    inHouse: "Responsibilities are assigned within your internal team.",
-    careSource: "Define a service scope and review steps together before work begins.",
+    title: "Credentialing support",
+    description: "Organized credentialing with visible next steps.",
+    icon: BadgeCheck,
   },
   {
-    area: "Workflow visibility",
-    inHouse: "Updates follow the process your practice already uses.",
-    careSource: "Set a shared update format for open questions, next steps, and follow-up.",
+    title: "AR & denial follow-up",
+    description: "Keep follow-up items and denial questions in view.",
+    icon: Workflow,
   },
   {
-    area: "Capacity planning",
-    inHouse: "Workload is managed within your current staffing plan.",
-    careSource: "Discuss the support needed and agree on a practical starting scope.",
+    title: "Dedicated communication",
+    description: "Agree on a contact and update rhythm for your team.",
+    icon: Headset,
+  },
+  {
+    title: "Clear service scope",
+    description: "Confirm responsibilities and review points before work starts.",
+    icon: ListChecks,
+  },
+  {
+    title: "Practice-led decisions",
+    description: "Your team keeps the approvals and decisions it owns.",
+    icon: Handshake,
+  },
+  {
+    title: "Visible next steps",
+    description: "See open questions, owners, and next actions clearly.",
+    icon: Eye,
+  },
+  {
+    title: "Flexible support mix",
+    description: "Choose one service or a coordinated mix of support.",
+    icon: MessageCircle,
   },
 ];
 
@@ -196,43 +216,37 @@ function ProcessSection() {
   );
 }
 
-function ComparisonSection() {
+function SupportHighlightsSection() {
   return (
-    <section className="bg-brand-background-wash/35 py-12 sm:py-14 lg:py-16" aria-labelledby="comparison-heading">
+    <section className="bg-brand-background-wash/35 py-12 sm:py-14 lg:py-16" aria-label="Practice support highlights">
       <Container>
         <ScrollReveal>
           <SectionHeading
-            eyebrow="A thoughtful fit"
-            title={<>Compare the way <span className="text-brand-accent-ink">work gets coordinated.</span></>}
-            description="Every practice is different. Use this as a conversation starter, then decide what makes sense for your team."
+            eyebrow="Support for your practice"
+            title={<>A clear approach to <span className="text-brand-accent-ink">working together.</span></>}
+            description="Explore the services and working practices that shape support around your team's needs."
             className="mb-7 sm:mb-9"
           />
         </ScrollReveal>
-        <ScrollReveal>
-          <div className="overflow-hidden rounded-2xl border border-brand-border bg-brand-background shadow-card">
-            <div className="overflow-x-auto">
-              <table className="w-full min-w-[42rem] border-collapse text-left">
-                <thead>
-                  <tr className="bg-brand-dark text-brand-background">
-                    <th scope="col" className="w-[22%] px-5 py-4 text-xs font-bold uppercase tracking-wide text-brand-background/60 sm:px-7">Area</th>
-                    <th scope="col" className="px-5 py-4 text-sm font-bold sm:px-7">In-house workflow</th>
-                    <th scope="col" className="px-5 py-4 text-sm font-bold text-brand-accent sm:px-7">Working with CareSource</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparisonRows.map((row) => (
-                    <tr key={row.area} className="border-t border-brand-border align-top">
-                      <th scope="row" className="px-5 py-5 text-sm font-bold text-brand-dark sm:px-7">{row.area}</th>
-                      <td className="px-5 py-5 text-sm leading-relaxed text-brand-slate sm:px-7">{row.inHouse}</td>
-                      <td className="px-5 py-5 text-sm leading-relaxed text-brand-slate sm:px-7">{row.careSource}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="border-t border-brand-border px-5 py-4 text-xs leading-relaxed text-brand-slate sm:px-7">This is a general comparison, not a performance or savings claim. Scope and working arrangements are agreed with each practice.</p>
-          </div>
-        </ScrollReveal>
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {supportHighlights.map(({ title, description, icon: Icon }, index) => (
+            <li key={title} className="h-full">
+              <ScrollReveal delay={index * 0.035} className="h-full">
+                <article className="group h-full rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
+                  <span className="grid size-11 place-items-center rounded-xl bg-brand-dark text-brand-accent transition-transform duration-300 group-hover:rotate-3 motion-reduce:transition-none" aria-hidden="true">
+                    <Icon size={21} strokeWidth={1.8} />
+                  </span>
+                  <h3 className="mt-4 font-display text-xl font-semibold leading-tight text-brand-dark">
+                    {title}
+                  </h3>
+                  <p className="mt-2 min-h-[3rem] text-sm leading-relaxed text-brand-slate line-clamp-2">
+                    {description}
+                  </p>
+                </article>
+              </ScrollReveal>
+            </li>
+          ))}
+        </ul>
       </Container>
     </section>
   );
@@ -297,7 +311,7 @@ export function HomeSections() {
       <ServicesSection />
       <OneRoofSection />
       <ProcessSection />
-      <ComparisonSection />
+      <SupportHighlightsSection />
       <FaqSection />
       <ContactCta />
     </>
