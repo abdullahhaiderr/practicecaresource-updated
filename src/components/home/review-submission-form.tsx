@@ -185,7 +185,7 @@ export function ReviewSubmissionForm() {
         </p>
       ) : null}
 
-      <Button type="submit" disabled={isSubmitting} showArrow>
+      <Button type="submit" disabled={isSubmitting} className="disabled:cursor-not-allowed disabled:opacity-60">
         {isSubmitting ? (
           <span className="inline-flex items-center gap-2">
             <LoaderCircle size={17} className="animate-spin" aria-hidden="true" />
