@@ -63,7 +63,7 @@ export function Navbar() {
       ].join(" ")}
     >
       <Container className="relative">
-        <div className="flex min-h-[76px] items-center justify-between gap-5 lg:min-h-[88px]">
+        <div className="flex min-h-[76px] items-center justify-between gap-5 lg:min-h-[76px]">
           <Link
             href="/"
             aria-label="CareSource home"

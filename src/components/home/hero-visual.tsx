@@ -72,8 +72,8 @@ export function HeroVisual({ heroImage }: HeroVisualProps) {
   const reducedMotion = useReducedMotion();
 
   return (
-    <figure className="relative mx-auto w-full max-w-[38rem] lg:ml-auto lg:mr-0">
-      <div className="relative aspect-[1.02/1] min-h-[20rem] sm:min-h-[25rem] lg:min-h-[30rem]">
+    <figure className="relative mx-auto w-full max-w-[34rem] lg:ml-auto lg:mr-0">
+      <div className="relative aspect-[1.1/1] min-h-[20rem] sm:min-h-[25rem] lg:min-h-[24rem]">
         <motion.div
           initial={reducedMotion ? false : { opacity: 0, scale: 0.94, rotate: 2 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
