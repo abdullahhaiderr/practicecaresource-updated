@@ -231,9 +231,9 @@ export default function AboutPage() {
 
           <div className="mt-8 grid gap-4 lg:grid-cols-2">
             <ScrollReveal className="h-full">
-              <article className="h-full rounded-2xl border border-brand-background/15 bg-brand-background/5 p-6 transition-[border-color,background-color,transform] duration-300 hover:-translate-y-1 hover:border-brand-background/30 hover:bg-brand-background/[0.08] motion-reduce:transition-none sm:p-8">
+              <article className="h-full rounded-2xl border border-brand-accent/45 bg-brand-background/10 p-6 transition-[border-color,background-color,transform] duration-300 hover:-translate-y-1 hover:border-brand-accent/75 hover:bg-brand-background/[0.13] motion-reduce:transition-none sm:p-8">
                 <div className="flex items-center gap-3">
-                  <span className="grid size-11 place-items-center rounded-xl border border-brand-background/20 text-brand-background/80">
+                  <span className="grid size-11 place-items-center rounded-xl bg-brand-accent text-brand-background">
                     <ListChecks size={21} aria-hidden="true" />
                   </span>
                   <h3 className="font-display text-2xl font-semibold text-brand-background sm:text-3xl">
