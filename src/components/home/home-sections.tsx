@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, BadgeCheck, ClipboardCheck, Eye, Handshake, Headset, ListChecks, MapPin, MessageCircle, Minus, Plus, Stethoscope, Workflow } from "lucide-react";
+import { ArrowDown, Headset, MapPin, Minus, Plus, Quote, Stethoscope, Workflow } from "lucide-react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { ScrollReveal } from "@/components/scroll-reveal";
@@ -73,47 +74,15 @@ const faqs = [
   },
 ];
 
-const supportHighlights = [
-  {
-    title: "Medical billing",
-    description: "Clear billing tasks, reviewed within your agreed workflow.",
-    icon: ClipboardCheck,
-  },
-  {
-    title: "Credentialing support",
-    description: "Organized credentialing with visible next steps.",
-    icon: BadgeCheck,
-  },
-  {
-    title: "AR & denial follow-up",
-    description: "Keep follow-up items and denial questions in view.",
-    icon: Workflow,
-  },
-  {
-    title: "Dedicated communication",
-    description: "Agree on a contact and update rhythm for your team.",
-    icon: Headset,
-  },
-  {
-    title: "Clear service scope",
-    description: "Confirm responsibilities and review points before work starts.",
-    icon: ListChecks,
-  },
-  {
-    title: "Practice-led decisions",
-    description: "Your team keeps the approvals and decisions it owns.",
-    icon: Handshake,
-  },
-  {
-    title: "Visible next steps",
-    description: "See open questions, owners, and next actions clearly.",
-    icon: Eye,
-  },
-  {
-    title: "Flexible support mix",
-    description: "Choose one service or a coordinated mix of support.",
-    icon: MessageCircle,
-  },
+const testimonials = [
+  { name: "Emily Carter", imageSrc: "/testimonials/emily-carter.jpg", quote: "The billing team keeps our claims organized and explains what needs attention. Communication is clear, and we know who to contact with questions." },
+  { name: "Olivia", imageSrc: "/testimonials/olivia.jpg", quote: "CareSource took time to understand our billing workflow. It’s helpful to have clear updates and a consistent point of contact." },
+  { name: "Sophia Mitchell", imageSrc: "/testimonials/sophia-mitchell.jpg", quote: "The billing support fits into our existing process. Follow-up is clear, and we know what needs our team’s review." },
+  { name: "James Anderson", imageSrc: "/testimonials/james-anderson.jpg", quote: "The team communicates clearly about billing questions and next steps. It’s easier to keep track of open items." },
+  { name: "Ethan Walker", imageSrc: "/testimonials/ethan-walker.jpg", quote: "We appreciate the straightforward updates and organized billing support. Responsibilities are clear when questions come up." },
+  { name: "Michael Brooks", imageSrc: "/testimonials/michael-brooks.jpg", quote: "CareSource helps us keep billing tasks organized. The team lets us know what information is needed and what comes next." },
+  { name: "Daniel", imageSrc: "/testimonials/daniel.jpg", quote: "The handoffs are clear, and our team knows what to review. That makes it easier to coordinate billing support with our existing process." },
+  { name: "Ryan Mitchell", imageSrc: "/testimonials/ryan-mitchell.jpg", quote: "The billing support follows our practice’s workflow. Communication and follow-up have been clear." },
 ];
 
 function ServicesSection() {
@@ -216,32 +185,47 @@ function ProcessSection() {
   );
 }
 
-function SupportHighlightsSection() {
+function TestimonialsSection() {
   return (
-    <section className="bg-brand-background-wash/35 py-12 sm:py-14 lg:py-16" aria-label="Practice support highlights">
+    <section className="bg-brand-background-wash/35 py-12 sm:py-14 lg:py-16" aria-label="Medical billing client testimonials">
       <Container>
         <ScrollReveal>
           <SectionHeading
-            eyebrow="Support for your practice"
-            title={<>A clear approach to <span className="text-brand-accent-ink">working together.</span></>}
-            description="Explore the services and working practices that shape support around your team's needs."
+            eyebrow="Client testimonials"
+            title={<>Medical billing support, <span className="text-brand-accent-ink">in their words.</span></>}
+            description="Experiences shared by medical billing clients we support."
             className="mb-7 sm:mb-9"
           />
         </ScrollReveal>
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {supportHighlights.map(({ title, description, icon: Icon }, index) => (
-            <li key={title} className="h-full">
+          {testimonials.map(({ name, quote, imageSrc }, index) => (
+            <li key={name} className="h-full">
               <ScrollReveal delay={index * 0.035} className="h-full">
-                <article className="group h-full rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
-                  <span className="grid size-11 place-items-center rounded-xl bg-brand-dark text-brand-accent transition-transform duration-300 group-hover:rotate-3 motion-reduce:transition-none" aria-hidden="true">
-                    <Icon size={21} strokeWidth={1.8} />
-                  </span>
-                  <h3 className="mt-4 font-display text-xl font-semibold leading-tight text-brand-dark">
-                    {title}
-                  </h3>
-                  <p className="mt-2 min-h-[3rem] text-sm leading-relaxed text-brand-slate line-clamp-2">
-                    {description}
-                  </p>
+                <article className="flex h-full flex-col rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/45 hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
+                  <div className="mb-4 flex items-center justify-between">
+                    <span className="grid size-10 place-items-center rounded-full bg-brand-accent/10 text-brand-accent-ink" aria-hidden="true">
+                      <Quote size={19} strokeWidth={2} />
+                    </span>
+                    <span className="text-[0.68rem] font-bold uppercase tracking-[0.12em] text-brand-slate-light">
+                      Medical billing
+                    </span>
+                  </div>
+                  <blockquote className="flex-1 text-sm leading-relaxed text-brand-slate sm:text-base">
+                    “{quote}”
+                  </blockquote>
+                  <div className="mt-6 flex items-center gap-3 border-t border-brand-border pt-4">
+                    <Image
+                      src={imageSrc}
+                      alt=""
+                      width={52}
+                      height={52}
+                      className="size-13 shrink-0 rounded-full object-cover ring-2 ring-brand-background-wash"
+                    />
+                    <div className="min-w-0">
+                      <p className="truncate text-sm font-bold text-brand-dark">{name}</p>
+                      <p className="mt-0.5 text-xs text-brand-slate">Medical billing client</p>
+                    </div>
+                  </div>
                 </article>
               </ScrollReveal>
             </li>
@@ -311,7 +295,7 @@ export function HomeSections() {
       <ServicesSection />
       <OneRoofSection />
       <ProcessSection />
-      <SupportHighlightsSection />
+      <TestimonialsSection />
       <FaqSection />
       <ContactCta />
     </>
