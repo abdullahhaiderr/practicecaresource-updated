@@ -305,7 +305,7 @@ function FaqSection() {
             <details key={faq.question} className="group py-5" open={index === 0}>
               <summary className="flex cursor-pointer list-none items-center justify-between gap-5 font-display text-lg font-semibold leading-snug text-brand-dark marker:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink sm:text-xl [&::-webkit-details-marker]:hidden">
                 {faq.question}
-                <span className="grid size-8 shrink-0 place-items-center rounded-full border border-brand-border text-brand-accent-ink transition-colors group-open:bg-brand-dark group-open:text-brand-accent">
+                <span className="grid size-8 shrink-0 place-items-center rounded-full border border-brand-border text-brand-accent-ink transition-colors group-open:border-brand-accent/20 group-open:bg-brand-accent/10 group-open:text-brand-accent-ink">
                   <Plus className="group-open:hidden" size={17} aria-hidden="true" />
                   <Minus className="hidden group-open:block" size={17} aria-hidden="true" />
                 </span>
