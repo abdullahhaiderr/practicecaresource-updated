@@ -82,14 +82,14 @@ export function HeroVisual({ heroImage }: HeroVisualProps) {
           aria-hidden="true"
         />
         <div className="absolute right-[2%] top-[13%] size-[30%] rounded-full border-[1.1rem] border-brand-accent/80 sm:border-[1.6rem]" aria-hidden="true" />
-        <div className="absolute left-[9%] top-[20%] size-[58%] rounded-full bg-brand-peach/55" aria-hidden="true" />
+        <div className="absolute left-[9%] top-[20%] size-[58%] rounded-full bg-brand-mint/55" aria-hidden="true" />
         <div
           className="absolute right-[8%] top-[4%] size-24 opacity-40 sm:size-32"
           style={{ backgroundImage: "radial-gradient(rgb(var(--cs-slate) / 0.7) 1px, transparent 1px)", backgroundSize: "12px 12px" }}
           aria-hidden="true"
         />
 
-        <div className="absolute bottom-[11%] left-[2%] z-10 h-[17%] w-[85%] -rotate-3 rounded-[2rem] border border-brand-border/70 bg-gradient-to-r from-brand-background-wash/40 via-brand-background-wash/75 to-brand-peach/40 shadow-card" aria-hidden="true" />
+        <div className="absolute bottom-[11%] left-[2%] z-10 h-[17%] w-[85%] -rotate-3 rounded-[2rem] border border-brand-border/70 bg-gradient-to-r from-brand-background-wash/40 via-brand-background-wash/75 to-brand-mint/40 shadow-card" aria-hidden="true" />
         <div className="absolute bottom-[6%] left-[11%] z-30 hidden items-center gap-3 sm:flex" aria-hidden="true">
           <span className="grid size-11 place-items-center rounded-b-xl rounded-t-lg border border-brand-border bg-brand-background-wash/70 text-brand-dark shadow-sm">
             <Coffee size={21} strokeWidth={1.5} />
