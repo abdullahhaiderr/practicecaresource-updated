@@ -93,3 +93,31 @@ img {
     transition-duration: 0.01ms !important;
   }
 }
+
+@keyframes testimonial-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.testimonial-marquee-track {
+  animation: testimonial-marquee 56s linear infinite;
+  will-change: transform;
+}
+
+.testimonial-marquee:hover .testimonial-marquee-track,
+.testimonial-marquee:focus-within .testimonial-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-marquee {
+    overflow-x: auto;
+  }
+
+  .testimonial-marquee-track {
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+}
