@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowDown, Check, Minus, Plus } from "lucide-react";
+import { ArrowDown, Headset, MapPin, Minus, Plus, Stethoscope, Workflow } from "lucide-react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { ScrollReveal } from "@/components/scroll-reveal";
@@ -133,42 +133,30 @@ function ServicesSection() {
   );
 }
 
+const coverageHighlights = [
+  { title: "End-to-End RCM", detail: "Coverage", icon: Workflow },
+  { title: "200+", detail: "Medical specialties supported", icon: Stethoscope },
+  { title: "50 States", detail: "Nationwide coverage", icon: MapPin },
+  { title: "1:1 Dedicated", detail: "Billing manager", icon: Headset },
+];
+
 function OneRoofSection() {
   return (
-    <section className="overflow-hidden bg-brand-dark py-12 text-brand-background sm:py-14 lg:py-16" aria-labelledby="one-roof-heading">
-      <Container className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
-        <ScrollReveal>
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">One coordinated team</p>
-          <h2 id="one-roof-heading" className="text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight sm:text-5xl lg:text-6xl">
-            Connected support. <span className="text-brand-accent">Clear handoffs.</span>
-          </h2>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-brand-background/70 sm:text-lg">
-            Bring the right practice support into a shared conversation. We agree who owns each step, what needs your review, and how updates should move between teams.
-          </p>
-          <Button href="/contact" className="mt-6" showArrow>
-            Talk through your needs
-          </Button>
-        </ScrollReveal>
-
-        <ScrollReveal>
-          <div className="relative mx-auto w-full max-w-2xl rounded-[2rem] border border-brand-background/15 bg-brand-dark-soft p-5 sm:p-8">
-            <div className="absolute left-1/2 top-16 hidden h-[calc(100%-8rem)] w-px -translate-x-1/2 bg-brand-accent/45 sm:block" aria-hidden="true" />
-            <div className="relative mx-auto mb-5 flex min-h-16 max-w-xs items-center justify-center gap-3 rounded-2xl border border-brand-accent/40 bg-brand-dark px-4 text-center shadow-card">
-              <span className="grid size-9 place-items-center rounded-full bg-brand-accent text-brand-background"><Check size={19} aria-hidden="true" /></span>
-              <span className="text-sm font-bold sm:text-base">Your practice &amp; shared goals</span>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
-              {services.map(({ slug, shortTitle, icon: Icon }) => (
-                <div key={slug} className="relative flex min-h-14 items-center gap-3 rounded-xl border border-brand-background/10 bg-brand-background/[0.045] px-4 py-3 sm:min-h-16">
-                  <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-brand-accent/15 text-brand-accent"><Icon size={19} strokeWidth={1.8} aria-hidden="true" /></span>
-                  <span className="text-sm font-semibold text-brand-background/90">{shortTitle}</span>
-                  <span className="ml-auto text-[10px] font-bold uppercase tracking-wide text-brand-background/45">As agreed</span>
-                </div>
-              ))}
-            </div>
-            <p className="mt-5 text-center text-xs leading-relaxed text-brand-background/55">Each service is scoped separately with your practice. No bundled result is assumed.</p>
-          </div>
-        </ScrollReveal>
+    <section className="py-8 sm:py-10 lg:py-12" aria-label="CareSource coverage and support">
+      <Container>
+        <ul className="grid overflow-hidden rounded-2xl border border-brand-border/40 bg-[linear-gradient(110deg,#299bcf_0%,#3aabb9_52%,#43b5a2_100%)] p-3 shadow-card sm:grid-cols-2 sm:p-4 lg:grid-cols-4">
+          {coverageHighlights.map(({ title, detail, icon: Icon }) => (
+            <li key={title} className="flex min-h-[5.25rem] items-center gap-3 rounded-xl px-3 py-3 sm:gap-4 sm:px-4">
+              <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-white text-brand-accent-ink shadow-sm sm:size-14" aria-hidden="true">
+                <Icon size={24} strokeWidth={1.8} />
+              </span>
+              <span className="min-w-0 text-sm leading-snug text-white sm:text-base">
+                <strong className="block font-bold">{title}</strong>
+                <span className="block font-medium text-white/95">{detail}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
       </Container>
     </section>
   );
