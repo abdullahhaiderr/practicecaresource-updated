@@ -1,11 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, Headset, MapPin, Minus, Plus, Quote, Stethoscope, Workflow } from "lucide-react";
+import {
+  ArrowDown,
+  ChevronDown,
+  Headset,
+  MapPin,
+  MessageSquare,
+  Minus,
+  Plus,
+  Quote,
+  Stethoscope,
+  Workflow,
+} from "lucide-react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
+import { ReviewSubmissionForm } from "@/components/home/review-submission-form";
 import { footerContact, services } from "@/lib/site";
 
 const processSteps = [
@@ -197,16 +209,16 @@ function TestimonialsSection() {
             className="mb-7 sm:mb-9"
           />
         </ScrollReveal>
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {testimonials.map(({ name, quote, imageSrc }, index) => (
             <li key={name} className="h-full">
-              <ScrollReveal delay={index * 0.035} className="h-full">
-                <article className="flex h-full flex-col rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/45 hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
+              <ScrollReveal delay={index * 0.035} className="flex h-full">
+                <article className="group flex h-full min-h-[20rem] flex-col rounded-2xl border border-brand-border border-t-4 border-t-brand-accent bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/45 hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
                   <div className="mb-4 flex items-center justify-between">
-                    <span className="grid size-10 place-items-center rounded-full bg-brand-accent/10 text-brand-accent-ink" aria-hidden="true">
+                    <span className="grid size-10 place-items-center rounded-full bg-brand-accent/10 text-brand-accent-ink transition-colors group-hover:bg-brand-accent/15" aria-hidden="true">
                       <Quote size={19} strokeWidth={2} />
                     </span>
-                    <span className="text-[0.68rem] font-bold uppercase tracking-[0.12em] text-brand-slate-light">
+                    <span className="rounded-full bg-brand-background-wash px-2.5 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-brand-accent-ink">
                       Medical billing
                     </span>
                   </div>
@@ -231,11 +243,34 @@ function TestimonialsSection() {
             </li>
           ))}
         </ul>
+
+        <details className="group mt-8 overflow-hidden rounded-2xl border border-brand-border bg-brand-background shadow-card transition-shadow open:shadow-card-hover">
+          <summary className="flex min-h-[5.25rem] cursor-pointer list-none items-center justify-between gap-4 bg-brand-background-wash/40 px-5 py-4 transition-colors hover:bg-brand-background-wash/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-accent-ink sm:px-7 [&::-webkit-details-marker]:hidden">
+            <span className="flex min-w-0 items-center gap-3">
+              <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-dark text-brand-accent" aria-hidden="true">
+                <MessageSquare size={20} />
+              </span>
+              <span className="min-w-0">
+                <span className="block font-display text-lg font-semibold text-brand-dark sm:text-xl">Share your medical billing experience</span>
+                <span className="mt-0.5 block text-sm text-brand-slate">Send a review for CareSource to review before publishing.</span>
+              </span>
+            </span>
+            <span className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-brand-accent-ink">
+              Write a review
+              <ChevronDown size={18} className="transition-transform duration-200 group-open:rotate-180" aria-hidden="true" />
+            </span>
+          </summary>
+          <div className="border-t border-brand-border px-5 py-6 sm:px-7 sm:py-8">
+            <p className="max-w-3xl text-sm leading-relaxed text-brand-slate">
+              Please share your own experience only and leave out all patient details. Submissions go to CareSource for review; we will contact you to confirm the final wording before it appears on the site.
+            </p>
+            <ReviewSubmissionForm />
+          </div>
+        </details>
       </Container>
     </section>
   );
 }
-
 function FaqSection() {
   return (
     <section className="bg-brand-background-wash/35 py-12 sm:py-14 lg:py-16" aria-label="Frequently asked questions">
