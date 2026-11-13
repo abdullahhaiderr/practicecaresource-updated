@@ -19,10 +19,11 @@ export const navigationLinks: SiteLink[] = [
 export const services = serviceCatalog;
 
 export const footerContact = {
-  email: "info@practicecaresource.com",
+  email: "irtiza.5.ih@gmail.com",
   phoneDisplay: "+92 308 8866774",
   phoneHref: "+923088866774",
   tagline: "The source of care for your practice.",
 };
 
 export const footerQuickLinks = navigationLinks;
+

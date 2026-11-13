@@ -1,16 +1,15 @@
 {
   "brand": "CareSource",
   "palette": {
-    "green": "#169D72",
-    "marineBlue": "#074C63",
-    "background": "#FFFFFF",
-    "dark": "#0A2A37",
-    "slate": "#4E6670"
+    "accent": "#FF771C",
+    "background": "#F5EDE0",
+    "dark": "#161311",
+    "slate": "#546877"
   },
   "decisions": [
     {
-      "decision": "Keep white as the page canvas and use green for primary actions with marine blue for headings, links, and structure.",
-      "reason": "The paired colors create a clear, professional healthcare identity while preserving high contrast and a calm white interface."
+      "decision": "Keep the warm cream and dark ink as the core canvas, using orange for action and emphasis.",
+      "reason": "This preserves the supplied palette while making primary actions distinct."
     },
     {
       "decision": "Use a condensed display face, a neutral body face, and a handwritten script face.",

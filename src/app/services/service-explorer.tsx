@@ -47,7 +47,7 @@ export function ServiceExplorer() {
           role="tablist"
           aria-label="Explore CareSource services"
           aria-orientation="vertical"
-          className="border-r border-brand-border bg-brand-background-wash/20 p-4"
+          className="border-r border-brand-border bg-brand-background-wash/35 p-4"
         >
           {serviceCatalog.map((service, index) => {
             const Icon = service.icon;
@@ -69,7 +69,7 @@ export function ServiceExplorer() {
                 className={[
                   "group flex min-h-14 w-full items-center gap-3 rounded-2xl px-3 text-left text-sm font-bold transition-[background-color,color,transform] duration-200 hover:translate-x-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink",
                   selected
-                    ? "bg-brand-background text-brand-dark shadow-card ring-1 ring-brand-border"
+                    ? "bg-brand-dark text-brand-background shadow-sm"
                     : "text-brand-slate hover:bg-brand-background hover:text-brand-dark",
                 ].join(" ")}
               >
@@ -77,7 +77,7 @@ export function ServiceExplorer() {
                   className={[
                     "grid size-9 shrink-0 place-items-center rounded-xl transition-colors",
                     selected
-                      ? "bg-brand-dark text-brand-accent"
+                      ? "bg-brand-accent text-brand-background"
                       : "bg-brand-background text-brand-accent-ink group-hover:bg-brand-accent/15",
                   ].join(" ")}
                   aria-hidden="true"
@@ -166,10 +166,10 @@ export function ServiceExplorer() {
                     setOpenMobileSlug(expanded ? "" : service.slug);
                     setActiveSlug(service.slug);
                   }}
-                  className="group flex min-h-[4.5rem] w-full items-center justify-between gap-4 bg-brand-background px-5 py-4 text-left transition-colors hover:bg-brand-background-wash/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-accent-ink sm:px-7"
+                  className="group flex min-h-[4.5rem] w-full items-center justify-between gap-4 px-5 py-4 text-left transition-colors hover:bg-brand-background-wash/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-accent-ink sm:px-7"
                 >
                   <span className="flex items-center gap-3">
-                    <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-brand-dark text-brand-accent shadow-sm" aria-hidden="true">
+                    <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-brand-accent/15 text-brand-accent-ink" aria-hidden="true">
                       <Icon size={19} strokeWidth={1.9} />
                     </span>
                     <span className="font-bold text-brand-dark">{service.shortTitle}</span>

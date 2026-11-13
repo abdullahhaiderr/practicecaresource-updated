@@ -288,7 +288,7 @@ export default function AboutPage() {
             {onboardingSteps.map(({ title, description }, index) => (
               <li key={title} className="h-full">
                 <ScrollReveal delay={index * 0.045} className="h-full">
-                  <article className="group h-full rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/60 hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
+                  <article className="group h-full rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
                     <span className="grid size-11 place-items-center rounded-full bg-brand-dark text-sm font-bold text-brand-accent transition-transform duration-300 group-hover:scale-105 motion-reduce:transition-none">
                       0{index + 1}
                     </span>

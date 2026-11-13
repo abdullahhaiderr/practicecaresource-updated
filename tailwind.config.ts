@@ -16,7 +16,7 @@ const config = {
           slate: "rgb(var(--cs-slate) / <alpha-value>)",
           "slate-light": "rgb(var(--cs-slate-light) / <alpha-value>)",
           border: "rgb(var(--cs-border) / <alpha-value>)",
-          mint: "rgb(var(--cs-mint) / <alpha-value>)",
+          peach: "rgb(var(--cs-peach) / <alpha-value>)",
         },
       },
       fontFamily: {
