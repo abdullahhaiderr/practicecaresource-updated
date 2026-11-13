@@ -18,6 +18,10 @@
     {
       "decision": "Use motion for hierarchy and feedback, with reduced-motion behavior built into shared primitives.",
       "reason": "The interface can feel responsive while remaining comfortable and accessible."
+    },
+    {
+      "decision": "Present testimonials as one continuous horizontal row with equal-height cards, pausing on hover or focus and allowing manual scrolling when reduced motion is preferred.",
+      "reason": "Clients can browse every review in one visual row without a second grid row, while motion remains accessible."
     }
   ]
 }
