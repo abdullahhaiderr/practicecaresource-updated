@@ -219,7 +219,7 @@ function TestimonialsSection() {
                       alt=""
                       width={52}
                       height={52}
-                      className="size-13 shrink-0 rounded-full object-cover ring-2 ring-brand-background-wash"
+                      className="size-[52px] shrink-0 rounded-full object-cover ring-2 ring-brand-background-wash"
                     />
                     <div className="min-w-0">
                       <p className="truncate text-sm font-bold text-brand-dark">{name}</p>
