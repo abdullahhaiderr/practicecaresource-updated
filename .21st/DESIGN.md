@@ -6,7 +6,7 @@ CareSource provides medical billing and practice support for US healthcare provi
 
 ## Palette
 
-Use the four authoritative colors: orange #FF771C, warm cream #F5EDE0, dark #161311, and slate #546877. Shared code maps derived shades in the Tailwind token system. Do not introduce unrelated hues. Orange surfaces use dark text.
+Keep white `#FFFFFF` as the page canvas. Use green `#169D72` for primary actions and key accents, and marine blue `#074C63` for headings, links, and structural emphasis. Use deep marine `#0A2A37` for dark surfaces and neutral slate `#4E6670` for body copy. Supporting washes and borders should stay pale and derived from these colors. Avoid orange and warm cream.
 
 ## Type
 
