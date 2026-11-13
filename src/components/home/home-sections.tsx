@@ -3,14 +3,10 @@ import Link from "next/link";
 import {
   ArrowDown,
   ChevronDown,
-  Headset,
-  MapPin,
   MessageSquare,
   Minus,
   Plus,
   Quote,
-  Stethoscope,
-  Workflow,
 } from "lucide-react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
@@ -135,25 +131,25 @@ function ServicesSection() {
 }
 
 const coverageHighlights = [
-  { title: "End-to-End RCM", detail: "Coverage", icon: Workflow },
-  { title: "200+", detail: "Medical specialties supported", icon: Stethoscope },
-  { title: "50 States", detail: "Nationwide coverage", icon: MapPin },
-  { title: "1:1 Dedicated", detail: "Billing manager", icon: Headset },
+  { title: "End-to-End RCM", detail: "Coverage", imageSrc: "/service-highlights/rcm.png" },
+  { title: "200+", detail: "Medical specialties supported", imageSrc: "/service-highlights/medical-specialties.png" },
+  { title: "50 States", detail: "Nationwide coverage", imageSrc: "/service-highlights/nationwide-coverage.png" },
+  { title: "1:1 Dedicated", detail: "Billing manager", imageSrc: "/service-highlights/billing-manager.png" },
 ];
 
 function OneRoofSection() {
   return (
     <section className="py-8 sm:py-10 lg:py-12" aria-label="CareSource coverage and support">
       <Container>
-        <ul className="grid overflow-hidden rounded-2xl border border-brand-border/40 bg-[linear-gradient(110deg,#299bcf_0%,#3aabb9_52%,#43b5a2_100%)] p-3 shadow-card sm:grid-cols-2 sm:p-4 lg:grid-cols-4">
-          {coverageHighlights.map(({ title, detail, icon: Icon }) => (
+        <ul className="grid overflow-hidden rounded-2xl border border-brand-accent/15 bg-brand-accent/5 p-3 shadow-card sm:grid-cols-2 sm:p-4 lg:grid-cols-4">
+          {coverageHighlights.map(({ title, detail, imageSrc }) => (
             <li key={title} className="flex min-h-[5.25rem] items-center gap-3 rounded-xl px-3 py-3 sm:gap-4 sm:px-4">
-              <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-white text-brand-accent-ink shadow-sm sm:size-14" aria-hidden="true">
-                <Icon size={24} strokeWidth={1.8} />
+              <span className="grid size-12 shrink-0 place-items-center rounded-xl border border-brand-accent/10 bg-white p-2 shadow-sm sm:size-14" aria-hidden="true">
+                <Image src={imageSrc} alt="" width={48} height={48} className="size-9 object-contain sm:size-10" />
               </span>
-              <span className="min-w-0 text-sm leading-snug text-white sm:text-base">
-                <strong className="block font-bold">{title}</strong>
-                <span className="block font-medium text-white/95">{detail}</span>
+              <span className="min-w-0 text-sm leading-snug text-brand-dark sm:text-base">
+                <strong className="block font-bold text-brand-accent-ink">{title}</strong>
+                <span className="block text-brand-slate">{detail}</span>
               </span>
             </li>
           ))}
