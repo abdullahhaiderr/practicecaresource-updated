@@ -28,7 +28,7 @@ Use Node.js 20 or newer, then run `npm install` and `npm run dev`.
 
 ## Brand system
 
-Authoritative colors are orange `#FF771C`, warm cream `#F5EDE0`, dark `#161311`, and slate `#546877`. Derived shades are documented in Tailwind tokens. Orange buttons use dark text for contrast.
+Use a white `#FFFFFF` page background, green `#169D72` for actions and accents, and marine blue `#074C63` for headings and links. Deep marine `#0A2A37` and slate `#4E6670` support dark surfaces and body text. Derived shades are documented in Tailwind tokens.
 
 ## Sprint boundaries
 
