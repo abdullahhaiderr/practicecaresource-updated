@@ -197,6 +197,46 @@ function ProcessSection() {
   );
 }
 
+function TestimonialCards({ duplicate = false }: { duplicate?: boolean }) {
+  return (
+    <ul
+      className="flex w-max shrink-0 items-stretch gap-4 pr-4"
+      aria-hidden={duplicate || undefined}
+    >
+      {testimonials.map(({ name, quote, imageSrc }) => (
+        <li key={name} className="w-[min(82vw,18rem)] shrink-0 sm:w-[17.5rem] lg:w-[18rem]">
+          <article className="group flex h-[21rem] flex-col rounded-2xl border border-brand-border border-t-4 border-t-brand-accent bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/45 hover:shadow-card-hover motion-reduce:transition-none sm:p-5">
+            <div className="mb-4 flex items-center justify-between">
+              <span className="grid size-10 place-items-center rounded-full bg-brand-accent/10 text-brand-accent-ink transition-colors group-hover:bg-brand-accent/15" aria-hidden="true">
+                <Quote size={19} strokeWidth={2} />
+              </span>
+              <span className="rounded-full bg-brand-background-wash px-2.5 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-brand-accent-ink">
+                Medical billing
+              </span>
+            </div>
+            <blockquote className="flex-1 overflow-hidden text-sm leading-relaxed text-brand-slate sm:text-base">
+              “{quote}”
+            </blockquote>
+            <div className="mt-4 flex items-center gap-3 border-t border-brand-border pt-4">
+              <Image
+                src={imageSrc}
+                alt=""
+                width={52}
+                height={52}
+                className="size-[52px] shrink-0 rounded-full object-cover ring-2 ring-brand-background-wash"
+              />
+              <div className="min-w-0">
+                <p className="truncate text-sm font-bold text-brand-dark">{name}</p>
+                <p className="mt-0.5 text-xs text-brand-slate">Medical billing client</p>
+              </div>
+            </div>
+          </article>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function TestimonialsSection() {
   return (
     <section className="bg-brand-background-wash/35 py-12 sm:py-14 lg:py-16" aria-label="Medical billing client testimonials">
@@ -209,40 +249,17 @@ function TestimonialsSection() {
             className="mb-7 sm:mb-9"
           />
         </ScrollReveal>
-        <ul className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {testimonials.map(({ name, quote, imageSrc }, index) => (
-            <li key={name} className="h-full">
-              <ScrollReveal delay={index * 0.035} className="flex h-full">
-                <article className="group flex h-full min-h-[20rem] flex-col rounded-2xl border border-brand-border border-t-4 border-t-brand-accent bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/45 hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
-                  <div className="mb-4 flex items-center justify-between">
-                    <span className="grid size-10 place-items-center rounded-full bg-brand-accent/10 text-brand-accent-ink transition-colors group-hover:bg-brand-accent/15" aria-hidden="true">
-                      <Quote size={19} strokeWidth={2} />
-                    </span>
-                    <span className="rounded-full bg-brand-background-wash px-2.5 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-brand-accent-ink">
-                      Medical billing
-                    </span>
-                  </div>
-                  <blockquote className="flex-1 text-sm leading-relaxed text-brand-slate sm:text-base">
-                    “{quote}”
-                  </blockquote>
-                  <div className="mt-6 flex items-center gap-3 border-t border-brand-border pt-4">
-                    <Image
-                      src={imageSrc}
-                      alt=""
-                      width={52}
-                      height={52}
-                      className="size-[52px] shrink-0 rounded-full object-cover ring-2 ring-brand-background-wash"
-                    />
-                    <div className="min-w-0">
-                      <p className="truncate text-sm font-bold text-brand-dark">{name}</p>
-                      <p className="mt-0.5 text-xs text-brand-slate">Medical billing client</p>
-                    </div>
-                  </div>
-                </article>
-              </ScrollReveal>
-            </li>
-          ))}
-        </ul>
+        <div
+          className="testimonial-marquee -mx-2 overflow-hidden px-2"
+          role="region"
+          aria-label="Scrolling medical billing testimonials"
+          tabIndex={0}
+        >
+          <div className="testimonial-marquee-track flex w-max py-2">
+            <TestimonialCards />
+            <TestimonialCards duplicate />
+          </div>
+        </div>
 
         <details className="group mt-8 overflow-hidden rounded-2xl border border-brand-border bg-brand-background shadow-card transition-shadow open:shadow-card-hover">
           <summary className="flex min-h-[5.25rem] cursor-pointer list-none items-center justify-between gap-4 bg-brand-background-wash/40 px-5 py-4 transition-colors hover:bg-brand-background-wash/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-accent-ink sm:px-7 [&::-webkit-details-marker]:hidden">
