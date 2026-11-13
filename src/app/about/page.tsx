@@ -194,7 +194,7 @@ export default function AboutPage() {
             {values.map(({ title, description, icon: Icon }, index) => (
               <ScrollReveal key={title} delay={index * 0.06} className="h-full">
                 <article className="group h-full rounded-2xl border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-7">
-                  <span className="grid size-12 place-items-center rounded-xl bg-brand-dark text-brand-accent transition-transform duration-300 group-hover:rotate-3 motion-reduce:transition-none">
+                  <span className="grid size-12 place-items-center rounded-xl border border-brand-accent/15 bg-brand-peach/65 text-brand-accent-ink shadow-sm transition-transform duration-300 group-hover:rotate-3 motion-reduce:transition-none">
                     <Icon size={23} strokeWidth={1.8} aria-hidden="true" />
                   </span>
                   <h2 className="mt-6 font-display text-2xl font-semibold text-brand-dark sm:text-3xl">
@@ -284,12 +284,12 @@ export default function AboutPage() {
               description="We agree on scope and communication with your practice before support begins. Each step leaves room for your team's review and decisions."
             />
           </ScrollReveal>
-          <ol className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <ol className="mt-8 grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {onboardingSteps.map(({ title, description }, index) => (
               <li key={title} className="h-full">
-                <ScrollReveal delay={index * 0.045} className="h-full">
+                <ScrollReveal delay={index * 0.045} className="flex h-full">
                   <article className="group h-full rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
-                    <span className="grid size-11 place-items-center rounded-full bg-brand-dark text-sm font-bold text-brand-accent transition-transform duration-300 group-hover:scale-105 motion-reduce:transition-none">
+                    <span className="grid size-11 place-items-center rounded-full border border-brand-accent/15 bg-brand-peach/65 text-sm font-bold text-brand-accent-ink shadow-sm transition-transform duration-300 group-hover:scale-105 motion-reduce:transition-none">
                       0{index + 1}
                     </span>
                     <h3 className="mt-5 font-display text-xl font-semibold leading-tight text-brand-dark sm:text-2xl">

@@ -247,7 +247,7 @@ function TestimonialsSection() {
         <details className="group mt-8 overflow-hidden rounded-2xl border border-brand-border bg-brand-background shadow-card transition-shadow open:shadow-card-hover">
           <summary className="flex min-h-[5.25rem] cursor-pointer list-none items-center justify-between gap-4 bg-brand-background-wash/40 px-5 py-4 transition-colors hover:bg-brand-background-wash/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-accent-ink sm:px-7 [&::-webkit-details-marker]:hidden">
             <span className="flex min-w-0 items-center gap-3">
-              <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-dark text-brand-accent" aria-hidden="true">
+              <span className="grid size-11 shrink-0 place-items-center rounded-xl border border-brand-accent/15 bg-brand-peach/65 text-brand-accent-ink shadow-sm" aria-hidden="true">
                 <MessageSquare size={20} />
               </span>
               <span className="min-w-0">

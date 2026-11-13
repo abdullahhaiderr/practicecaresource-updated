@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import {
-  ArrowRight,
+  CircleDollarSign,
   BadgeCheck,
   ClipboardCheck,
   Headset,
@@ -94,7 +94,7 @@ export function HomeHero({ heroImage }: HomeHeroProps) {
                   index === 3 ? "sm:pl-4" : "",
                 ].join(" ")}
               >
-                <span className="grid size-8 place-items-center rounded-lg bg-brand-dark text-brand-accent">
+                <span className="grid size-9 place-items-center rounded-xl border border-brand-accent/15 bg-brand-peach/65 text-brand-accent-ink shadow-sm">
                   <Icon size={17} strokeWidth={1.8} aria-hidden="true" />
                 </span>
                 <span className="text-xs font-bold leading-snug text-brand-dark sm:text-sm">
