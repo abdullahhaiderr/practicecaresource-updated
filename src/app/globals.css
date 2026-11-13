@@ -4,17 +4,17 @@
 
 :root {
   color-scheme: light;
-  --cs-accent: 6 83 199;
-  --cs-accent-hover: 5 65 158;
-  --cs-accent-ink: 7 48 116;
+  --cs-accent: 22 157 114;
+  --cs-accent-hover: 17 125 92;
+  --cs-accent-ink: 7 76 99;
   --cs-background: 255 255 255;
-  --cs-background-wash: 248 251 252;
-  --cs-dark: 22 19 17;
-  --cs-dark-soft: 39 34 30;
-  --cs-slate: 84 104 119;
-  --cs-slate-light: 110 126 138;
-  --cs-border: 220 230 232;
-  --cs-peach: 217 241 244;
+  --cs-background-wash: 246 250 249;
+  --cs-dark: 10 42 55;
+  --cs-dark-soft: 15 61 76;
+  --cs-slate: 78 102 112;
+  --cs-slate-light: 111 130 136;
+  --cs-border: 220 231 232;
+  --cs-mint: 219 240 231;
 }
 
 * {
