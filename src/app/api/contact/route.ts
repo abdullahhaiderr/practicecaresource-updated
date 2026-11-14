@@ -180,7 +180,7 @@ export async function POST(request: NextRequest) {
       `Phone: ${parsed.data.phone}`,
       `Specialty: ${parsed.data.specialty}`,
       `Service of interest: ${parsed.data.serviceInterestedIn}`,
-      `Contact permission: ${parsed.data.consent ? "Yes" : "No"}`,
+      ...(parsed.data.consent ? ["Contact permission: Yes"] : []),
       "",
       "Message:",
       parsed.data.message,
