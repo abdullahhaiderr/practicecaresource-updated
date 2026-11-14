@@ -61,10 +61,18 @@ export const contactFormSchema = z.object({
     .trim()
     .min(10, "Add a little more detail so we can understand your request.")
     .max(2000, "Message must be 2,000 characters or fewer."),
-  consent: z.boolean().refine((value) => value, {
-    message: "Please confirm that CareSource may contact you about this request.",
-  }),
+  consent: z.boolean().optional(),
   website: z.string().max(200).optional(),
 });
 
-export type ContactFormValues = z.infer<typeof contactFormSchema>;
+export const contactFormCompactSchema = contactFormSchema.extend({
+  consent: z.boolean(),
+});
+
+export const contactFormWithConsentSchema = contactFormSchema.extend({
+  consent: z.boolean().refine((value) => value, {
+    message: "Please confirm that CareSource may contact you about this request.",
+  }),
+});
+
+export type ContactFormValues = z.infer<typeof contactFormWithConsentSchema>;
