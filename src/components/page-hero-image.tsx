@@ -11,7 +11,7 @@ export function PageHeroImage({ src, alt, compact = false }: PageHeroImageProps)
     <div
       role="img"
       aria-label={alt}
-      className={`pointer-events-none relative order-last mx-auto w-full max-w-sm lg:absolute lg:inset-y-0 lg:order-none lg:mx-0 lg:h-full ${compact ? "h-48 sm:h-56 lg:right-[-1rem] lg:w-[36%] lg:max-w-[31rem]" : "h-56 sm:h-64 lg:right-0 lg:w-[40%] lg:max-w-[34rem]"}`}
+      className={`pointer-events-none relative order-last mx-auto w-full max-w-sm lg:absolute lg:inset-y-0 lg:order-none lg:mx-0 lg:h-full ${compact ? "h-48 sm:h-56 lg:right-[5%] lg:w-[27%] lg:max-w-[22rem]" : "h-56 sm:h-64 lg:right-[5%] lg:w-[27%] lg:max-w-[22rem]"}`}
     >
       <div className={`absolute inset-x-8 bottom-0 top-0 overflow-hidden rounded-3xl border-[6px] border-white bg-brand-background-wash shadow-card lg:inset-x-0 lg:bottom-auto lg:rounded-t-none lg:rounded-b-[46%] ${compact ? "lg:top-[-20%] lg:h-[105%]" : "lg:top-[-42%] lg:h-[142%]"}`}>
         <Image
