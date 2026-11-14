@@ -181,7 +181,7 @@ function ProcessSection() {
           {processSteps.map((step, index) => (
             <li key={step.number} className="relative">
               <ScrollReveal delay={index * 0.04}>
-                <article className="h-full rounded-2xl border border-brand-border bg-brand-background-wash/25 p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
+                <article className="h-full rounded-2xl border border-black bg-brand-background-wash/25 p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-black hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
                   <p className="font-display text-4xl font-semibold leading-none text-brand-accent-ink/70">{step.number}</p>
                   <h3 className="mt-6 font-display text-xl font-semibold leading-tight text-brand-dark">{step.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-brand-slate">{step.description}</p>
