@@ -333,10 +333,10 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
               Sending…
             </>
           ) : (
-            <>
+            <span className="inline-flex items-center gap-2 whitespace-nowrap">
               Send message
               <Send size={17} aria-hidden="true" />
-            </>
+            </span>
           )}
         </Button>
       </div>
