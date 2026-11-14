@@ -339,7 +339,7 @@ function ContactCta() {
                     href={"tel:" + footerContact.phoneHref}
                     className="group flex items-center gap-4 rounded-2xl border border-brand-background/15 bg-brand-background/[0.04] p-4 transition-colors hover:border-brand-accent/40 hover:bg-brand-background/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
                   >
-                    <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-background/10 text-brand-accent" aria-hidden="true">
+                    <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-white text-brand-accent-ink" aria-hidden="true">
                       <Phone size={20} />
                     </span>
                     <span className="min-w-0">
@@ -351,7 +351,7 @@ function ContactCta() {
                     href={"mailto:" + footerContact.email}
                     className="group flex items-center gap-4 rounded-2xl border border-brand-background/15 bg-brand-background/[0.04] p-4 transition-colors hover:border-brand-accent/40 hover:bg-brand-background/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
                   >
-                    <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-background/10 text-brand-accent" aria-hidden="true">
+                    <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-white text-brand-accent-ink" aria-hidden="true">
                       <Mail size={20} />
                     </span>
                     <span className="min-w-0">
