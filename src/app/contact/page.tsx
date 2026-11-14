@@ -2,17 +2,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
-  HelpCircle,
   Mail,
   Phone,
   ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
+import { PageHeroImage } from "@/components/page-hero-image";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { ContactForm } from "./contact-form";
 import { footerContact } from "@/lib/site";
+import { serviceCatalog } from "@/data/services";
 
 export const metadata: Metadata = {
   title: "Contact CareSource",
@@ -47,16 +48,6 @@ export default function ContactPage() {
   return (
     <main id="main-content">
       <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-8 sm:py-10 lg:py-12">
-        <div className="pointer-events-none absolute -right-20 top-1/2 hidden h-[26rem] w-[32rem] -translate-y-1/2 lg:block" aria-hidden="true">
-          <div className="absolute right-0 top-6 size-[24rem] rounded-[44%_56%_61%_39%/41%_48%_52%_59%] bg-brand-dark" />
-          <div className="absolute right-12 top-1/2 size-72 -translate-y-1/2 rounded-full border border-brand-accent/55" />
-          <div className="absolute right-16 top-12 size-16 rounded-full bg-brand-accent" />
-          <div className="absolute left-0 top-1/2 grid size-24 -translate-y-1/2 place-items-center rounded-full border border-brand-background/35 bg-brand-dark-soft text-brand-accent">
-            <HelpCircle size={40} strokeWidth={1.4} />
-          </div>
-          <div className="absolute bottom-12 right-24 h-1.5 w-32 rounded-full bg-brand-accent" />
-        </div>
-
         <Container className="relative grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
           <ScrollReveal className="max-w-3xl lg:max-w-none">
             <nav aria-label="Breadcrumb" className="mb-4">
@@ -98,7 +89,7 @@ export default function ContactPage() {
               </a>
             </div>
           </ScrollReveal>
-          <div className="hidden min-h-[18rem] lg:block" aria-hidden="true" />
+          <PageHeroImage src={serviceCatalog[2].imageSrc} alt="A team member coordinating work in a professional office" />
         </Container>
       </section>
 

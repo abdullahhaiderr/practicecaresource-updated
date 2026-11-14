@@ -7,6 +7,7 @@ import { Container } from "@/components/container";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
+import { PageHeroImage } from "@/components/page-hero-image";
 import { getServiceBySlug, serviceCatalog, type ServiceContent } from "@/data/services";
 
 type ServicePageProps = {
@@ -39,7 +40,6 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   const service = getServiceBySlug(slug);
   if (!service) notFound();
 
-  const ServiceIcon = service.icon;
   const relatedServices = service.relatedServices
     .map((relatedSlug) => getServiceBySlug(relatedSlug))
     .filter((related): related is ServiceContent => Boolean(related));
@@ -47,13 +47,6 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   return (
     <main id="main-content">
       <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-8 sm:py-10 lg:py-12">
-        <div className="pointer-events-none absolute -right-20 top-1/2 hidden size-[27rem] -translate-y-1/2 rounded-[47%_53%_65%_35%/46%_43%_57%_54%] bg-brand-dark lg:block" aria-hidden="true">
-          <div className="absolute inset-8 rounded-full border border-brand-accent/50" />
-          <div className="absolute right-6 top-8 size-16 rounded-full bg-brand-accent" />
-          <div className="absolute left-1/2 top-1/2 grid size-28 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full border border-brand-background/25 bg-brand-dark-soft text-brand-accent">
-            <ServiceIcon size={54} strokeWidth={1.45} />
-          </div>
-        </div>
         <Container className="relative grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
           <ScrollReveal className="max-w-3xl">
             <nav aria-label="Breadcrumb" className="mb-4">
@@ -72,14 +65,9 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">
               CareSource practice support
             </p>
-            <div className="flex items-center gap-4">
-              <span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-brand-accent/15 text-brand-accent-ink lg:hidden" aria-hidden="true">
-                <ServiceIcon size={28} strokeWidth={1.7} />
-              </span>
-              <h1 className="text-balance font-display text-5xl font-semibold leading-[0.98] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
-                {service.title}
-              </h1>
-            </div>
+            <h1 className="text-balance font-display text-5xl font-semibold leading-[0.98] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
+              {service.title}
+            </h1>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
               {service.overview}
             </p>
@@ -90,7 +78,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               </Link>
             </div>
           </ScrollReveal>
-          <div className="hidden lg:block lg:min-h-[18rem]" aria-hidden="true" />
+          <PageHeroImage src={service.imageSrc} alt={service.imageAlt} />
         </Container>
       </section>
 
