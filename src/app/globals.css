@@ -121,3 +121,38 @@ img {
     will-change: auto;
   }
 }
+
+@keyframes coverage-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.coverage-float {
+  animation: coverage-float 4.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.coverage-float:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.coverage-float:nth-child(3) {
+  animation-delay: 0.8s;
+}
+
+.coverage-float:nth-child(4) {
+  animation-delay: 1.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coverage-float {
+    animation: none;
+    will-change: auto;
+  }
+}

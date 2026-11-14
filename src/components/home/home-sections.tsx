@@ -145,7 +145,7 @@ function OneRoofSection() {
       <Container>
         <ul className="grid overflow-hidden rounded-2xl border border-brand-accent/15 bg-brand-accent/5 p-3 shadow-card sm:grid-cols-2 sm:p-4 lg:grid-cols-4">
           {coverageHighlights.map(({ title, detail, imageSrc }) => (
-            <li key={title} className="flex min-h-[5.25rem] items-center gap-3 rounded-xl px-3 py-3 sm:gap-4 sm:px-4">
+            <li key={title} className="coverage-float flex min-h-[5.25rem] items-center gap-3 rounded-xl px-3 py-3 sm:gap-4 sm:px-4">
               <span className="grid size-12 shrink-0 place-items-center rounded-xl border border-brand-accent/10 bg-white p-2 shadow-sm sm:size-14" aria-hidden="true">
                 <Image src={imageSrc} alt="" width={48} height={48} className="size-9 object-contain sm:size-10" />
               </span>
