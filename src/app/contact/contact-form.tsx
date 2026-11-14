@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { Button } from "@/components/button";
 import {
   contactFormCompactSchema,
+  contactFormSimpleSchema,
   contactFormWithConsentSchema,
   serviceOptions,
   specialtyOptions,
@@ -32,7 +33,7 @@ function FieldError({ id, message }: { id: string; message?: string }) {
   );
 }
 
-export function ContactForm({ compact = false }: { compact?: boolean }) {
+export function ContactForm({ compact = false, simple = false }: { compact?: boolean; simple?: boolean }) {
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>(null);
   const {
     register,
@@ -41,9 +42,11 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
     setError,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormValues>({
-    resolver: compact
-      ? zodResolver(contactFormCompactSchema)
-      : zodResolver(contactFormWithConsentSchema),
+    resolver: simple
+      ? (zodResolver(contactFormSimpleSchema) as never)
+      : compact
+        ? zodResolver(contactFormCompactSchema)
+        : zodResolver(contactFormWithConsentSchema),
     mode: "onBlur",
     defaultValues: {
       fullName: "",
@@ -129,6 +132,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
           <FieldError id="fullName-error" message={errors.fullName?.message} />
         </div>
 
+        {!simple ? (
         <div>
           <label className={labelClass} htmlFor="practiceName">
             Practice name <span aria-hidden="true">*</span>
@@ -146,6 +150,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
             message={errors.practiceName?.message}
           />
         </div>
+        ) : null}
 
         <div>
           <label className={labelClass} htmlFor="email">
@@ -179,6 +184,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
           <FieldError id="phone-error" message={errors.phone?.message} />
         </div>
 
+        {!simple ? (
         <div>
           <label className={labelClass} htmlFor="specialty">
             Specialty <span aria-hidden="true">*</span>
@@ -225,6 +231,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
             message={errors.serviceInterestedIn?.message}
           />
         </div>
+        ) : null}
       </div>
 
       <div>
@@ -262,7 +269,7 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
         <FieldError id="message-error" message={errors.message?.message} />
       </div>
 
-      {!compact ? (
+      {!compact && !simple ? (
         <div className="flex items-start gap-3">
           <input
             id="consent"
@@ -315,8 +322,8 @@ export function ContactForm({ compact = false }: { compact?: boolean }) {
         </div>
       ) : null}
 
-      <div className={compact ? "" : "flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"}>
-        {!compact ? (
+      <div className={compact || simple ? "" : "flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"}>
+        {!compact && !simple ? (
           <p className="text-xs leading-relaxed text-brand-slate">
             Fields marked * are required. Your message is sent to CareSource by email.
           </p>

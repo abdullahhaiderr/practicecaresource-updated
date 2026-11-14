@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
+  Clock3,
   Mail,
+  MapPin,
   Phone,
-  ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
@@ -95,86 +96,71 @@ export default function ContactPage() {
 
       <section id="contact-form" className="scroll-mt-24 py-10 sm:py-12 lg:py-16">
         <Container className="grid items-start gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
-          <ScrollReveal className="space-y-5">
-            <div>
-              <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">
-                Get in touch
+          <ScrollReveal className="space-y-4">
+            <div className="mb-5">
+              <p className="mb-2 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">
+                Contact details
               </p>
               <h2 className="font-display text-3xl font-semibold leading-tight text-brand-dark sm:text-4xl">
-                Choose the easiest way to reach us.
+                Reach our team.
               </h2>
-              <p className="mt-4 text-base leading-relaxed text-brand-slate">
-                Share a little about your practice and the support you are
-                considering. Please keep all patient information out of your
-                message.
-              </p>
             </div>
 
-            <a
-              href={`mailto:${footerContact.email}`}
-              className="group flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none"
-            >
-              <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-brand-dark text-brand-accent">
-                <Mail size={22} aria-hidden="true" />
+            <div className="flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card">
+              <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
+                <MapPin size={21} aria-hidden="true" />
               </span>
-              <span className="min-w-0 flex-1">
-                <span className="block text-sm font-bold text-brand-dark">Email</span>
-                <span className="mt-1 block break-all text-sm leading-relaxed text-brand-slate">
-                  {footerContact.email}
-                </span>
+              <span>
+                <span className="block text-sm font-bold text-brand-dark">US Office</span>
+                <span className="mt-1 block text-sm leading-relaxed text-brand-slate">1770 Crystal Drive, Arlington, VA 22202, USA</span>
               </span>
-              <ArrowRight size={18} className="mt-1 shrink-0 text-brand-accent-ink transition-transform group-hover:translate-x-1" aria-hidden="true" />
-            </a>
+            </div>
 
             <a
               href={`tel:${footerContact.phoneHref}`}
               className="group flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none"
             >
-              <span className="grid size-12 shrink-0 place-items-center rounded-xl bg-brand-dark text-brand-accent">
-                <Phone size={21} aria-hidden="true" />
+              <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
+                <Phone size={20} aria-hidden="true" />
               </span>
-              <span className="min-w-0 flex-1">
+              <span className="min-w-0">
                 <span className="block text-sm font-bold text-brand-dark">Phone</span>
-                <span className="mt-1 block text-sm leading-relaxed text-brand-slate">
-                  {footerContact.phoneDisplay}
-                </span>
+                <span className="mt-1 block text-sm leading-relaxed text-brand-slate">{footerContact.phoneDisplay}</span>
               </span>
-              <ArrowRight size={18} className="mt-1 shrink-0 text-brand-accent-ink transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              <ArrowRight size={17} className="mt-1 ml-auto shrink-0 text-brand-accent-ink transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </a>
 
-            <div className="rounded-2xl border border-brand-border bg-brand-dark p-5 text-brand-background sm:p-6">
-              <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand-accent">Next step</p>
-              <p className="mt-2 font-display text-2xl font-semibold leading-tight sm:text-3xl">
-                Tell us what support you&apos;re exploring.
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-brand-background/75">
-                Share the services or workflow you have in mind. We&apos;ll use the contact details you provide to follow up about your request.
-              </p>
+            <a
+              href={`mailto:${footerContact.email}`}
+              className="group flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none"
+            >
+              <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
+                <Mail size={20} aria-hidden="true" />
+              </span>
+              <span className="min-w-0">
+                <span className="block text-sm font-bold text-brand-dark">Email</span>
+                <span className="mt-1 block break-all text-sm leading-relaxed text-brand-slate">{footerContact.email}</span>
+              </span>
+              <ArrowRight size={17} className="mt-1 ml-auto shrink-0 text-brand-accent-ink transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            </a>
+
+            <div className="flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card">
+              <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
+                <Clock3 size={20} aria-hidden="true" />
+              </span>
+              <span>
+                <span className="block text-sm font-bold text-brand-dark">Hours</span>
+                <span className="mt-1 block text-sm leading-relaxed text-brand-slate">Mon–Fri · 8:00 AM–7:00 PM PT</span>
+              </span>
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.06}>
             <div className="rounded-3xl border border-brand-border bg-brand-background p-5 shadow-card sm:p-8 lg:p-9">
-              <div className="mb-4">
-                <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">
-                  Contact form
-                </p>
-                <h2 className="mt-2 font-display text-3xl font-semibold leading-tight text-brand-dark sm:text-4xl">
-                  Tell us how we can help.
-                </h2>
-                <p className="mt-3 text-sm leading-relaxed text-brand-slate">
-                  We’ll use these details to follow up about your request.
-                </p>
-              </div>
-
-              <div className="mb-7 flex items-start gap-3 rounded-2xl border border-brand-accent/45 bg-brand-background-wash/45 p-4 text-sm font-semibold leading-relaxed text-brand-dark sm:p-5">
-                <ShieldCheck size={21} className="mt-0.5 shrink-0 text-brand-accent-ink" aria-hidden="true" />
-                <p>
-                  Please do not include patient names or any protected health information in this form.
-                </p>
-              </div>
-
-              <ContactForm />
+              <h2 className="mb-6 font-display text-3xl font-semibold leading-tight text-brand-dark sm:text-4xl">
+                Send us a message
+              </h2>
+              <ContactForm simple />
             </div>
           </ScrollReveal>
         </Container>

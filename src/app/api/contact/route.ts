@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { z } from "zod";
 import { Resend } from "resend";
-import { contactFormSchema } from "@/lib/contact-schema";
+import { contactFormSchema, contactFormSimpleSchema } from "@/lib/contact-schema";
 
 export const runtime = "nodejs";
 
@@ -137,7 +138,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true });
   }
 
-  const parsed = contactFormSchema.safeParse(body);
+  const parsed = z.union([contactFormSchema, contactFormSimpleSchema]).safeParse(body);
   if (!parsed.success) {
     const errors = Object.fromEntries(
       parsed.error.issues
@@ -175,12 +176,12 @@ export async function POST(request: NextRequest) {
       "New CareSource website contact request",
       "",
       `Name: ${parsed.data.fullName}`,
-      `Practice: ${parsed.data.practiceName}`,
+      ...("practiceName" in parsed.data ? [`Practice: ${parsed.data.practiceName}`] : []),
       `Email: ${parsed.data.email}`,
       `Phone: ${parsed.data.phone}`,
-      `Specialty: ${parsed.data.specialty}`,
-      `Service of interest: ${parsed.data.serviceInterestedIn}`,
-      ...(parsed.data.consent ? ["Contact permission: Yes"] : []),
+      ...("specialty" in parsed.data ? [`Specialty: ${parsed.data.specialty}`] : []),
+      ...("serviceInterestedIn" in parsed.data ? [`Service of interest: ${parsed.data.serviceInterestedIn}`] : []),
+      ...("consent" in parsed.data && parsed.data.consent ? ["Contact permission: Yes"] : []),
       "",
       "Message:",
       parsed.data.message,
