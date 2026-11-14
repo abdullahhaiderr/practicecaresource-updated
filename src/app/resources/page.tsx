@@ -51,7 +51,7 @@ export default function ResourcesPage() {
               Browse articles <ArrowDown size={16} aria-hidden="true" />
             </a>
           </ScrollReveal>
-          <PageHeroImage src={resourceArticles[0].coverImage} alt={resourceArticles[0].coverAlt} compact />
+          <PageHeroImage src={resourceArticles[0].coverImage} alt={resourceArticles[0].coverAlt} />
         </Container>
       </section>
 
