@@ -18,13 +18,13 @@ function BillingDashboard() {
 
   return (
     <div className="relative z-20 mx-auto w-[91%] max-w-[34rem] -rotate-2 rounded-t-2xl border border-brand-background/30 bg-brand-dark p-2 shadow-card sm:w-[88%] sm:p-3">
-      <div className="overflow-hidden rounded-t-xl border border-brand-background/10 bg-brand-dark-soft">
-        <div className="flex items-center justify-between border-b border-brand-background/10 px-3 py-2 sm:px-4 sm:py-3">
+      <div className="overflow-hidden rounded-t-xl border border-brand-border bg-brand-background">
+        <div className="flex items-center justify-between border-b border-brand-border px-3 py-2 sm:px-4 sm:py-3">
           <div className="flex items-center gap-2">
             <span className="grid size-7 place-items-center rounded-lg bg-brand-accent text-brand-background">
               <ClipboardCheck size={15} aria-hidden="true" />
             </span>
-            <span className="text-[10px] font-bold text-brand-background sm:text-xs">Practice workflow</span>
+            <span className="text-[10px] font-bold text-brand-dark sm:text-xs">Practice workflow</span>
           </div>
           <span className="rounded-pill border border-brand-accent/35 px-2 py-1 text-[8px] font-bold uppercase tracking-[0.12em] text-brand-accent sm:text-[9px]">
             Agreed scope
@@ -32,12 +32,12 @@ function BillingDashboard() {
         </div>
 
         <div className="grid grid-cols-[1.15fr_0.85fr] gap-2 p-3 sm:gap-3 sm:p-4">
-          <div className="rounded-xl border border-brand-background/10 bg-brand-background/[0.06] p-3 sm:p-4">
-            <p className="text-[9px] font-semibold text-brand-background/60 sm:text-[10px]">Billing support</p>
+          <div className="rounded-xl border border-brand-border bg-brand-background-wash p-3 sm:p-4">
+            <p className="text-[9px] font-semibold text-brand-slate sm:text-[10px]">Billing support</p>
             <ul className="mt-3 space-y-3">
               {tasks.map((task) => (
-                <li key={task} className="flex items-center gap-2 text-[9px] font-semibold text-brand-background/85 sm:text-[11px]">
-                  <span className="grid size-5 shrink-0 place-items-center rounded-md bg-brand-accent/15 text-brand-accent">
+                <li key={task} className="flex items-center gap-2 text-[9px] font-semibold text-brand-dark sm:text-[11px]">
+                  <span className="grid size-5 shrink-0 place-items-center rounded-md bg-brand-accent/10 text-brand-accent-ink">
                     <ClipboardCheck size={12} aria-hidden="true" />
                   </span>
                   {task}
@@ -46,19 +46,19 @@ function BillingDashboard() {
             </ul>
           </div>
 
-          <div className="rounded-xl border border-brand-background/10 bg-brand-background/[0.06] p-3 sm:p-4">
-            <p className="text-[9px] font-semibold text-brand-background/60 sm:text-[10px]">Practice review</p>
+          <div className="rounded-xl border border-brand-border bg-brand-background-wash p-3 sm:p-4">
+            <p className="text-[9px] font-semibold text-brand-slate sm:text-[10px]">Practice review</p>
             <div className="mt-3 grid aspect-square place-items-center rounded-full border border-brand-accent/60 p-2 text-center">
-              <span className="text-[9px] font-bold leading-snug text-brand-background sm:text-[11px]">Questions<br />and handoffs</span>
+              <span className="text-[9px] font-bold leading-snug text-brand-dark sm:text-[11px]">Questions<br />and handoffs</span>
             </div>
-            <p className="mt-2 text-center text-[8px] leading-snug text-brand-background/60 sm:text-[9px]">For your team to review</p>
+            <p className="mt-2 text-center text-[8px] leading-snug text-brand-slate sm:text-[9px]">For your team to review</p>
           </div>
         </div>
 
         <div className="mx-3 mb-3 grid grid-cols-3 gap-2 sm:mx-4 sm:mb-4">
           {["Billing", "Credentialing", "Admin support"].map((service) => (
-            <div key={service} className="rounded-lg border border-brand-background/10 bg-brand-background/[0.04] px-2 py-2">
-              <p className="text-[8px] leading-snug text-brand-background/75 sm:text-[9px]">{service}</p>
+            <div key={service} className="rounded-lg border border-brand-border bg-white px-2 py-2">
+              <p className="text-[8px] leading-snug text-brand-slate sm:text-[9px]">{service}</p>
             </div>
           ))}
         </div>
