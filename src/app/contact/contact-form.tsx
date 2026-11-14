@@ -185,6 +185,7 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
         </div>
 
         {!simple ? (
+        <>
         <div>
           <label className={labelClass} htmlFor="specialty">
             Specialty <span aria-hidden="true">*</span>
@@ -231,6 +232,7 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
             message={errors.serviceInterestedIn?.message}
           />
         </div>
+        </>
         ) : null}
       </div>
 
