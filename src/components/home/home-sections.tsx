@@ -1,14 +1,16 @@
 import Image from "next/image";
-import Link from "next/link";
 import {
   ArrowDown,
   ChevronDown,
+  Mail,
   MessageSquare,
   Minus,
+  Phone,
   Plus,
   Quote,
 } from "lucide-react";
 import { Button } from "@/components/button";
+import { ContactForm } from "@/app/contact/contact-form";
 import { Container } from "@/components/container";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
@@ -317,19 +319,58 @@ function FaqSection() {
 
 function ContactCta() {
   return (
-    <section className="py-12 sm:py-14 lg:py-16">
+    <section className="py-12 sm:py-14 lg:py-16" aria-label="Contact CareSource">
       <Container>
         <ScrollReveal>
-          <div className="relative isolate overflow-hidden rounded-[2rem] bg-brand-dark px-6 py-8 text-center text-brand-background sm:px-12 sm:py-10 lg:px-20 lg:py-12">
+          <div className="relative isolate overflow-hidden rounded-[2rem] bg-brand-dark px-5 py-8 text-brand-background shadow-card sm:px-8 sm:py-10 lg:px-12 lg:py-12">
             <div className="pointer-events-none absolute -right-16 -top-24 -z-10 size-72 rounded-full border-[3rem] border-brand-accent/15" aria-hidden="true" />
-            <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">Start a conversation</p>
-            <h2 className="mx-auto mt-4 max-w-3xl text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight sm:text-5xl lg:text-6xl">Let&apos;s find the right support for your practice.</h2>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-brand-background/70 sm:text-lg">Tell us what your team is looking for. We&apos;ll learn about your workflow and discuss a sensible next step.</p>
-            <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href="/contact" size="lg" showArrow>Book a Free Audit</Button>
-              <Link href={`mailto:${footerContact.email}`} className="rounded-pill px-5 py-3 text-sm font-bold text-brand-background underline decoration-brand-accent/70 underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">Email {footerContact.email}</Link>
+            <div className="relative grid gap-9 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-12">
+              <div className="lg:pt-3">
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">Start a conversation</p>
+                <h2 className="mt-4 text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-background sm:text-5xl">
+                  Let&apos;s find the right support for your practice.
+                </h2>
+                <p className="mt-5 max-w-xl text-base leading-relaxed text-brand-background/75 sm:text-lg">
+                  Tell us what your team is looking for. We&apos;ll learn about your workflow and discuss a sensible next step.
+                </p>
+
+                <div className="mt-8 space-y-4">
+                  <a
+                    href={"tel:" + footerContact.phoneHref}
+                    className="group flex items-center gap-4 rounded-2xl border border-brand-background/15 bg-brand-background/[0.04] p-4 transition-colors hover:border-brand-accent/40 hover:bg-brand-background/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+                  >
+                    <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-background/10 text-brand-accent" aria-hidden="true">
+                      <Phone size={20} />
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block text-sm text-brand-background/60">Call us</span>
+                      <span className="block font-semibold text-brand-background">{footerContact.phoneDisplay}</span>
+                    </span>
+                  </a>
+                  <a
+                    href={"mailto:" + footerContact.email}
+                    className="group flex items-center gap-4 rounded-2xl border border-brand-background/15 bg-brand-background/[0.04] p-4 transition-colors hover:border-brand-accent/40 hover:bg-brand-background/[0.08] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+                  >
+                    <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-background/10 text-brand-accent" aria-hidden="true">
+                      <Mail size={20} />
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block text-sm text-brand-background/60">Email us</span>
+                      <span className="block break-all font-semibold text-brand-background">{footerContact.email}</span>
+                    </span>
+                  </a>
+                </div>
+
+                <p className="mt-7 border-t border-brand-background/15 pt-5 text-sm leading-relaxed text-brand-background/60">
+                  Please don&apos;t include patient names or protected health information in your message.
+                </p>
+              </div>
+
+              <div className="rounded-3xl border border-brand-border bg-brand-background p-5 text-brand-dark shadow-card sm:p-7 lg:p-8">
+                <p className="mb-5 font-display text-2xl font-semibold text-brand-dark sm:text-3xl">Send us a message</p>
+                <ContactForm />
+              </div>
             </div>
-            <p className="mt-7 text-xs text-brand-background/50">Please do not share patient names or protected health information in your initial message.</p>
           </div>
         </ScrollReveal>
       </Container>
