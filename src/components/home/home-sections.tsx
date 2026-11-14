@@ -361,14 +361,11 @@ function ContactCta() {
                   </a>
                 </div>
 
-                <p className="mt-7 border-t border-brand-background/15 pt-5 text-sm leading-relaxed text-brand-background/60">
-                  Please don&apos;t include patient names or protected health information in your message.
-                </p>
               </div>
 
               <div className="rounded-3xl border border-brand-border bg-brand-background p-5 text-brand-dark shadow-card sm:p-7 lg:p-8">
                 <p className="mb-5 font-display text-2xl font-semibold text-brand-dark sm:text-3xl">Send us a message</p>
-                <ContactForm />
+                <ContactForm compact />
               </div>
             </div>
           </div>
