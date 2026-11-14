@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | CareSource",
   },
   description:
-    "Medical billing and practice support for US healthcare providers, including credentialing, AR recovery, denial management, virtual assistant services, and online presence.",
+    "Medical billing and practice support for US healthcare providers, including credentialing, AR recovery, denial management, virtual assistant services, and website development.",
   applicationName: "CareSource",
   openGraph: {
     type: "website",

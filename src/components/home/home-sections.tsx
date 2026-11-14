@@ -55,7 +55,7 @@ const faqs = [
   {
     question: "Which services can I ask about?",
     answer:
-      "CareSource offers medical billing, credentialing, virtual assistant support, AR recovery, denial management, website development, and online presence support. We can discuss one service or a combination that fits your practice.",
+      "CareSource offers medical billing, credentialing, virtual assistant support, AR recovery, denial management, and website development. We can discuss one service or a combination that fits your practice.",
   },
   {
     question: "How is pricing determined?",

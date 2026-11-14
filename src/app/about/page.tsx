@@ -210,9 +210,8 @@ export default function AboutPage() {
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-background/75 sm:text-lg">
                 Practices can choose support across billing, enrollment,
-                administrative coordination, and online presence. A connected
-                relationship can make responsibilities and handoffs easier to
-                discuss.
+                and administrative coordination. A connected relationship can
+                make responsibilities and handoffs easier to discuss.
               </p>
             </div>
           </ScrollReveal>

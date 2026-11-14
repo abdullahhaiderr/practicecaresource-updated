@@ -1,7 +1,6 @@
 import {
   BadgeCheck,
   ClipboardCheck,
-  Globe2,
   Headset,
   Laptop,
   RefreshCw,
@@ -443,76 +442,9 @@ export const serviceCatalog: ServiceContent[] = [
           "We can discuss the tools and requirements involved. Any patient-facing integration needs a separate review of the practice's chosen systems and privacy requirements.",
       },
     ],
-    relatedServices: ["online-presence", "virtual-assistant"],
+    relatedServices: ["virtual-assistant"],
   },
-  {
-    slug: "online-presence",
-    title: "Online Presence",
-    shortTitle: "Online Presence",
-    description:
-      "Practical support for a clear and consistent practice presence online.",
-    icon: Globe2,
-    imageSrc:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=85",
-    imageAlt: "Laptop displaying a website design on a desk",
-    overview:
-      "We help practices review how their public information appears across the web and organize updates to the profiles they use. The work focuses on accurate, practice-approved details and a manageable routine for keeping them current.",
-    whatsIncluded: [
-      "Review of practice-provided public contact and location details",
-      "A list of online profiles and directories your team wants to maintain",
-      "Coordination of approved profile updates",
-      "Organization of practice-approved descriptions and service information",
-      "A simple checklist for recurring information reviews",
-      "Notes on questions or profile access that need practice follow-up",
-    ],
-    howWeWork: [
-      {
-        title: "Choose what to review",
-        description:
-          "We agree on the profiles, directories, and public details that matter to your practice.",
-      },
-      {
-        title: "Check the information",
-        description:
-          "We compare available listings with the current details provided and approved by your team.",
-      },
-      {
-        title: "Coordinate updates",
-        description:
-          "Changes are prepared or coordinated through the account access and approval process you choose.",
-      },
-      {
-        title: "Keep a review routine",
-        description:
-          "We share a practical checklist so your team can revisit important public information over time.",
-      },
-    ],
-    whoItsFor:
-      "Practices that want help organizing their public business information and maintaining the profiles they choose to use.",
-    whyItMatters: [
-      "Consistent details make it easier for visitors to find the right contact information.",
-      "A review checklist gives the practice a repeatable way to spot outdated public details.",
-      "Approved descriptions help keep the practice's services understandable across its channels.",
-    ],
-    faqs: [
-      {
-        question: "Does online presence support guarantee search rankings?",
-        answer:
-          "No search position or volume of inquiries is guaranteed. The work focuses on organizing accurate, practice-approved information.",
-      },
-      {
-        question: "Which profiles can you review?",
-        answer:
-          "We can discuss the listings your practice uses and agree on a manageable scope before any updates are made.",
-      },
-      {
-        question: "Will you respond to patient reviews?",
-        answer:
-          "Review responses should follow your practice's own approval and privacy process. We can discuss administrative coordination, but we do not publish responses without agreed instructions.",
-      },
-    ],
-    relatedServices: ["website-development", "virtual-assistant"],
-  },
+
 ];
 
 export function getServiceBySlug(slug: string) {

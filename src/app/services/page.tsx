@@ -13,7 +13,7 @@ import { ServiceExplorer } from "./service-explorer";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore medical billing, credentialing, virtual assistant, AR recovery, denial management, website development, and online presence support from CareSource.",
+    "Explore medical billing, credentialing, virtual assistant, AR recovery, denial management, and website development support from CareSource.",
 };
 
 export default function ServicesPage() {
@@ -106,7 +106,7 @@ export default function ServicesPage() {
               Why bring it under one roof?
             </h2>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-brand-background/75 sm:text-lg">
-              Billing, enrollment, administrative coordination, and your online presence all affect how a practice works. CareSource can help you plan the right combination and keep the handoffs clear.
+              Billing, enrollment, and administrative coordination all affect how a practice works. CareSource can help you plan the right combination and keep the handoffs clear.
             </p>
             <Link
               href="/contact"

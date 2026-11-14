@@ -19,7 +19,6 @@ export const serviceOptions = [
   "AR Recovery",
   "Denial Management",
   "Website Development",
-  "Online Presence",
 ] as const;
 
 export const contactFormSchema = z.object({
