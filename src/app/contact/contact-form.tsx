@@ -6,7 +6,8 @@ import { AlertCircle, CheckCircle2, LoaderCircle, Send } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/button";
 import {
-  contactFormSchema,
+  contactFormCompactSchema,
+  contactFormWithConsentSchema,
   serviceOptions,
   specialtyOptions,
   type ContactFormValues,
@@ -31,7 +32,7 @@ function FieldError({ id, message }: { id: string; message?: string }) {
   );
 }
 
-export function ContactForm() {
+export function ContactForm({ compact = false }: { compact?: boolean }) {
   const [submitStatus, setSubmitStatus] = useState<SubmitStatus>(null);
   const {
     register,
@@ -40,7 +41,9 @@ export function ContactForm() {
     setError,
     formState: { errors, isSubmitting },
   } = useForm<ContactFormValues>({
-    resolver: zodResolver(contactFormSchema),
+    resolver: compact
+      ? zodResolver(contactFormCompactSchema)
+      : zodResolver(contactFormWithConsentSchema),
     mode: "onBlur",
     defaultValues: {
       fullName: "",
@@ -105,7 +108,11 @@ export function ContactForm() {
   }
 
   return (
-    <form noValidate onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+    <form
+      noValidate
+      onSubmit={handleSubmit(onSubmit)}
+      className={compact ? "space-y-4" : "space-y-6"}
+    >
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label className={labelClass} htmlFor="fullName">
@@ -222,40 +229,57 @@ export function ContactForm() {
 
       <div>
         <label className={labelClass} htmlFor="message">
-          How can we support your practice? <span aria-hidden="true">*</span>
+          {compact ? "Message" : "How can we support your practice?"} <span aria-hidden="true">*</span>
         </label>
-        <textarea
-          id="message"
-          rows={5}
-          maxLength={2000}
-          placeholder="Tell us about your practice goals or the support you are exploring."
-          className={`${fieldClass} min-h-36 resize-y`}
-          aria-invalid={Boolean(errors.message)}
-          aria-describedby={errors.message ? "message-error" : "message-hint"}
-          {...register("message")}
-        />
-        <p id="message-hint" className="mt-2 text-sm leading-relaxed text-brand-slate">
-          Share general business information only. Please leave out patient details.
-        </p>
+        {compact ? (
+          <input
+            id="message"
+            type="text"
+            maxLength={2000}
+            placeholder="Tell us how we can help."
+            className={fieldClass}
+            aria-invalid={Boolean(errors.message)}
+            aria-describedby={errors.message ? "message-error" : undefined}
+            {...register("message")}
+          />
+        ) : (
+          <textarea
+            id="message"
+            rows={5}
+            maxLength={2000}
+            placeholder="Tell us about your practice goals or the support you are exploring."
+            className={`${fieldClass} min-h-36 resize-y`}
+            aria-invalid={Boolean(errors.message)}
+            aria-describedby={errors.message ? "message-error" : "message-hint"}
+            {...register("message")}
+          />
+        )}
+        {!compact ? (
+          <p id="message-hint" className="mt-2 text-sm leading-relaxed text-brand-slate">
+            Share general business information only. Please leave out patient details.
+          </p>
+        ) : null}
         <FieldError id="message-error" message={errors.message?.message} />
       </div>
 
-      <div className="flex items-start gap-3">
-        <input
-          id="consent"
-          type="checkbox"
-          className="mt-1 size-5 shrink-0 rounded border-brand-border accent-brand-accent-ink focus-visible:ring-2 focus-visible:ring-brand-accent-ink"
-          aria-invalid={Boolean(errors.consent)}
-          aria-describedby={errors.consent ? "consent-error" : undefined}
-          {...register("consent")}
-        />
-        <div>
-          <label htmlFor="consent" className="text-sm leading-relaxed text-brand-dark">
-            I agree that CareSource may contact me about this request. <span aria-hidden="true">*</span>
-          </label>
-          <FieldError id="consent-error" message={errors.consent?.message} />
+      {!compact ? (
+        <div className="flex items-start gap-3">
+          <input
+            id="consent"
+            type="checkbox"
+            className="mt-1 size-5 shrink-0 rounded border-brand-border accent-brand-accent-ink focus-visible:ring-2 focus-visible:ring-brand-accent-ink"
+            aria-invalid={Boolean(errors.consent)}
+            aria-describedby={errors.consent ? "consent-error" : undefined}
+            {...register("consent")}
+          />
+          <div>
+            <label htmlFor="consent" className="text-sm leading-relaxed text-brand-dark">
+              I agree that CareSource may contact me about this request. <span aria-hidden="true">*</span>
+            </label>
+            <FieldError id="consent-error" message={errors.consent?.message} />
+          </div>
         </div>
-      </div>
+      ) : null}
 
       <div className="sr-only" aria-hidden="true">
         <label htmlFor="website">Leave this field empty</label>
@@ -291,15 +315,17 @@ export function ContactForm() {
         </div>
       ) : null}
 
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-xs leading-relaxed text-brand-slate">
-          Fields marked * are required. Your message is sent to CareSource by email.
-        </p>
+      <div className={compact ? "" : "flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between"}>
+        {!compact ? (
+          <p className="text-xs leading-relaxed text-brand-slate">
+            Fields marked * are required. Your message is sent to CareSource by email.
+          </p>
+        ) : null}
         <Button
           type="submit"
           size="lg"
           disabled={isSubmitting}
-          className="w-full shrink-0 sm:w-auto"
+          className={compact ? "w-full" : "w-full shrink-0 sm:w-auto"}
         >
           {isSubmitting ? (
             <>
