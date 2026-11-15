@@ -24,8 +24,8 @@
       "reason": "Clients can browse every review in one visual row without a second grid row, while motion remains accessible."
     },
     {
-      "decision": "Use a large right-edge hero image with a primary-blue outer arch and a blue-tinted photo inset, aligned to the shared hero divider across About, Services, Resources, and Contact.",
-      "reason": "The approved client reference uses a wide image area and a blue arch that follows the CareSource primary color."
+      "decision": "Use an inset right-side arch hero image with a very thin dark outline, no outer color backing, and a flat base aligned to the shared hero divider across About, Services, Resources, and Contact.",
+      "reason": "This keeps the client's approved arch profile while removing blue overflow and avoiding image clipping at zoomed-out widths."
     }
   ]
 }
