@@ -10,9 +10,9 @@ export function PageHeroImage({ src, alt }: PageHeroImageProps) {
     <div
       role="img"
       aria-label={alt}
-      className="pointer-events-none relative order-last mx-auto h-56 w-full max-w-sm lg:absolute lg:right-[10%] lg:top-[-3rem] lg:order-none lg:h-[25rem] lg:w-[21%] lg:max-w-64"
+      className="pointer-events-none relative order-last mx-auto h-56 w-full max-w-sm lg:absolute lg:right-[10%] lg:top-[-3rem] lg:order-none lg:h-[28.5rem] lg:w-[21%] lg:max-w-64"
     >
-      <div className="absolute inset-x-8 inset-y-0 overflow-hidden rounded-xl border-4 border-brand-accent-ink bg-brand-background-wash shadow-card lg:inset-x-0 lg:rounded-xl lg:border-[5px]">
+      <div className="absolute inset-x-8 inset-y-0 overflow-hidden rounded-xl lg:inset-x-0 lg:rounded-t-full lg:rounded-b-none">
         <Image
           src={src}
           alt=""

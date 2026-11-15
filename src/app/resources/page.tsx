@@ -33,7 +33,7 @@ const resourceCards = resourceArticles.map((article) => ({
 export default function ResourcesPage() {
   return (
     <main id="main-content">
-      <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-8 sm:py-10 lg:py-12">
+      <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-8 sm:py-10 lg:py-12 lg:pb-2">
 
         <Container className="relative grid items-start gap-10 lg:min-h-[25rem] lg:grid-cols-[1.15fr_0.85fr]">
           <ScrollReveal className="max-w-3xl lg:max-w-none">
