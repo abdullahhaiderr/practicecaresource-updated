@@ -24,8 +24,8 @@
       "reason": "Clients can browse every review in one visual row without a second grid row, while motion remains accessible."
     },
     {
-      "decision": "Use a compact, borderless arch hero image with its flat base aligned to the shared hero divider across About, Services, Resources, and Contact.",
-      "reason": "The centered dome shape follows the client reference while keeping the same width and a consistent baseline on every inside page."
+      "decision": "Use a large right-edge hero image with a primary-blue outer arch and a blue-tinted photo inset, aligned to the shared hero divider across About, Services, Resources, and Contact.",
+      "reason": "The approved client reference uses a wide image area and a blue arch that follows the CareSource primary color."
     }
   ]
 }
