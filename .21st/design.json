@@ -24,8 +24,8 @@
       "reason": "Clients can browse every review in one visual row without a second grid row, while motion remains accessible."
     },
     {
-      "decision": "Use the same fixed hero image frame, text spacing, and marine blue image border across About, Services, Resources, and Contact pages.",
-      "reason": "Visitors get a consistent page opening while each page keeps its own content and image."
+      "decision": "Use a compact portrait rectangle with a marine blue border for the shared hero image frame, aligned just below the site navigation across About, Services, Resources, and Contact.",
+      "reason": "The image stays distinct from the headline while using the same scale and placement on every inside page."
     }
   ]
 }
