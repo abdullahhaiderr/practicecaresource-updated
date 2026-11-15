@@ -20,7 +20,7 @@ export default function ServicesPage() {
   return (
     <main id="main-content">
       <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-8 sm:py-10 lg:py-12">
-        <Container className="relative grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+        <Container className="relative grid items-start gap-10 lg:min-h-[25rem] lg:grid-cols-[1.15fr_0.85fr]">
           <ScrollReveal className="max-w-3xl lg:max-w-none">
             <nav aria-label="Breadcrumb" className="mb-4">
               <ol className="flex items-center gap-2 text-sm font-semibold text-brand-slate">
@@ -36,13 +36,13 @@ export default function ServicesPage() {
             <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">
               Practice support, connected
             </p>
-            <h1 className="text-balance font-display text-5xl font-semibold leading-[0.98] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
+            <h1 className="text-balance font-display text-5xl font-semibold leading-[0.98] tracking-tight text-brand-dark sm:text-6xl lg:min-h-[2em] lg:text-7xl">
               Everything Your Practice Needs, <span className="text-brand-accent-ink">Under One Roof</span>
             </h1>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg lg:min-h-[5.5rem]">
               From billing and enrollment to patient-facing digital support, CareSource helps US practices bring important administrative work into one coordinated conversation.
             </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="mt-6 flex min-h-14 flex-col gap-3 sm:flex-row sm:items-center">
               <Button href="/contact" size="lg" showArrow>
                 Book a Free Audit
               </Button>

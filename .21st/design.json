@@ -22,6 +22,10 @@
     {
       "decision": "Present testimonials as one continuous horizontal row with equal-height cards, pausing on hover or focus and allowing manual scrolling when reduced motion is preferred.",
       "reason": "Clients can browse every review in one visual row without a second grid row, while motion remains accessible."
+    },
+    {
+      "decision": "Use the same fixed hero image frame, text spacing, and marine blue image border across About, Services, Resources, and Contact pages.",
+      "reason": "Visitors get a consistent page opening while each page keeps its own content and image."
     }
   ]
 }
