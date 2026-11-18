@@ -181,7 +181,7 @@ function ProcessSection() {
           {processSteps.map((step, index) => (
             <li key={step.number} className="relative">
               <ScrollReveal delay={index * 0.04}>
-                <article className="h-full rounded-2xl border border-black bg-brand-background-wash/25 p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-black hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
+                <article className="h-full rounded-2xl border border-black bg-[#eaf4ff] p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-black hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
                   <p className="font-display text-4xl font-semibold leading-none text-brand-accent-ink/70">{step.number}</p>
                   <h3 className="mt-6 font-display text-xl font-semibold leading-tight text-brand-dark">{step.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-brand-slate">{step.description}</p>
@@ -215,13 +215,13 @@ function TestimonialCards({ duplicate = false }: { duplicate?: boolean }) {
             <blockquote className="flex-1 overflow-hidden text-sm leading-relaxed text-brand-slate sm:text-base">
               “{quote}”
             </blockquote>
-            <div className="mt-4 flex items-center gap-3 border-t border-brand-border pt-4">
+            <div className="mt-4 flex items-center gap-3 rounded-xl bg-[#eaf4ff] p-3">
               <Image
                 src={imageSrc}
                 alt=""
                 width={52}
                 height={52}
-                className="size-[52px] shrink-0 rounded-full object-cover ring-2 ring-brand-background-wash"
+                className="size-[52px] shrink-0 rounded-full object-cover ring-2 ring-white"
               />
               <div className="min-w-0">
                 <p className="truncate text-sm font-bold text-brand-dark">{name}</p>
