@@ -58,7 +58,7 @@ function createArticleSchema(article: ResourceArticle) {
     image: [article.coverImage],
     publisher: {
       "@type": "Organization",
-      name: "CareSource",
+      name: "Practice Care Source",
     },
     ...(isIsoDate(article.publishedAt) ? { datePublished: article.publishedAt } : {}),
   };
