@@ -121,7 +121,7 @@ export default function AboutPage() {
                 Book a Free Audit
               </Button>
               <Button href="#our-story" variant="ghost" size="lg">
-                Meet the founder
+                Our story
               </Button>
             </div>
           </ScrollReveal>
@@ -156,14 +156,9 @@ export default function AboutPage() {
               description="CareSource brings medical billing and related practice support under one roof for US healthcare providers."
             />
             <p className="mt-6 text-base leading-relaxed text-brand-slate sm:text-lg">
-              Irtiza Hassan is the owner of CareSource. The business supports
-              practices with medical billing, credentialing, administrative
-              coordination, and digital services, with the scope agreed
-              directly with each practice.
-            </p>
-            <p className="mt-5 text-sm font-semibold text-brand-dark">
-              Irtiza Hassan{" "}
-              <span className="font-normal text-brand-slate">· Founder &amp; Owner</span>
+              CareSource supports practices with medical billing, credentialing,
+              administrative coordination, and digital services, with the scope
+              agreed directly with each practice.
             </p>
           </ScrollReveal>
         </Container>
