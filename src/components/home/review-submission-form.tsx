@@ -90,7 +90,7 @@ export function ReviewSubmissionForm() {
 
         <div>
           <label className={labelClass} htmlFor="review-email">
-            Email for follow-up <span aria-hidden="true">*</span>
+            Email address <span aria-hidden="true">*</span>
           </label>
           <input
             id="review-email"
@@ -103,7 +103,7 @@ export function ReviewSubmissionForm() {
             className={fieldClass}
           />
           <p id="review-email-hint" className="mt-2 text-xs leading-relaxed text-brand-slate">
-            This stays private and is only used to follow up with you.
+            We use this address to contact you about your review submission.
           </p>
         </div>
 
