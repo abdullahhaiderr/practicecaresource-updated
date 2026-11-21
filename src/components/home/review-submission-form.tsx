@@ -103,7 +103,7 @@ export function ReviewSubmissionForm() {
             className={fieldClass}
           />
           <p id="review-email-hint" className="mt-2 text-xs leading-relaxed text-brand-slate">
-            This stays private and is only used to follow up with you.
+            We use this email to follow up about your review submission.
           </p>
         </div>
 
