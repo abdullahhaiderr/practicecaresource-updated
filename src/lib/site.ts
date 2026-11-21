@@ -20,8 +20,8 @@ export const services = serviceCatalog;
 
 export const footerContact = {
   email: "info@practicecaresource.com",
-  phoneDisplay: "+92 308 8866774",
-  phoneHref: "+923088866774",
+  phoneDisplay: process.env.NEXT_PUBLIC_CONTACT_PHONE_DISPLAY ?? "",
+  phoneHref: process.env.NEXT_PUBLIC_CONTACT_PHONE ?? "",
   tagline: "The source of care for your practice.",
 };
 
