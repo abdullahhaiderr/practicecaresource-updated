@@ -75,15 +75,17 @@ export function Footer() {
                   <ArrowUpRight size={14} className="mt-0.5 shrink-0" aria-hidden="true" />
                 </a>
               </li>
-              <li>
-                <a
-                  href={"tel:" + footerContact.phoneHref}
-                  className="inline-flex items-center gap-2.5 text-sm text-brand-slate transition-colors hover:text-brand-accent-ink focus-visible:outline-none"
-                >
-                  <Phone size={17} aria-hidden="true" />
-                  <span>{footerContact.phoneDisplay}</span>
-                </a>
-              </li>
+              {footerContact.phoneDisplay && footerContact.phoneHref ? (
+                <li>
+                  <a
+                    href={"tel:" + footerContact.phoneHref}
+                    className="inline-flex items-center gap-2.5 text-sm text-brand-slate transition-colors hover:text-brand-accent-ink focus-visible:outline-none"
+                  >
+                    <Phone size={17} aria-hidden="true" />
+                    <span>{footerContact.phoneDisplay}</span>
+                  </a>
+                </li>
+              ) : null}
             </ul>
             <Link
               href="/contact"
