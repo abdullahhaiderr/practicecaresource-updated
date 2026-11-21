@@ -17,10 +17,15 @@ import { footerContact } from "@/lib/site";
 import { serviceCatalog } from "@/data/services";
 
 export const metadata: Metadata = {
-  title: "Contact CareSource",
+  title: "Contact",
   description:
     "Contact CareSource to discuss medical billing and practice support for your team.",
   alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact CareSource | Medical Billing and Practice Support",
+    description: "Contact CareSource to discuss medical billing and practice support for your team.",
+    type: "website",
+  },
 };
 
 const faqs = [
