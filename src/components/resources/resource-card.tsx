@@ -83,8 +83,12 @@ export function ResourceCard({ article, featured = false }: ResourceCardProps) {
         <div className="flex flex-1 flex-col p-5 sm:p-6">
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-bold text-brand-slate">
             <span className="text-brand-accent-ink">{article.category}</span>
-            <span aria-hidden="true">·</span>
-            <span>{isIsoDate(article.publishedAt) ? new Date(`${article.publishedAt}T00:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : null}</span>
+            {isIsoDate(article.publishedAt) ? (
+              <>
+                <span aria-hidden="true">·</span>
+                <span>{new Date(`${article.publishedAt}T00:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}</span>
+              </>
+            ) : null}
           </div>
           <h3 className="mt-4 font-display text-2xl font-semibold leading-tight text-brand-dark sm:text-3xl">
             {article.title}
