@@ -22,7 +22,6 @@ const config = {
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],
         body: ["var(--font-body)", "sans-serif"],
-        script: ["var(--font-script)", "cursive"],
       },
       fontSize: {
         "display-sm": ["clamp(2.75rem, 5vw, 4.5rem)", { lineHeight: "0.98", letterSpacing: "-0.045em" }],
