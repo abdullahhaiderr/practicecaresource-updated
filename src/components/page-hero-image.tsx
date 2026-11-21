@@ -21,7 +21,6 @@ export function PageHeroImage({ src, alt }: PageHeroImageProps) {
           sizes="(min-width: 1024px) 37vw, (min-width: 640px) 400px, 100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-accent-ink/10 via-brand-accent-ink/20 to-brand-accent-ink/55" />
       </div>
     </div>
   );
