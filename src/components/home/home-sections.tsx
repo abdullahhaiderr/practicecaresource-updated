@@ -68,7 +68,7 @@ const faqs = [
   {
     question: "How long does credentialing take?",
     answer:
-      "Timing varies by payer, application, provider, and the completeness of the information available. We can help organize follow-up, but payer review times and outcomes are outside our control.",
+      "Timing varies by payer, application, provider, and the completeness of the information available. We can help organize follow up, but payer review times and outcomes are outside our control.",
   },
   {
     question: "How will our teams share updates?",
