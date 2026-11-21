@@ -231,7 +231,7 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
           <FieldError id="monthlyClaimVolume-error" message={errors.monthlyClaimVolume?.message} />
         </div>
 
-        <div>
+        <div className="sm:col-span-2">
           <label className={labelClass} htmlFor="serviceInterestedIn">
             Service of interest <span aria-hidden="true">*</span>
           </label>
