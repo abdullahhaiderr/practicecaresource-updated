@@ -50,7 +50,7 @@ export const serviceCatalog: ServiceContent[] = [
       "We help keep the billing work moving from charge review through claim follow up and payment posting. Work is organized around the practice's documented workflows, billing system, and review preferences.",
     whatsIncluded: [
       "Review of charge and encounter details provided by the practice",
-      "Coding and billing checks against practice-approved information",
+      "Coding and billing checks against approved by the practice information",
       "Claim preparation and submission through the agreed workflow",
       "Monitoring of claim acknowledgements and returned items",
       "Posting of payer and patient payments from remittance details",
@@ -119,9 +119,9 @@ export const serviceCatalog: ServiceContent[] = [
     whatsIncluded: [
       "A checklist of provider and practice information needed for applications",
       "Organization of credentialing documents supplied by the practice",
-      "Application preparation using provider-approved details",
+      "Application preparation using approved by the provider details",
       "Submission coordination through the process agreed with your team",
-      "Follow-up notes and requests for additional information",
+      "Follow up notes and requests for additional information",
       "A simple view of application status and upcoming renewal dates",
     ],
     howWeWork: [
@@ -183,7 +183,7 @@ export const serviceCatalog: ServiceContent[] = [
       "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Team member coordinating work in a professional office",
     overview:
-      "A virtual assistant can take on agreed administrative tasks so your in-office team has a clearer routine for daily coordination. Responsibilities and escalation points are set with your practice before the work begins.",
+      "A virtual assistant can take on agreed administrative tasks so your at the practice team has a clearer routine for daily coordination. Responsibilities and escalation points are set with your practice before the work begins.",
     whatsIncluded: [
       "Appointment scheduling and calendar updates",
       "Routine call handling and message routing using practice instructions",
@@ -215,9 +215,9 @@ export const serviceCatalog: ServiceContent[] = [
       },
     ],
     whoItsFor:
-      "Practices that want additional help with non-clinical administrative work such as scheduling, routine calls, and eligibility checks.",
+      "Practices that want additional help with administrative administrative work such as scheduling, routine calls, and eligibility checks.",
     whyItMatters: [
-      "Clearly assigned administrative tasks can reduce avoidable handoffs for the in-office team.",
+      "Clearly assigned administrative tasks can reduce avoidable handoffs for the at the practice team.",
       "Written instructions help routine work follow the process your practice has chosen.",
       "Defined escalation paths keep decisions with the appropriate member of your team.",
     ],
@@ -253,9 +253,9 @@ export const serviceCatalog: ServiceContent[] = [
     overview:
       "We help practices organize outstanding account work, review available claim history, and document follow up. The goal is a clear queue of next steps, questions, and items that need the practice's input.",
     whatsIncluded: [
-      "Review and grouping of outstanding claims by practice-defined priority",
+      "Review and grouping of outstanding claims by set by the practice priority",
       "Claim status checks through the tools available to your team",
-      "Follow-up on payer requests and unresolved claim questions",
+      "Follow up on payer requests and unresolved claim questions",
       "Identification of missing information that may need practice review",
       "Notes on contact attempts and responses received",
       "A summary of open items and recommended next actions for review",
@@ -324,7 +324,7 @@ export const serviceCatalog: ServiceContent[] = [
       "Logging of denial details and claim references",
       "Grouping of denial reasons for easier review",
       "Checks for supporting information identified in your workflow",
-      "Preparation of appeal materials from practice-approved content",
+      "Preparation of appeal materials from approved by the practice content",
       "Tracking of follow up dates and responses",
       "Notes on patterns or questions to discuss with the billing team",
     ],
@@ -392,7 +392,7 @@ export const serviceCatalog: ServiceContent[] = [
       "A discovery conversation about your practice and website goals",
       "Page structure for services, providers, location, and contact details",
       "Responsive page layouts for phone, tablet, and desktop screens",
-      "Content organization using practice-approved information",
+      "Content organization using approved by the practice information",
       "Contact and navigation patterns that are clear and easy to use",
       "A handoff review for updates and future maintenance needs",
     ],
