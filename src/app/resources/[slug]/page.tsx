@@ -188,9 +188,8 @@ export default async function ResourceArticlePage({ params }: ArticlePageProps) 
               <h1 className="mt-3 text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-dark sm:text-5xl lg:text-6xl">{article.title}</h1>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">{article.description}</p>
               <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm font-semibold text-brand-slate">
-                <span className="inline-flex items-center gap-2"><CalendarDays size={16} aria-hidden="true" />{isIsoDate(article.publishedAt) ? article.publishedAt : null}</span>
+                {isIsoDate(article.publishedAt) ? <span className="inline-flex items-center gap-2"><CalendarDays size={16} aria-hidden="true" />{article.publishedAt}</span> : null}
                 <span className="inline-flex items-center gap-2"><Clock3 size={16} aria-hidden="true" />{getReadingMinutes(article)} min read</span>
-                <span>By Irtiza Hassan</span>
               </div>
             </ScrollReveal>
             <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-brand-border bg-brand-background-wash shadow-card">
