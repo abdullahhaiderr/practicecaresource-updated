@@ -2,20 +2,24 @@
 
 ## Brand
 
-CareSource provides medical billing and practice support for US healthcare providers. The voice should feel dependable, clear, and human. Avoid unsupported performance claims, testimonials, certifications, or privacy claims.
+CareSource provides medical billing and practice support for US healthcare providers. The voice should feel dependable, clear, and human. Avoid unsupported performance claims, testimonials, certifications, and privacy claims.
 
 ## Palette
 
-Use the four authoritative colors: orange #FF771C, warm cream #F5EDE0, dark #161311, and slate #546877. Shared code maps derived shades in the Tailwind token system. Do not introduce unrelated hues. Orange surfaces use dark text.
+Use the four authoritative colors: orange #FF771C, warm cream #F5EDE0, dark #161311, and slate #546877. Use dark ink for text on orange surfaces. Keep the background light and use dark ink for small, intentional accents rather than large dark panels.
 
 ## Type
 
-Use Barlow Condensed for expressive display headings, Manrope for body copy and controls, and Caveat only for the later handwritten hero line. Body copy must remain at least 16 px.
+Use Inter for display headings and Manrope for body copy and controls. Keep body copy at least 16 px.
 
 ## Layout and motion
 
-Use generous spacing, rounded 2xl cards, fine palette-derived borders, and restrained shadows. Keep motion short and purposeful, preserve keyboard focus, and respect reduced-motion preferences.
+Use generous spacing, clear alignment, fine palette derived borders, and restrained shadows. Prefer real professional photography over simulated dashboards, floating interface panels, or decorative orbs. Do not use gradients or glass style panels. Keep motion subtle, provide visible keyboard focus, and respect reduced motion preferences. Do not use continuous decorative animation.
 
-## Sprint scope
+## Content
 
-Part A is the shared foundation. Part B will build the Home hero. Part C will add the remaining Home sections. Services, About, Resources, and Contact are placeholders only.
+Publish only verified business details and client approved feedback. Do not invent founder details, client names, testimonials, certifications, numerical claims, or privacy assurances.
+
+## Site structure
+
+The site includes Home, Services, individual service pages, About, Resources, individual articles, and Contact. Preserve the existing routes and working form flows while improving the design and content.
