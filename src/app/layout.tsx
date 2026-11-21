@@ -44,6 +44,7 @@ export const metadata: Metadata = {
     title: "CareSource | Medical Billing and Practice Support",
     description:
       "Medical billing and practice support for US healthcare providers.",
+    images: ["/opengraph-image"],
   },
 };
 
