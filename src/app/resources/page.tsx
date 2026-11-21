@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowDown, ArrowRight, BookOpenText } from "lucide-react";
+import { ArrowDown, BookOpenText } from "lucide-react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { ResourcesExplorer } from "@/components/resources/resources-explorer";
@@ -130,7 +130,6 @@ export default function ResourcesPage() {
               </div>
               <Button href="/contact" size="lg" showArrow className="shrink-0">
                 Contact our team
-                <ArrowRight size={17} aria-hidden="true" />
               </Button>
             </div>
           </ScrollReveal>
