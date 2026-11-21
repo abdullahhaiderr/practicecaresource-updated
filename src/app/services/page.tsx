@@ -100,7 +100,7 @@ export default function ServicesPage() {
       <section className="bg-brand-background-wash py-10 text-brand-dark sm:py-12 lg:py-16">
         <Container className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:gap-16">
           <ScrollReveal>
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">
               One connected team
             </p>
             <h2 className="text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-dark sm:text-5xl lg:text-6xl">
