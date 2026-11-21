@@ -49,6 +49,8 @@ Add the required values to `.env.local` before testing form delivery.
 - `CONTACT_TO_EMAIL` verified business inbox that receives contact and review submissions.
 - `CONTACT_FROM_EMAIL` verified Resend sender address.
 - `NEXT_PUBLIC_SITE_URL` optional canonical production URL. Set this to the verified production domain in Vercel. When unset, the app uses Vercel's production URL when available, then the current Vercel project domain as a fallback.
+- `NEXT_PUBLIC_CONTACT_PHONE` optional phone number for `tel:` links. Leave blank until verified.
+- `NEXT_PUBLIC_CONTACT_PHONE_DISPLAY` optional formatted phone number shown on the site. Leave blank until verified.
 
 Never commit real API keys or secrets.
 
