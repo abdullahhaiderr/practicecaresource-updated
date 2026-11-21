@@ -11,7 +11,6 @@ import {
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { HeroVisual } from "@/components/home/hero-visual";
-import { serviceCatalog } from "@/data/services";
 
 const features = [
   { label: "Medical Billing & Coding", icon: ClipboardCheck },
@@ -104,7 +103,7 @@ export function HomeHero({ heroImage }: HomeHeroProps) {
 
         </div>
 
-        <HeroVisual heroImage={heroImage ?? serviceCatalog[0].imageSrc} />
+        <HeroVisual heroImage={heroImage} />
       </Container>
     </section>
   );
