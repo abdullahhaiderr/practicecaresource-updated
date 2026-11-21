@@ -28,11 +28,7 @@ export function HomeHero({ heroImage }: HomeHeroProps) {
   const reducedMotion = useReducedMotion();
 
   return (
-    <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background">
-      <div
-        className="pointer-events-none absolute -left-28 top-1/2 hidden size-72 -translate-y-1/2 rounded-full border-[3rem] border-brand-accent/10 lg:block"
-        aria-hidden="true"
-      />
+    <section className="border-b border-brand-border/70 bg-brand-background">
       <Container className="relative grid items-center gap-6 py-5 sm:py-7 lg:min-h-[calc(100svh-4.75rem)] lg:grid-cols-[1.04fr_0.96fr] lg:gap-5 lg:py-4 xl:gap-8">
         <div className="relative z-10 max-w-2xl">
 
