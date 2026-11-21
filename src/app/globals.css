@@ -4,6 +4,8 @@
 
 :root {
   color-scheme: light;
+  --font-display: "Inter";
+  --font-body: "Manrope";
   --cs-accent: 255 119 28;
   --cs-accent-hover: 226 91 17;
   --cs-accent-ink: 22 19 17;
