@@ -181,6 +181,7 @@ export async function POST(request: NextRequest) {
       `Phone: ${parsed.data.phone}`,
       ...("specialty" in parsed.data ? [`Specialty: ${parsed.data.specialty}`] : []),
       ...("serviceInterestedIn" in parsed.data ? [`Service of interest: ${parsed.data.serviceInterestedIn}`] : []),
+      ...("monthlyClaimVolume" in parsed.data && parsed.data.monthlyClaimVolume ? [`Monthly claim volume: ${parsed.data.monthlyClaimVolume}`] : []),
       ...("consent" in parsed.data && parsed.data.consent ? ["Contact permission: Yes"] : []),
       "",
       "Message:",
