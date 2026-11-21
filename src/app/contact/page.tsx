@@ -57,7 +57,7 @@ export default function ContactPage() {
                 <li>
                   <Link
                     href="/"
-                    className="rounded-sm transition-colors hover:text-brand-accent-ink-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink"
+                    className="rounded-sm transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink"
                   >
                     Home
                   </Link>
