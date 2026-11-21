@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
+import { getSiteUrl } from "@/lib/seo";
 import "./globals.css";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
@@ -11,6 +12,11 @@ const fontVariables = {
 } as CSSProperties;
 
 export const metadata: Metadata = {
+  metadataBase: getSiteUrl(),
+  robots: {
+    index: process.env.VERCEL_ENV === "production",
+    follow: process.env.VERCEL_ENV === "production",
+  },
   title: {
     default: "CareSource | The source of care for your practice",
     template: "%s | CareSource",
