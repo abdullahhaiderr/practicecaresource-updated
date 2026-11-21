@@ -6,30 +6,30 @@
     "dark": "#161311",
     "slate": "#546877"
   },
+  "typography": {
+    "display": "Inter",
+    "body": "Manrope"
+  },
   "decisions": [
     {
-      "decision": "Keep the warm cream and dark ink as the core canvas, using orange for action and emphasis.",
-      "reason": "This preserves the supplied palette while making primary actions distinct."
+      "decision": "Keep warm cream and dark ink as the core canvas, using orange for primary actions and emphasis.",
+      "reason": "This preserves the supplied brand palette and maintains readable contrast."
     },
     {
-      "decision": "Use a condensed display face, a neutral body face, and a handwritten script face.",
-      "reason": "The combination adds healthcare editorial character without leaning on generic technology styling."
+      "decision": "Use professional healthcare photography and straightforward editorial layouts.",
+      "reason": "Real photography and clear hierarchy feel more credible than simulated dashboards and decorative interface panels."
     },
     {
-      "decision": "Use motion for hierarchy and feedback, with reduced-motion behavior built into shared primitives.",
-      "reason": "The interface can feel responsive while remaining comfortable and accessible."
+      "decision": "Avoid gradients, large dark panels, glass effects, floating cards, and continuous decorative animation.",
+      "reason": "A restrained visual system keeps attention on the service information and contact paths."
     },
     {
-      "decision": "Present testimonials as one continuous horizontal row with equal-height cards, pausing on hover or focus and allowing manual scrolling when reduced motion is preferred.",
-      "reason": "Clients can browse every review in one visual row without a second grid row, while motion remains accessible."
+      "decision": "Display client feedback only after the client has approved the final wording.",
+      "reason": "The site must not present unverified or fabricated testimonials as genuine."
     },
     {
-      "decision": "Use an inset right-side arch hero image with a very thin dark outline, no outer color backing, and a flat base aligned to the shared hero divider across About, Services, Resources, and Contact.",
-      "reason": "This keeps the client's approved arch profile while removing blue overflow and avoiding image clipping at zoomed-out widths."
-    },
-    {
-      "decision": "Use powder blue #eaf4ff inside the home process cards and behind testimonial author details, while keeping the testimonial quote panels white.",
-      "reason": "The light blue fill gives the steps and client names/photos a subtle branded highlight without tinting the review text area."
+      "decision": "Use page specific metadata, canonical URLs, sitemap, robots rules, and structured data.",
+      "reason": "Search engines and answer engines need clear, consistent information about the site and its pages."
     }
   ]
 }
