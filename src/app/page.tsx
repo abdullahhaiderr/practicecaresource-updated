@@ -6,10 +6,15 @@ import { serviceCatalog } from "@/data/services";
 
 
 export const metadata: Metadata = {
-  title: "CareSource | Medical Billing and Practice Support",
+  title: "Medical Billing and Practice Support",
   description:
     "Medical billing, credentialing, AR recovery, and practice support for US healthcare providers, all under one roof.",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "Medical Billing and Practice Support | CareSource",
+    description: "Medical billing, credentialing, AR recovery, and practice support for US healthcare providers.",
+    type: "website",
+  },
 };
 
 export default function HomePage() {
