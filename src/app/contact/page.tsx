@@ -90,7 +90,7 @@ export default function ContactPage() {
               </a>
             </div>
           </ScrollReveal>
-          <PageHeroImage src={serviceCatalog[2].imageSrc} alt="A team member coordinating work in a professional office" />
+          <PageHeroImage src={serviceCatalog[2].imageSrc} alt="A team member coordinating work in a professional office" variant="contact" />
         </Container>
       </section>
 
