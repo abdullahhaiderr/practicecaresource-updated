@@ -263,7 +263,7 @@ export default async function ResourceArticlePage({ params }: ArticlePageProps) 
           <ScrollReveal>
             <div className="relative isolate overflow-hidden rounded-3xl border border-brand-border bg-brand-background-wash px-6 py-10 text-brand-dark sm:px-10 sm:py-14 lg:px-16">
               <div className="pointer-events-none absolute -right-12 -top-20 -z-10 size-64 rounded-full border-[2.5rem] border-brand-accent/15" aria-hidden="true" />
-              <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">The source of care for your practice</p>
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">The source of care for your practice</p>
               <h2 className="mt-3 max-w-3xl text-balance font-display text-4xl font-semibold leading-[1.02] text-brand-dark sm:text-5xl">Want to talk through your practice workflow?</h2>
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">Share the general kind of support you are looking for and we can discuss a practical next step.</p>
               <Button href="/contact" size="lg" showArrow className="mt-7">Book a Free Audit</Button>
