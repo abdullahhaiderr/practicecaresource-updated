@@ -34,6 +34,7 @@ The project is a Next.js application. It does not currently use Supabase or anot
 - Added a shared canonical site URL helper, page canonical metadata, sitemap, robots rules, Organization and WebSite structured data, Service structured data, an Open Graph image, and a site icon.
 - Prevented non production deployments from being indexed.
 - Added a TypeScript check script and updated the design documentation.
+- Overrode the vulnerable nested PostCSS version used by Next.js with patched 8.5.32. The latest dependency install and audit report zero vulnerabilities.
 
 ## Remaining release checks
 
