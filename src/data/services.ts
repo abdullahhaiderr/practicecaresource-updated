@@ -41,20 +41,20 @@ export const serviceCatalog: ServiceContent[] = [
     title: "Medical Billing",
     shortTitle: "Medical Billing",
     description:
-      "Support for claim submission, payment posting, and day-to-day billing workflows.",
+      "Support for claim submission, payment posting, and daily billing workflows.",
     icon: ClipboardCheck,
     imageSrc:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Healthcare professional reviewing information at a clinic",
     overview:
-      "We help keep the billing work moving from charge review through claim follow-up and payment posting. Work is organized around the practice's documented workflows, billing system, and review preferences.",
+      "We help keep the billing work moving from charge review through claim follow up and payment posting. Work is organized around the practice's documented workflows, billing system, and review preferences.",
     whatsIncluded: [
       "Review of charge and encounter details provided by the practice",
       "Coding and billing checks against practice-approved information",
       "Claim preparation and submission through the agreed workflow",
       "Monitoring of claim acknowledgements and returned items",
       "Posting of payer and patient payments from remittance details",
-      "Clear notes on open items that need practice input or follow-up",
+      "Clear notes on open items that need practice input or follow up",
     ],
     howWeWork: [
       {
@@ -73,13 +73,13 @@ export const serviceCatalog: ServiceContent[] = [
           "Claims and payments are handled through the process agreed with your practice.",
       },
       {
-        title: "Share follow-up items",
+        title: "Share follow up items",
         description:
           "We keep notes on returned claims, open balances, and questions that need a decision.",
       },
     ],
     whoItsFor:
-      "Independent providers, clinics, and practice teams that want structured help with recurring billing tasks and claim follow-up.",
+      "Independent providers, clinics, and practice teams that want structured help with recurring billing tasks and claim follow up.",
     whyItMatters: [
       "A consistent process makes it easier to see where a claim stands.",
       "Timely notes can help your team address missing information before it gets overlooked.",
@@ -109,13 +109,13 @@ export const serviceCatalog: ServiceContent[] = [
     title: "Credentialing & Enrollment",
     shortTitle: "Credentialing",
     description:
-      "Application and follow-up support for provider enrollment with health plans.",
+      "Application and follow up support for provider enrollment with health plans.",
     icon: BadgeCheck,
     imageSrc:
       "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Clinician working at a desk in a healthcare office",
     overview:
-      "We help organize provider information, prepare enrollment materials, and track application follow-up. Your practice remains involved in reviewing and approving information submitted on its behalf.",
+      "We help organize provider information, prepare enrollment materials, and track application follow up. Your practice remains involved in reviewing and approving information submitted on its behalf.",
     whatsIncluded: [
       "A checklist of provider and practice information needed for applications",
       "Organization of credentialing documents supplied by the practice",
@@ -141,7 +141,7 @@ export const serviceCatalog: ServiceContent[] = [
           "Applications are prepared for practice review and handled through your approved submission process.",
       },
       {
-        title: "Track follow-up",
+        title: "Track follow up",
         description:
           "We record status updates and route requests for missing information to the right person.",
       },
@@ -183,11 +183,11 @@ export const serviceCatalog: ServiceContent[] = [
       "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Team member coordinating work in a professional office",
     overview:
-      "A virtual assistant can take on agreed administrative tasks so your in-office team has a clearer routine for day-to-day coordination. Responsibilities and escalation points are set with your practice before the work begins.",
+      "A virtual assistant can take on agreed administrative tasks so your in-office team has a clearer routine for daily coordination. Responsibilities and escalation points are set with your practice before the work begins.",
     whatsIncluded: [
       "Appointment scheduling and calendar updates",
       "Routine call handling and message routing using practice instructions",
-      "Appointment reminders and administrative follow-up",
+      "Appointment reminders and administrative follow up",
       "Eligibility verification using the practice's approved workflow",
       "Organization of routine requests and task lists",
       "Escalation of questions that need a clinical or practice decision",
@@ -245,13 +245,13 @@ export const serviceCatalog: ServiceContent[] = [
     title: "AR Recovery",
     shortTitle: "AR Recovery",
     description:
-      "Structured follow-up on outstanding claims and aged accounts receivable.",
+      "Structured follow up on outstanding claims and aged accounts receivable.",
     icon: RefreshCw,
     imageSrc:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Office team reviewing documents and account information",
     overview:
-      "We help practices organize outstanding account work, review available claim history, and document follow-up. The goal is a clear queue of next steps, questions, and items that need the practice's input.",
+      "We help practices organize outstanding account work, review available claim history, and document follow up. The goal is a clear queue of next steps, questions, and items that need the practice's input.",
     whatsIncluded: [
       "Review and grouping of outstanding claims by practice-defined priority",
       "Claim status checks through the tools available to your team",
@@ -283,10 +283,10 @@ export const serviceCatalog: ServiceContent[] = [
       },
     ],
     whoItsFor:
-      "Practice managers and billing teams with outstanding claim work that needs organized review and follow-up.",
+      "Practice managers and billing teams with outstanding claim work that needs organized review and follow up.",
     whyItMatters: [
       "A prioritized queue gives the team a shared view of what needs attention.",
-      "Documented follow-up helps preserve context when an account changes hands.",
+      "Documented follow up helps preserve context when an account changes hands.",
       "Clear escalation notes help the practice focus on items that need its decision.",
     ],
     faqs: [
@@ -303,7 +303,7 @@ export const serviceCatalog: ServiceContent[] = [
       {
         question: "Can AR work be coordinated with billing support?",
         answer:
-          "Yes. The two services can share agreed documentation and escalation steps to make follow-up easier to track.",
+          "Yes. The two services can share agreed documentation and escalation steps to make follow up easier to track.",
       },
     ],
     relatedServices: ["medical-billing", "denial-management"],
@@ -325,7 +325,7 @@ export const serviceCatalog: ServiceContent[] = [
       "Grouping of denial reasons for easier review",
       "Checks for supporting information identified in your workflow",
       "Preparation of appeal materials from practice-approved content",
-      "Tracking of follow-up dates and responses",
+      "Tracking of follow up dates and responses",
       "Notes on patterns or questions to discuss with the billing team",
     ],
     howWeWork: [
@@ -347,11 +347,11 @@ export const serviceCatalog: ServiceContent[] = [
       {
         title: "Track the response",
         description:
-          "We document the follow-up status and share recurring questions with the appropriate team member.",
+          "We document the follow up status and share recurring questions with the appropriate team member.",
       },
     ],
     whoItsFor:
-      "Billing teams and practice managers who want a consistent way to review denials, coordinate appeals, and record follow-up.",
+      "Billing teams and practice managers who want a consistent way to review denials, coordinate appeals, and record follow up.",
     whyItMatters: [
       "Consistent categories can make recurring issues easier for a team to discuss.",
       "A documented appeal workflow helps keep supporting information and next actions together.",
@@ -439,7 +439,7 @@ export const serviceCatalog: ServiceContent[] = [
       {
         question: "Can you add online booking or patient forms?",
         answer:
-          "We can discuss the tools and requirements involved. Any patient-facing integration needs a separate review of the practice's chosen systems and privacy requirements.",
+          "We can discuss the tools and requirements involved. Any patient facing integration needs a separate review of the practice's chosen systems and privacy requirements.",
       },
     ],
     relatedServices: ["virtual-assistant"],
