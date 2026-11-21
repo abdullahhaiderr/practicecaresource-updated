@@ -15,6 +15,11 @@ export const metadata: Metadata = {
   description:
     "Explore medical billing, credentialing, virtual assistant, AR recovery, denial management, and website development support from CareSource.",
   alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Medical Billing and Practice Support Services | CareSource",
+    description: "Explore medical billing, credentialing, virtual assistant, AR recovery, denial management, and website development support.",
+    type: "website",
+  },
 };
 
 export default function ServicesPage() {
