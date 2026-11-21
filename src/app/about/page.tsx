@@ -125,7 +125,7 @@ export default function AboutPage() {
               </Button>
             </div>
           </ScrollReveal>
-          <PageHeroImage src={serviceCatalog[0].imageSrc} alt="Healthcare professional reviewing information at a clinic" />
+          <PageHeroImage src={serviceCatalog[0].imageSrc} alt="Healthcare professional reviewing information at a clinic" variant="about" />
         </Container>
       </section>
 
