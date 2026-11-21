@@ -17,10 +17,15 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
 
 export const metadata: Metadata = {
-  title: "About CareSource",
+  title: "About",
   description:
     "Learn how CareSource brings medical billing and practice support together for US healthcare providers.",
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About CareSource | Medical Billing and Practice Support",
+    description: "Learn about CareSource and its approach to medical billing and practice support.",
+    type: "website",
+  },
 };
 
 const values = [
