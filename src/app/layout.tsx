@@ -1,35 +1,29 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, Caveat, Manrope } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 
-const displayFont = Barlow_Condensed({
+const displayFont = Inter({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
 const bodyFont = Manrope({
   subsets: ["latin"],
   variable: "--font-body",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const scriptFont = Caveat({
-  subsets: ["latin"],
-  variable: "--font-script",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "CareSource | The source of care for your practice",
+    default: "CareSource | Medical Billing and Practice Support",
     template: "%s | CareSource",
   },
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "https://practicecaresource-updated.vercel.app")),
   description:
     "Medical billing and practice support for US healthcare providers, including credentialing, AR recovery, denial management, virtual assistant services, and website development.",
   applicationName: "CareSource",
@@ -56,7 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={[displayFont.variable, bodyFont.variable, scriptFont.variable].join(" ")}>
+      <body className={[displayFont.variable, bodyFont.variable].join(" ")}>
         <a
           href="#main-content"
           className="sr-only z-[100] rounded-md bg-brand-background px-4 py-3 text-brand-dark focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
