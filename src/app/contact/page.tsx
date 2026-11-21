@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
-  Clock3,
   Mail,
   Phone,
 } from "lucide-react";
@@ -141,15 +140,6 @@ export default function ContactPage() {
               <ArrowRight size={17} className="mt-1 ml-auto shrink-0 text-brand-accent-ink transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </a>
 
-            <div className="flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card">
-              <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
-                <Clock3 size={20} aria-hidden="true" />
-              </span>
-              <span>
-                <span className="block text-sm font-bold text-brand-dark">Hours</span>
-                <span className="mt-1 block text-sm leading-relaxed text-brand-slate">Monday to Friday, 8:00 AM to 7:00 PM PT</span>
-              </span>
-            </div>
           </ScrollReveal>
 
           <ScrollReveal delay={0.06}>
