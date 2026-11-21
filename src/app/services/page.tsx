@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Explore medical billing, credentialing, virtual assistant, AR recovery, denial management, and website development support from CareSource.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {
