@@ -21,10 +21,10 @@ export function ServiceCard({
   href = "/services",
 }: ServiceCardProps) {
   return (
-    <article className="group relative overflow-hidden rounded-2xl border border-brand-border bg-brand-background shadow-card transition-[transform,box-shadow,border-color] duration-300 ease-brand-out hover:-translate-y-1.5 hover:border-brand-accent/50 hover:shadow-card-hover active:scale-[0.995] motion-reduce:transition-none">
+    <article className="group relative h-full overflow-hidden rounded-2xl border border-brand-border bg-brand-background shadow-card transition-[transform,box-shadow,border-color] duration-300 ease-brand-out hover:-translate-y-1.5 hover:border-brand-accent/50 hover:shadow-card-hover active:scale-[0.995] motion-reduce:transition-none">
       <Link
         href={href}
-        className="block rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-accent-ink"
+        className="flex h-full flex-col rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-accent-ink"
         aria-label={"Learn more about " + title}
       >
         <div className="relative aspect-[16/10] overflow-hidden bg-brand-background-wash">
@@ -43,7 +43,7 @@ export function ServiceCard({
             <Icon size={20} strokeWidth={1.8} />
           </span>
         </div>
-        <div className="px-6 pb-6 pt-9 sm:px-7 sm:pb-7">
+        <div className="flex flex-1 flex-col px-6 pb-6 pt-9 sm:px-7 sm:pb-7">
           <h3 className="font-display text-2xl font-semibold leading-tight text-brand-dark sm:text-3xl">
             {title}
           </h3>
