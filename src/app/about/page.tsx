@@ -143,7 +143,7 @@ export default function AboutPage() {
                 <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand-accent-ink">Practice support</p>
                 <h2 className="mt-3 font-display text-3xl font-semibold leading-tight">Services shaped around your workflow</h2>
                 <ul className="mt-6 space-y-3 text-sm font-semibold text-brand-slate">
-                  {["Medical billing", "Credentialing & enrollment", "AR and denial follow-up", "Administrative and digital support"].map((service) => (
+                  {["Medical billing", "Credentialing & enrollment", "AR and denial follow up", "Administrative and digital support"].map((service) => (
                     <li key={service} className="flex items-center gap-3">
                       <Check size={17} className="shrink-0 text-brand-accent-ink" aria-hidden="true" />
                       {service}
