@@ -36,6 +36,18 @@ The project is a Next.js application. It does not currently use Supabase or anot
 - Added a TypeScript check script and updated the design documentation.
 - Overrode the vulnerable nested PostCSS version used by Next.js with patched 8.5.32. The latest dependency install and audit report zero vulnerabilities.
 
+## Verification status
+
+The latest GitHub Actions run completed successfully:
+
+- `npm ci` passed.
+- `npm audit --audit-level=moderate` passed with zero vulnerabilities.
+- `npm run typecheck` passed.
+- `npm run build` passed.
+- The Vercel preview deployment is Ready.
+
+ESLint is not installed or configured in this repository, so the existing `npm run lint` script is not yet a verified quality gate. There is also no dedicated automated test suite. Manual browser, form, and accessibility testing remains necessary.
+
 ## Remaining release checks
 
 ### Business approval
@@ -57,9 +69,9 @@ The project is a Next.js application. It does not currently use Supabase or anot
 
 ### Build and deployment verification
 
-- Run `npm ci`, `npm run typecheck`, `npm run lint`, and `npm run build` against this branch.
+- Configure ESLint and verify `npm run lint` before treating lint as a release gate.
 - The lint script still needs a verified ESLint installation and configuration.
-- Check the Vercel preview build and inspect its logs before merging.
+- Inspect the Ready Vercel preview manually on desktop and mobile before merging. Automated access to the protected preview is not available in this audit session.
 - Confirm that `NEXT_PUBLIC_SITE_URL` resolves to the approved production domain.
 - Confirm production indexing, canonical tags, `/robots.txt`, and `/sitemap.xml` after deployment.
 - Run mobile and desktop checks, keyboard navigation, reduced motion checks, and a production Lighthouse review.
