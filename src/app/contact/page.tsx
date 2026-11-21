@@ -199,7 +199,7 @@ export default function ContactPage() {
           <ScrollReveal>
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-3xl">
-                <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">
+                <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">
                   CareSource
                 </p>
                 <h2 className="text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-dark sm:text-5xl lg:text-6xl">
