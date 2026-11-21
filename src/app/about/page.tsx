@@ -135,12 +135,12 @@ export default function AboutPage() {
           <ScrollReveal className="mx-auto w-full max-w-sm lg:max-w-none">
             <div className="relative overflow-hidden rounded-3xl border border-brand-border bg-brand-background-wash p-6 text-brand-dark shadow-card sm:p-8">
               <div className="relative">
-                <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand-accent">Practice support</p>
+                <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand-accent-ink">Practice support</p>
                 <h2 className="mt-3 font-display text-3xl font-semibold leading-tight">Services shaped around your workflow</h2>
                 <ul className="mt-6 space-y-3 text-sm font-semibold text-brand-slate">
                   {["Medical billing", "Credentialing & enrollment", "AR and denial follow-up", "Administrative and digital support"].map((service) => (
                     <li key={service} className="flex items-center gap-3">
-                      <Check size={17} className="shrink-0 text-brand-accent" aria-hidden="true" />
+                      <Check size={17} className="shrink-0 text-brand-accent-ink" aria-hidden="true" />
                       {service}
                     </li>
                   ))}
@@ -198,7 +198,7 @@ export default function AboutPage() {
         <Container>
           <ScrollReveal>
             <div className="max-w-3xl">
-              <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">
+              <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">
                 Connected practice support
               </p>
               <h2 className="text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-dark sm:text-5xl lg:text-6xl">
@@ -226,7 +226,7 @@ export default function AboutPage() {
                 <ul className="mt-6 space-y-4">
                   {vendorChallenges.map((item) => (
                     <li key={item} className="flex items-start gap-3 text-base leading-relaxed text-brand-slate">
-                      <ArrowRight size={18} className="mt-1 shrink-0 text-brand-accent" aria-hidden="true" />
+                      <ArrowRight size={18} className="mt-1 shrink-0 text-brand-accent-ink" aria-hidden="true" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -247,7 +247,7 @@ export default function AboutPage() {
                 <ul className="mt-6 space-y-4">
                   {connectedSupport.map((item) => (
                     <li key={item} className="flex items-start gap-3 text-base leading-relaxed text-brand-slate">
-                      <Check size={18} className="mt-1 shrink-0 text-brand-accent" aria-hidden="true" />
+                      <Check size={18} className="mt-1 shrink-0 text-brand-accent-ink" aria-hidden="true" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -321,7 +321,7 @@ export default function AboutPage() {
           <ScrollReveal>
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
               <div className="max-w-3xl">
-                <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">
+                <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">
                   The source of care for your practice
                 </p>
                 <h2 className="text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-dark sm:text-5xl lg:text-6xl">
