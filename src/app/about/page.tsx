@@ -19,7 +19,13 @@ import { SectionHeading } from "@/components/section-heading";
 export const metadata: Metadata = {
   title: "About CareSource",
   description:
-    "Learn how CareSource brings medical billing and practice support together for US healthcare providers.",
+    "Learn how Practice Care Source brings medical billing and practice support together for US healthcare providers.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Practice Care Source",
+    description: "Learn how Practice Care Source supports medical practices.",
+    type: "website",
+  },
 };
 
 const values = [
