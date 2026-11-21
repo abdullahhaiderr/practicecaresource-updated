@@ -28,6 +28,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   return {
     title: service.title,
     description: service.description,
+    alternates: { canonical: `/services/${slug}` },
     openGraph: {
       title: `${service.title} | CareSource`,
       description: service.description,
