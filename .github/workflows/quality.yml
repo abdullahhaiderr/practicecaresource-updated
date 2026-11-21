@@ -26,6 +26,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Report dependency audit
+        run: |
+          npm audit --json > npm-audit.json || true
+          node -e "const audit = require('./npm-audit.json'); console.log(JSON.stringify(audit.vulnerabilities ?? {}, null, 2));"
+
       - name: Check TypeScript
         run: npm run typecheck
 
