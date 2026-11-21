@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Practice Resources",
   description:
     "Practical, general information about medical billing, credentialing, denials, accounts receivable, and practice support.",
+  alternates: { canonical: "/resources" },
   openGraph: {
     title: "Practice Resources | CareSource",
     description:
