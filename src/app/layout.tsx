@@ -28,16 +28,19 @@ export const metadata: Metadata = {
   description:
     "Medical billing and practice support for US healthcare providers, including credentialing, AR recovery, denial management, virtual assistant services, and website development.",
   applicationName: "CareSource",
+  robots: process.env.VERCEL_ENV === "production"
+    ? { index: true, follow: true }
+    : { index: false, follow: false },
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "CareSource",
-    title: "CareSource | The source of care for your practice",
+    title: "CareSource | Medical Billing and Practice Support",
     description:
       "Medical billing and practice support for US healthcare providers, all under one roof.",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "CareSource | The source of care for your practice",
     description:
       "Medical billing and practice support for US healthcare providers.",
