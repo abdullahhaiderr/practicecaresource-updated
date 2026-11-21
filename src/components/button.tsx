@@ -33,7 +33,7 @@ const variants: Record<ButtonVariant, string> = {
   primary:
     "bg-brand-accent text-brand-dark shadow-sm hover:bg-brand-accent-hover hover:shadow-focus-brand",
   secondary:
-    "bg-brand-dark text-brand-background shadow-sm hover:bg-brand-dark-soft",
+    "border border-brand-border bg-brand-background-wash text-brand-dark shadow-sm hover:bg-brand-background",
   ghost:
     "border border-brand-slate/35 bg-transparent text-brand-dark hover:border-brand-accent-ink hover:bg-brand-background-wash/60",
 };
