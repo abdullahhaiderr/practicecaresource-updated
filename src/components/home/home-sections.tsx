@@ -264,18 +264,20 @@ function ContactCta() {
                 </p>
 
                 <div className="mt-8 space-y-4">
-                  <a
-                    href={"tel:" + footerContact.phoneHref}
-                    className="group flex items-center gap-4 rounded-2xl border border-brand-border bg-white/80 p-4 transition-colors hover:border-brand-accent/40 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
-                  >
-                    <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-white text-brand-accent-ink" aria-hidden="true">
-                      <Phone size={20} />
-                    </span>
-                    <span className="min-w-0">
-                      <span className="block text-sm text-brand-slate">Call us</span>
-                      <span className="block font-semibold text-brand-dark">{footerContact.phoneDisplay}</span>
-                    </span>
-                  </a>
+                  {footerContact.phoneDisplay && footerContact.phoneHref ? (
+                    <a
+                      href={"tel:" + footerContact.phoneHref}
+                      className="group flex items-center gap-4 rounded-2xl border border-brand-border bg-white/80 p-4 transition-colors hover:border-brand-accent/40 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
+                    >
+                      <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-white text-brand-accent-ink" aria-hidden="true">
+                        <Phone size={20} />
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-sm text-brand-slate">Call us</span>
+                        <span className="block font-semibold text-brand-dark">{footerContact.phoneDisplay}</span>
+                      </span>
+                    </a>
+                  ) : null}
                   <a
                     href={"mailto:" + footerContact.email}
                     className="group flex items-center gap-4 rounded-2xl border border-brand-border bg-white/80 p-4 transition-colors hover:border-brand-accent/40 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
