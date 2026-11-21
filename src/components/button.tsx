@@ -31,7 +31,7 @@ export type ButtonProps = LinkProps | NativeButtonProps;
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand-accent text-brand-background shadow-sm hover:bg-brand-accent-hover hover:shadow-focus-brand",
+    "bg-brand-accent text-brand-dark shadow-sm hover:bg-brand-accent-hover hover:shadow-focus-brand",
   secondary:
     "bg-brand-dark text-brand-background shadow-sm hover:bg-brand-dark-soft",
   ghost:
