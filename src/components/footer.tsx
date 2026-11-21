@@ -6,9 +6,9 @@ import { footerContact, footerQuickLinks, services } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="bg-brand-dark text-brand-background">
+    <footer className="border-t border-brand-border bg-brand-background-wash text-brand-dark">
       <Container className="py-10 sm:py-12 lg:py-14">
-        <div className="grid gap-12 border-b border-brand-background/15 pb-12 md:grid-cols-[1.3fr_0.7fr_0.9fr_1fr] md:gap-8 lg:pb-16">
+        <div className="grid gap-12 border-b border-brand-border pb-12 md:grid-cols-[1.3fr_0.7fr_0.9fr_1fr] md:gap-8 lg:pb-16">
           <div className="max-w-sm">
             <Link href="/" aria-label="CareSource home" className="inline-block rounded-md">
               <Image
@@ -19,13 +19,13 @@ export function Footer() {
                 className="h-auto w-[194px]"
               />
             </Link>
-            <p className="mt-5 max-w-xs text-base leading-relaxed text-brand-background/75">
+            <p className="mt-5 max-w-xs text-base leading-relaxed text-brand-slate">
               {footerContact.tagline}
             </p>
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-semibold text-brand-background">
+            <h2 className="font-display text-xl font-semibold text-brand-dark">
               Quick links
             </h2>
             <ul className="mt-4 space-y-2.5">
@@ -33,7 +33,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-brand-background/75 transition-colors hover:text-brand-accent focus-visible:outline-none"
+                    className="text-sm text-brand-slate transition-colors hover:text-brand-accent-ink focus-visible:outline-none"
                   >
                     {link.label}
                   </Link>
@@ -43,7 +43,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-semibold text-brand-background">
+            <h2 className="font-display text-xl font-semibold text-brand-dark">
               Services
             </h2>
             <ul className="mt-4 space-y-2.5">
@@ -51,7 +51,7 @@ export function Footer() {
                 <li key={service.slug}>
                   <Link
                     href={"/services/" + service.slug}
-                    className="text-sm text-brand-background/75 transition-colors hover:text-brand-accent focus-visible:outline-none"
+                    className="text-sm text-brand-slate transition-colors hover:text-brand-accent-ink focus-visible:outline-none"
                   >
                     {service.shortTitle}
                   </Link>
@@ -61,14 +61,14 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-semibold text-brand-background">
+            <h2 className="font-display text-xl font-semibold text-brand-dark">
               Contact
             </h2>
             <ul className="mt-4 space-y-3">
               <li>
                 <a
                   href={"mailto:" + footerContact.email}
-                  className="inline-flex items-start gap-2.5 text-sm text-brand-background/75 transition-colors hover:text-brand-accent focus-visible:outline-none"
+                  className="inline-flex items-start gap-2.5 text-sm text-brand-slate transition-colors hover:text-brand-accent-ink focus-visible:outline-none"
                 >
                   <Mail size={17} className="mt-0.5 shrink-0" aria-hidden="true" />
                   <span>{footerContact.email}</span>
@@ -78,7 +78,7 @@ export function Footer() {
               <li>
                 <a
                   href={"tel:" + footerContact.phoneHref}
-                  className="inline-flex items-center gap-2.5 text-sm text-brand-background/75 transition-colors hover:text-brand-accent focus-visible:outline-none"
+                  className="inline-flex items-center gap-2.5 text-sm text-brand-slate transition-colors hover:text-brand-accent-ink focus-visible:outline-none"
                 >
                   <Phone size={17} aria-hidden="true" />
                   <span>{footerContact.phoneDisplay}</span>
@@ -87,7 +87,7 @@ export function Footer() {
             </ul>
             <Link
               href="/contact"
-              className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-pill bg-brand-accent px-5 text-sm font-bold text-brand-background transition-transform hover:-translate-y-0.5 focus-visible:outline-none"
+              className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-pill bg-brand-accent px-5 text-sm font-bold text-brand-dark transition-transform hover:-translate-y-0.5 focus-visible:outline-none"
             >
               Book a Free Audit
               <ArrowUpRight size={16} aria-hidden="true" />
@@ -95,7 +95,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 pt-6 text-sm text-brand-background/65 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-3 pt-6 text-sm text-brand-slate sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} CareSource. All rights reserved.</p>
           <p>The source of care for your practice.</p>
         </div>
