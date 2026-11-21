@@ -78,7 +78,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               </Link>
             </div>
           </ScrollReveal>
-          <PageHeroImage src={service.imageSrc} alt={service.imageAlt} />
+          <PageHeroImage src={service.imageSrc} alt={service.imageAlt} variant={slug} />
         </Container>
       </section>
 
