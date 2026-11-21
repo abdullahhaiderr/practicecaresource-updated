@@ -28,6 +28,7 @@ The project is a Next.js application. It does not currently use Supabase or anot
 - Improved keyboard focus behavior and removed the pointer gap in the Services dropdown.
 - Corrected the compact contact form phone number regular expression.
 - Removed unverified founder attribution from the About page and article author display.
+- Removed the unverified office address and made public phone details opt in through verified environment variables.
 - Suppressed article publication dates while the source data still contains placeholder dates.
 - Added a shared canonical site URL helper, page canonical metadata, sitemap, robots rules, Organization and WebSite structured data, Service structured data, an Open Graph image, and a site icon.
 - Prevented non production deployments from being indexed.
