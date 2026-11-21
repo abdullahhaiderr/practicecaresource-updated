@@ -57,7 +57,7 @@ export default function ContactPage() {
                 <li>
                   <Link
                     href="/"
-                    className="rounded-sm transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink"
+                    className="rounded-sm transition-colors hover:text-brand-accent-ink-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink"
                   >
                     Home
                   </Link>
@@ -194,7 +194,7 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="bg-brand-dark py-10 text-brand-background sm:py-12 lg:py-16">
+      <section className="bg-brand-background-wash py-10 text-brand-dark sm:py-12 lg:py-16">
         <Container>
           <ScrollReveal>
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
@@ -202,10 +202,10 @@ export default function ContactPage() {
                 <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">
                   CareSource
                 </p>
-                <h2 className="text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-background sm:text-5xl lg:text-6xl">
+                <h2 className="text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-dark sm:text-5xl lg:text-6xl">
                   Start with a conversation about your practice.
                 </h2>
-                <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-background/75 sm:text-lg">
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
                   Use the form above or reach out by email when you’re ready to
                   talk through your next step.
                 </p>
