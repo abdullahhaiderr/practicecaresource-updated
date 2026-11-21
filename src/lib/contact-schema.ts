@@ -68,7 +68,7 @@ export const contactFormSchema = z.object({
 export const contactFormSimpleSchema = z.object({
   fullName: z.string().trim().min(2, "Enter your full name.").max(100, "Name must be 100 characters or fewer."),
   email: z.string().trim().email("Enter a valid email address.").max(254, "Email address is too long."),
-  phone: z.string().trim().min(7, "Enter a phone number with at least 7 characters.").max(30, "Phone number must be 30 characters or fewer.").regex(/^[+\\d().\\-\\s]+$/, "Use numbers and common phone symbols only."),
+  phone: z.string().trim().min(7, "Enter a phone number with at least 7 characters.").max(30, "Phone number must be 30 characters or fewer.").regex(/^[+\d().\-\s]+$/, "Use numbers and common phone symbols only."),
   message: z.string().trim().min(10, "Add a little more detail so we can understand your request.").max(2000, "Message must be 2,000 characters or fewer."),
   website: z.string().max(200).optional(),
 });
