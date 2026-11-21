@@ -4,7 +4,6 @@ import {
   ArrowRight,
   Clock3,
   Mail,
-  MapPin,
   Phone,
 } from "lucide-react";
 import { Button } from "@/components/button";
@@ -112,29 +111,21 @@ export default function ContactPage() {
               </h2>
             </div>
 
-            <div className="flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card">
-              <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
-                <MapPin size={21} aria-hidden="true" />
-              </span>
-              <span>
-                <span className="block text-sm font-bold text-brand-dark">US Office</span>
-                <span className="mt-1 block text-sm leading-relaxed text-brand-slate">1770 Crystal Drive, Arlington, VA 22202, USA</span>
-              </span>
-            </div>
-
-            <a
-              href={`tel:${footerContact.phoneHref}`}
-              className="group flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none"
-            >
-              <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
-                <Phone size={20} aria-hidden="true" />
-              </span>
-              <span className="min-w-0">
-                <span className="block text-sm font-bold text-brand-dark">Phone</span>
-                <span className="mt-1 block text-sm leading-relaxed text-brand-slate">{footerContact.phoneDisplay}</span>
-              </span>
-              <ArrowRight size={17} className="mt-1 ml-auto shrink-0 text-brand-accent-ink transition-transform group-hover:translate-x-1" aria-hidden="true" />
-            </a>
+            {footerContact.phoneDisplay && footerContact.phoneHref ? (
+              <a
+                href={`tel:${footerContact.phoneHref}`}
+                className="group flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none"
+              >
+                <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
+                  <Phone size={20} aria-hidden="true" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-sm font-bold text-brand-dark">Phone</span>
+                  <span className="mt-1 block text-sm leading-relaxed text-brand-slate">{footerContact.phoneDisplay}</span>
+                </span>
+                <ArrowRight size={17} className="mt-1 ml-auto shrink-0 text-brand-accent-ink transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </a>
+            ) : null}
 
             <a
               href={`mailto:${footerContact.email}`}
