@@ -46,8 +46,8 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
     resolver: simple
       ? (zodResolver(contactFormSimpleSchema) as never)
       : compact
-        ? zodResolver(contactFormCompactSchema)
-        : zodResolver(contactFormWithConsentSchema),
+        ? (zodResolver(contactFormCompactSchema) as never)
+        : (zodResolver(contactFormWithConsentSchema) as never),
     mode: "onBlur",
     defaultValues: {
       fullName: "",
@@ -211,10 +211,11 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
 
         <div>
           <label className={labelClass} htmlFor="monthlyClaimVolume">
-            Monthly claim volume
+            Monthly claim volume <span aria-hidden="true">*</span>
           </label>
           <select
             id="monthlyClaimVolume"
+            required
             className={fieldClass}
             aria-invalid={Boolean(errors.monthlyClaimVolume)}
             aria-describedby={errors.monthlyClaimVolume ? "monthlyClaimVolume-error" : undefined}
