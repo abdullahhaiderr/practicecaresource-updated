@@ -209,27 +209,31 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
           <FieldError id="specialty-error" message={errors.specialty?.message} />
         </div>
 
-        <div>
-          <label className={labelClass} htmlFor="monthlyClaimVolume">
-            Monthly claim volume <span aria-hidden="true">*</span>
-          </label>
-          <select
-            id="monthlyClaimVolume"
-            required
-            className={fieldClass}
-            aria-invalid={Boolean(errors.monthlyClaimVolume)}
-            aria-describedby={errors.monthlyClaimVolume ? "monthlyClaimVolume-error" : undefined}
-            {...register("monthlyClaimVolume")}
-          >
-            <option value="">Choose monthly volume</option>
-            {monthlyClaimVolumeOptions.map((volume) => (
-              <option key={volume} value={volume}>
-                {volume}
-              </option>
-            ))}
-          </select>
-          <FieldError id="monthlyClaimVolume-error" message={errors.monthlyClaimVolume?.message} />
-        </div>
+        {!compact ? (
+          <div>
+            <label className={labelClass} htmlFor="monthlyClaimVolume">
+              Monthly claim volume <span aria-hidden="true">*</span>
+            </label>
+            <select
+              id="monthlyClaimVolume"
+              required
+              className={fieldClass}
+              aria-invalid={Boolean(errors.monthlyClaimVolume)}
+              aria-describedby={errors.monthlyClaimVolume ? "monthlyClaimVolume-error" : undefined}
+              {...register("monthlyClaimVolume")}
+            >
+              <option value="">Choose monthly volume</option>
+              {monthlyClaimVolumeOptions.map((volume) => (
+                <option key={volume} value={volume}>
+                  {volume}
+                </option>
+              ))}
+            </select>
+            <FieldError id="monthlyClaimVolume-error" message={errors.monthlyClaimVolume?.message} />
+          </div>
+  
+  
+        ) : null}
 
         <div className="sm:col-span-2">
           <label className={labelClass} htmlFor="serviceInterestedIn">
