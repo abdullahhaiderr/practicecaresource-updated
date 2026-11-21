@@ -7,8 +7,8 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      allow: "/",
-      disallow: ["/api/"],
+      allow: process.env.VERCEL_ENV === "production" ? "/" : undefined,
+      disallow: process.env.VERCEL_ENV === "production" ? ["/api/"] : ["/"],
     },
     sitemap: new URL("/sitemap.xml", siteUrl).toString(),
   };
