@@ -63,7 +63,7 @@ export const resourceArticles: ResourceArticle[] = [
         bullets: [
           "Charge and encounter information organized for billing review",
           "Claim preparation and submission through an agreed workflow",
-          "Payment posting, returned-item tracking, and follow up notes",
+          "Payment posting, returned item tracking, and follow up notes",
         ],
       },
       {
@@ -79,8 +79,8 @@ export const resourceArticles: ResourceArticle[] = [
         },
       },
       {
-        id: "denials-and-follow up",
-        title: "Follow-up helps keep open work visible",
+        id: "denials-and-follow-up",
+        title: "Follow up helps keep open work visible",
         paragraphs: [
           "When a payer requests more information, returns a claim, or does not process it as expected, someone needs to identify the next administrative action. A billing company may sort returned items, record the reason shown, monitor response dates, and route requests for practice input. The specific task depends on the service agreement and the systems available to both teams. A useful process distinguishes items the billing staff can handle from those needing documentation, approval, or a decision by the practice.",
           "Payment posting and account review can also help a practice understand which balances remain open and why. The work is most useful when notes are consistent and the practice can see the status of unresolved items. Reports should be explained in plain language, including the period covered, the definitions used, and any known gaps. A report is a view of recorded activity; it is not, by itself, a promise about future payments or results.",
@@ -126,7 +126,7 @@ export const resourceArticles: ResourceArticle[] = [
       "A claim denial is a payer response indicating that a claim or service was not paid as submitted. The reason may relate to eligibility, missing information, coding, authorization, filing rules, or payer review. Because denials differ, begin with the specific notice and available claim history. No general process can guarantee a reversal.",
     takeaways: [
       "Start with the payer's stated reason and claim history.",
-      "Use clear categories and practice-approved deadlines.",
+      "Use clear categories and approved by the practice deadlines.",
       "Route clinical and approval questions to authorized staff.",
     ],
     sections: [
@@ -172,7 +172,7 @@ export const resourceArticles: ResourceArticle[] = [
         id: "look-for-patterns",
         title: "Look for patterns carefully",
         paragraphs: [
-          "Once several items have been recorded consistently, the practice can review whether similar questions appear more than once. A cluster may suggest an opportunity to revisit a data-entry step, documentation handoff, eligibility check, or internal instruction. It is a signal to investigate, not proof of a single cause. The sample may be incomplete, categories may be used inconsistently, and payer responses can change over time.",
+          "Once several items have been recorded consistently, the practice can review whether similar questions appear more than once. A cluster may suggest an opportunity to revisit a data entry step, documentation handoff, eligibility check, or internal instruction. It is a signal to investigate, not proof of a single cause. The sample may be incomplete, categories may be used inconsistently, and payer responses can change over time.",
           "When reviewing a pattern, look at representative source records and confirm the denominator and time period being discussed. Separate counts from rates, and state how the records were selected. If the information will guide a workflow change, discuss it with the people who perform the work and the staff authorized to approve changes. A measured review is more useful than assuming that a broad category explains every claim in it.",
         ],
       },
@@ -180,7 +180,7 @@ export const resourceArticles: ResourceArticle[] = [
         id: "prevent-rework",
         title: "Reduce avoidable rework through repeatable checks",
         paragraphs: [
-          "Some process checks can help teams catch missing information before submission, such as confirming that required fields are present, using a practice-approved checklist, and routing exceptions for review. The checklist should match the practice's services and the current payer instructions it relies on. It should be reviewed when systems, forms, or requirements change. A checklist cannot replace provider judgment or guarantee acceptance, but it can make a chosen process easier to follow consistently.",
+          "Some process checks can help teams catch missing information before submission, such as confirming that required fields are present, using a approved by the practice checklist, and routing exceptions for review. The checklist should match the practice's services and the current payer instructions it relies on. It should be reviewed when systems, forms, or requirements change. A checklist cannot replace provider judgment or guarantee acceptance, but it can make a chosen process easier to follow consistently.",
           "Clear roles also matter. Staff should know who verifies a detail, who approves a correction, and where to record the decision. If an outside billing partner participates, define its access and review responsibilities in writing. Periodic discussion of returned claims can identify where an instruction is unclear or an information handoff needs adjustment. Keep changes documented so new team members do not have to rely on informal memory.",
         ],
       },
@@ -191,7 +191,7 @@ export const resourceArticles: ResourceArticle[] = [
     slug: "credentialing-and-payer-enrollment",
     title: "Credentialing and payer enrollment: what to expect",
     description:
-      "A plain-language overview of credentialing and enrollment tasks, the information practices may need to organize, and why payer timelines differ.",
+      "A plain language overview of credentialing and enrollment tasks, the information practices may need to organize, and why payer timelines differ.",
     excerpt:
       "Credentialing and enrollment involve provider information, application materials, review, and follow up. The steps vary, so a clear checklist and realistic expectations help teams coordinate the work.",
     category: "Credentialing",
@@ -202,7 +202,7 @@ export const resourceArticles: ResourceArticle[] = [
     introduction:
       "Credentialing and payer enrollment are related administrative processes that can involve reviewing provider qualifications, collecting practice information, preparing applications, and following up on requests. The terminology and sequence differ among payers and circumstances. A practice should confirm the current requirements that apply to each provider and plan before submitting information. This article describes common coordination tasks, not a guaranteed approval path or a specific to a payer checklist.",
     takeaways: [
-      "Begin with a provider-specific checklist and confirm current payer requirements.",
+      "Begin with a for each provider checklist and confirm current payer requirements.",
       "Keep practice review and approval points visible before an application is submitted.",
       "Track requests, dates, and next steps because review timelines vary.",
     ],
@@ -233,7 +233,7 @@ export const resourceArticles: ResourceArticle[] = [
         ],
       },
       {
-        id: "submission-and-follow up",
+        id: "submission-and-follow-up",
         title: "Plan for submission and follow up",
         paragraphs: [
           "Once an application is ready, the practice should follow the payer's current instructions for submission and retain a record of what was sent and when. The submission method may vary. Confirm who is authorized to send materials, how confirmation is recorded, and where follow up requests will be received. If a payer asks for additional information, log the request, the date received, the requested item, and who will prepare or approve the response.",
@@ -260,7 +260,7 @@ export const resourceArticles: ResourceArticle[] = [
     closingNote: "rules vary by payer and state; verify current requirements",
   },
   {
-    slug: "accounts-receivable-follow up",
+    slug: "accounts-receivable-follow-up",
     title: "Accounts receivable follow up: why aged claims matter",
     description:
       "A practical introduction to aged accounts receivable, organizing follow up, and communicating the next action without promising a payment outcome.",
@@ -275,7 +275,7 @@ export const resourceArticles: ResourceArticle[] = [
       "Accounts receivable, often shortened to AR, refers to amounts recorded as owed to a practice but not yet resolved through payment, adjustment, or another documented outcome. An aged claim is one that remains open as time passes. Age alone does not explain why the account is unresolved or what action is appropriate. A useful review looks at the claim history, available payer responses, practice records, and any applicable filing or follow up instructions.",
     takeaways: [
       "Use claim history and source responses to understand why an account remains open.",
-      "Prioritize work using practice-approved criteria and clearly assigned next steps.",
+      "Prioritize work using approved by the practice criteria and clearly assigned next steps.",
       "Reporting should explain its date range, definitions, and known limitations.",
     ],
     sections: [
@@ -305,7 +305,7 @@ export const resourceArticles: ResourceArticle[] = [
         ],
       },
       {
-        id: "document-follow up",
+        id: "document-follow-up",
         title: "Document each follow up clearly",
         paragraphs: [
           "A useful note captures what was reviewed, who was contacted through the approved process, what response was received, and what should happen next. Keep the note factual and concise. Reference the relevant source response or record rather than relying on shorthand that only one person understands. If no response was available, record the date and the plan for checking again according to the practice's procedure.",
