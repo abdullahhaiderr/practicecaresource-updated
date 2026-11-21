@@ -53,7 +53,7 @@ export default function ResourcesPage() {
               </a>
             </div>
           </ScrollReveal>
-          <PageHeroImage src={resourceArticles[0].coverImage} alt={resourceArticles[0].coverAlt} />
+          <PageHeroImage src={resourceArticles[0].coverImage} alt={resourceArticles[0].coverAlt} variant="resources" />
         </Container>
       </section>
 
