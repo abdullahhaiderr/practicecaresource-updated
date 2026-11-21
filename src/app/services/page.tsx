@@ -13,7 +13,13 @@ import { ServiceExplorer } from "./service-explorer";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore medical billing, credentialing, virtual assistant, AR recovery, denial management, and website development support from CareSource.",
+    "Explore medical billing, credentialing, virtual assistant, AR recovery, denial management, and website development support from Practice Care Source.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Medical Billing and Practice Support Services | Practice Care Source",
+    description: "Explore medical billing, credentialing, AR recovery, denial management, and practice support.",
+    type: "website",
+  },
 };
 
 export default function ServicesPage() {
