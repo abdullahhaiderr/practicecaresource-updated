@@ -1,35 +1,70 @@
 # CareSource
 
-This is the medical billing website which I am building for my client.
+CareSource is a medical billing and practice support website for US healthcare providers.
 
-## Sprint 1 — Part A: Foundation
+## Technology
 
-This repository currently contains the design foundation and reusable components. The Home hero and remaining Home sections are intentionally deferred to Parts B and C.
+- Next.js 15 App Router
+- React 19 and TypeScript
+- Tailwind CSS
+- Framer Motion with reduced motion support
+- Lucide icons
+- React Hook Form and Zod
+- Resend for contact and review notification emails
 
-## Stack
+## Existing routes
 
-- Next.js App Router with TypeScript
-- Tailwind CSS design tokens
-- Framer Motion with reduced-motion support
-- lucide-react icons
-- Next Image for local and approved remote images
+- `/` Home
+- `/about` About CareSource
+- `/services` Services directory
+- `/services/[slug]` Individual service pages
+- `/resources` Resource library
+- `/resources/[slug]` Individual articles
+- `/contact` Contact form
 
-## Getting started
+## Form endpoints
 
-Use Node.js 20 or newer, then run `npm install` and `npm run dev`.
+- `POST /api/contact` validates a practice inquiry and sends it through Resend.
+- `POST /api/testimonial` validates a client review submission and emails it to the configured review inbox for approval.
 
-## Project structure
+Review submissions are not stored in a database and are not published automatically. A real client must approve the final wording before publication. Do not add invented testimonials or client identities.
 
-- `src/app/`: App Router layout, global styles, and the temporary Home placeholder
-- `src/components/`: reusable layout, navigation, motion, and service components
-- `src/lib/site.ts`: navigation and service content
-- `public/logo.png`: supplied, unmodified CareSource logo
-- `docs/motion-guidelines.md`: motion and accessibility rules
+The contact and review forms are for general business inquiries only. Visitors are asked not to submit patient names or protected health information.
 
-## Brand system
+## Local setup
 
-Authoritative colors are orange `#FF771C`, warm cream `#F5EDE0`, dark `#161311`, and slate `#546877`. Derived shades are documented in Tailwind tokens. Orange buttons use dark text for contrast.
+Use Node.js 20.9 or newer.
 
-## Sprint boundaries
+```bash
+npm ci
+cp .env.example .env.local
+npm run dev
+```
 
-Part A provides the design foundation and shared components. Build the Home hero only after Part B is requested, then add the remaining Home sections in Part C. Services, About, Resources, and Contact remain placeholders; no Sprint 2 pages are included.
+Add the required values to `.env.local` before testing form delivery.
+
+## Environment variables
+
+- `RESEND_API_KEY` Resend API key used by the server.
+- `CONTACT_TO_EMAIL` verified business inbox that receives contact and review submissions.
+- `CONTACT_FROM_EMAIL` verified Resend sender address.
+- `NEXT_PUBLIC_SITE_URL` optional canonical production URL. Set this to the verified production domain in Vercel. When unset, the app uses Vercel's production URL when available, then the current Vercel project domain as a fallback.
+
+Never commit real API keys or secrets.
+
+## Quality commands
+
+```bash
+npm run typecheck
+npm run lint
+npm run build
+npm run start
+```
+
+The TypeScript check is available as `npm run typecheck`. The lint command currently needs its ESLint configuration and dependency availability verified before it can be treated as a release gate. There is not yet a dedicated automated test suite.
+
+## Content and launch requirements
+
+Confirm the business name, public phone number, contact inbox, sender address, and production domain with the business owner before launch. Publish only approved service details and client feedback. Do not invent founder details, certifications, numerical claims, payer relationships, privacy assurances, or performance results.
+
+See `docs/audit-remediation.md` for the current audit findings and launch checks.
