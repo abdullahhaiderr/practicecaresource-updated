@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
-  CheckCircle2,
   Mail,
   Phone,
 } from "lucide-react";
