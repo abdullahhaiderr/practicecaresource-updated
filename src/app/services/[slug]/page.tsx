@@ -9,6 +9,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
 import { PageHeroImage } from "@/components/page-hero-image";
 import { getServiceBySlug, serviceCatalog, type ServiceContent } from "@/data/services";
+import { getSiteUrl } from "@/lib/seo";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -44,9 +45,31 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   const relatedServices = service.relatedServices
     .map((relatedSlug) => getServiceBySlug(relatedSlug))
     .filter((related): related is ServiceContent => Boolean(related));
+  const siteUrl = getSiteUrl();
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    description: service.description,
+    serviceType: service.title,
+    provider: {
+      "@type": "Organization",
+      name: "CareSource",
+      url: siteUrl.toString(),
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "United States",
+    },
+    url: new URL(`/services/${service.slug}`, siteUrl).toString(),
+  };
 
   return (
     <main id="main-content">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema).replace(/</g, "\\u003c") }}
+      />
       <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-8 sm:py-10 lg:py-12 lg:pb-6">
         <Container className="relative grid items-start gap-10 lg:min-h-[25rem] lg:grid-cols-[1.15fr_0.85fr]">
           <ScrollReveal className="max-w-3xl">
