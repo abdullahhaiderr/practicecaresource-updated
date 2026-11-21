@@ -46,7 +46,7 @@ export default function ServicesPage() {
               Everything Your Practice Needs, <span className="text-brand-accent-ink">Under One Roof</span>
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg lg:min-h-[5.5rem]">
-              From billing and enrollment to patient-facing digital support, CareSource helps US practices bring important administrative work into one coordinated conversation.
+              From billing and enrollment to patient facing digital support, CareSource helps US practices bring important administrative work into one coordinated conversation.
             </p>
             <div className="mt-6 flex min-h-14 flex-col gap-3 sm:flex-row sm:items-center">
               <Button href="/contact" size="lg" showArrow>
@@ -67,7 +67,7 @@ export default function ServicesPage() {
             <SectionHeading
               eyebrow="Our services"
               title="Support for the work behind every visit"
-              description="Choose a service to see how the day-to-day work can be organized around your practice and its existing processes."
+              description="Choose a service to see how the daily work can be organized around your practice and its existing processes."
             />
           </ScrollReveal>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
