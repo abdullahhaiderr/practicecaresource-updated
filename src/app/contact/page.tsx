@@ -160,7 +160,7 @@ export default function ContactPage() {
               <h2 className="mb-6 font-display text-3xl font-semibold leading-tight text-brand-dark sm:text-4xl">
                 Send us a message
               </h2>
-              <ContactForm simple />
+              <ContactForm />
             </div>
           </ScrollReveal>
         </Container>
