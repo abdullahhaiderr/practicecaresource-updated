@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CareSource | The source of care for your practice",
+    title: "CareSource | Medical Billing and Practice Support",
     description:
       "Medical billing and practice support for US healthcare providers.",
   },
