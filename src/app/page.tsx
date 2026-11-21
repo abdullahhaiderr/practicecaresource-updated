@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { HomeHero } from "@/components/home/home-hero";
 import { HomeSections } from "@/components/home/home-sections";
 import { getSiteUrl } from "@/lib/seo";
+import { serviceCatalog } from "@/data/services";
 
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData).replace(/</g, "\\u003c") }}
       />
-      <HomeHero />
+      <HomeHero heroImage={serviceCatalog[0].imageSrc} />
       <HomeSections />
     </main>
   );
