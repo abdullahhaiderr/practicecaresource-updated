@@ -55,7 +55,7 @@ export function ResourceCard({ article, featured = false }: ResourceCardProps) {
             <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
               {article.excerpt}
             </p>
-            <span className="mt-7 inline-flex items-center gap-2 self-start text-sm font-bold text-brand-accent">
+            <span className="mt-7 inline-flex items-center gap-2 self-start text-sm font-bold text-brand-accent-ink">
               Read the article <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </span>
           </div>
