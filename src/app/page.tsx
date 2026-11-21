@@ -6,7 +6,7 @@ import { serviceCatalog } from "@/data/services";
 
 
 export const metadata: Metadata = {
-  title: "CareSource | The source of care for your practice",
+  title: "CareSource | Medical Billing and Practice Support",
   description:
     "Medical billing, credentialing, AR recovery, and practice support for US healthcare providers, all under one roof.",
   alternates: { canonical: "/" },
