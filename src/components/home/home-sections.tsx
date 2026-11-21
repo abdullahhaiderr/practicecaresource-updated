@@ -1,13 +1,15 @@
-import Image from "next/image";
 import {
   ArrowDown,
+  BadgeCheck,
+  ClipboardCheck,
   ChevronDown,
   Mail,
+  Laptop,
   MessageSquare,
   Minus,
   Phone,
   Plus,
-  Quote,
+  Workflow,
 } from "lucide-react";
 import { Button } from "@/components/button";
 import { ContactForm } from "@/app/contact/contact-form";
@@ -84,17 +86,6 @@ const faqs = [
   },
 ];
 
-const testimonials = [
-  { name: "Emily Carter", imageSrc: "/testimonials/emily-carter.jpg", quote: "The billing team keeps our claims organized and explains what needs attention. Communication is clear, and we know who to contact with questions." },
-  { name: "Olivia", imageSrc: "/testimonials/olivia.jpg", quote: "CareSource took time to understand our billing workflow. It’s helpful to have clear updates and a consistent point of contact." },
-  { name: "Sophia Mitchell", imageSrc: "/testimonials/sophia-mitchell.jpg", quote: "The billing support fits into our existing process. Follow-up is clear, and we know what needs our team’s review." },
-  { name: "James Anderson", imageSrc: "/testimonials/james-anderson.jpg", quote: "The team communicates clearly about billing questions and next steps. It’s easier to keep track of open items." },
-  { name: "Ethan Walker", imageSrc: "/testimonials/ethan-walker.jpg", quote: "We appreciate the straightforward updates and organized billing support. Responsibilities are clear when questions come up." },
-  { name: "Michael Brooks", imageSrc: "/testimonials/michael-brooks.jpg", quote: "CareSource helps us keep billing tasks organized. The team lets us know what information is needed and what comes next." },
-  { name: "Daniel", imageSrc: "/testimonials/daniel.jpg", quote: "The handoffs are clear, and our team knows what to review. That makes it easier to coordinate billing support with our existing process." },
-  { name: "Ryan Mitchell", imageSrc: "/testimonials/ryan-mitchell.jpg", quote: "The billing support follows our practice’s workflow. Communication and follow-up have been clear." },
-];
-
 function ServicesSection() {
   return (
     <section className="py-12 sm:py-14 lg:py-16" aria-label="CareSource services">
@@ -133,21 +124,21 @@ function ServicesSection() {
 }
 
 const coverageHighlights = [
-  { title: "End-to-End RCM", detail: "Coverage", imageSrc: "/service-highlights/rcm.png" },
-  { title: "200+", detail: "Medical specialties supported", imageSrc: "/service-highlights/medical-specialties.png" },
-  { title: "50 States", detail: "Nationwide coverage", imageSrc: "/service-highlights/nationwide-coverage.png" },
-  { title: "1:1 Dedicated", detail: "Billing manager", imageSrc: "/service-highlights/billing-manager.png" },
+  { title: "Medical billing", detail: "Claim and payment workflows", icon: ClipboardCheck },
+  { title: "Credentialing", detail: "Provider enrollment support", icon: BadgeCheck },
+  { title: "Practice coordination", detail: "Clear responsibilities and handoffs", icon: Workflow },
+  { title: "Digital support", detail: "Website planning and development", icon: Laptop },
 ];
 
 function OneRoofSection() {
   return (
-    <section className="py-8 sm:py-10 lg:py-12" aria-label="CareSource coverage and support">
+    <section className="py-8 sm:py-10 lg:py-12" aria-label="CareSource practice support">
       <Container>
-        <ul className="grid overflow-hidden rounded-2xl border border-brand-accent/15 bg-brand-accent/5 p-3 shadow-card sm:grid-cols-2 sm:p-4 lg:grid-cols-4">
-          {coverageHighlights.map(({ title, detail, imageSrc }) => (
-            <li key={title} className="coverage-float flex min-h-[5.25rem] items-center gap-3 rounded-xl px-3 py-3 sm:gap-4 sm:px-4">
-              <span className="grid size-12 shrink-0 place-items-center rounded-xl border border-brand-accent/10 bg-white p-2 shadow-sm sm:size-14" aria-hidden="true">
-                <Image src={imageSrc} alt="" width={48} height={48} className="size-9 object-contain sm:size-10" />
+        <ul className="grid gap-3 rounded-2xl border border-brand-accent/15 bg-brand-accent/5 p-3 shadow-card sm:grid-cols-2 sm:p-4 lg:grid-cols-4">
+          {coverageHighlights.map(({ title, detail, icon: Icon }) => (
+            <li key={title} className="flex min-h-[5.25rem] items-center gap-3 rounded-xl px-3 py-3 sm:gap-4 sm:px-4">
+              <span className="grid size-12 shrink-0 place-items-center rounded-xl border border-brand-accent/10 bg-brand-background text-brand-accent-ink shadow-sm sm:size-14" aria-hidden="true">
+                <Icon size={23} strokeWidth={1.8} />
               </span>
               <span className="min-w-0 text-sm leading-snug text-brand-dark sm:text-base">
                 <strong className="block font-bold text-brand-accent-ink">{title}</strong>
@@ -195,93 +186,31 @@ function ProcessSection() {
   );
 }
 
-function TestimonialCards({ duplicate = false }: { duplicate?: boolean }) {
-  return (
-    <ul
-      className="flex w-max shrink-0 items-stretch gap-4 pr-4"
-      aria-hidden={duplicate || undefined}
-    >
-      {testimonials.map(({ name, quote, imageSrc }) => (
-        <li key={name} className="w-[min(82vw,18rem)] shrink-0 sm:w-[17.5rem] lg:w-[18rem]">
-          <article className="group flex h-[21rem] flex-col rounded-2xl border border-brand-border border-t-4 border-t-brand-accent bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/45 hover:shadow-card-hover motion-reduce:transition-none sm:p-5">
-            <div className="mb-4 flex items-center justify-between">
-              <span className="grid size-10 place-items-center rounded-full bg-brand-accent/10 text-brand-accent-ink transition-colors group-hover:bg-brand-accent/15" aria-hidden="true">
-                <Quote size={19} strokeWidth={2} />
-              </span>
-              <span className="rounded-full bg-brand-background-wash px-2.5 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-brand-accent-ink">
-                Medical billing
-              </span>
-            </div>
-            <blockquote className="flex-1 overflow-hidden text-sm leading-relaxed text-brand-slate sm:text-base">
-              “{quote}”
-            </blockquote>
-            <div className="mt-4 flex items-center gap-3 rounded-xl bg-[#eaf4ff] p-3">
-              <Image
-                src={imageSrc}
-                alt=""
-                width={52}
-                height={52}
-                className="size-[52px] shrink-0 rounded-full object-cover ring-2 ring-white"
-              />
-              <div className="min-w-0">
-                <p className="truncate text-sm font-bold text-brand-dark">{name}</p>
-                <p className="mt-0.5 text-xs text-brand-slate">Medical billing client</p>
-              </div>
-            </div>
-          </article>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
 function TestimonialsSection() {
   return (
-    <section className="bg-brand-background-wash/35 py-12 sm:py-14 lg:py-16" aria-label="Medical billing client testimonials">
-      <Container>
+    <section className="bg-brand-background-wash/35 py-12 sm:py-14 lg:py-16" aria-label="Client feedback">
+      <Container className="grid items-start gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <ScrollReveal>
           <SectionHeading
-            eyebrow="Client testimonials"
-            title={<>Medical billing support, <span className="text-brand-accent-ink">in their words.</span></>}
-            description="Experiences shared by medical billing clients we support."
-            className="mb-7 sm:mb-9"
+            eyebrow="Client feedback"
+            title={<>Your experience, <span className="text-brand-accent-ink">in your words.</span></>}
+            description="If you have worked with CareSource, you can send feedback for review. We ask for your permission before publishing any client feedback."
           />
         </ScrollReveal>
-        <div
-          className="testimonial-marquee -mx-2 overflow-hidden px-2"
-          role="region"
-          aria-label="Scrolling medical billing testimonials"
-          tabIndex={0}
-        >
-          <div className="testimonial-marquee-track flex w-max py-2">
-            <TestimonialCards />
-            <TestimonialCards duplicate />
-          </div>
-        </div>
-
-        <details className="group mt-8 overflow-hidden rounded-2xl border border-brand-border bg-brand-background shadow-card transition-shadow open:shadow-card-hover">
-          <summary className="flex min-h-[5.25rem] cursor-pointer list-none items-center justify-between gap-4 bg-brand-background-wash/40 px-5 py-4 transition-colors hover:bg-brand-background-wash/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-accent-ink sm:px-7 [&::-webkit-details-marker]:hidden">
-            <span className="flex min-w-0 items-center gap-3">
-              <span className="grid size-11 shrink-0 place-items-center rounded-xl border border-brand-accent/15 bg-brand-peach/65 text-brand-accent-ink shadow-sm" aria-hidden="true">
+        <ScrollReveal delay={0.06}>
+          <div className="rounded-3xl border border-brand-border bg-brand-background p-5 shadow-card sm:p-7">
+            <div className="mb-5 flex items-center gap-3">
+              <span className="grid size-11 place-items-center rounded-xl border border-brand-accent/15 bg-brand-peach/65 text-brand-accent-ink" aria-hidden="true">
                 <MessageSquare size={20} />
               </span>
-              <span className="min-w-0">
-                <span className="block font-display text-lg font-semibold text-brand-dark sm:text-xl">Share your medical billing experience</span>
-                <span className="mt-0.5 block text-sm text-brand-slate">Send a review for CareSource to review before publishing.</span>
-              </span>
-            </span>
-            <span className="inline-flex shrink-0 items-center gap-2 text-sm font-bold text-brand-accent-ink">
-              Write a review
-              <ChevronDown size={18} className="transition-transform duration-200 group-open:rotate-180" aria-hidden="true" />
-            </span>
-          </summary>
-          <div className="border-t border-brand-border px-5 py-6 sm:px-7 sm:py-8">
-            <p className="max-w-3xl text-sm leading-relaxed text-brand-slate">
-              Please share your own experience only and leave out all patient details. Submissions go to CareSource for review; we will contact you to confirm the final wording before it appears on the site.
-            </p>
+              <div>
+                <h3 className="font-display text-xl font-semibold text-brand-dark sm:text-2xl">Share your experience</h3>
+                <p className="mt-0.5 text-sm text-brand-slate">Feedback is reviewed before it is published.</p>
+              </div>
+            </div>
             <ReviewSubmissionForm />
           </div>
-        </details>
+        </ScrollReveal>
       </Container>
     </section>
   );
