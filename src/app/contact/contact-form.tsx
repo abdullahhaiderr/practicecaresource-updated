@@ -11,6 +11,7 @@ import {
   contactFormWithConsentSchema,
   serviceOptions,
   specialtyOptions,
+  monthlyClaimVolumeOptions,
   type ContactFormValues,
 } from "@/lib/contact-schema";
 
@@ -55,6 +56,7 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
       phone: "",
       specialty: "",
       serviceInterestedIn: "",
+      monthlyClaimVolume: "",
       message: "",
       consent: false,
       website: "",
@@ -132,26 +134,6 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
           <FieldError id="fullName-error" message={errors.fullName?.message} />
         </div>
 
-        {!simple ? (
-        <div>
-          <label className={labelClass} htmlFor="practiceName">
-            Practice name <span aria-hidden="true">*</span>
-          </label>
-          <input
-            id="practiceName"
-            autoComplete="organization"
-            className={fieldClass}
-            aria-invalid={Boolean(errors.practiceName)}
-            aria-describedby={errors.practiceName ? "practiceName-error" : undefined}
-            {...register("practiceName")}
-          />
-          <FieldError
-            id="practiceName-error"
-            message={errors.practiceName?.message}
-          />
-        </div>
-        ) : null}
-
         <div>
           <label className={labelClass} htmlFor="email">
             Work email <span aria-hidden="true">*</span>
@@ -185,6 +167,26 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
         </div>
 
         {!simple ? (
+        <div>
+          <label className={labelClass} htmlFor="practiceName">
+            Practice name <span aria-hidden="true">*</span>
+          </label>
+          <input
+            id="practiceName"
+            autoComplete="organization"
+            className={fieldClass}
+            aria-invalid={Boolean(errors.practiceName)}
+            aria-describedby={errors.practiceName ? "practiceName-error" : undefined}
+            {...register("practiceName")}
+          />
+          <FieldError
+            id="practiceName-error"
+            message={errors.practiceName?.message}
+          />
+        </div>
+        ) : null}
+
+        {!simple ? (
         <>
         <div>
           <label className={labelClass} htmlFor="specialty">
@@ -205,6 +207,27 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
             ))}
           </select>
           <FieldError id="specialty-error" message={errors.specialty?.message} />
+        </div>
+
+        <div>
+          <label className={labelClass} htmlFor="monthlyClaimVolume">
+            Monthly claim volume
+          </label>
+          <select
+            id="monthlyClaimVolume"
+            className={fieldClass}
+            aria-invalid={Boolean(errors.monthlyClaimVolume)}
+            aria-describedby={errors.monthlyClaimVolume ? "monthlyClaimVolume-error" : undefined}
+            {...register("monthlyClaimVolume")}
+          >
+            <option value="">Choose monthly volume</option>
+            {monthlyClaimVolumeOptions.map((volume) => (
+              <option key={volume} value={volume}>
+                {volume}
+              </option>
+            ))}
+          </select>
+          <FieldError id="monthlyClaimVolume-error" message={errors.monthlyClaimVolume?.message} />
         </div>
 
         <div>
