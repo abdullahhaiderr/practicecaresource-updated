@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { ArrowDown, BookOpenText } from "lucide-react";
+import { ArrowDown, ArrowRight, BookOpenText } from "lucide-react";
+import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { ResourcesExplorer } from "@/components/resources/resources-explorer";
 import { PageHeroImage } from "@/components/page-hero-image";
@@ -73,6 +74,66 @@ export default function ResourcesPage() {
             categories={resourceCategories}
             featuredSlug={resourceArticles[0].slug}
           />
+        </Container>
+      </section>
+
+      <section className="border-y border-brand-border/75 bg-brand-background-wash/30 py-10 sm:py-12 lg:py-16" aria-label="Resource library questions">
+        <Container className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+          <ScrollReveal>
+            <SectionHeading
+              eyebrow="Resource questions"
+              title="A little more context."
+              description="A few useful notes about using the information in this library."
+            />
+          </ScrollReveal>
+          <ScrollReveal delay={0.06}>
+            <div className="space-y-3">
+              {[
+                {
+                  question: "Are these articles medical or legal advice?",
+                  answer: "No. The articles provide general information about billing and practice workflows. They do not replace clinical judgment, legal advice, coding guidance, or current payer instructions.",
+                },
+                {
+                  question: "How should I use information about payer rules?",
+                  answer: "Payer requirements can change. Confirm current requirements directly with the payer and your qualified advisors before changing a practice workflow.",
+                },
+                {
+                  question: "Can I share an article with my team?",
+                  answer: "Yes. You can share the public article link with colleagues so your team can review the same information.",
+                },
+                {
+                  question: "Can I suggest a topic?",
+                  answer: "Yes. Send our team a message and tell us which billing or practice workflow you would like to see covered.",
+                },
+              ].map((item) => (
+                <details key={item.question} className="group rounded-2xl border border-brand-border bg-brand-background px-5 transition-[border-color,box-shadow] open:border-brand-accent/45 open:shadow-card sm:px-6">
+                  <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-4 py-4 font-bold text-brand-dark transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink [&::-webkit-details-marker]:hidden">
+                    {item.question}
+                    <span className="grid size-8 shrink-0 place-items-center rounded-full bg-brand-background-wash text-xl font-normal text-brand-accent-ink transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                  </summary>
+                  <p className="max-w-3xl pb-5 pr-8 text-sm leading-relaxed text-brand-slate sm:text-base">{item.answer}</p>
+                </details>
+              ))}
+            </div>
+          </ScrollReveal>
+        </Container>
+      </section>
+
+      <section className="py-10 sm:py-12 lg:py-16">
+        <Container>
+          <ScrollReveal>
+            <div className="flex flex-col items-start justify-between gap-6 rounded-3xl border border-brand-border bg-brand-background p-6 shadow-card sm:p-9 lg:flex-row lg:items-center lg:p-12">
+              <div className="max-w-2xl">
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">Put the information into practice</p>
+                <h2 className="mt-3 text-balance font-display text-3xl font-semibold leading-tight text-brand-dark sm:text-4xl">Want to talk through your practice workflow?</h2>
+                <p className="mt-3 text-base leading-relaxed text-brand-slate">Tell us what kind of support you are exploring. Please leave patient details out of your message.</p>
+              </div>
+              <Button href="/contact" size="lg" showArrow className="shrink-0">
+                Contact our team
+                <ArrowRight size={17} aria-hidden="true" />
+              </Button>
+            </div>
+          </ScrollReveal>
         </Container>
       </section>
     </main>
