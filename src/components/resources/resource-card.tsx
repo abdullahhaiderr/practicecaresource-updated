@@ -24,7 +24,7 @@ export function ResourceCard({ article, featured = false }: ResourceCardProps) {
       <article className="group overflow-hidden rounded-3xl border border-brand-border bg-brand-dark text-brand-background shadow-card transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-card-hover">
         <Link
           href={`/resources/${article.slug}`}
-          className="grid h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-accent"
+          className="grid h-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-accent lg:grid-cols-[1.05fr_0.95fr]"
           aria-label={`Read featured article: ${article.title}`}
         >
           <div className="relative min-h-56 overflow-hidden bg-brand-dark-soft sm:min-h-72 lg:min-h-[28rem]">
