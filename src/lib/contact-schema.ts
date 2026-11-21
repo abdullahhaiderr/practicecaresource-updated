@@ -12,6 +12,13 @@ export const specialtyOptions = [
   "Other",
 ] as const;
 
+export const monthlyClaimVolumeOptions = [
+  "Under 500 claims a month",
+  "500 to 2,000 claims a month",
+  "2,000 to 5,000 claims a month",
+  "Over 5,000 claims a month",
+] as const;
+
 export const serviceOptions = [
   "Medical Billing",
   "Credentialing",
@@ -54,6 +61,12 @@ export const contactFormSchema = z.object({
     .min(1, "Choose a service.")
     .refine((value) => serviceOptions.includes(value as (typeof serviceOptions)[number]), {
       message: "Choose a service from the list.",
+    }),
+  monthlyClaimVolume: z
+    .string()
+    .optional()
+    .refine((value) => !value || monthlyClaimVolumeOptions.includes(value as (typeof monthlyClaimVolumeOptions)[number]), {
+      message: "Choose a monthly claim volume from the list.",
     }),
   message: z
     .string()
