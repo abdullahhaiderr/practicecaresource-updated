@@ -1,29 +1,14 @@
 import type { Metadata } from "next";
-import { Barlow_Condensed, Caveat, Manrope } from "next/font/google";
+import type { CSSProperties } from "react";
 import "./globals.css";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
 
-const displayFont = Barlow_Condensed({
-  subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["500", "600", "700"],
-  display: "swap",
-});
-
-const bodyFont = Manrope({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-const scriptFont = Caveat({
-  subsets: ["latin"],
-  variable: "--font-script",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
+const fontVariables = {
+  "--font-display": '"Barlow Condensed"',
+  "--font-body": '"Manrope"',
+  "--font-script": '"Caveat"',
+} as CSSProperties;
 
 export const metadata: Metadata = {
   title: {
@@ -56,7 +41,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={[displayFont.variable, bodyFont.variable, scriptFont.variable].join(" ")}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Caveat:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body style={fontVariables}>
         <a
           href="#main-content"
           className="sr-only z-[100] rounded-md bg-brand-background px-4 py-3 text-brand-dark focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
