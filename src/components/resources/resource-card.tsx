@@ -19,7 +19,7 @@ type ResourceCardProps = {
 };
 
 export function ResourceCard({ article, featured = false }: ResourceCardProps) {
-  const hasPublishedDate = /^\\d{4}-\\d{2}-\\d{2}$/.test(article.publishedAt);
+  const hasPublishedDate = /^\d{4}-\d{2}-\d{2}$/.test(article.publishedAt);
 
   if (featured) {
     return (
