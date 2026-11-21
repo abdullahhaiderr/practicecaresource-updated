@@ -231,7 +231,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             <div className="relative overflow-hidden rounded-3xl border border-brand-border bg-brand-background-wash px-7 py-8 text-brand-dark sm:px-10 sm:py-10 lg:px-16 lg:py-12">
               <div className="pointer-events-none absolute -right-10 -top-20 size-64 rounded-full border border-brand-accent/35" aria-hidden="true" />
               <div className="relative max-w-3xl">
-                <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">The source of care for your practice</p>
+                <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">The source of care for your practice</p>
                 <h2 className="mt-3 text-balance font-display text-4xl font-semibold leading-[1.02] text-brand-dark sm:text-5xl">
                   Let's talk about what your team needs.
                 </h2>
