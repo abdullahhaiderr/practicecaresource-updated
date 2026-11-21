@@ -51,7 +51,7 @@ export default function ServicesPage() {
               </Button>
             </div>
           </ScrollReveal>
-          <PageHeroImage src={serviceCatalog[2].imageSrc} alt="A team member coordinating work in a professional office" />
+          <PageHeroImage src={serviceCatalog[2].imageSrc} alt="A team member coordinating work in a professional office" variant="services" />
         </Container>
       </section>
 
