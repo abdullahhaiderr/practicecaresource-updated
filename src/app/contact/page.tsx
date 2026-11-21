@@ -100,7 +100,16 @@ export default function ContactPage() {
 
       <section id="contact-form" className="scroll-mt-24 py-10 sm:py-12 lg:py-16">
         <Container className="grid items-start gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
-          <ScrollReveal className="space-y-4">
+          <ScrollReveal delay={0.06} className="min-w-0 lg:order-2">
+            <div className="rounded-3xl border border-brand-border bg-brand-background p-5 shadow-card sm:p-8 lg:p-9">
+              <h2 className="mb-6 font-display text-3xl font-semibold leading-tight text-brand-dark sm:text-4xl">
+                Send us a message
+              </h2>
+              <ContactForm />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal className="min-w-0 space-y-4 lg:order-1">
             <div className="mb-5">
               <p className="mb-2 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">
                 Contact details
@@ -162,15 +171,6 @@ export default function ContactPage() {
                   <span key={item} className="rounded-pill bg-brand-peach/70 px-3 py-1.5 text-xs font-bold text-brand-accent-ink">{item}</span>
                 ))}
               </div>
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal delay={0.06}>
-            <div className="rounded-3xl border border-brand-border bg-brand-background p-5 shadow-card sm:p-8 lg:p-9">
-              <h2 className="mb-6 font-display text-3xl font-semibold leading-tight text-brand-dark sm:text-4xl">
-                Send us a message
-              </h2>
-              <ContactForm />
             </div>
           </ScrollReveal>
         </Container>
