@@ -102,4 +102,4 @@ export const contactFormWithConsentSchema = contactFormSchema.extend({
   }),
 });
 
-export type ContactFormValues = z.infer<typeof contactFormWithConsentSchema>;
+export type ContactFormValues = z.infer<typeof contactFormSchema> & { consent?: boolean };
