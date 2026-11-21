@@ -39,14 +39,14 @@ export const resourceArticles: ResourceArticle[] = [
     description:
       "A practical overview of the administrative work a medical billing partner may handle, where practice decisions remain essential, and how to set a clear scope.",
     excerpt:
-      "Medical billing covers a connected set of administrative tasks from charge review through payment posting and follow-up. Here is what the work can include and how a practice can stay involved.",
+      "Medical billing covers a connected set of administrative tasks from charge review through payment posting and follow up. Here is what the work can include and how a practice can stay involved.",
     category: "Billing",
     publishedAt: "[PUBLISH DATE]",
     coverImage:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=85",
     coverAlt: "Healthcare professional reviewing information at a desk",
     introduction:
-      "Medical billing helps move a documented visit through claim preparation, submission, payment posting, and follow-up. A billing company may take on some of these tasks, depending on the agreement. The practice supplies visit and insurance information, reviews questions that require its judgment, and decides which workflows fit its operations.",
+      "Medical billing helps move a documented visit through claim preparation, submission, payment posting, and follow up. A billing company may take on some of these tasks, depending on the agreement. The practice supplies visit and insurance information, reviews questions that require its judgment, and decides which workflows fit its operations.",
     takeaways: [
       "Billing includes several connected tasks and handoffs.",
       "Agree on responsibilities, approvals, access, and reporting first.",
@@ -63,7 +63,7 @@ export const resourceArticles: ResourceArticle[] = [
         bullets: [
           "Charge and encounter information organized for billing review",
           "Claim preparation and submission through an agreed workflow",
-          "Payment posting, returned-item tracking, and follow-up notes",
+          "Payment posting, returned-item tracking, and follow up notes",
         ],
       },
       {
@@ -79,7 +79,7 @@ export const resourceArticles: ResourceArticle[] = [
         },
       },
       {
-        id: "denials-and-follow-up",
+        id: "denials-and-follow up",
         title: "Follow-up helps keep open work visible",
         paragraphs: [
           "When a payer requests more information, returns a claim, or does not process it as expected, someone needs to identify the next administrative action. A billing company may sort returned items, record the reason shown, monitor response dates, and route requests for practice input. The specific task depends on the service agreement and the systems available to both teams. A useful process distinguishes items the billing staff can handle from those needing documentation, approval, or a decision by the practice.",
@@ -90,7 +90,7 @@ export const resourceArticles: ResourceArticle[] = [
         id: "scope-and-handoffs",
         title: "Set the scope and handoffs before starting",
         paragraphs: [
-          "The phrase medical billing can mean different things across service providers. One arrangement may cover claim submission and posting, while another may include eligibility checks, aging review, or denial follow-up. A practice should list the work it wants help with and ask the provider to state what is included, what is excluded, and how additional tasks will be handled. It is also helpful to identify expected response channels and the people responsible for routine questions.",
+          "The phrase medical billing can mean different things across service providers. One arrangement may cover claim submission and posting, while another may include eligibility checks, aging review, or denial follow up. A practice should list the work it wants help with and ask the provider to state what is included, what is excluded, and how additional tasks will be handled. It is also helpful to identify expected response channels and the people responsible for routine questions.",
           "Document how records are transferred, exceptions are raised, and work is approved. If system access is needed, decide who requests it, which permissions fit the task, and how access changes when responsibilities change. Clear steps make problems easier to identify and resolve.",
         ],
         bullets: [
@@ -114,7 +114,7 @@ export const resourceArticles: ResourceArticle[] = [
     slug: "why-claims-get-denied",
     title: "Why claims get denied and how practices can reduce avoidable rework",
     description:
-      "A general guide to common claim denial causes, careful review, and practical ways to make denial follow-up easier to coordinate.",
+      "A general guide to common claim denial causes, careful review, and practical ways to make denial follow up easier to coordinate.",
     excerpt:
       "Denials can have different causes, and the next step depends on the reason and the information available. A consistent review process can help a practice understand recurring issues without assuming every denial is preventable.",
     category: "Denials and AR",
@@ -193,14 +193,14 @@ export const resourceArticles: ResourceArticle[] = [
     description:
       "A plain-language overview of credentialing and enrollment tasks, the information practices may need to organize, and why payer timelines differ.",
     excerpt:
-      "Credentialing and enrollment involve provider information, application materials, review, and follow-up. The steps vary, so a clear checklist and realistic expectations help teams coordinate the work.",
+      "Credentialing and enrollment involve provider information, application materials, review, and follow up. The steps vary, so a clear checklist and realistic expectations help teams coordinate the work.",
     category: "Credentialing",
     publishedAt: "[PUBLISH DATE]",
     coverImage:
       "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1400&q=85",
     coverAlt: "Clinician working at a desk in a healthcare office",
     introduction:
-      "Credentialing and payer enrollment are related administrative processes that can involve reviewing provider qualifications, collecting practice information, preparing applications, and following up on requests. The terminology and sequence differ among payers and circumstances. A practice should confirm the current requirements that apply to each provider and plan before submitting information. This article describes common coordination tasks, not a guaranteed approval path or a payer-specific checklist.",
+      "Credentialing and payer enrollment are related administrative processes that can involve reviewing provider qualifications, collecting practice information, preparing applications, and following up on requests. The terminology and sequence differ among payers and circumstances. A practice should confirm the current requirements that apply to each provider and plan before submitting information. This article describes common coordination tasks, not a guaranteed approval path or a specific to a payer checklist.",
     takeaways: [
       "Begin with a provider-specific checklist and confirm current payer requirements.",
       "Keep practice review and approval points visible before an application is submitted.",
@@ -233,10 +233,10 @@ export const resourceArticles: ResourceArticle[] = [
         ],
       },
       {
-        id: "submission-and-follow-up",
-        title: "Plan for submission and follow-up",
+        id: "submission-and-follow up",
+        title: "Plan for submission and follow up",
         paragraphs: [
-          "Once an application is ready, the practice should follow the payer's current instructions for submission and retain a record of what was sent and when. The submission method may vary. Confirm who is authorized to send materials, how confirmation is recorded, and where follow-up requests will be received. If a payer asks for additional information, log the request, the date received, the requested item, and who will prepare or approve the response.",
+          "Once an application is ready, the practice should follow the payer's current instructions for submission and retain a record of what was sent and when. The submission method may vary. Confirm who is authorized to send materials, how confirmation is recorded, and where follow up requests will be received. If a payer asks for additional information, log the request, the date received, the requested item, and who will prepare or approve the response.",
           "Status tracking helps keep an application from disappearing between teams. A simple tracker may include a reference number, plan name, provider, submission date, last response, next action, and an owner. Avoid marking a file complete based only on a verbal update; record the source of the status and any remaining tasks. The practice should decide how often to review open applications and what information needs to be escalated to leadership.",
         ],
       },
@@ -245,7 +245,7 @@ export const resourceArticles: ResourceArticle[] = [
         title: "Set realistic timing expectations",
         paragraphs: [
           "Review time can depend on the payer, application type, completeness of information, volume of requests, and whether additional questions arise. External review schedules can change and are not controlled by the practice or an administrative support provider. Ask the payer how to check the status and whether it publishes current processing guidance. Avoid treating an estimated timeframe as a promise or scheduling business changes around an unconfirmed date.",
-          "A support team can help organize the work, note when follow-up is due, and surface missing information. It cannot guarantee how quickly a payer will review an application or what decision will be made. If a date has practical consequences for the practice, confirm the applicable requirements with the payer and any qualified advisor the practice relies on. Record what is known, what is pending, and when the next status check is planned.",
+          "A support team can help organize the work, note when follow up is due, and surface missing information. It cannot guarantee how quickly a payer will review an application or what decision will be made. If a date has practical consequences for the practice, confirm the applicable requirements with the payer and any qualified advisor the practice relies on. Record what is known, what is pending, and when the next status check is planned.",
         ],
       },
       {
@@ -260,10 +260,10 @@ export const resourceArticles: ResourceArticle[] = [
     closingNote: "rules vary by payer and state; verify current requirements",
   },
   {
-    slug: "accounts-receivable-follow-up",
-    title: "Accounts receivable follow-up: why aged claims matter",
+    slug: "accounts-receivable-follow up",
+    title: "Accounts receivable follow up: why aged claims matter",
     description:
-      "A practical introduction to aged accounts receivable, organizing follow-up, and communicating the next action without promising a payment outcome.",
+      "A practical introduction to aged accounts receivable, organizing follow up, and communicating the next action without promising a payment outcome.",
     excerpt:
       "An aged claim is an open account that has remained unresolved over time. A consistent review process helps teams understand the history, identify the next step, and keep practice decisions in view.",
     category: "Denials and AR",
@@ -272,7 +272,7 @@ export const resourceArticles: ResourceArticle[] = [
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=85",
     coverAlt: "Office team reviewing documents and account information",
     introduction:
-      "Accounts receivable, often shortened to AR, refers to amounts recorded as owed to a practice but not yet resolved through payment, adjustment, or another documented outcome. An aged claim is one that remains open as time passes. Age alone does not explain why the account is unresolved or what action is appropriate. A useful review looks at the claim history, available payer responses, practice records, and any applicable filing or follow-up instructions.",
+      "Accounts receivable, often shortened to AR, refers to amounts recorded as owed to a practice but not yet resolved through payment, adjustment, or another documented outcome. An aged claim is one that remains open as time passes. Age alone does not explain why the account is unresolved or what action is appropriate. A useful review looks at the claim history, available payer responses, practice records, and any applicable filing or follow up instructions.",
     takeaways: [
       "Use claim history and source responses to understand why an account remains open.",
       "Prioritize work using practice-approved criteria and clearly assigned next steps.",
@@ -296,7 +296,7 @@ export const resourceArticles: ResourceArticle[] = [
         title: "Review the account history before taking action",
         paragraphs: [
           "For an open balance, gather the relevant claim reference, date of service, submission and response history, payment details, and notes already recorded. Check whether the claim was acknowledged, returned, processed, or subject to a request. If a previous contact or correction was made, read the note and confirm that the response was recorded. This context helps prevent duplicate work and gives the next person a clearer starting point.",
-          "The appropriate next action depends on what the source information shows. A claim may need administrative follow-up, missing information from the practice, review of a payer response, or no further action because the balance was adjusted or resolved. If the explanation is unclear, record the question and send it to someone authorized to contact the payer or review the practice record. Avoid making assumptions based only on the age bucket or amount.",
+          "The appropriate next action depends on what the source information shows. A claim may need administrative follow up, missing information from the practice, review of a payer response, or no further action because the balance was adjusted or resolved. If the explanation is unclear, record the question and send it to someone authorized to contact the payer or review the practice record. Avoid making assumptions based only on the age bucket or amount.",
         ],
         bullets: [
           "What was submitted and when",
@@ -305,8 +305,8 @@ export const resourceArticles: ResourceArticle[] = [
         ],
       },
       {
-        id: "document-follow-up",
-        title: "Document each follow-up clearly",
+        id: "document-follow up",
+        title: "Document each follow up clearly",
         paragraphs: [
           "A useful note captures what was reviewed, who was contacted through the approved process, what response was received, and what should happen next. Keep the note factual and concise. Reference the relevant source response or record rather than relying on shorthand that only one person understands. If no response was available, record the date and the plan for checking again according to the practice's procedure.",
           "Consistent documentation helps the next staff member pick up the task and reduces repeated calls or searches. It also makes it easier for a manager to distinguish work that is waiting on a payer from work that needs practice input. When outside support participates, agree on where notes live, who can access them, and how open work will be returned to the practice if the scope changes.",
