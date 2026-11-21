@@ -230,7 +230,7 @@ export const serviceCatalog: ServiceContent[] = [
       {
         question: "Can the assistant follow our existing scripts?",
         answer:
-          "Yes. We can start from practice-provided instructions and agree how updates or exceptions should be handled.",
+          "Yes. We can start from instructions provided by the practice and agree how updates or exceptions should be handled.",
       },
       {
         question: "Does the assistant make clinical decisions?",
