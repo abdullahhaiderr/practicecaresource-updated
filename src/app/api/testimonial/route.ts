@@ -173,7 +173,7 @@ export async function POST(request: NextRequest) {
     replyTo: parsed.data.email,
     subject: "Medical billing review submission from " + parsed.data.fullName.replace(/[\r\n]+/g, " "),
     text: [
-      "New CareSource medical billing review submission — pending approval",
+      "New CareSource medical billing review submission: pending approval",
       "",
       "Name: " + parsed.data.fullName,
       "Practice: " + (parsed.data.practiceName || "Not provided"),
