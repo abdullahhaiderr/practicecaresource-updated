@@ -252,7 +252,7 @@ function ContactCta() {
     <section className="py-12 sm:py-14 lg:py-16" aria-label="Contact CareSource">
       <Container>
         <ScrollReveal>
-          <div className="relative isolate overflow-hidden rounded-[2rem] border border-brand-border bg-[#eaf4ff] px-5 py-8 text-brand-dark shadow-card sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+          <div className="relative isolate overflow-hidden rounded-[2rem] border border-brand-border bg-brand-background-wash px-5 py-8 text-brand-dark shadow-card sm:px-8 sm:py-10 lg:px-12 lg:py-12">
             <div className="relative grid gap-9 lg:grid-cols-[0.82fr_1.18fr] lg:items-start lg:gap-12">
               <div className="lg:pt-3">
                 <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">Start a conversation</p>
