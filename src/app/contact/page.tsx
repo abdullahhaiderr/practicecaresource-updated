@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
-  Clock3,
+  CheckCircle2,
   Mail,
-  MapPin,
   Phone,
 } from "lucide-react";
 import { Button } from "@/components/button";
@@ -106,16 +105,6 @@ export default function ContactPage() {
               </h2>
             </div>
 
-            <div className="flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card">
-              <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
-                <MapPin size={21} aria-hidden="true" />
-              </span>
-              <span>
-                <span className="block text-sm font-bold text-brand-dark">US Office</span>
-                <span className="mt-1 block text-sm leading-relaxed text-brand-slate">1770 Crystal Drive, Arlington, VA 22202, USA</span>
-              </span>
-            </div>
-
             <a
               href={`tel:${footerContact.phoneHref}`}
               className="group flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none"
@@ -144,14 +133,30 @@ export default function ContactPage() {
               <ArrowRight size={17} className="mt-1 ml-auto shrink-0 text-brand-accent-ink transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </a>
 
-            <div className="flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card">
-              <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
-                <Clock3 size={20} aria-hidden="true" />
-              </span>
-              <span>
-                <span className="block text-sm font-bold text-brand-dark">Hours</span>
-                <span className="mt-1 block text-sm leading-relaxed text-brand-slate">Mon–Fri · 8:00 AM–7:00 PM PT</span>
-              </span>
+            <div className="rounded-2xl border border-brand-border bg-brand-background-wash/30 p-5 sm:p-6">
+              <h3 className="font-display text-2xl font-semibold text-brand-dark">What happens next</h3>
+              <ol className="mt-5 space-y-5">
+                {[
+                  { title: "We review your message", description: "Your request is sent to the CareSource team for review." },
+                  { title: "We follow up", description: "A team member can contact you using the details you provide." },
+                  { title: "We clarify the next step", description: "Any service scope, responsibilities, and handoffs are discussed with your practice." },
+                ].map((step, index) => (
+                  <li key={step.title} className="flex items-start gap-3">
+                    <span className="grid size-8 shrink-0 place-items-center rounded-full bg-brand-peach text-sm font-extrabold text-brand-accent-ink" aria-hidden="true">
+                      {index + 1}
+                    </span>
+                    <span className="min-w-0 pt-0.5">
+                      <span className="block text-sm font-bold text-brand-dark">{step.title}</span>
+                      <span className="mt-1 block text-sm leading-relaxed text-brand-slate">{step.description}</span>
+                    </span>
+                  </li>
+                ))}
+              </ol>
+              <div className="mt-5 flex flex-wrap gap-2 border-t border-brand-border pt-4">
+                {["No patient information", "Agreed scope", "Clear handoffs"].map((item) => (
+                  <span key={item} className="rounded-pill bg-brand-peach/70 px-3 py-1.5 text-xs font-bold text-brand-accent-ink">{item}</span>
+                ))}
+              </div>
             </div>
           </ScrollReveal>
 
