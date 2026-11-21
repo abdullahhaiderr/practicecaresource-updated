@@ -91,6 +91,12 @@ export const contactFormCompactSchema = contactFormSchema.extend({
 });
 
 export const contactFormWithConsentSchema = contactFormSchema.extend({
+  monthlyClaimVolume: z
+    .string()
+    .min(1, "Choose your monthly claim volume.")
+    .refine((value) => monthlyClaimVolumeOptions.includes(value as (typeof monthlyClaimVolumeOptions)[number]), {
+      message: "Choose a monthly claim volume from the list.",
+    }),
   consent: z.boolean().refine((value) => value, {
     message: "Please confirm that CareSource may contact you about this request.",
   }),
