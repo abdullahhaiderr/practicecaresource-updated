@@ -26,7 +26,7 @@ export default function ServicesPage() {
             <nav aria-label="Breadcrumb" className="mb-4">
               <ol className="flex items-center gap-2 text-sm font-semibold text-brand-slate">
                 <li>
-                  <Link href="/" className="rounded-sm transition-colors hover:text-brand-accent-ink-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
+                  <Link href="/" className="rounded-sm transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
                     Home
                   </Link>
                 </li>
