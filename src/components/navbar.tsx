@@ -58,7 +58,7 @@ export function Navbar() {
       className={[
         "sticky top-0 z-50 border-b border-brand-border/80 transition-[background-color,box-shadow,backdrop-filter] duration-300",
         scrolled
-          ? "bg-brand-background/90 shadow-sm backdrop-blur-xl"
+          ? "bg-brand-background shadow-sm"
           : "bg-brand-background",
       ].join(" ")}
     >
@@ -87,6 +87,11 @@ export function Navbar() {
                   className="relative"
                   onMouseEnter={() => setServicesOpen(true)}
                   onMouseLeave={() => setServicesOpen(false)}
+                  onBlur={(event) => {
+                    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+                      setServicesOpen(false);
+                    }
+                  }}
                 >
                   <button
                     type="button"
@@ -95,7 +100,7 @@ export function Navbar() {
                     aria-expanded={servicesOpen}
                     aria-controls={dropdownId}
                     onClick={() => setServicesOpen((open) => !open)}
-                    onFocus={() => undefined}
+                    onFocus={() => setServicesOpen(true)}
                   >
                     Services
                     <ArrowDown
@@ -115,7 +120,7 @@ export function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 8 }}
                         transition={{ duration: reducedMotion ? 0 : 0.18 }}
-                        className="absolute left-1/2 top-full z-50 mt-1 w-72 -translate-x-1/2 rounded-2xl border border-brand-border bg-brand-background p-2 shadow-card"
+                        className="absolute left-1/2 top-full z-50 mt-0 w-72 -translate-x-1/2 rounded-2xl border border-brand-border bg-brand-background p-2 shadow-card"
                       >
                         {serviceNavLinks.map((service) => (
                           <Link
