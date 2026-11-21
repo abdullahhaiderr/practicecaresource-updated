@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   title: "Contact CareSource",
   description:
     "Contact CareSource to discuss medical billing and practice support for your team.",
+  alternates: { canonical: "/contact" },
 };
 
 const faqs = [
