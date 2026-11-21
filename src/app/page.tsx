@@ -5,12 +5,6 @@ import { getSiteUrl } from "@/lib/seo";
 
 
 export const metadata: Metadata = {
-  title: "CareSource | The source of care for your practice",
-  description:
-    "Medical billing, credentialing, AR recovery, and practice support for US healthcare providers, all under one roof.",
-};
-
-export const metadata: Metadata = {
   title: "Medical Billing and Practice Support",
   description:
     "Medical billing, credentialing, AR recovery, and practice support for US healthcare providers.",
