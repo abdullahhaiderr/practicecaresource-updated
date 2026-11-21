@@ -45,7 +45,7 @@ export function ResourceCard({ article, featured = false }: ResourceCardProps) {
           </div>
           <div className="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-bold text-brand-slate">
-              <span className="text-brand-accent">{article.category}</span>
+              <span className="text-brand-accent-ink">{article.category}</span>
               <span>{isIsoDate(article.publishedAt) ? new Date(`${article.publishedAt}T00:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : null}</span>
               <span className="inline-flex items-center gap-1.5"><Clock3 size={14} aria-hidden="true" />{article.readingMinutes} min read</span>
             </div>
@@ -84,7 +84,7 @@ export function ResourceCard({ article, featured = false }: ResourceCardProps) {
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-bold text-brand-slate">
             <span className="text-brand-accent-ink">{article.category}</span>
             <span aria-hidden="true">·</span>
-            <span>{article.publishedAt}</span>
+            <span>{isIsoDate(article.publishedAt) ? new Date(`${article.publishedAt}T00:00:00`).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) : null}</span>
           </div>
           <h3 className="mt-4 font-display text-2xl font-semibold leading-tight text-brand-dark sm:text-3xl">
             {article.title}
