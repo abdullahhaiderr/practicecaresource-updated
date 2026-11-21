@@ -18,17 +18,17 @@ export const metadata: Metadata = {
     follow: process.env.VERCEL_ENV === "production",
   },
   title: {
-    default: "CareSource | The source of care for your practice",
-    template: "%s | CareSource",
+    default: "Practice Care Source | The source of care for your practice",
+    template: "%s | Practice Care Source",
   },
   description:
     "Medical billing and practice support for US healthcare providers, including credentialing, AR recovery, denial management, virtual assistant services, and website development.",
-  applicationName: "CareSource",
+  applicationName: "Practice Care Source",
   openGraph: {
     type: "website",
     locale: "en_US",
-    siteName: "CareSource",
-    title: "CareSource | The source of care for your practice",
+    siteName: "Practice Care Source",
+    title: "Practice Care Source | The source of care for your practice",
     description:
       "Medical billing and practice support for US healthcare providers, all under one roof.",
   },
