@@ -1,21 +1,41 @@
-# CareSource design context
+# Practice Care Source design context
 
-## Brand
+## Brand identity
 
-CareSource provides medical billing and practice support for US healthcare providers. The voice should feel dependable, clear, and human. Avoid unsupported performance claims, testimonials, certifications, or privacy claims.
+Practice Care Source provides medical billing and practice support for US healthcare providers. The website should feel dependable, clear, professional, and human.
 
-## Palette
+The existing production website is the visual source of truth. Preserve its logo, navy and blue palette, teal accents, pale neutral surfaces, and homepage hero. Do not introduce orange, a replacement palette, or an unrelated visual identity.
 
-Use the four authoritative colors: orange #FF771C, warm cream #F5EDE0, dark #161311, and slate #546877. Shared code maps derived shades in the Tailwind token system. Do not introduce unrelated hues. Orange surfaces use dark text.
+## Color system
 
-## Type
+The current CSS custom properties in `src/app/globals.css` are authoritative:
 
-Use Barlow Condensed for expressive display headings, Manrope for body copy and controls, and Caveat only for the later handwritten hero line. Body copy must remain at least 16 px.
+- Primary blue: #0653C7
+- Primary hover: #05419E
+- Primary ink: #073074
+- White surface: #FFFFFF
+- Soft background: #F8FBFC
+- Main text: #161311
+- Muted text: #546877
+- Border: #DCE6E8
+- Soft teal tint: #D9F1F4
 
-## Layout and motion
+Do not change these values without explicit approval. Use solid color surfaces and avoid introducing gradients.
 
-Use generous spacing, rounded 2xl cards, fine palette-derived borders, and restrained shadows. Keep motion short and purposeful, preserve keyboard focus, and respect reduced-motion preferences.
+## Typography
 
-## Sprint scope
+Use Barlow Condensed for display headings, Manrope for body copy and controls, and Caveat only for the existing limited script accent. Keep body copy comfortably readable and maintain a consistent heading hierarchy.
 
-Part A is the shared foundation. Part B will build the Home hero. Part C will add the remaining Home sections. Services, About, Resources, and Contact are placeholders only.
+## Layout and interaction
+
+Use a consistent container and spacing system, aligned grids, predictable card heights, carefully cropped images, refined borders, and restrained shadows. Inner pages should have their own art direction while remaining part of the same brand.
+
+Keep desktop, tablet, and mobile layouts intentional. Prevent horizontal overflow, text collisions, clipped controls, uneven card alignment, and accidental image overlap. Preserve visible keyboard focus and respect reduced motion.
+
+## Content integrity
+
+Do not invent testimonials, customer identities, founder credentials, addresses, office hours, certifications, privacy promises, performance statistics, or downloadable resources. Use only verified business information. Keep existing forms connected to their real server routes and email delivery. Never ask visitors to submit patient information.
+
+## Page scope
+
+Keep the production homepage hero and brand theme unchanged. Improve the wireframing and presentation of About, Services, service detail, Resources, article, and Contact pages without replacing the existing Next.js application.
