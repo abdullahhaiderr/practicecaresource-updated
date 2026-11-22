@@ -28,13 +28,17 @@ function Cards({ services }: RelatedServicesCarouselProps) {
 export function RelatedServicesCarousel({ services }: RelatedServicesCarouselProps) {
   if (services.length === 0) return null;
 
+  const repeatedGroups = Array.from({ length: 7 }, (_, index) => index);
+
   return (
-    <div className="related-services-marquee mt-5 overflow-hidden" aria-label="Related services carousel">
+    <div className="related-services-marquee mt-5 overflow-hidden" role="region" aria-label="Related services carousel">
       <div className="related-services-track flex w-max items-stretch py-3">
         <Cards services={services} />
-        <div aria-hidden="true" inert className="related-services-clone flex shrink-0">
-          <Cards services={services} />
-        </div>
+        {repeatedGroups.map((group) => (
+          <div key={group} aria-hidden="true" inert className="related-services-clone flex shrink-0">
+            <Cards services={services} />
+          </div>
+        ))}
       </div>
     </div>
   );

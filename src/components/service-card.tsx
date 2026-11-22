@@ -23,7 +23,7 @@ export function ServiceCard({
   compact = false,
 }: ServiceCardProps) {
   return (
-    <article className="card-accent-line group relative flex h-full flex-col overflow-hidden rounded-2xl border border-brand-border bg-brand-background shadow-card transition-[transform,box-shadow,border-color] duration-300 ease-brand-out hover:-translate-y-1.5 hover:border-brand-accent/50 hover:shadow-card-hover active:scale-[0.995] motion-reduce:transition-none">
+    <article className={`card-accent-line group relative flex h-full flex-col overflow-hidden rounded-2xl border border-brand-border bg-brand-background shadow-card transition-[transform,box-shadow,border-color] duration-300 ease-brand-out hover:border-brand-accent/50 hover:shadow-card-hover active:scale-[0.995] motion-reduce:transition-none ${compact ? "hover:z-10 hover:-translate-y-2" : "hover:-translate-y-1.5"}`}>
       <Link
         href={href}
         className="flex h-full flex-col rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-accent-ink"

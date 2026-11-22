@@ -283,7 +283,7 @@ img {
 
 @keyframes related-services-marquee {
   from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  to { transform: translateX(-12.5%); }
 }
 
 .related-services-track {
