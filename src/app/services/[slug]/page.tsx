@@ -48,10 +48,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
     <main id="main-content">
       <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background">
         <ServiceSpotlight />
-        <Container className="relative z-10 flex min-h-[34rem] flex-col items-center justify-center py-12 text-center sm:py-16 lg:min-h-[39rem] lg:py-20">
-          <ScrollReveal className="w-full max-w-5xl">
+        <Container className="relative z-10 flex min-h-[30rem] flex-col items-center justify-center py-10 text-center sm:py-12 lg:min-h-[31rem] lg:py-14">
+          <ScrollReveal className="w-full max-w-4xl">
             <div className="hero-enter-stagger flex flex-col items-center">
-            <nav aria-label="Breadcrumb" className="mb-6">
+            <nav aria-label="Breadcrumb" className="mb-4">
               <ol className="flex flex-wrap items-center justify-center gap-2 text-sm font-semibold text-brand-accent-ink">
                 <li>
                   <Link href="/" className="rounded-sm transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Home</Link>
@@ -64,16 +64,16 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 <li aria-current="page" className="text-brand-dark">{service.shortTitle}</li>
               </ol>
             </nav>
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">
-              CareSource practice support
+            <p className="mb-2 text-xs font-extrabold uppercase tracking-[0.18em] text-brand-accent-ink sm:text-sm">
+              Practice support
             </p>
-            <h1 className="max-w-5xl text-balance font-display text-5xl font-semibold leading-[0.98] tracking-tight text-brand-dark sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-4xl text-balance font-display text-4xl font-semibold leading-[0.98] tracking-tight text-brand-dark sm:text-5xl lg:text-6xl">
               {service.title}
             </h1>
-            <p className="mt-5 max-w-3xl text-base leading-relaxed text-brand-slate sm:text-lg">
-              {service.overview}
+            <p className="mt-4 max-w-2xl text-base font-medium leading-relaxed text-brand-dark-soft sm:text-lg">
+              {service.description}
             </p>
-            <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <div className="mt-5 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <Button href="/contact" size="lg" showArrow>Book a Free Audit</Button>
               <Link href="/services" className="inline-flex min-h-12 items-center gap-2 px-3 text-sm font-bold text-brand-dark transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
                 View all services <ArrowRight size={17} aria-hidden="true" />

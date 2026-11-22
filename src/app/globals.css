@@ -170,11 +170,12 @@ img {
   transform: translateX(-50%);
   background: linear-gradient(
     to bottom,
-    rgb(var(--cs-accent) / 0.2),
-    rgb(var(--cs-accent) / 0.11) 48%,
-    rgb(var(--cs-accent) / 0.015)
+    rgb(var(--cs-accent) / 0.15),
+    rgb(var(--cs-accent) / 0.085) 42%,
+    rgb(var(--cs-accent) / 0.025) 78%,
+    transparent
   );
-  filter: blur(1px);
+  filter: blur(16px);
   opacity: 0;
   animation: service-spotlight-on 1.05s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
