@@ -87,7 +87,7 @@ export default function AboutPage() {
   return (
     <main id="main-content">
       <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-8 sm:py-10 lg:py-12 lg:pb-6">
-        <Container className="relative grid items-start gap-10 lg:min-h-[25rem] lg:grid-cols-[1.15fr_0.85fr]">
+        <Container className="relative grid items-start gap-10 lg:min-h-[31.25rem] lg:grid-cols-[1.05fr_0.95fr]">
           <ScrollReveal className="max-w-3xl lg:max-w-none">
             <nav aria-label="Breadcrumb" className="mb-4">
               <ol className="flex items-center gap-2 text-sm font-semibold text-brand-slate">
@@ -132,12 +132,12 @@ export default function AboutPage() {
       <section id="our-story" className="py-10 sm:py-12 lg:py-16">
         <Container className="grid items-center gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
           <ScrollReveal className="mx-auto w-full max-w-sm lg:max-w-none">
-            <div className="relative overflow-hidden rounded-3xl border border-brand-border bg-brand-dark p-6 text-brand-background shadow-card sm:p-8">
+            <div className="relative overflow-hidden rounded-3xl border border-brand-border bg-brand-background-wash p-6 text-brand-dark shadow-card sm:p-8">
               <div className="absolute -right-12 -top-12 size-48 rounded-full border border-brand-accent/35" aria-hidden="true" />
               <div className="relative">
                 <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand-accent">Practice support</p>
                 <h2 className="mt-3 font-display text-3xl font-semibold leading-tight">Services shaped around your workflow</h2>
-                <ul className="mt-6 space-y-3 text-sm font-semibold text-brand-background/85">
+                <ul className="mt-6 space-y-3 text-sm font-semibold text-brand-slate">
                   {["Medical billing", "Credentialing & enrollment", "AR and denial follow-up", "Administrative and digital support"].map((service) => (
                     <li key={service} className="flex items-center gap-3">
                       <Check size={17} className="shrink-0 text-brand-accent" aria-hidden="true" />
@@ -198,17 +198,17 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-brand-dark py-10 text-brand-background sm:py-12 lg:py-16">
+      <section className="bg-brand-background-wash py-10 text-brand-dark sm:py-12 lg:py-16">
         <Container>
           <ScrollReveal>
             <div className="max-w-3xl">
               <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">
                 Connected practice support
               </p>
-              <h2 className="text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-background sm:text-5xl lg:text-6xl">
+              <h2 className="text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-dark sm:text-5xl lg:text-6xl">
                 Why bring it under one roof?
               </h2>
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-background/75 sm:text-lg">
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
                 Practices can choose support across billing, enrollment,
                 and administrative coordination. A connected relationship can
                 make responsibilities and handoffs easier to discuss.
@@ -220,16 +220,16 @@ export default function AboutPage() {
             <ScrollReveal className="h-full">
               <article className="h-full rounded-2xl border border-brand-accent/45 bg-brand-background/10 p-6 transition-[border-color,background-color,transform] duration-300 hover:-translate-y-1 hover:border-brand-accent/75 hover:bg-brand-background/[0.13] motion-reduce:transition-none sm:p-8">
                 <div className="flex items-center gap-3">
-                  <span className="grid size-11 place-items-center rounded-xl bg-brand-accent text-brand-background">
+                  <span className="grid size-11 place-items-center rounded-xl bg-brand-accent text-brand-dark">
                     <ListChecks size={21} aria-hidden="true" />
                   </span>
-                  <h3 className="font-display text-2xl font-semibold text-brand-background sm:text-3xl">
+                  <h3 className="font-display text-2xl font-semibold text-brand-dark sm:text-3xl">
                     Juggling separate vendors
                   </h3>
                 </div>
                 <ul className="mt-6 space-y-4">
                   {vendorChallenges.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-base leading-relaxed text-brand-background/75">
+                    <li key={item} className="flex items-start gap-3 text-base leading-relaxed text-brand-slate">
                       <ArrowRight size={18} className="mt-1 shrink-0 text-brand-accent" aria-hidden="true" />
                       <span>{item}</span>
                     </li>
@@ -241,16 +241,16 @@ export default function AboutPage() {
             <ScrollReveal delay={0.08} className="h-full">
               <article className="h-full rounded-2xl border border-brand-accent/45 bg-brand-background/10 p-6 transition-[border-color,background-color,transform] duration-300 hover:-translate-y-1 hover:border-brand-accent/75 hover:bg-brand-background/[0.13] motion-reduce:transition-none sm:p-8">
                 <div className="flex items-center gap-3">
-                  <span className="grid size-11 place-items-center rounded-xl bg-brand-accent text-brand-background">
+                  <span className="grid size-11 place-items-center rounded-xl bg-brand-accent text-brand-dark">
                     <Workflow size={21} aria-hidden="true" />
                   </span>
-                  <h3 className="font-display text-2xl font-semibold text-brand-background sm:text-3xl">
+                  <h3 className="font-display text-2xl font-semibold text-brand-dark sm:text-3xl">
                     One connected team
                   </h3>
                 </div>
                 <ul className="mt-6 space-y-4">
                   {connectedSupport.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-base leading-relaxed text-brand-background/85">
+                    <li key={item} className="flex items-start gap-3 text-base leading-relaxed text-brand-slate">
                       <Check size={18} className="mt-1 shrink-0 text-brand-accent" aria-hidden="true" />
                       <span>{item}</span>
                     </li>
@@ -320,7 +320,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-brand-dark py-10 text-brand-background sm:py-12 lg:py-16">
+      <section className="bg-brand-background-wash py-10 text-brand-dark sm:py-12 lg:py-16">
         <Container>
           <ScrollReveal>
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
@@ -328,10 +328,10 @@ export default function AboutPage() {
                 <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">
                   The source of care for your practice
                 </p>
-                <h2 className="text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-background sm:text-5xl lg:text-6xl">
+                <h2 className="text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-dark sm:text-5xl lg:text-6xl">
                   Let's talk about the support your team needs.
                 </h2>
-                <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-background/75 sm:text-lg">
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
                   Share what your practice would like to improve, and we can
                   discuss a practical next step together.
                 </p>
