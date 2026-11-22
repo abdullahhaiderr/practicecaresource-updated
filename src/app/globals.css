@@ -157,12 +157,12 @@ img {
 }
 
 @keyframes service-spotlight-bulb-on {
-  0% { opacity: 0.25; background-color: rgb(var(--cs-accent) / 0.18); box-shadow: none; }
-  48% { opacity: 1; background-color: rgb(var(--cs-accent) / 0.88); box-shadow: 0 0 16px rgb(var(--cs-accent) / 0.55); }
-  57% { opacity: 0.4; background-color: rgb(var(--cs-accent) / 0.35); box-shadow: none; }
-  72% { opacity: 1; background-color: rgb(var(--cs-accent) / 0.92); box-shadow: 0 0 18px rgb(var(--cs-accent) / 0.58); }
-  82% { opacity: 0.62; background-color: rgb(var(--cs-accent) / 0.5); box-shadow: 0 0 7px rgb(var(--cs-accent) / 0.25); }
-  100% { opacity: 1; background-color: rgb(var(--cs-accent)); box-shadow: 0 0 15px rgb(var(--cs-accent) / 0.42); }
+  0% { opacity: 0.25; background-color: #f7d58e; box-shadow: none; }
+  48% { opacity: 1; background-color: #fff0c8; box-shadow: 0 0 16px rgb(255 198 91 / 0.7); }
+  57% { opacity: 0.4; background-color: #e5ae4d; box-shadow: none; }
+  72% { opacity: 1; background-color: #fff1cc; box-shadow: 0 0 18px rgb(255 198 91 / 0.75); }
+  82% { opacity: 0.62; background-color: #edc36f; box-shadow: 0 0 7px rgb(255 198 91 / 0.38); }
+  100% { opacity: 1; background-color: #ffe3a3; box-shadow: 0 0 15px rgb(255 198 91 / 0.58); }
 }
 
 .service-spotlight-beam {
@@ -170,12 +170,12 @@ img {
   transform: translateX(-50%);
   background: linear-gradient(
     to bottom,
-    rgb(var(--cs-accent) / 0.15),
-    rgb(var(--cs-accent) / 0.085) 42%,
-    rgb(var(--cs-accent) / 0.025) 78%,
+    rgb(255 225 166 / 0.24),
+    rgb(255 210 125 / 0.14) 42%,
+    rgb(255 202 105 / 0.045) 78%,
     transparent
   );
-  filter: blur(16px);
+  filter: blur(28px);
   opacity: 0;
   animation: service-spotlight-on 1.05s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
