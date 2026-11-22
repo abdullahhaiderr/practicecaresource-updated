@@ -6,7 +6,7 @@ import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
-import { ServiceCard } from "@/components/service-card";
+import { RelatedServicesCarousel } from "@/components/related-services-carousel";
 import { ServiceSpotlight } from "@/components/service-spotlight";
 import { getServiceBySlug, serviceCatalog, type ServiceContent } from "@/data/services";
 
@@ -186,20 +186,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               description="Explore other areas that may fit alongside this work."
             />
           </ScrollReveal>
-          <div className="mt-7 grid gap-5 md:grid-cols-2">
-            {relatedServices.map((related, index) => (
-              <ScrollReveal key={related.slug} delay={index * 0.05}>
-                <ServiceCard
-                  title={related.title}
-                  description={related.description}
-                  imageSrc={related.imageSrc}
-                  imageAlt={related.imageAlt}
-                  icon={related.icon}
-                  href={`/services/${related.slug}`}
-                />
-              </ScrollReveal>
-            ))}
-          </div>
+          <RelatedServicesCarousel services={relatedServices} />
         </Container>
       </section>
 

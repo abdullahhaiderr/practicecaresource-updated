@@ -281,6 +281,21 @@ img {
   animation-play-state: paused;
 }
 
+@keyframes related-services-marquee {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.related-services-track {
+  animation: related-services-marquee 34s linear infinite;
+  will-change: transform;
+}
+
+.related-services-marquee:hover .related-services-track,
+.related-services-marquee:focus-within .related-services-track {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .testimonial-marquee {
     overflow-x: auto;
@@ -290,6 +305,22 @@ img {
     animation: none;
     transform: none;
     will-change: auto;
+  }
+
+  .related-services-marquee {
+    overflow-x: auto;
+  }
+
+  .related-services-track {
+    width: 100%;
+    animation: none;
+    justify-content: center;
+    transform: none;
+    will-change: auto;
+  }
+
+  .related-services-clone {
+    display: none;
   }
 }
 
