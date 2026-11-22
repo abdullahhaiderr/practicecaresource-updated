@@ -57,12 +57,12 @@ export function ResourceCard({ article, featured = false }: ResourceCardProps) {
             <span>{article.publishedAt}</span>
           </div>
           <h3 className={[
-            "mt-3 font-display font-semibold leading-tight text-brand-dark",
+            "mt-3 line-clamp-2 min-h-[3rem] font-display font-semibold leading-tight text-brand-dark sm:min-h-[3.5rem]",
             featured ? "text-2xl sm:text-3xl lg:text-4xl" : "text-xl sm:text-2xl",
           ].join(" ")}>
             {article.title}
           </h3>
-          <p className="mt-3 flex-1 text-sm leading-relaxed text-brand-slate sm:text-base">
+          <p className="mt-3 min-h-[4.25rem] flex-1 line-clamp-3 text-sm leading-relaxed text-brand-slate sm:min-h-[4.95rem] sm:text-base">
             {article.excerpt}
           </p>
           <div className="mt-5 flex items-center justify-between gap-4 border-t border-brand-border pt-4">

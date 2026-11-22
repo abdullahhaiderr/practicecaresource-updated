@@ -49,6 +49,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-8 sm:py-10 lg:py-12 lg:pb-6">
         <Container className="relative grid items-start gap-10 lg:min-h-[25rem] lg:grid-cols-[1.15fr_0.85fr]">
           <ScrollReveal className="max-w-3xl">
+            <div className="hero-enter-stagger">
             <nav aria-label="Breadcrumb" className="mb-4">
               <ol className="flex flex-wrap items-center gap-2 text-sm font-semibold text-brand-slate">
                 <li>
@@ -77,6 +78,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 View all services <ArrowRight size={17} aria-hidden="true" />
               </Link>
             </div>
+            </div>
           </ScrollReveal>
           <PageHeroImage src={service.imageSrc} alt={service.imageAlt} />
         </Container>
@@ -90,9 +92,9 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               title="A clear scope, built around your workflow"
               description="The exact tasks are agreed with your practice. Common areas of support may include:"
             />
-            <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+            <ul className="mt-6 grid auto-rows-fr gap-3 sm:grid-cols-2">
               {service.whatsIncluded.map((item) => (
-                <li key={item} className="flex items-start gap-3 rounded-2xl border border-brand-border bg-brand-background/70 p-4 text-sm leading-relaxed text-brand-slate transition-colors hover:border-brand-accent/45 hover:bg-brand-background">
+                <li key={item} className="card-accent-line flex h-full items-start gap-3 rounded-2xl border border-brand-border bg-brand-background/70 p-4 text-sm leading-relaxed text-brand-slate transition-colors hover:border-brand-accent/45 hover:bg-brand-background">
                   <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-brand-accent/15 text-brand-accent-ink" aria-hidden="true">
                     <Check size={15} strokeWidth={2.3} />
                   </span>
@@ -102,7 +104,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             </ul>
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
-            <aside className="h-full rounded-3xl border border-brand-border bg-brand-background-wash/40 p-5 sm:p-6">
+            <aside className="card-accent-line h-full rounded-3xl border border-brand-border bg-brand-background-wash/40 p-5 sm:p-6">
               <p className="text-sm font-bold uppercase tracking-[0.15em] text-brand-accent-ink">Who it's for</p>
               <h2 className="mt-3 font-display text-3xl font-semibold leading-tight text-brand-dark sm:text-4xl">
                 Built for real practice workflows
@@ -134,10 +136,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               align="center"
             />
           </ScrollReveal>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {service.howWeWork.map((step, index) => (
-              <ScrollReveal key={step.title} delay={index * 0.04}>
-                <article className="h-full rounded-2xl border border-brand-border bg-brand-background p-5 transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card sm:p-6">
+              <ScrollReveal key={step.title} delay={index * 0.04} className="flex h-full">
+                <article className="card-accent-line h-full rounded-2xl border border-brand-border bg-brand-background p-5 transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card sm:p-6">
                   <span className="grid size-10 place-items-center rounded-xl bg-brand-dark text-sm font-bold text-brand-background" aria-hidden="true">
                     0{index + 1}
                   </span>

@@ -151,7 +151,7 @@ export default function AboutPage() {
               description="Our working principles keep the scope clear and make it easier for your team to stay involved where its input is needed."
             />
           </ScrollReveal>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 grid auto-rows-fr gap-5 md:grid-cols-3">
             {values.map(({ title, description, icon: Icon }, index) => (
               <ScrollReveal key={title} delay={index * 0.06} className="h-full">
                 <article className="group relative h-full overflow-hidden rounded-[18px] border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-2 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-7 before:absolute before:inset-x-0 before:top-0 before:h-1 before:origin-left before:scale-x-0 before:bg-brand-accent before:transition-transform before:duration-500 group-hover:before:scale-x-100">
@@ -191,7 +191,7 @@ export default function AboutPage() {
 
           <div className="mt-8 grid gap-4 lg:grid-cols-2">
             <ScrollReveal className="h-full">
-              <article className="h-full rounded-2xl border border-brand-accent/45 bg-brand-background/10 p-6 transition-[border-color,background-color,transform] duration-300 hover:-translate-y-1 hover:border-brand-accent/75 hover:bg-brand-background/[0.13] motion-reduce:transition-none sm:p-8">
+              <article className="card-accent-line h-full rounded-2xl border border-brand-accent/45 bg-brand-background/10 p-6 transition-[border-color,background-color,transform] duration-300 hover:-translate-y-1 hover:border-brand-accent/75 hover:bg-brand-background/[0.13] motion-reduce:transition-none sm:p-8">
                 <div className="flex items-center gap-3">
                   <span className="grid size-11 place-items-center rounded-xl bg-brand-accent text-brand-dark">
                     <ListChecks size={21} aria-hidden="true" />
@@ -212,7 +212,7 @@ export default function AboutPage() {
             </ScrollReveal>
 
             <ScrollReveal delay={0.08} className="h-full">
-              <article className="h-full rounded-2xl border border-brand-accent/45 bg-brand-background/10 p-6 transition-[border-color,background-color,transform] duration-300 hover:-translate-y-1 hover:border-brand-accent/75 hover:bg-brand-background/[0.13] motion-reduce:transition-none sm:p-8">
+              <article className="card-accent-line h-full rounded-2xl border border-brand-accent/45 bg-brand-background/10 p-6 transition-[border-color,background-color,transform] duration-300 hover:-translate-y-1 hover:border-brand-accent/75 hover:bg-brand-background/[0.13] motion-reduce:transition-none sm:p-8">
                 <div className="flex items-center gap-3">
                   <span className="grid size-11 place-items-center rounded-xl bg-brand-accent text-brand-dark">
                     <Workflow size={21} aria-hidden="true" />
@@ -275,14 +275,14 @@ export default function AboutPage() {
               description="Before work begins, your practice and CareSource can agree on scope, information access, review points, and how open questions are handed off."
             />
           </ScrollReveal>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 grid auto-rows-fr gap-5 md:grid-cols-3">
             {[
               { title: "Scope", description: "List the tasks included, what is outside the scope, and which systems or workflows they involve." },
               { title: "Practice review", description: "Identify which details need your team's confirmation, approval, or decision before moving forward." },
               { title: "Handoffs", description: "Agree how questions, updates, and next steps should be shared with the right practice contact." },
             ].map((item, index) => (
               <ScrollReveal key={item.title} delay={index * 0.05} className="h-full">
-                <article className="h-full rounded-2xl border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none">
+                <article className="card-accent-line h-full rounded-2xl border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none">
                   <p className="text-sm font-extrabold uppercase tracking-[0.16em] text-brand-accent-ink">0{index + 1}</p>
                   <h2 className="mt-3 font-display text-2xl font-semibold text-brand-dark">{item.title}</h2>
                   <p className="mt-3 text-base leading-relaxed text-brand-slate">{item.description}</p>

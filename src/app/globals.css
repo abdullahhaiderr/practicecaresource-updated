@@ -77,6 +77,68 @@ img {
   .brand-divider {
     border-color: rgb(var(--cs-border));
   }
+
+  .card-accent-line {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-accent-line::before {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 4px;
+    background: rgb(var(--cs-accent));
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .card-accent-line:hover::before,
+  .card-accent-line:focus-within::before {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes hero-rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-image-in {
+  from {
+    transform: scale(1.035);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.hero-enter-stagger > * {
+  animation: hero-rise-in 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-enter-stagger > :nth-child(1) { animation-delay: 40ms; }
+.hero-enter-stagger > :nth-child(2) { animation-delay: 100ms; }
+.hero-enter-stagger > :nth-child(3) { animation-delay: 160ms; }
+.hero-enter-stagger > :nth-child(4) { animation-delay: 220ms; }
+.hero-enter-stagger > :nth-child(5) { animation-delay: 280ms; }
+
+.hero-image-enter {
+  animation: hero-image-in 1100ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

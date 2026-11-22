@@ -75,7 +75,7 @@ export default function ContactPage() {
               </h2>
             </div>
 
-            <div className="flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card">
+            <div className="card-accent-line flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card">
               <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
                 <MapPin size={21} aria-hidden="true" />
               </span>
@@ -87,7 +87,7 @@ export default function ContactPage() {
 
             <a
               href={`tel:${footerContact.phoneHref}`}
-              className="group flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none"
+              className="card-accent-line group flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none"
             >
               <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
                 <Phone size={20} aria-hidden="true" />
@@ -101,7 +101,7 @@ export default function ContactPage() {
 
             <a
               href={`mailto:${footerContact.email}`}
-              className="group flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none"
+              className="card-accent-line group flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none"
             >
               <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
                 <Mail size={20} aria-hidden="true" />
@@ -113,7 +113,7 @@ export default function ContactPage() {
               <ArrowRight size={17} className="mt-1 ml-auto shrink-0 text-brand-accent-ink transition-transform group-hover:translate-x-1" aria-hidden="true" />
             </a>
 
-            <div className="flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card">
+            <div className="card-accent-line flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card">
               <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
                 <Clock3 size={20} aria-hidden="true" />
               </span>
@@ -125,7 +125,7 @@ export default function ContactPage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.06}>
-            <div className="rounded-3xl border border-brand-border bg-brand-background p-5 shadow-card sm:p-8 lg:p-9">
+            <div className="card-accent-line rounded-3xl border border-brand-border bg-brand-background p-5 shadow-card sm:p-8 lg:p-9">
               <h2 className="mb-6 font-display text-3xl font-semibold leading-tight text-brand-dark sm:text-4xl">
                 Send us a message
               </h2>
@@ -145,14 +145,14 @@ export default function ContactPage() {
             />
           </ScrollReveal>
 
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="mt-8 grid auto-rows-fr gap-4 md:grid-cols-2">
             {faqs.map(({ question, answer }, index) => (
               <ScrollReveal key={question} delay={index * 0.05} className="h-full">
-                <article className="group relative h-full overflow-hidden rounded-[18px] border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-2 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-7 before:absolute before:inset-x-0 before:top-0 before:h-1 before:origin-left before:scale-x-0 before:bg-brand-accent before:transition-transform before:duration-500 group-hover:before:scale-x-100">
+                <article className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-2 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-7 before:absolute before:inset-x-0 before:top-0 before:h-1 before:origin-left before:scale-x-0 before:bg-brand-accent before:transition-transform before:duration-500 group-hover:before:scale-x-100">
                   <h3 className="font-display text-xl font-semibold leading-tight text-brand-dark sm:text-2xl">
                     {question}
                   </h3>
-                  <p className="mt-3 text-base leading-relaxed text-brand-slate">
+                  <p className="mt-3 flex-1 text-base leading-relaxed text-brand-slate">
                     {answer}
                   </p>
                 </article>

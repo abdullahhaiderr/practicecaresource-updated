@@ -107,7 +107,7 @@ function ServicesSection() {
             className="mb-7 sm:mb-9"
           />
         </ScrollReveal>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <ServiceCard
               key={service.slug}
@@ -177,11 +177,11 @@ function ProcessSection() {
             </a>
           </div>
         </ScrollReveal>
-        <ol id="process-steps" className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <ol id="process-steps" className="grid auto-rows-fr gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {processSteps.map((step, index) => (
             <li key={step.number} className="relative">
-              <ScrollReveal delay={index * 0.04}>
-                <article className="h-full rounded-2xl border border-black bg-[#eaf4ff] p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-black hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
+              <ScrollReveal delay={index * 0.04} className="flex h-full">
+                <article className="card-accent-line h-full rounded-2xl border border-brand-border bg-[#eaf4ff] p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
                   <p className="font-display text-4xl font-semibold leading-none text-brand-accent-ink/70">{step.number}</p>
                   <h3 className="mt-6 font-display text-xl font-semibold leading-tight text-brand-dark">{step.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-brand-slate">{step.description}</p>
@@ -203,7 +203,7 @@ function TestimonialCards({ duplicate = false }: { duplicate?: boolean }) {
     >
       {testimonials.map(({ name, quote, imageSrc }) => (
         <li key={name} className="w-[min(82vw,18rem)] shrink-0 sm:w-[17.5rem] lg:w-[18rem]">
-          <article className="group flex h-[21rem] flex-col rounded-2xl border border-brand-border border-t-4 border-t-brand-accent bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/45 hover:shadow-card-hover motion-reduce:transition-none sm:p-5">
+          <article className="card-accent-line group flex h-[21rem] flex-col rounded-2xl border border-brand-border border-t-4 border-t-brand-accent bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/45 hover:shadow-card-hover motion-reduce:transition-none sm:p-5">
             <div className="mb-4 flex items-center justify-between">
               <span className="grid size-10 place-items-center rounded-full bg-brand-accent/10 text-brand-accent-ink transition-colors group-hover:bg-brand-accent/15" aria-hidden="true">
                 <Quote size={19} strokeWidth={2} />

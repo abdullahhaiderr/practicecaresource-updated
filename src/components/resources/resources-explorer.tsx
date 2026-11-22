@@ -95,7 +95,7 @@ export function ResourcesExplorer({ articles, categories, featuredSlug }: Resour
       </div>
 
       {gridArticles.length ? (
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {gridArticles.map((article, index) => (
             <ScrollReveal key={article.slug} delay={index * 0.035} className="h-full">
               <ResourceCard article={article} />

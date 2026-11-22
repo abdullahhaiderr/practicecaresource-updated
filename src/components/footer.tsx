@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
 import { Container } from "@/components/container";
 import { footerContact, footerQuickLinks, services } from "@/lib/site";
 
@@ -13,6 +13,19 @@ export function Footer() {
             <Link href="/" aria-label="CareSource home" className="inline-block rounded-md">
               <Image src="/logo.png" alt="Practice Care Source" width={219} height={60} className="h-auto w-[194px]" />
             </Link>
+            <div className="mt-4 flex items-center gap-2.5" role="group" aria-label="Social media profiles">
+              {[{ name: "LinkedIn", Icon: Linkedin }, { name: "Instagram", Icon: Instagram }, { name: "Facebook", Icon: Facebook }].map(({ name, Icon }) => (
+                <span
+                  key={name}
+                  role="img"
+                  aria-label={name}
+                  title={name}
+                  className="grid size-10 place-items-center rounded-full border border-brand-border bg-brand-background text-brand-accent-ink shadow-sm"
+                >
+                  <Icon size={18} strokeWidth={1.8} aria-hidden="true" />
+                </span>
+              ))}
+            </div>
             <p className="mt-5 max-w-xs text-base leading-relaxed text-brand-slate">
               {footerContact.tagline}
             </p>

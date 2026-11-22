@@ -42,7 +42,7 @@ export function PageHero({
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[72%_center]"
+          className="hero-image-enter object-cover object-[72%_center]"
         />
         <div
           aria-hidden="true"
@@ -50,7 +50,7 @@ export function PageHero({
         />
 
         <Container className="relative z-10 flex min-h-[34rem] items-center pb-28 pt-10 sm:min-h-[38rem] sm:pb-32 sm:pt-12">
-          <div className="max-w-[42rem]">
+          <div className="hero-enter-stagger max-w-[42rem]">
             <nav aria-label="Breadcrumb" className="mb-7 flex items-center gap-2 text-sm font-semibold text-brand-background/75">
               <Link href="/" className="transition-colors hover:text-brand-background focus-visible:rounded-sm">
                 Home
@@ -91,7 +91,7 @@ export function PageHero({
 
       <div className="relative z-20 -mt-[3.25rem] pb-4 sm:pb-6">
         <Container>
-          <div className={`grid overflow-hidden rounded-xl border border-brand-border bg-brand-background shadow-card ${factColumns} divide-y divide-brand-border md:divide-y-0 md:divide-x`}>
+          <div className={`card-accent-line grid overflow-hidden rounded-xl border border-brand-border bg-brand-background shadow-card ${factColumns} divide-y divide-brand-border md:divide-y-0 md:divide-x`}>
             {facts.map((fact) => (
               <div key={fact.title} className="min-h-[5.75rem] px-5 py-4 sm:px-6 sm:py-5">
                 <p className="font-display text-lg font-semibold leading-tight text-brand-dark sm:text-xl">

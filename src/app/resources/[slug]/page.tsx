@@ -190,6 +190,7 @@ export default async function ResourceArticlePage({ params }: ArticlePageProps) 
           </nav>
           <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
             <ScrollReveal>
+              <div className="hero-enter-stagger">
               <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">{article.category}</p>
               <h1 className="mt-3 text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-dark sm:text-5xl lg:text-6xl">{article.title}</h1>
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">{article.description}</p>
@@ -198,8 +199,9 @@ export default async function ResourceArticlePage({ params }: ArticlePageProps) 
                 <span className="inline-flex items-center gap-2"><Clock3 size={16} aria-hidden="true" />{getReadingMinutes(article)} min read</span>
                 <span>By Irtiza Hassan</span>
               </div>
+              </div>
             </ScrollReveal>
-            <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-brand-border bg-brand-background-wash shadow-card">
+            <div className="hero-image-enter relative aspect-[16/10] overflow-hidden rounded-3xl border border-brand-border bg-brand-background-wash shadow-card">
               <Image
                 src={article.coverImage}
                 alt={article.coverAlt}
@@ -255,7 +257,7 @@ export default async function ResourceArticlePage({ params }: ArticlePageProps) 
               </Link>
             </div>
           </ScrollReveal>
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid auto-rows-fr gap-5 md:grid-cols-2">
             {relatedArticles.map((related, index) => (
               <ScrollReveal key={related.slug} delay={index * 0.05} className="h-full">
                 <ResourceCard article={toCard(related)} />
@@ -268,7 +270,7 @@ export default async function ResourceArticlePage({ params }: ArticlePageProps) 
       <section className="py-8 sm:py-10 lg:py-12">
         <Container>
           <ScrollReveal>
-            <div className="relative isolate overflow-hidden rounded-3xl bg-brand-dark px-6 py-10 text-brand-background sm:px-10 sm:py-14 lg:px-16">
+            <div className="card-accent-line relative isolate overflow-hidden rounded-3xl bg-brand-dark px-6 py-10 text-brand-background sm:px-10 sm:py-14 lg:px-16">
               <div className="pointer-events-none absolute -right-12 -top-20 -z-10 size-64 rounded-full border-[2.5rem] border-brand-accent/15" aria-hidden="true" />
               <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">The source of care for your practice</p>
               <h2 className="mt-3 max-w-3xl text-balance font-display text-4xl font-semibold leading-[1.02] text-brand-background sm:text-5xl">Want to talk through your practice workflow?</h2>
