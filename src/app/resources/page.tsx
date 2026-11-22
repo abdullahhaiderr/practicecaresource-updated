@@ -3,6 +3,7 @@ import { ArrowDown, BookOpenText } from "lucide-react";
 import { Container } from "@/components/container";
 import { ResourcesExplorer } from "@/components/resources/resources-explorer";
 import { PageHeroImage } from "@/components/page-hero-image";
+import { PageHeroStrip } from "@/components/page-hero-strip";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { resourceArticles, resourceCategories, getReadingMinutes } from "@/data/resources/articles";
@@ -56,6 +57,7 @@ export default function ResourcesPage() {
           <PageHeroImage src={resourceArticles[0].coverImage} alt={resourceArticles[0].coverAlt} />
         </Container>
       </section>
+      <PageHeroStrip items={[{ title: "Free to read", detail: "Practical, general information" }, { title: "Four topics", detail: "Billing, credentialing, denials, growth" }, { title: "Written for", detail: "Practice managers and providers" }]} />
 
       <section id="resource-library" className="scroll-mt-24 py-10 sm:py-12 lg:py-16" aria-label="Resource library">
         <Container>
