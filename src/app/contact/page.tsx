@@ -10,6 +10,7 @@ import {
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { PageHeroImage } from "@/components/page-hero-image";
+import { PageHeroStrip } from "@/components/page-hero-strip";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { ContactForm } from "./contact-form";
@@ -93,6 +94,7 @@ export default function ContactPage() {
           <PageHeroImage src={serviceCatalog[2].imageSrc} alt="A team member coordinating work in a professional office" />
         </Container>
       </section>
+      <PageHeroStrip items={[{ title: "Call us", detail: "+92 308 8866774" }, { title: "Email us", detail: "info@practicecaresource.com" }, { title: "Who we support", detail: "US healthcare providers" }]} />
 
       <section id="contact-form" className="scroll-mt-24 py-10 sm:py-12 lg:py-16">
         <Container className="grid items-start gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
