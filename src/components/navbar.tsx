@@ -130,10 +130,10 @@ export function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 8 }}
                         transition={{ duration: reducedMotion ? 0 : 0.18 }}
-                        className="absolute left-1/2 top-full z-50 mt-2 w-[min(74rem,calc(100vw-2rem))] -translate-x-1/2 rounded-3xl border border-brand-border bg-brand-background p-4 shadow-card sm:p-5 lg:p-6"
+                        className="fixed left-1/2 top-[calc(76px+0.5rem)] z-50 max-h-[calc(100vh-6rem)] w-[min(74rem,calc(100vw-2rem))] -translate-x-1/2 overflow-y-auto rounded-3xl border border-brand-border bg-brand-background p-4 shadow-card sm:p-5 lg:p-6"
                       >
-                        <div className="grid gap-5 md:grid-cols-[0.9fr_1fr_1fr] md:gap-6">
-                          <div className="flex flex-col rounded-2xl bg-brand-background-wash/65 p-4 sm:p-5">
+                        <div className="grid min-w-0 gap-5 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)_minmax(0,1fr)] md:gap-6">
+                          <div className="flex min-w-0 flex-col rounded-2xl bg-brand-background-wash/65 p-4 sm:p-5">
                             <p className="text-[0.68rem] font-extrabold uppercase tracking-[0.15em] text-brand-accent-ink">Practice support</p>
                             <h2 className="mt-2 font-display text-2xl font-semibold leading-tight text-brand-dark sm:text-3xl">Explore our services</h2>
                             <p className="mt-2 text-sm leading-relaxed text-brand-slate">Choose the support that fits your team and workflow.</p>
@@ -142,7 +142,7 @@ export function Navbar() {
                             </Link>
                           </div>
                           {serviceMenuGroups.map((group) => (
-                            <div key={group.title}>
+                            <div key={group.title} className="min-w-0">
                               <h3 className="border-b border-brand-border pb-3 text-xs font-extrabold uppercase tracking-[0.13em] text-brand-slate">{group.title}</h3>
                               <ul className="mt-2">
                                 {group.services.map((service) => {
