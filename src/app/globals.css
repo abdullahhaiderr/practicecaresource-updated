@@ -156,11 +156,6 @@ img {
   100% { opacity: 1; }
 }
 
-@keyframes service-spotlight-card-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 @keyframes service-spotlight-bulb-on {
   0% { opacity: 0.25; background-color: rgb(var(--cs-accent) / 0.18); box-shadow: none; }
   48% { opacity: 1; background-color: rgb(var(--cs-accent) / 0.88); box-shadow: 0 0 16px rgb(var(--cs-accent) / 0.55); }
@@ -186,11 +181,6 @@ img {
 
 .service-spotlight-bulb {
   animation: service-spotlight-bulb-on 1.05s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.service-spotlight-card {
-  opacity: 0;
-  animation: service-spotlight-card-in 700ms ease-out 900ms both;
 }
 
 .cookie-consent-enter {
@@ -344,8 +334,7 @@ img {
   .cookie-consent-enter,
   .faq-answer,
   .service-spotlight-beam,
-  .service-spotlight-bulb,
-  .service-spotlight-card {
+  .service-spotlight-bulb {
     animation: none !important;
     opacity: 1 !important;
   }
