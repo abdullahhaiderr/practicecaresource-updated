@@ -5,13 +5,14 @@ type RelatedServicesCarouselProps = {
   services: ServiceContent[];
 };
 
-function Cards({ services }: RelatedServicesCarouselProps) {
+function Cards({ services, clone = false }: RelatedServicesCarouselProps & { clone?: boolean }) {
   return (
     <div className="flex shrink-0 gap-4 px-2 md:gap-5">
       {services.map((service) => (
         <div key={service.slug} className="w-[min(78vw,19rem)] shrink-0 md:w-[19rem]">
           <ServiceCard
             compact
+            duplicate={clone}
             title={service.title}
             description={service.description}
             imageSrc={service.imageSrc}
@@ -35,8 +36,8 @@ export function RelatedServicesCarousel({ services }: RelatedServicesCarouselPro
       <div className="related-services-track flex w-max items-stretch py-3">
         <Cards services={services} />
         {repeatedGroups.map((group) => (
-          <div key={group} aria-hidden="true" inert className="related-services-clone flex shrink-0">
-            <Cards services={services} />
+          <div key={group} aria-hidden="true" className="related-services-clone flex shrink-0">
+            <Cards services={services} clone />
           </div>
         ))}
       </div>
