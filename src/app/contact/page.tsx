@@ -49,7 +49,7 @@ export default function ContactPage() {
   return (
     <main id="main-content">
       <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-8 sm:py-10 lg:py-12 lg:pb-6">
-        <Container className="relative grid items-start gap-10 lg:min-h-[25rem] lg:grid-cols-[1.15fr_0.85fr]">
+        <Container className="relative grid items-start gap-10 lg:min-h-[31.25rem] lg:grid-cols-[1.05fr_0.95fr]">
           <ScrollReveal className="max-w-3xl lg:max-w-none">
             <nav aria-label="Breadcrumb" className="mb-4">
               <ol className="flex items-center gap-2 text-sm font-semibold text-brand-slate">
@@ -193,7 +193,7 @@ export default function ContactPage() {
         </Container>
       </section>
 
-      <section className="bg-brand-dark py-10 text-brand-background sm:py-12 lg:py-16">
+      <section className="bg-brand-background-wash py-10 text-brand-dark sm:py-12 lg:py-16">
         <Container>
           <ScrollReveal>
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
@@ -201,10 +201,10 @@ export default function ContactPage() {
                 <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">
                   CareSource
                 </p>
-                <h2 className="text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-background sm:text-5xl lg:text-6xl">
+                <h2 className="text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-dark sm:text-5xl lg:text-6xl">
                   Start with a conversation about your practice.
                 </h2>
-                <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-background/75 sm:text-lg">
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">
                   Use the form above or reach out by email when you’re ready to
                   talk through your next step.
                 </p>
