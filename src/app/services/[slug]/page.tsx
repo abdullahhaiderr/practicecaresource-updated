@@ -49,7 +49,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background">
         <ServiceSpotlight />
         <Container className="relative z-10 flex min-h-[26rem] flex-col items-center justify-center py-8 text-center sm:py-10 lg:min-h-[27rem] lg:py-12">
-          <ScrollReveal className="w-full max-w-4xl">
+          <ScrollReveal className="w-full max-w-4xl translate-y-4 sm:translate-y-5">
             <div className="hero-enter-stagger flex flex-col items-center">
             <nav aria-label="Breadcrumb" className="mb-4">
               <ol className="flex flex-wrap items-center justify-center gap-2 text-sm font-semibold text-brand-accent-ink">
