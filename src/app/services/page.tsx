@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { PageHeroImage } from "@/components/page-hero-image";
+import { PageHeroStrip } from "@/components/page-hero-strip";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
@@ -54,6 +55,7 @@ export default function ServicesPage() {
           <PageHeroImage src={serviceCatalog[2].imageSrc} alt="A team member coordinating work in a professional office" />
         </Container>
       </section>
+      <PageHeroStrip items={[{ title: "End to End RCM", detail: "Coverage" }, { title: "200+", detail: "Medical specialties supported" }, { title: "50 States", detail: "Nationwide coverage" }, { title: "1:1 Dedicated", detail: "Billing manager" }]} />
 
       <section id="all-services" className="py-10 sm:py-12 lg:py-16">
         <Container>
