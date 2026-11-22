@@ -21,12 +21,6 @@ export function Footer() {
             <p className="mt-5 max-w-xs text-base leading-relaxed text-brand-slate">
               {footerContact.tagline}
             </p>
-            <Link
-              href="/contact"
-              className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-pill bg-brand-accent px-5 text-sm font-bold text-brand-background shadow-card transition-[transform,box-shadow] hover:-translate-y-0.5 hover:shadow-card-hover focus-visible:outline-none"
-            >
-              Book a Free Audit <ArrowUpRight size={16} aria-hidden="true" />
-            </Link>
           </div>
 
           <div>
@@ -65,12 +59,26 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <Link
+                  href="/contact"
+                  className="inline-flex min-h-11 items-center gap-2 rounded-pill bg-brand-accent px-4 text-sm font-bold text-brand-background shadow-card transition-[transform,box-shadow] hover:-translate-y-0.5 hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink"
+                >
+                  Book a Free Audit <ArrowUpRight size={15} aria-hidden="true" />
+                </Link>
+              </li>
+              <li>
                 <a href={"tel:" + footerContact.phoneHref} className="inline-flex items-center gap-2.5 text-sm text-brand-slate transition-colors hover:text-brand-accent-ink focus-visible:outline-none">
                   <Phone size={17} className="shrink-0 text-brand-accent-ink" aria-hidden="true" />
                   <span>{footerContact.phoneDisplay}</span>
                 </a>
               </li>
             </ul>
+            <nav aria-label="Legal and privacy links" className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-brand-slate">
+              <Link href="/privacy-policy" className="transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Privacy policy</Link>
+              <Link href="/cookies-policy" className="transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Cookie policy</Link>
+              <Link href="/terms-of-service" className="transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Terms of service</Link>
+              <CookieSettingsButton />
+            </nav>
           </div>
         </div>
 
@@ -79,12 +87,6 @@ export function Footer() {
             <p>© {new Date().getFullYear()} CareSource. All rights reserved.</p>
             <p>The source of care for your practice.</p>
           </div>
-          <nav aria-label="Legal and privacy links" className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-brand-border pt-4">
-            <Link href="/privacy-policy" className="transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Privacy policy</Link>
-            <Link href="/cookies-policy" className="transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Cookie policy</Link>
-            <Link href="/terms-of-service" className="transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Terms of service</Link>
-            <CookieSettingsButton />
-          </nav>
         </div>
       </Container>
     </footer>
