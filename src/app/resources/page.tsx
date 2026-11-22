@@ -35,7 +35,7 @@ export default function ResourcesPage() {
     <main id="main-content">
       <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-8 sm:py-10 lg:py-12 lg:pb-6">
 
-        <Container className="relative grid items-start gap-10 lg:min-h-[25rem] lg:grid-cols-[1.15fr_0.85fr]">
+        <Container className="relative grid items-start gap-10 lg:min-h-[31.25rem] lg:grid-cols-[1.05fr_0.95fr]">
           <ScrollReveal className="max-w-3xl lg:max-w-none">
             <div className="mb-6 inline-flex min-h-10 items-center gap-2 rounded-pill border border-brand-border bg-brand-background/70 px-4 text-sm font-bold text-brand-dark">
               <BookOpenText size={17} className="text-brand-accent-ink" aria-hidden="true" />
