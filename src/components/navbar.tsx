@@ -5,10 +5,25 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ArrowDown, ArrowRight, Menu, X } from "lucide-react";
+import { ArrowDown, ArrowRight, LayoutGrid, Menu, X } from "lucide-react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { navigationLinks, serviceNavLinks } from "@/lib/site";
+
+const serviceMenuGroups = [
+  {
+    title: "Revenue cycle",
+    services: serviceNavLinks.filter((service) =>
+      ["medical-billing", "ar-recovery", "denial-management"].includes(service.slug),
+    ),
+  },
+  {
+    title: "Practice operations",
+    services: serviceNavLinks.filter((service) =>
+      ["credentialing", "virtual-assistant", "website-development"].includes(service.slug),
+    ),
+  },
+];
 
 export function Navbar() {
   const pathname = usePathname();
@@ -115,18 +130,39 @@ export function Navbar() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 8 }}
                         transition={{ duration: reducedMotion ? 0 : 0.18 }}
-                        className="absolute left-1/2 top-full z-50 mt-1 w-72 -translate-x-1/2 rounded-2xl border border-brand-border bg-brand-background p-2 shadow-card"
+                        className="absolute left-1/2 top-full z-50 mt-2 w-[min(74rem,calc(100vw-2rem))] -translate-x-1/2 rounded-3xl border border-brand-border bg-brand-background p-4 shadow-card sm:p-5 lg:p-6"
                       >
-                        {serviceNavLinks.map((service) => (
-                          <Link
-                            key={service.href}
-                            href={service.href}
-                            className="flex min-h-11 items-center justify-between rounded-xl px-4 text-sm font-semibold text-brand-dark transition-colors hover:bg-brand-background-wash/60 hover:text-brand-accent-ink focus-visible:outline-none"
-                          >
-                            {service.label}
-                            <ArrowRight size={15} aria-hidden="true" />
-                          </Link>
-                        ))}
+                        <div className="grid gap-5 md:grid-cols-[0.9fr_1fr_1fr] md:gap-6">
+                          <div className="flex flex-col rounded-2xl bg-brand-background-wash/65 p-4 sm:p-5">
+                            <p className="text-[0.68rem] font-extrabold uppercase tracking-[0.15em] text-brand-accent-ink">Practice support</p>
+                            <h2 className="mt-2 font-display text-2xl font-semibold leading-tight text-brand-dark sm:text-3xl">Explore our services</h2>
+                            <p className="mt-2 text-sm leading-relaxed text-brand-slate">Choose the support that fits your team and workflow.</p>
+                            <Link href="/services" className="mt-4 inline-flex min-h-10 items-center gap-2 self-start rounded-pill bg-brand-accent px-4 text-sm font-bold text-brand-background transition-colors hover:bg-brand-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
+                              <LayoutGrid size={16} aria-hidden="true" /> All services <ArrowRight size={15} aria-hidden="true" />
+                            </Link>
+                          </div>
+                          {serviceMenuGroups.map((group) => (
+                            <div key={group.title}>
+                              <h3 className="border-b border-brand-border pb-3 text-xs font-extrabold uppercase tracking-[0.13em] text-brand-slate">{group.title}</h3>
+                              <ul className="mt-2">
+                                {group.services.map((service) => {
+                                  const Icon = service.icon;
+                                  return (
+                                    <li key={service.href}>
+                                      <Link href={service.href} className="group flex min-h-12 items-center gap-3 rounded-xl px-2.5 text-sm font-semibold text-brand-dark transition-colors hover:bg-brand-background-wash/70 hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
+                                        <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-brand-peach/65 text-brand-accent-ink transition-colors group-hover:bg-brand-accent/15" aria-hidden="true">
+                                          <Icon size={16} strokeWidth={1.9} />
+                                        </span>
+                                        <span className="min-w-0 flex-1">{service.label}</span>
+                                        <ArrowRight size={14} className="shrink-0 text-brand-slate transition-transform group-hover:translate-x-0.5 group-hover:text-brand-accent-ink" aria-hidden="true" />
+                                      </Link>
+                                    </li>
+                                  );
+                                })}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
                       </motion.div>
                     ) : null}
                   </AnimatePresence>
@@ -208,13 +244,16 @@ export function Navbar() {
                             exit={{ opacity: 0, height: 0 }}
                             className="grid overflow-hidden pl-4"
                           >
+                            <Link
+                              href="/services"
+                              className="flex min-h-11 items-center gap-2 rounded-xl bg-brand-background-wash/65 px-3 text-sm font-bold text-brand-accent-ink hover:bg-brand-peach/50"
+                            >
+                              <LayoutGrid size={16} aria-hidden="true" /> All services
+                              <ArrowRight size={14} className="ml-auto" aria-hidden="true" />
+                            </Link>
                             {serviceNavLinks.map((service) => (
-                              <Link
-                                key={service.href}
-                                href={service.href}
-                                className="flex min-h-10 items-center rounded-lg px-3 text-sm text-brand-slate hover:bg-brand-background-wash/60 hover:text-brand-accent-ink"
-                              >
-                                {service.label}
+                              <Link key={service.href} href={service.href} className="flex min-h-10 items-center gap-2 rounded-lg px-3 text-sm text-brand-slate hover:bg-brand-background-wash/60 hover:text-brand-accent-ink">
+                                <service.icon size={15} aria-hidden="true" /> {service.label}
                               </Link>
                             ))}
                           </motion.div>

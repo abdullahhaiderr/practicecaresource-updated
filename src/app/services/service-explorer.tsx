@@ -69,8 +69,8 @@ export function ServiceExplorer() {
                 className={[
                   "group flex min-h-14 w-full items-center gap-3 rounded-2xl px-3 text-left text-sm font-bold transition-[background-color,color,transform] duration-200 hover:translate-x-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink",
                   selected
-                    ? "bg-brand-dark text-brand-background shadow-sm"
-                    : "text-brand-slate hover:bg-brand-background hover:text-brand-dark",
+                    ? "border border-brand-accent/20 bg-brand-background-wash text-brand-accent-ink shadow-sm"
+                    : "text-brand-slate hover:bg-brand-background hover:text-brand-accent-ink",
                 ].join(" ")}
               >
                 <span

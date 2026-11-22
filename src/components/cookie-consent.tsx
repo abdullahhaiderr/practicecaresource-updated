@@ -41,34 +41,31 @@ export function CookieConsent() {
       role="dialog"
       aria-labelledby="cookie-consent-title"
       aria-describedby="cookie-consent-description"
-      className="cookie-consent-enter fixed inset-x-4 bottom-4 z-[100] mx-auto max-w-4xl rounded-2xl border border-brand-border bg-brand-background p-5 text-brand-dark shadow-card-hover sm:inset-x-6 sm:p-6"
+      className="cookie-consent-enter fixed inset-x-2 bottom-2 z-[100] mx-auto max-w-5xl rounded-xl border border-brand-border bg-brand-background px-2.5 py-2 text-brand-dark shadow-card-hover sm:inset-x-5 sm:bottom-4 sm:rounded-full sm:px-4 sm:py-2.5"
     >
-      <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
-        <div className="max-w-2xl">
-          <div className="flex items-center gap-2.5">
-            <span className="grid size-10 shrink-0 place-items-center rounded-xl border border-brand-accent/15 bg-brand-peach/65 text-brand-accent-ink">
-              <Cookie size={19} aria-hidden="true" />
-            </span>
-            <h2 id="cookie-consent-title" className="font-display text-2xl font-semibold">Cookie choices</h2>
-          </div>
-          <p id="cookie-consent-description" className="mt-3 text-sm leading-relaxed text-brand-slate">
-            This site uses an essential cookie to remember your choice. It does not currently load analytics or advertising cookies. Choose whether to allow optional cookies; your choice is saved for 180 days.
+      <div className="flex min-h-10 items-center gap-1.5 sm:gap-3">
+        <span className="grid size-8 shrink-0 place-items-center rounded-full bg-brand-peach/65 text-brand-accent-ink sm:size-9" aria-hidden="true">
+          <Cookie size={17} />
+        </span>
+        <div className="min-w-0 flex-1">
+          <h2 id="cookie-consent-title" className="sr-only">Cookie choices</h2>
+          <p id="cookie-consent-description" className="truncate text-[0.68rem] font-medium leading-tight text-brand-slate sm:text-xs md:text-sm">
+            <span className="sm:hidden">Cookie choices · essential only</span>
+            <span className="hidden sm:inline">Essential preference cookie; no analytics or advertising cookies are active.</span>
           </p>
-          <Link href="/cookies-policy" className="mt-2 inline-flex min-h-9 items-center text-sm font-bold text-brand-accent-ink underline decoration-brand-accent/50 underline-offset-4 hover:text-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
-            Read the cookie policy
-          </Link>
         </div>
-        <div className="flex shrink-0 flex-wrap gap-2 sm:max-w-[17rem] sm:justify-end">
-          <button type="button" onClick={() => choose("rejected")} className="min-h-11 rounded-pill border border-brand-border px-4 text-sm font-bold text-brand-accent-ink transition-colors hover:border-brand-accent/45 hover:bg-brand-background-wash focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
-            Reject optional
-          </button>
-          <button type="button" onClick={() => choose("accepted")} className="min-h-11 rounded-pill bg-brand-accent px-4 text-sm font-bold text-brand-background shadow-sm transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-brand-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
-            Accept optional
-          </button>
-          <button type="button" onClick={() => setOpen(false)} className="absolute right-3 top-3 grid size-9 place-items-center rounded-full text-brand-slate transition-colors hover:bg-brand-background-wash hover:text-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink sm:hidden" aria-label="Close cookie choices">
-            <X size={17} aria-hidden="true" />
-          </button>
-        </div>
+        <Link href="/cookies-policy" className="hidden shrink-0 px-2 text-xs font-bold text-brand-accent-ink underline decoration-brand-accent/50 underline-offset-4 hover:text-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink md:inline-flex">
+          Policy
+        </Link>
+        <button type="button" onClick={() => choose("rejected")} className="min-h-9 shrink-0 rounded-full border border-brand-border px-2.5 text-[0.68rem] font-bold text-brand-accent-ink transition-colors hover:border-brand-accent/45 hover:bg-brand-background-wash focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink sm:px-3 sm:text-xs">
+          Reject
+        </button>
+        <button type="button" onClick={() => choose("accepted")} className="min-h-9 shrink-0 rounded-full bg-brand-accent px-2.5 text-[0.68rem] font-bold text-brand-background shadow-sm transition-colors hover:bg-brand-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink sm:px-3 sm:text-xs">
+          Accept
+        </button>
+        <button type="button" onClick={() => setOpen(false)} className="grid size-8 shrink-0 place-items-center rounded-full text-brand-slate transition-colors hover:bg-brand-background-wash hover:text-brand-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink" aria-label="Close cookie choices">
+          <X size={16} aria-hidden="true" />
+        </button>
       </div>
     </section>
   );

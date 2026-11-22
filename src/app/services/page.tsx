@@ -89,7 +89,7 @@ export default function ServicesPage() {
             </p>
             <Link
               href="/contact"
-              className="group mt-7 inline-flex min-h-12 items-center gap-2 rounded-pill bg-brand-accent px-6 text-sm font-bold text-brand-dark transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-brand-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-background focus-visible:ring-offset-2 focus-visible:ring-offset-brand-dark"
+              className="group mt-7 inline-flex min-h-12 items-center gap-2 rounded-pill bg-brand-accent px-6 text-sm font-bold text-brand-background transition-[transform,background-color] hover:-translate-y-0.5 hover:bg-brand-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-background focus-visible:ring-offset-2 focus-visible:ring-offset-brand-background"
             >
               Talk through your needs
               <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" aria-hidden="true" />

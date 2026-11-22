@@ -454,5 +454,7 @@ export function getServiceBySlug(slug: string) {
 export const serviceNavLinks = serviceCatalog.map((service) => ({
   label: service.shortTitle,
   href: "/services/" + service.slug,
+  slug: service.slug,
+  icon: service.icon,
 }));
 
