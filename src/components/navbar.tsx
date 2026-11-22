@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowDown, ArrowRight, LayoutGrid, Menu, X } from "lucide-react";
 import { Button } from "@/components/button";
@@ -28,6 +29,7 @@ const serviceMenuGroups = [
 export function Navbar() {
   const pathname = usePathname();
   const dropdownId = useId();
+  const servicesCloseTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -55,6 +57,20 @@ export function Navbar() {
     setMobileOpen(false);
     setServicesOpen(false);
   }, [pathname]);
+
+  useEffect(() => () => {
+    if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current);
+  }, []);
+
+  const openServices = () => {
+    if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current);
+    setServicesOpen(true);
+  };
+
+  const scheduleServicesClose = () => {
+    if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current);
+    servicesCloseTimer.current = setTimeout(() => setServicesOpen(false), 180);
+  };
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -100,8 +116,8 @@ export function Navbar() {
                 <div
                   key={link.href}
                   className="relative"
-                  onMouseEnter={() => setServicesOpen(true)}
-                  onMouseLeave={() => setServicesOpen(false)}
+                  onMouseEnter={openServices}
+                  onMouseLeave={scheduleServicesClose}
                 >
                   <button
                     type="button"
@@ -109,7 +125,10 @@ export function Navbar() {
                     aria-haspopup="true"
                     aria-expanded={servicesOpen}
                     aria-controls={dropdownId}
-                    onClick={() => setServicesOpen((open) => !open)}
+                    onClick={() => {
+                      if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current);
+                      setServicesOpen((open) => !open);
+                    }}
                     onFocus={() => undefined}
                   >
                     Services
@@ -123,15 +142,21 @@ export function Navbar() {
                     />
                   </button>
                   <AnimatePresence>
-                    {servicesOpen ? (
+                    {servicesOpen && typeof document !== "undefined" ? createPortal(
                       <motion.div
-                        id={dropdownId}
+                        key="services-menu"
                         initial={reducedMotion ? false : { opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 8 }}
                         transition={{ duration: reducedMotion ? 0 : 0.18 }}
-                        className="fixed left-1/2 top-[calc(76px+0.5rem)] z-50 max-h-[calc(100vh-6rem)] w-[min(74rem,calc(100vw-2rem))] -translate-x-1/2 overflow-y-auto rounded-3xl border border-brand-border bg-brand-background p-4 shadow-card sm:p-5 lg:p-6"
+                        className="pointer-events-none fixed inset-x-0 top-[calc(76px+0.5rem)] z-[60] flex justify-center px-4 sm:px-6"
                       >
+                        <div
+                          id={dropdownId}
+                          onMouseEnter={openServices}
+                          onMouseLeave={scheduleServicesClose}
+                          className="pointer-events-auto max-h-[calc(100vh-6rem)] w-full max-w-[74rem] overflow-y-auto rounded-3xl border border-brand-border bg-brand-background p-4 shadow-card sm:p-5 lg:p-6"
+                        >
                         <div className="grid min-w-0 gap-5 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)_minmax(0,1fr)] md:gap-6">
                           <div className="flex min-w-0 flex-col rounded-2xl bg-brand-background-wash/65 p-4 sm:p-5">
                             <p className="text-[0.68rem] font-extrabold uppercase tracking-[0.15em] text-brand-accent-ink">Practice support</p>
@@ -163,7 +188,9 @@ export function Navbar() {
                             </div>
                           ))}
                         </div>
-                      </motion.div>
+                        </div>
+                      </motion.div>,
+                      document.body,
                     ) : null}
                   </AnimatePresence>
                 </div>
