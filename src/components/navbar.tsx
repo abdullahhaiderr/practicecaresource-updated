@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useRef, useState } from "react";
-import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { ArrowDown, ArrowRight, LayoutGrid, Menu, X } from "lucide-react";
 import { Button } from "@/components/button";
@@ -69,7 +68,7 @@ export function Navbar() {
 
   const scheduleServicesClose = () => {
     if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current);
-    servicesCloseTimer.current = setTimeout(() => setServicesOpen(false), 180);
+    servicesCloseTimer.current = setTimeout(() => setServicesOpen(false), 350);
   };
 
   const isActive = (href: string) =>
@@ -129,7 +128,7 @@ export function Navbar() {
                       if (servicesCloseTimer.current) clearTimeout(servicesCloseTimer.current);
                       setServicesOpen((open) => !open);
                     }}
-                    onFocus={() => undefined}
+                    onFocus={openServices}
                   >
                     Services
                     <ArrowDown
@@ -141,58 +140,6 @@ export function Navbar() {
                       ].join(" ")}
                     />
                   </button>
-                  <AnimatePresence>
-                    {servicesOpen && typeof document !== "undefined" ? createPortal(
-                      <motion.div
-                        key="services-menu"
-                        initial={reducedMotion ? false : { opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 8 }}
-                        transition={{ duration: reducedMotion ? 0 : 0.18 }}
-                        className="pointer-events-none fixed inset-x-0 top-[calc(76px+0.5rem)] z-[60] flex justify-center px-4 sm:px-6"
-                      >
-                        <div
-                          id={dropdownId}
-                          onMouseEnter={openServices}
-                          onMouseLeave={scheduleServicesClose}
-                          className="pointer-events-auto max-h-[calc(100vh-6rem)] w-full max-w-[74rem] overflow-y-auto rounded-3xl border border-brand-border bg-brand-background p-4 shadow-card sm:p-5 lg:p-6"
-                        >
-                        <div className="grid min-w-0 gap-5 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)_minmax(0,1fr)] md:gap-6">
-                          <div className="flex min-w-0 flex-col rounded-2xl bg-brand-background-wash/65 p-4 sm:p-5">
-                            <p className="text-[0.68rem] font-extrabold uppercase tracking-[0.15em] text-brand-accent-ink">Practice support</p>
-                            <h2 className="mt-2 font-display text-2xl font-semibold leading-tight text-brand-dark sm:text-3xl">Explore our services</h2>
-                            <p className="mt-2 text-sm leading-relaxed text-brand-slate">Choose the support that fits your team and workflow.</p>
-                            <Link href="/services" className="mt-4 inline-flex min-h-10 items-center gap-2 self-start rounded-pill bg-brand-accent px-4 text-sm font-bold text-brand-background transition-colors hover:bg-brand-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
-                              <LayoutGrid size={16} aria-hidden="true" /> All services <ArrowRight size={15} aria-hidden="true" />
-                            </Link>
-                          </div>
-                          {serviceMenuGroups.map((group) => (
-                            <div key={group.title} className="min-w-0">
-                              <h3 className="border-b border-brand-border pb-3 text-xs font-extrabold uppercase tracking-[0.13em] text-brand-slate">{group.title}</h3>
-                              <ul className="mt-2">
-                                {group.services.map((service) => {
-                                  const Icon = service.icon;
-                                  return (
-                                    <li key={service.href}>
-                                      <Link href={service.href} className="group flex min-h-12 items-center gap-3 rounded-xl px-2.5 text-sm font-semibold text-brand-dark transition-colors hover:bg-brand-background-wash/70 hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
-                                        <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-brand-peach/65 text-brand-accent-ink transition-colors group-hover:bg-brand-accent/15" aria-hidden="true">
-                                          <Icon size={16} strokeWidth={1.9} />
-                                        </span>
-                                        <span className="min-w-0 flex-1">{service.label}</span>
-                                        <ArrowRight size={14} className="shrink-0 text-brand-slate transition-transform group-hover:translate-x-0.5 group-hover:text-brand-accent-ink" aria-hidden="true" />
-                                      </Link>
-                                    </li>
-                                  );
-                                })}
-                              </ul>
-                            </div>
-                          ))}
-                        </div>
-                        </div>
-                      </motion.div>,
-                      document.body,
-                    ) : null}
-                  </AnimatePresence>
                 </div>
               ) : (
                 <Link
@@ -316,6 +263,57 @@ export function Navbar() {
           ) : null}
         </AnimatePresence>
       </Container>
+      <AnimatePresence>
+        {servicesOpen ? (
+          <motion.div
+            key="services-menu"
+            initial={reducedMotion ? false : { opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 8 }}
+            transition={{ duration: reducedMotion ? 0 : 0.18 }}
+            className="absolute left-0 right-0 top-full z-[60] flex justify-center px-4 pt-2 sm:px-6"
+          >
+            <div
+              id={dropdownId}
+              onMouseEnter={openServices}
+              onMouseLeave={scheduleServicesClose}
+              className="max-h-[calc(100vh-6rem)] w-full max-w-[74rem] overflow-y-auto rounded-3xl border border-brand-border bg-brand-background p-4 shadow-card sm:p-5 lg:p-6"
+            >
+              <div className="grid min-w-0 gap-5 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)_minmax(0,1fr)] md:gap-6">
+                <div className="flex min-w-0 flex-col rounded-2xl bg-brand-background-wash/65 p-4 sm:p-5">
+                  <p className="text-[0.68rem] font-extrabold uppercase tracking-[0.15em] text-brand-accent-ink">Practice support</p>
+                  <h2 className="mt-2 font-display text-2xl font-semibold leading-tight text-brand-dark sm:text-3xl">Explore our services</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-brand-slate">Choose the support that fits your team and workflow.</p>
+                  <Link href="/services" className="mt-4 inline-flex min-h-10 items-center gap-2 self-start rounded-pill bg-brand-accent px-4 text-sm font-bold text-brand-background transition-colors hover:bg-brand-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
+                    <LayoutGrid size={16} aria-hidden="true" /> All services <ArrowRight size={15} aria-hidden="true" />
+                  </Link>
+                </div>
+                {serviceMenuGroups.map((group) => (
+                  <div key={group.title} className="min-w-0">
+                    <h3 className="border-b border-brand-border pb-3 text-xs font-extrabold uppercase tracking-[0.13em] text-brand-slate">{group.title}</h3>
+                    <ul className="mt-2">
+                      {group.services.map((service) => {
+                        const Icon = service.icon;
+                        return (
+                          <li key={service.href}>
+                            <Link href={service.href} className="group flex min-h-12 items-center gap-3 rounded-xl px-2.5 text-sm font-semibold text-brand-dark transition-colors hover:bg-brand-background-wash/70 hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
+                              <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-brand-peach/65 text-brand-accent-ink transition-colors group-hover:bg-brand-accent/15" aria-hidden="true">
+                                <Icon size={16} strokeWidth={1.9} />
+                              </span>
+                              <span className="min-w-0 flex-1">{service.label}</span>
+                              <ArrowRight size={14} className="shrink-0 text-brand-slate transition-transform group-hover:translate-x-0.5 group-hover:text-brand-accent-ink" aria-hidden="true" />
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </header>
   );
 }
