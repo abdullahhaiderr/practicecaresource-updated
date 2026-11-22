@@ -59,6 +59,12 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href={"tel:" + footerContact.phoneHref} className="inline-flex items-center gap-2.5 text-sm text-brand-slate transition-colors hover:text-brand-accent-ink focus-visible:outline-none">
+                  <Phone size={17} className="shrink-0 text-brand-accent-ink" aria-hidden="true" />
+                  <span>{footerContact.phoneDisplay}</span>
+                </a>
+              </li>
+              <li>
                 <Link
                   href="/contact"
                   className="inline-flex min-h-11 items-center gap-2 rounded-pill bg-brand-accent px-4 text-sm font-bold text-brand-background shadow-card transition-[transform,box-shadow] hover:-translate-y-0.5 hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink"
@@ -66,23 +72,20 @@ export function Footer() {
                   Book a Free Audit <ArrowUpRight size={15} aria-hidden="true" />
                 </Link>
               </li>
-              <li>
-                <a href={"tel:" + footerContact.phoneHref} className="inline-flex items-center gap-2.5 text-sm text-brand-slate transition-colors hover:text-brand-accent-ink focus-visible:outline-none">
-                  <Phone size={17} className="shrink-0 text-brand-accent-ink" aria-hidden="true" />
-                  <span>{footerContact.phoneDisplay}</span>
-                </a>
-              </li>
             </ul>
-            <nav aria-label="Legal and privacy links" className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-brand-slate">
-              <Link href="/privacy-policy" className="transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Privacy policy</Link>
-              <Link href="/cookies-policy" className="transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Cookie policy</Link>
-              <Link href="/terms-of-service" className="transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Terms of service</Link>
-              <CookieSettingsButton />
-            </nav>
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 pt-6 text-sm text-brand-slate">
+        <nav aria-label="Legal and privacy links" className="grid gap-3 border-b border-brand-border py-4 text-sm text-brand-slate md:grid-cols-[1.25fr_0.75fr_0.9fr_1fr] md:gap-8">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 md:col-start-3 md:col-span-2 lg:flex-nowrap">
+            <Link href="/privacy-policy" className="shrink-0 transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Privacy policy</Link>
+            <Link href="/cookies-policy" className="shrink-0 transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Cookie policy</Link>
+            <Link href="/terms-of-service" className="shrink-0 transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Terms of service</Link>
+            <CookieSettingsButton />
+          </div>
+        </nav>
+
+        <div className="flex flex-col gap-4 pt-5 text-sm text-brand-slate">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p>© {new Date().getFullYear()} CareSource. All rights reserved.</p>
             <p>The source of care for your practice.</p>
