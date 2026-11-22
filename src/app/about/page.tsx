@@ -11,8 +11,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
-import { PageHeroImage } from "@/components/page-hero-image";
-import { PageHeroStrip } from "@/components/page-hero-strip";
+import { PageHero } from "@/components/page-hero";
 import { serviceCatalog } from "@/data/services";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
@@ -87,49 +86,21 @@ const connectedSupport = [
 export default function AboutPage() {
   return (
     <main id="main-content">
-      <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background py-8 sm:py-10 lg:py-12 lg:pb-6">
-        <Container className="relative grid items-start gap-10 lg:min-h-[31.25rem] lg:grid-cols-[1.05fr_0.95fr]">
-          <ScrollReveal className="max-w-3xl lg:max-w-none">
-            <nav aria-label="Breadcrumb" className="mb-4">
-              <ol className="flex items-center gap-2 text-sm font-semibold text-brand-slate">
-                <li>
-                  <Link
-                    href="/"
-                    className="rounded-sm transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink"
-                  >
-                    Home
-                  </Link>
-                </li>
-                <li aria-hidden="true">/</li>
-                <li aria-current="page" className="text-brand-dark">
-                  About
-                </li>
-              </ol>
-            </nav>
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">
-              About CareSource
-            </p>
-            <h1 className="text-balance font-display text-5xl font-semibold leading-[0.98] tracking-tight text-brand-dark sm:text-6xl lg:min-h-[2em] lg:text-7xl">
-              The source of care for providers.
-            </h1>
-            <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg lg:min-h-[5.5rem]">
-              CareSource brings medical billing and practice support together
-              for US healthcare providers, with clear responsibilities and
-              thoughtful coordination around your team's way of working.
-            </p>
-            <div className="mt-6 flex min-h-14 flex-col gap-3 sm:flex-row sm:items-center">
-              <Button href="/contact" size="lg" showArrow>
-                Book a Free Audit
-              </Button>
-              <Button href="#our-story" variant="ghost" size="lg">
-                Meet the founder
-              </Button>
-            </div>
-          </ScrollReveal>
-          <PageHeroImage src="/heroes/about-hero.jpg" alt="Healthcare professional reviewing information at a clinic" />
-        </Container>
-      </section>
-      <PageHeroStrip items={[{ title: "Irtiza Hassan", detail: "Founder & Owner" }, { title: "Scope agreed", detail: "Directly with each practice" }, { title: "US healthcare providers", detail: "Billing and practice support" }]} />
+      <PageHero
+        breadcrumb="About"
+        eyebrow="About CareSource"
+        title="The source of care for providers."
+        description="CareSource brings medical billing and practice support together for US healthcare providers, with clear responsibilities and thoughtful coordination around your team's way of working."
+        imageSrc="/heroes/about-hero.jpg"
+        imageAlt="A healthcare professional and practice coordinator reviewing information together in a bright clinic"
+        primaryAction={{ label: "Book a Free Audit", href: "/contact" }}
+        secondaryAction={{ label: "Meet the founder", href: "#our-story" }}
+        facts={[
+          { title: "Irtiza Hassan", detail: "Founder & Owner" },
+          { title: "Scope agreed", detail: "Directly with each practice" },
+          { title: "US healthcare providers", detail: "Billing and practice support" },
+        ]}
+      />
 
       <section id="our-story" className="py-10 sm:py-12 lg:py-16">
         <Container className="grid items-center gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
@@ -183,7 +154,7 @@ export default function AboutPage() {
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {values.map(({ title, description, icon: Icon }, index) => (
               <ScrollReveal key={title} delay={index * 0.06} className="h-full">
-                <article className="group h-full rounded-2xl border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-7">
+                <article className="group relative h-full overflow-hidden rounded-[18px] border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-2 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-7 before:absolute before:inset-x-0 before:top-0 before:h-1 before:origin-left before:scale-x-0 before:bg-brand-accent before:transition-transform before:duration-500 group-hover:before:scale-x-100">
                   <span className="grid size-12 place-items-center rounded-xl border border-brand-accent/15 bg-brand-peach/65 text-brand-accent-ink shadow-sm transition-transform duration-300 group-hover:rotate-3 motion-reduce:transition-none">
                     <Icon size={23} strokeWidth={1.8} aria-hidden="true" />
                   </span>
@@ -277,7 +248,7 @@ export default function AboutPage() {
             {onboardingSteps.map(({ title, description }, index) => (
               <li key={title} className="h-full">
                 <ScrollReveal delay={index * 0.045} className="flex h-full">
-                  <article className="group h-full rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
+                  <article className="group relative h-full overflow-hidden rounded-[18px] border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-2 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-6 before:absolute before:inset-x-0 before:top-0 before:h-1 before:origin-left before:scale-x-0 before:bg-brand-accent before:transition-transform before:duration-500 group-hover:before:scale-x-100">
                     <span className="grid size-11 place-items-center rounded-full border border-brand-accent/15 bg-brand-peach/65 text-sm font-bold text-brand-accent-ink shadow-sm transition-transform duration-300 group-hover:scale-105 motion-reduce:transition-none">
                       0{index + 1}
                     </span>
