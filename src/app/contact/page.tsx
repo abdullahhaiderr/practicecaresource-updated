@@ -65,62 +65,64 @@ export default function ContactPage() {
 
       <section id="contact-form" className="scroll-mt-24 py-10 sm:py-12 lg:py-16">
         <Container className="grid items-start gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
-          <ScrollReveal className="space-y-4">
-            <div className="mb-5">
-              <p className="mb-2 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">
-                Contact details
-              </p>
-              <h2 className="font-display text-3xl font-semibold leading-tight text-brand-dark sm:text-4xl">
-                Reach our team.
-              </h2>
-            </div>
+          <ScrollReveal>
+            <div className="space-y-4">
+              <div className="mb-5">
+                <p className="mb-2 text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">
+                  Contact details
+                </p>
+                <h2 className="font-display text-3xl font-semibold leading-tight text-brand-dark sm:text-4xl">
+                  Reach our team.
+                </h2>
+              </div>
 
-            <div className="card-accent-line flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card">
-              <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
-                <MapPin size={21} aria-hidden="true" />
-              </span>
-              <span>
-                <span className="block text-sm font-bold text-brand-dark">US Office</span>
-                <span className="mt-1 block text-sm leading-relaxed text-brand-slate">1770 Crystal Drive, Arlington, VA 22202, USA</span>
-              </span>
-            </div>
+              <div className="card-accent-line flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card">
+                <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
+                  <MapPin size={21} aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="block text-sm font-bold text-brand-dark">US Office</span>
+                  <span className="mt-1 block text-sm leading-relaxed text-brand-slate">1770 Crystal Drive, Arlington, VA 22202, USA</span>
+                </span>
+              </div>
 
-            <a
-              href={`tel:${footerContact.phoneHref}`}
-              className="card-accent-line group flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none"
-            >
-              <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
-                <Phone size={20} aria-hidden="true" />
-              </span>
-              <span className="min-w-0">
-                <span className="block text-sm font-bold text-brand-dark">Phone</span>
-                <span className="mt-1 block text-sm leading-relaxed text-brand-slate">{footerContact.phoneDisplay}</span>
-              </span>
-              <ArrowRight size={17} className="mt-1 ml-auto shrink-0 text-brand-accent-ink transition-transform group-hover:translate-x-1" aria-hidden="true" />
-            </a>
+              <a
+                href={`tel:${footerContact.phoneHref}`}
+                className="card-accent-line group flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none"
+              >
+                <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
+                  <Phone size={20} aria-hidden="true" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-sm font-bold text-brand-dark">Phone</span>
+                  <span className="mt-1 block text-sm leading-relaxed text-brand-slate">{footerContact.phoneDisplay}</span>
+                </span>
+                <ArrowRight size={17} className="mt-1 ml-auto shrink-0 text-brand-accent-ink transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </a>
 
-            <a
-              href={`mailto:${footerContact.email}`}
-              className="card-accent-line group flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none"
-            >
-              <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
-                <Mail size={20} aria-hidden="true" />
-              </span>
-              <span className="min-w-0">
-                <span className="block text-sm font-bold text-brand-dark">Email</span>
-                <span className="mt-1 block break-all text-sm leading-relaxed text-brand-slate">{footerContact.email}</span>
-              </span>
-              <ArrowRight size={17} className="mt-1 ml-auto shrink-0 text-brand-accent-ink transition-transform group-hover:translate-x-1" aria-hidden="true" />
-            </a>
+              <a
+                href={`mailto:${footerContact.email}`}
+                className="card-accent-line group flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-1 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none"
+              >
+                <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
+                  <Mail size={20} aria-hidden="true" />
+                </span>
+                <span className="min-w-0">
+                  <span className="block text-sm font-bold text-brand-dark">Email</span>
+                  <span className="mt-1 block break-all text-sm leading-relaxed text-brand-slate">{footerContact.email}</span>
+                </span>
+                <ArrowRight size={17} className="mt-1 ml-auto shrink-0 text-brand-accent-ink transition-transform group-hover:translate-x-1" aria-hidden="true" />
+              </a>
 
-            <div className="card-accent-line flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card">
-              <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
-                <Clock3 size={20} aria-hidden="true" />
-              </span>
-              <span>
-                <span className="block text-sm font-bold text-brand-dark">Hours</span>
-                <span className="mt-1 block text-sm leading-relaxed text-brand-slate">Mon–Fri · 8:00 AM–7:00 PM PT</span>
-              </span>
+              <div className="card-accent-line flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card">
+                <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
+                  <Clock3 size={20} aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="block text-sm font-bold text-brand-dark">Hours</span>
+                  <span className="mt-1 block text-sm leading-relaxed text-brand-slate">Mon–Fri · 8:00 AM–7:00 PM PT</span>
+                </span>
+              </div>
             </div>
           </ScrollReveal>
 
@@ -147,7 +149,7 @@ export default function ContactPage() {
 
           <div className="mt-8 grid auto-rows-fr gap-4 md:grid-cols-2">
             {faqs.map(({ question, answer }, index) => (
-              <ScrollReveal key={question} delay={index * 0.05} className="h-full">
+              <ScrollReveal key={question} delay={index * 0.05} className="flex h-full">
                 <article className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-2 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-7 before:absolute before:inset-x-0 before:top-0 before:h-1 before:origin-left before:scale-x-0 before:bg-brand-accent before:transition-transform before:duration-500 group-hover:before:scale-x-100">
                   <h3 className="font-display text-xl font-semibold leading-tight text-brand-dark sm:text-2xl">
                     {question}

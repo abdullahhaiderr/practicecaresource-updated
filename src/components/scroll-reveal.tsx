@@ -46,6 +46,7 @@ export function ScrollReveal({
   return (
     <div className={className} {...props}>
       <motion.div
+        className="h-full"
         initial={reducedMotion ? false : "hidden"}
         whileInView="visible"
         viewport={{ once: true, amount }}

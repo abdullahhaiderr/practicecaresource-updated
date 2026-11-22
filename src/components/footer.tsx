@@ -20,7 +20,7 @@ export function Footer() {
                   role="img"
                   aria-label={name}
                   title={name}
-                  className="grid size-10 place-items-center rounded-full border border-brand-border bg-brand-background text-brand-accent-ink shadow-sm"
+                  className="social-icon grid size-10 place-items-center rounded-full border border-brand-border bg-brand-background text-brand-accent-ink shadow-sm"
                 >
                   <Icon size={18} strokeWidth={1.8} aria-hidden="true" />
                 </span>
