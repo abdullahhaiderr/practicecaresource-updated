@@ -291,6 +291,11 @@ img {
   will-change: transform;
 }
 
+.related-services-marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 8%, #000 92%, transparent 100%);
+}
+
 .related-services-marquee:hover .related-services-track,
 .related-services-marquee:focus-within .related-services-track {
   animation-play-state: paused;
