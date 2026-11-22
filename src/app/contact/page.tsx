@@ -91,7 +91,7 @@ export default function ContactPage() {
               </a>
             </div>
           </ScrollReveal>
-          <PageHeroImage src={serviceCatalog[2].imageSrc} alt="A team member coordinating work in a professional office" />
+          <PageHeroImage src="/heroes/contact-hero.jpg" alt="A team member coordinating work in a professional office" />
         </Container>
       </section>
       <PageHeroStrip items={[{ title: "Call us", detail: "+92 308 8866774" }, { title: "Email us", detail: "info@practicecaresource.com" }, { title: "Who we support", detail: "US healthcare providers" }]} />

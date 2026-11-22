@@ -54,7 +54,7 @@ export default function ResourcesPage() {
               </a>
             </div>
           </ScrollReveal>
-          <PageHeroImage src={resourceArticles[0].coverImage} alt={resourceArticles[0].coverAlt} />
+          <PageHeroImage src="/heroes/resources-hero.jpg" alt="Practice manager reviewing guidance in a professional office" />
         </Container>
       </section>
       <PageHeroStrip items={[{ title: "Free to read", detail: "Practical, general information" }, { title: "Four topics", detail: "Billing, credentialing, denials, growth" }, { title: "Written for", detail: "Practice managers and providers" }]} />

@@ -126,7 +126,7 @@ export default function AboutPage() {
               </Button>
             </div>
           </ScrollReveal>
-          <PageHeroImage src={serviceCatalog[0].imageSrc} alt="Healthcare professional reviewing information at a clinic" />
+          <PageHeroImage src="/heroes/about-hero.jpg" alt="Healthcare professional reviewing information at a clinic" />
         </Container>
       </section>
       <PageHeroStrip items={[{ title: "Irtiza Hassan", detail: "Founder & Owner" }, { title: "Scope agreed", detail: "Directly with each practice" }, { title: "US healthcare providers", detail: "Billing and practice support" }]} />

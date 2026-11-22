@@ -52,7 +52,7 @@ export default function ServicesPage() {
               </Button>
             </div>
           </ScrollReveal>
-          <PageHeroImage src={serviceCatalog[2].imageSrc} alt="A team member coordinating work in a professional office" />
+          <PageHeroImage src="/heroes/services-hero.jpg" alt="A team member coordinating work in a professional office" />
         </Container>
       </section>
       <PageHeroStrip items={[{ title: "End to End RCM", detail: "Coverage" }, { title: "200+", detail: "Medical specialties supported" }, { title: "50 States", detail: "Nationwide coverage" }]} />
