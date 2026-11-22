@@ -12,6 +12,7 @@ import {
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { PageHeroImage } from "@/components/page-hero-image";
+import { PageHeroStrip } from "@/components/page-hero-strip";
 import { serviceCatalog } from "@/data/services";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
@@ -128,6 +129,7 @@ export default function AboutPage() {
           <PageHeroImage src={serviceCatalog[0].imageSrc} alt="Healthcare professional reviewing information at a clinic" />
         </Container>
       </section>
+      <PageHeroStrip items={[{ title: "Irtiza Hassan", detail: "Founder & Owner" }, { title: "Scope agreed", detail: "Directly with each practice" }, { title: "US healthcare providers", detail: "Billing and practice support" }]} />
 
       <section id="our-story" className="py-10 sm:py-12 lg:py-16">
         <Container className="grid items-center gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
