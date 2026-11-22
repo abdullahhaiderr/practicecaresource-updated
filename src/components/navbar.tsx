@@ -277,7 +277,7 @@ export function Navbar() {
               id={dropdownId}
               onMouseEnter={openServices}
               onMouseLeave={scheduleServicesClose}
-              className="max-h-[calc(100vh-6rem)] w-full max-w-[74rem] overflow-y-auto rounded-3xl border border-brand-border bg-brand-background p-4 shadow-card sm:p-5 lg:p-6"
+              className="max-h-[calc(100vh-6rem)] w-full max-w-[68rem] overflow-y-auto rounded-3xl border border-brand-border bg-brand-background p-4 shadow-card sm:p-5 lg:p-6"
             >
               <div className="grid min-w-0 gap-5 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1fr)_minmax(0,1fr)] md:gap-6">
                 <div className="flex min-w-0 flex-col rounded-2xl bg-brand-background-wash/65 p-4 sm:p-5">
