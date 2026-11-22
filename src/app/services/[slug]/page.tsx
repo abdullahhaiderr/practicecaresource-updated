@@ -94,7 +94,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             />
             <ul className="mt-6 grid auto-rows-fr gap-3 sm:grid-cols-2">
               {service.whatsIncluded.map((item) => (
-                <li key={item} className="card-accent-line flex h-full items-start gap-3 rounded-2xl border border-brand-border bg-brand-background/70 p-4 text-sm leading-relaxed text-brand-slate transition-colors hover:border-brand-accent/45 hover:bg-brand-background">
+                <li key={item} className="card-accent-line flex h-full items-start gap-3 rounded-2xl border border-brand-border bg-brand-background/70 p-4 text-sm leading-relaxed text-brand-slate transition-[transform,box-shadow,border-color,background-color] duration-300 ease-brand-out hover:-translate-y-1 hover:border-brand-accent/50 hover:bg-brand-background hover:shadow-card-hover motion-reduce:transition-none">
                   <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-brand-accent/15 text-brand-accent-ink" aria-hidden="true">
                     <Check size={15} strokeWidth={2.3} />
                   </span>
@@ -104,7 +104,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             </ul>
           </ScrollReveal>
           <ScrollReveal delay={0.08}>
-            <aside className="card-accent-line h-full rounded-3xl border border-brand-border bg-brand-background-wash/40 p-5 sm:p-6">
+            <aside className="card-accent-line h-full rounded-3xl border border-brand-border bg-brand-background-wash/40 p-5 transition-[transform,box-shadow,border-color,background-color] duration-300 ease-brand-out hover:-translate-y-1 hover:border-brand-accent/50 hover:bg-brand-background hover:shadow-card-hover motion-reduce:transition-none sm:p-6">
               <p className="text-sm font-bold uppercase tracking-[0.15em] text-brand-accent-ink">Who it's for</p>
               <h2 className="mt-3 font-display text-3xl font-semibold leading-tight text-brand-dark sm:text-4xl">
                 Built for real practice workflows
