@@ -78,7 +78,6 @@ export function Footer() {
 
         <div className="flex flex-col gap-3 pt-5 text-sm text-brand-slate sm:flex-row sm:items-center xl:justify-between">
           <p className="shrink-0">© {new Date().getFullYear()} CareSource. All rights reserved.</p>
-          <p className="sm:ml-auto xl:ml-0">The source of care for your practice.</p>
           <nav aria-label="Legal and privacy links" className="flex flex-wrap items-center gap-x-5 gap-y-2 sm:ml-auto xl:flex-nowrap">
             <Link href="/privacy-policy" className="shrink-0 transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Privacy policy</Link>
             <Link href="/cookies-policy" className="shrink-0 transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Cookie policy</Link>
