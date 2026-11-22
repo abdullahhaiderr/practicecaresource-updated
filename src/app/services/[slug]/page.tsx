@@ -7,7 +7,7 @@ import { Container } from "@/components/container";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
-import { PageHeroImage } from "@/components/page-hero-image";
+import { ServiceSpotlight } from "@/components/service-spotlight";
 import { getServiceBySlug, serviceCatalog, type ServiceContent } from "@/data/services";
 
 type ServicePageProps = {
@@ -80,7 +80,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             </div>
             </div>
           </ScrollReveal>
-          <PageHeroImage src={service.imageSrc} alt={service.imageAlt} />
+          <ServiceSpotlight key={service.slug} title={service.title} Icon={service.icon} />
         </Container>
       </section>
 
