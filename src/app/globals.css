@@ -301,6 +301,26 @@ img {
   animation-play-state: paused;
 }
 
+@keyframes related-resources-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-12.5%); }
+}
+
+.related-resources-track {
+  animation: related-resources-marquee 34s linear infinite;
+  will-change: transform;
+}
+
+.related-resources-marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%);
+}
+
+.related-resources-marquee:hover .related-resources-track,
+.related-resources-marquee:focus-within .related-resources-track {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .testimonial-marquee {
     overflow-x: auto;
@@ -325,6 +345,20 @@ img {
   }
 
   .related-services-clone {
+    display: none;
+  }
+
+  .related-resources-marquee {
+    overflow-x: auto;
+  }
+
+  .related-resources-track {
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+
+  .related-resources-clone {
     display: none;
   }
 }

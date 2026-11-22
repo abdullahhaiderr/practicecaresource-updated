@@ -6,7 +6,8 @@ import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { ArticleHero } from "@/components/resources/article-hero";
 import { ArticleReadingProgress } from "@/components/resources/article-reading-progress";
-import { ResourceCard, type ResourceCardData } from "@/components/resources/resource-card";
+import { type ResourceCardData } from "@/components/resources/resource-card";
+import { RelatedResourcesCarousel } from "@/components/resources/related-resources-carousel";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { getReadingMinutes, getResourceArticle, resourceArticles, type ResourceArticle } from "@/data/resources/articles";
 
@@ -229,13 +230,9 @@ export default async function ResourceArticlePage({ params }: ArticlePageProps) 
               </Link>
             </div>
           </ScrollReveal>
-          <div className="grid auto-rows-fr gap-5 md:grid-cols-2">
-            {relatedArticles.map((related, index) => (
-              <ScrollReveal key={related.slug} delay={index * 0.05} className="h-full">
-                <ResourceCard article={toCard(related)} />
-              </ScrollReveal>
-            ))}
-          </div>
+          <ScrollReveal>
+            <RelatedResourcesCarousel articles={relatedArticles.map(toCard)} />
+          </ScrollReveal>
         </Container>
       </section>
 
