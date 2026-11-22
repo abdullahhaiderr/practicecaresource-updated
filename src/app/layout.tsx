@@ -3,6 +3,7 @@ import { Barlow_Condensed, Caveat, Manrope } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/footer";
 import { Navbar } from "@/components/navbar";
+import { CookieConsent } from "@/components/cookie-consent";
 
 const displayFont = Barlow_Condensed({
   subsets: ["latin"],
@@ -66,6 +67,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <CookieConsent />
       </body>
     </html>
   );

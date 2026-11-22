@@ -81,7 +81,7 @@ export function HomeHero({ heroImage }: HomeHeroProps) {
             initial={reducedMotion ? false : { opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reducedMotion ? 0 : 0.48, delay: reducedMotion ? 0 : 0.3, ease: "easeOut" }}
-            className="mt-4 grid grid-cols-2 border-t border-brand-border/80 sm:grid-cols-4 lg:mt-5"
+            className="home-hero-features mt-4 grid grid-cols-2 border-t border-brand-border/80 sm:grid-cols-4 lg:mt-5"
           >
             {features.map(({ label, icon: Icon }, index) => (
               <li
@@ -94,7 +94,7 @@ export function HomeHero({ heroImage }: HomeHeroProps) {
                   index === 3 ? "sm:pl-4" : "",
                 ].join(" ")}
               >
-                <span className="grid size-9 place-items-center rounded-xl border border-brand-accent/15 bg-brand-peach/65 text-brand-accent-ink shadow-sm">
+                <span className="hero-feature-icon grid size-9 place-items-center rounded-xl border border-brand-accent/15 bg-brand-peach/65 text-brand-accent-ink shadow-sm">
                   <Icon size={17} strokeWidth={1.8} aria-hidden="true" />
                 </span>
                 <span className="text-xs font-bold leading-snug text-brand-dark sm:text-sm">

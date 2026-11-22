@@ -4,9 +4,7 @@ import {
   ChevronDown,
   Mail,
   MessageSquare,
-  Minus,
   Phone,
-  Plus,
   Quote,
 } from "lucide-react";
 import { Button } from "@/components/button";
@@ -298,17 +296,16 @@ function FaqSection() {
           />
           <Button href="/contact" variant="ghost" className="mt-7" showArrow>Ask us a question</Button>
         </ScrollReveal>
-        <div className="divide-y divide-brand-border border-y border-brand-border">
+        <div className="space-y-3">
           {faqs.map((faq, index) => (
-            <details key={faq.question} className="group py-5" open={index === 0}>
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-5 font-display text-lg font-semibold leading-snug text-brand-dark marker:hidden focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink sm:text-xl [&::-webkit-details-marker]:hidden">
+            <details key={faq.question} name="home-faq" className="faq-row card-accent-line group overflow-hidden rounded-2xl border border-brand-border bg-brand-background shadow-card transition-[border-color,box-shadow] duration-300 hover:border-brand-accent/45 hover:shadow-card-hover" open={index === 0}>
+              <summary className="flex min-h-[4.5rem] cursor-pointer list-none items-center justify-between gap-5 px-5 py-4 font-display text-lg font-semibold leading-snug text-brand-dark marker:hidden transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-accent-ink sm:px-6 sm:text-xl [&::-webkit-details-marker]:hidden">
                 {faq.question}
-                <span className="grid size-8 shrink-0 place-items-center rounded-full border border-brand-border text-brand-accent-ink transition-colors group-open:border-brand-accent/20 group-open:bg-brand-accent/10 group-open:text-brand-accent-ink">
-                  <Plus className="group-open:hidden" size={17} aria-hidden="true" />
-                  <Minus className="hidden group-open:block" size={17} aria-hidden="true" />
+                <span className="faq-chevron grid size-9 shrink-0 place-items-center rounded-full border border-brand-accent/20 bg-brand-peach/55 text-brand-accent-ink transition-[transform,background-color] duration-300" aria-hidden="true">
+                  <ChevronDown size={18} />
                 </span>
               </summary>
-              <p className="max-w-2xl pr-10 pt-4 text-sm leading-relaxed text-brand-slate sm:text-base">{faq.answer}</p>
+              <p className="faq-answer max-w-2xl px-5 pb-5 text-sm leading-relaxed text-brand-slate sm:px-6 sm:pb-6 sm:text-base">{faq.answer}</p>
             </details>
           ))}
         </div>

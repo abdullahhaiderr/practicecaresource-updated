@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Facebook, Instagram, Linkedin, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, Phone } from "lucide-react";
 import { Container } from "@/components/container";
+import { SocialIcons } from "@/components/social-icons";
+import { CookieSettingsButton } from "@/components/cookie-consent";
 import { footerContact, footerQuickLinks, services } from "@/lib/site";
 
 export function Footer() {
@@ -13,18 +15,8 @@ export function Footer() {
             <Link href="/" aria-label="CareSource home" className="inline-block rounded-md">
               <Image src="/logo.png" alt="Practice Care Source" width={219} height={60} className="h-auto w-[194px]" />
             </Link>
-            <div className="mt-4 flex items-center gap-2.5" role="group" aria-label="Social media profiles">
-              {[{ name: "LinkedIn", Icon: Linkedin }, { name: "Instagram", Icon: Instagram }, { name: "Facebook", Icon: Facebook }].map(({ name, Icon }) => (
-                <span
-                  key={name}
-                  role="img"
-                  aria-label={name}
-                  title={name}
-                  className="social-icon grid size-10 place-items-center rounded-full border border-brand-border bg-brand-background text-brand-accent-ink shadow-sm"
-                >
-                  <Icon size={18} strokeWidth={1.8} aria-hidden="true" />
-                </span>
-              ))}
+            <div className="mt-4">
+              <SocialIcons />
             </div>
             <p className="mt-5 max-w-xs text-base leading-relaxed text-brand-slate">
               {footerContact.tagline}
@@ -82,9 +74,17 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 pt-6 text-sm text-brand-slate sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} CareSource. All rights reserved.</p>
-          <p>The source of care for your practice.</p>
+        <div className="flex flex-col gap-4 pt-6 text-sm text-brand-slate">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <p>© {new Date().getFullYear()} CareSource. All rights reserved.</p>
+            <p>The source of care for your practice.</p>
+          </div>
+          <nav aria-label="Legal and privacy links" className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-brand-border pt-4">
+            <Link href="/privacy-policy" className="transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Privacy policy</Link>
+            <Link href="/cookies-policy" className="transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Cookie policy</Link>
+            <Link href="/terms-of-service" className="transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Terms of service</Link>
+            <CookieSettingsButton />
+          </nav>
         </div>
       </Container>
     </footer>

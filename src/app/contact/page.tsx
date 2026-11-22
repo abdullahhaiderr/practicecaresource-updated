@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
+  ChevronDown,
   Clock3,
   Mail,
   MapPin,
@@ -10,6 +11,7 @@ import {
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { PageHero } from "@/components/page-hero";
+import { SocialIcons } from "@/components/social-icons";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { ContactForm } from "./contact-form";
@@ -76,7 +78,7 @@ export default function ContactPage() {
                 </h2>
               </div>
 
-              <div className="card-accent-line flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card">
+              <div className="card-accent-line flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,background-color,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-brand-accent/45 hover:bg-brand-background-wash hover:shadow-card-hover motion-reduce:transition-none">
                 <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
                   <MapPin size={21} aria-hidden="true" />
                 </span>
@@ -114,7 +116,7 @@ export default function ContactPage() {
                 <ArrowRight size={17} className="mt-1 ml-auto shrink-0 text-brand-accent-ink transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </a>
 
-              <div className="card-accent-line flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card">
+              <div className="card-accent-line flex items-start gap-4 rounded-2xl border border-brand-border bg-brand-background p-5 shadow-card transition-[transform,background-color,border-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:border-brand-accent/45 hover:bg-brand-background-wash hover:shadow-card-hover motion-reduce:transition-none">
                 <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand-peach/55 text-brand-accent-ink">
                   <Clock3 size={20} aria-hidden="true" />
                 </span>
@@ -122,6 +124,10 @@ export default function ContactPage() {
                   <span className="block text-sm font-bold text-brand-dark">Hours</span>
                   <span className="mt-1 block text-sm leading-relaxed text-brand-slate">Mon–Fri · 8:00 AM–7:00 PM PT</span>
                 </span>
+              </div>
+              <div className="flex items-center justify-between gap-4 rounded-2xl border border-brand-border bg-brand-background-wash/55 p-4">
+                <p className="font-display text-lg font-semibold text-brand-accent-ink">Follow CareSource</p>
+                <SocialIcons compact />
               </div>
             </div>
           </ScrollReveal>
@@ -147,17 +153,20 @@ export default function ContactPage() {
             />
           </ScrollReveal>
 
-          <div className="mt-8 grid auto-rows-fr gap-4 md:grid-cols-2">
+          <div className="mx-auto mt-8 max-w-4xl space-y-3">
             {faqs.map(({ question, answer }, index) => (
-              <ScrollReveal key={question} delay={index * 0.05} className="flex h-full">
-                <article className="group relative flex h-full flex-col overflow-hidden rounded-[18px] border border-brand-border bg-brand-background p-6 shadow-card transition-[transform,border-color,box-shadow] duration-300 hover:-translate-y-2 hover:border-brand-accent/50 hover:shadow-card-hover motion-reduce:transition-none sm:p-7 before:absolute before:inset-x-0 before:top-0 before:h-1 before:origin-left before:scale-x-0 before:bg-brand-accent before:transition-transform before:duration-500 group-hover:before:scale-x-100">
-                  <h3 className="font-display text-xl font-semibold leading-tight text-brand-dark sm:text-2xl">
+              <ScrollReveal key={question} delay={index * 0.04}>
+                <details name="contact-faq" className="faq-row card-accent-line overflow-hidden rounded-2xl border border-brand-border bg-brand-background shadow-card transition-[border-color,box-shadow] duration-300 hover:border-brand-accent/45 hover:shadow-card-hover">
+                  <summary className="flex min-h-[4.5rem] cursor-pointer list-none items-center justify-between gap-5 px-5 py-4 font-display text-lg font-semibold leading-snug text-brand-dark marker:hidden transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-accent-ink sm:px-6 sm:text-xl [&::-webkit-details-marker]:hidden">
                     {question}
-                  </h3>
-                  <p className="mt-3 flex-1 text-base leading-relaxed text-brand-slate">
+                    <span className="faq-chevron grid size-9 shrink-0 place-items-center rounded-full border border-brand-accent/20 bg-brand-peach/55 text-brand-accent-ink transition-[transform,background-color] duration-300" aria-hidden="true">
+                      <ChevronDown size={18} />
+                    </span>
+                  </summary>
+                  <p className="faq-answer max-w-3xl px-5 pb-5 text-sm leading-relaxed text-brand-slate sm:px-6 sm:pb-6 sm:text-base">
                     {answer}
                   </p>
-                </article>
+                </details>
               </ScrollReveal>
             ))}
           </div>

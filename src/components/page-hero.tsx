@@ -93,7 +93,7 @@ export function PageHero({
         <Container>
           <div className={`grid gap-3 ${factColumns}`}>
             {facts.map((fact) => (
-              <div key={fact.title} className="hero-fact-card card-accent-line min-h-[5.75rem] rounded-xl border border-brand-border bg-brand-background px-5 py-4 shadow-card transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-brand-accent/45 hover:shadow-card-hover motion-reduce:transition-none sm:px-6 sm:py-5">
+              <div key={fact.title} className="hero-fact-card card-accent-line min-h-[5.75rem] rounded-xl border border-brand-border bg-brand-background px-5 py-4 shadow-card transition-[transform,background-color,box-shadow,border-color] duration-300 hover:-translate-y-1 hover:border-brand-accent/45 hover:bg-brand-background-wash hover:shadow-card-hover motion-reduce:transition-none sm:px-6 sm:py-5">
                 <p className="font-display text-lg font-semibold leading-tight text-brand-dark sm:text-xl">
                   {fact.title}
                 </p>

@@ -160,16 +160,16 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               title={`A few things to know about ${service.shortTitle.toLowerCase()}`}
               align="center"
             />
-            <div className="mt-6 divide-y divide-brand-border border-y border-brand-border">
+            <div className="mt-6 space-y-3">
               {service.faqs.map((faq) => (
-                <details key={faq.question} className="group py-1">
-                  <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-5 py-4 font-bold text-brand-dark transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
+                <details key={faq.question} name="service-faq" className="faq-row card-accent-line group overflow-hidden rounded-2xl border border-brand-border bg-brand-background shadow-card transition-[border-color,box-shadow] duration-300 hover:border-brand-accent/45 hover:shadow-card-hover">
+                  <summary className="flex min-h-[4.5rem] cursor-pointer list-none items-center justify-between gap-5 px-5 py-4 font-display text-lg font-semibold leading-snug text-brand-dark transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-accent-ink sm:px-6 sm:text-xl [&::-webkit-details-marker]:hidden">
                     {faq.question}
-                    <span className="grid size-8 shrink-0 place-items-center rounded-full bg-brand-background-wash/50 text-brand-accent-ink transition-transform group-open:rotate-180" aria-hidden="true">
+                    <span className="faq-chevron grid size-9 shrink-0 place-items-center rounded-full border border-brand-accent/20 bg-brand-peach/55 text-brand-accent-ink transition-transform duration-300" aria-hidden="true">
                       <ChevronRight size={17} className="rotate-90" />
                     </span>
                   </summary>
-                  <p className="max-w-3xl pb-5 pr-10 text-sm leading-relaxed text-brand-slate sm:text-base">{faq.answer}</p>
+                  <p className="faq-answer max-w-3xl px-5 pb-5 text-sm leading-relaxed text-brand-slate sm:px-6 sm:pb-6 sm:text-base">{faq.answer}</p>
                 </details>
               ))}
             </div>

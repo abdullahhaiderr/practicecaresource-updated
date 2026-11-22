@@ -127,6 +127,11 @@ img {
   }
 }
 
+@keyframes hero-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .hero-enter-stagger > * {
   animation: hero-rise-in 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -141,8 +146,12 @@ img {
   animation: hero-image-in 1100ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+.cookie-consent-enter {
+  animation: hero-rise-in 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
 .hero-fact-card {
-  animation: hero-rise-in 580ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: hero-fade-in 580ms ease-out both;
 }
 
 .hero-fact-card:nth-child(1) { animation-delay: 90ms; }
@@ -150,8 +159,24 @@ img {
 .hero-fact-card:nth-child(3) { animation-delay: 270ms; }
 .hero-fact-card:nth-child(4) { animation-delay: 360ms; }
 
+.hero-feature-icon {
+  animation: hero-fade-in 480ms ease-out both;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1), background-color 240ms ease, color 240ms ease;
+}
+
+.home-hero-features li:nth-child(1) .hero-feature-icon { animation-delay: 320ms; }
+.home-hero-features li:nth-child(2) .hero-feature-icon { animation-delay: 400ms; }
+.home-hero-features li:nth-child(3) .hero-feature-icon { animation-delay: 480ms; }
+.home-hero-features li:nth-child(4) .hero-feature-icon { animation-delay: 560ms; }
+
+.home-hero-features li:hover .hero-feature-icon {
+  transform: translateY(-3px) rotate(-6deg) scale(1.08);
+  background-color: rgb(var(--cs-accent));
+  color: rgb(var(--cs-background));
+}
+
 .social-icon {
-  animation: hero-rise-in 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: hero-fade-in 520ms ease-out both;
   transition: transform 220ms ease, background-color 220ms ease, color 220ms ease, box-shadow 220ms ease;
 }
 
@@ -164,6 +189,27 @@ img {
   background-color: rgb(var(--cs-accent));
   color: rgb(var(--cs-background));
   box-shadow: 0 8px 18px rgb(var(--cs-accent-ink) / 0.18);
+}
+
+.faq-row[open] .faq-chevron {
+  transform: rotate(180deg);
+  background-color: rgb(var(--cs-accent) / 0.12);
+}
+
+.faq-row[open] .faq-answer {
+  animation: faq-answer-in 220ms ease-out both;
+}
+
+@keyframes faq-answer-in {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -246,7 +292,10 @@ img {
   .hero-enter-stagger > *,
   .hero-image-enter,
   .hero-fact-card,
-  .social-icon {
+  .social-icon,
+  .hero-feature-icon,
+  .cookie-consent-enter,
+  .faq-answer {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;

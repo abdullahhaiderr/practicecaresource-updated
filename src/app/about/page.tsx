@@ -193,10 +193,10 @@ export default function AboutPage() {
             <ScrollReveal className="h-full">
               <article className="card-accent-line h-full rounded-2xl border border-brand-accent/45 bg-brand-background/10 p-6 transition-[border-color,background-color,transform] duration-300 hover:-translate-y-1 hover:border-brand-accent/75 hover:bg-brand-background/[0.13] motion-reduce:transition-none sm:p-8">
                 <div className="flex items-center gap-3">
-                  <span className="grid size-11 place-items-center rounded-xl bg-brand-accent text-brand-dark">
+                  <span className="grid size-11 place-items-center rounded-xl border border-brand-accent/15 bg-brand-peach/65 text-brand-accent-ink shadow-sm">
                     <ListChecks size={21} aria-hidden="true" />
                   </span>
-                  <h3 className="font-display text-2xl font-semibold text-brand-dark sm:text-3xl">
+                  <h3 className="font-display text-2xl font-semibold text-brand-accent-ink sm:text-3xl">
                     Juggling separate vendors
                   </h3>
                 </div>
@@ -214,10 +214,10 @@ export default function AboutPage() {
             <ScrollReveal delay={0.08} className="h-full">
               <article className="card-accent-line h-full rounded-2xl border border-brand-accent/45 bg-brand-background/10 p-6 transition-[border-color,background-color,transform] duration-300 hover:-translate-y-1 hover:border-brand-accent/75 hover:bg-brand-background/[0.13] motion-reduce:transition-none sm:p-8">
                 <div className="flex items-center gap-3">
-                  <span className="grid size-11 place-items-center rounded-xl bg-brand-accent text-brand-dark">
+                  <span className="grid size-11 place-items-center rounded-xl border border-brand-accent/15 bg-brand-peach/65 text-brand-accent-ink shadow-sm">
                     <Workflow size={21} aria-hidden="true" />
                   </span>
-                  <h3 className="font-display text-2xl font-semibold text-brand-dark sm:text-3xl">
+                  <h3 className="font-display text-2xl font-semibold text-brand-accent-ink sm:text-3xl">
                     One connected team
                   </h3>
                 </div>

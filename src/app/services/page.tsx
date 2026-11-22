@@ -106,7 +106,7 @@ export default function ServicesPage() {
                       href={`/services/${service.slug}`}
                       className="group flex min-h-[5.25rem] items-center gap-3 rounded-2xl border border-brand-background/15 bg-brand-background/5 p-4 transition-[background-color,border-color,transform] hover:-translate-y-0.5 hover:border-brand-accent/55 hover:bg-brand-background/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent"
                     >
-                      <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-brand-accent text-brand-dark" aria-hidden="true">
+                      <span className="grid size-10 shrink-0 place-items-center rounded-xl border border-brand-accent/15 bg-brand-peach/65 text-brand-accent-ink shadow-sm" aria-hidden="true">
                         <Icon size={19} strokeWidth={1.9} />
                       </span>
                       <span className="min-w-0">
