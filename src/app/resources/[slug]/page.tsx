@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight, CalendarDays, Clock3 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
+import { ArticleHero } from "@/components/resources/article-hero";
 import { ArticleReadingProgress } from "@/components/resources/article-reading-progress";
 import { ResourceCard, type ResourceCardData } from "@/components/resources/resource-card";
 import { ScrollReveal } from "@/components/scroll-reveal";
@@ -150,7 +150,7 @@ function ArticleContent({ article }: { article: ResourceArticle }) {
 function AuthorBox() {
   return (
     <aside className="mt-8 flex flex-col gap-4 rounded-2xl border border-brand-border bg-brand-background-wash/25 p-5 sm:flex-row sm:items-center sm:p-6">
-      <div className="grid size-14 shrink-0 place-items-center rounded-full bg-brand-dark font-display text-xl font-semibold text-brand-accent" aria-hidden="true">IH</div>
+      <div className="grid size-14 shrink-0 place-items-center rounded-full border border-brand-accent/15 bg-brand-peach/60 font-display text-xl font-semibold text-brand-accent-ink" aria-hidden="true">IH</div>
       <div>
         <p className="text-xs font-bold uppercase tracking-[0.13em] text-brand-accent-ink">About the author</p>
         <h2 className="mt-1 font-display text-2xl font-semibold text-brand-dark">Irtiza Hassan</h2>
@@ -177,43 +177,15 @@ export default async function ResourceArticlePage({ params }: ArticlePageProps) 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }}
       />
-      <section className="border-b border-brand-border/70 bg-brand-background-wash/25 py-8 sm:py-10 lg:py-12">
-        <Container>
-          <nav aria-label="Breadcrumb" className="mb-4">
-            <ol className="flex flex-wrap items-center gap-2 text-sm font-semibold text-brand-slate">
-              <li><Link href="/" className="rounded-sm hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Home</Link></li>
-              <li aria-hidden="true">/</li>
-              <li><Link href="/resources" className="rounded-sm hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Resources</Link></li>
-              <li aria-hidden="true">/</li>
-              <li aria-current="page" className="max-w-[14rem] truncate text-brand-dark sm:max-w-none">{article.category}</li>
-            </ol>
-          </nav>
-          <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
-            <ScrollReveal>
-              <div className="hero-enter-stagger">
-              <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">{article.category}</p>
-              <h1 className="mt-3 text-balance font-display text-4xl font-semibold leading-[1.02] tracking-tight text-brand-dark sm:text-5xl lg:text-6xl">{article.title}</h1>
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">{article.description}</p>
-              <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm font-semibold text-brand-slate">
-                <span className="inline-flex items-center gap-2"><CalendarDays size={16} aria-hidden="true" />{article.publishedAt}</span>
-                <span className="inline-flex items-center gap-2"><Clock3 size={16} aria-hidden="true" />{getReadingMinutes(article)} min read</span>
-                <span>By Irtiza Hassan</span>
-              </div>
-              </div>
-            </ScrollReveal>
-            <div className="hero-image-enter relative aspect-[16/10] overflow-hidden rounded-3xl border border-brand-border bg-brand-background-wash shadow-card">
-              <Image
-                src={article.coverImage}
-                alt={article.coverAlt}
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 46vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </Container>
-      </section>
+      <ArticleHero
+        title={article.title}
+        description={article.description}
+        category={article.category}
+        publishedAt={article.publishedAt}
+        readingMinutes={getReadingMinutes(article)}
+        coverImage={article.coverImage}
+        coverAlt={article.coverAlt}
+      />
 
       <ArticleReadingProgress />
 
@@ -270,11 +242,11 @@ export default async function ResourceArticlePage({ params }: ArticlePageProps) 
       <section className="py-8 sm:py-10 lg:py-12">
         <Container>
           <ScrollReveal>
-            <div className="card-accent-line relative isolate overflow-hidden rounded-3xl bg-brand-dark px-6 py-10 text-brand-background sm:px-10 sm:py-14 lg:px-16">
-              <div className="pointer-events-none absolute -right-12 -top-20 -z-10 size-64 rounded-full border-[2.5rem] border-brand-accent/15" aria-hidden="true" />
-              <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent">The source of care for your practice</p>
-              <h2 className="mt-3 max-w-3xl text-balance font-display text-4xl font-semibold leading-[1.02] text-brand-background sm:text-5xl">Want to talk through your practice workflow?</h2>
-              <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-background/75 sm:text-lg">Share the general kind of support you are looking for and we can discuss a practical next step.</p>
+            <div className="card-accent-line relative isolate overflow-hidden rounded-3xl border border-brand-border bg-brand-background-wash/55 px-6 py-10 text-brand-dark shadow-card sm:px-10 sm:py-14 lg:px-16">
+              <div className="pointer-events-none absolute -right-12 -top-20 -z-10 size-64 rounded-full border-[2.5rem] border-brand-accent/10" aria-hidden="true" />
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand-accent-ink">The source of care for your practice</p>
+              <h2 className="mt-3 max-w-3xl text-balance font-display text-4xl font-semibold leading-[1.02] text-brand-dark sm:text-5xl">Want to talk through your practice workflow?</h2>
+              <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-slate sm:text-lg">Share the general kind of support you are looking for and we can discuss a practical next step.</p>
               <Button href="/contact" size="lg" showArrow className="mt-7">Book a Free Audit</Button>
             </div>
           </ScrollReveal>
