@@ -7,12 +7,12 @@ import { CookieSettingsButton } from "@/components/cookie-consent";
 import { footerContact, footerQuickLinks } from "@/lib/site";
 
 const footerServices = [
-  { label: "Medical Billing", slug: "medical-billing" },
-  { label: "Revenue Cycle Management", slug: "revenue-cycle-management" },
-  { label: "Credentialing & Enrollment", slug: "credentialing" },
-  { label: "Accounts Receivable Recovery", slug: "ar-recovery" },
-  { label: "Denial Management", slug: "denial-management" },
-  { label: "Medical Coding", slug: "medical-coding" },
+  { label: "View all", href: "/services" },
+  { label: "Revenue Cycle Management", href: "/services/revenue-cycle-management" },
+  { label: "Credentialing & Enrollment", href: "/services/credentialing" },
+  { label: "Accounts Receivable Recovery", href: "/services/ar-recovery" },
+  { label: "Denial Management", href: "/services/denial-management" },
+  { label: "Medical Coding", href: "/services/medical-coding" },
 ];
 
 const linkClassName =
@@ -24,7 +24,7 @@ const headingClassName =
 export function Footer() {
   return (
     <footer className="border-t border-brand-border bg-brand-background-wash text-brand-dark">
-      <Container className="py-10 sm:py-14 lg:py-16">
+      <Container className="pt-10 pb-5 sm:pt-14 sm:pb-6 lg:pt-16 lg:pb-7">
         <div className="grid gap-10 border-b border-brand-border pb-10 sm:gap-12 md:grid-cols-2 md:gap-9 xl:grid-cols-[1.3fr_1.1fr_0.85fr_1fr] xl:gap-8 lg:pb-12">
           <div className="max-w-sm">
             <Link href="/" aria-label="Practice Care Source home" className="inline-block rounded-md">
@@ -54,7 +54,7 @@ export function Footer() {
             <ul className="mt-5 space-y-3">
               {footerServices.map((service) => (
                 <li key={service.slug}>
-                  <Link href={"/services/" + service.slug} className={linkClassName}>
+                  <Link href={service.href} className={linkClassName}>
                     {service.label}
                   </Link>
                 </li>
