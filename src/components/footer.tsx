@@ -53,7 +53,7 @@ export function Footer() {
             <h2 className={headingClassName}>Main services</h2>
             <ul className="mt-5 space-y-3">
               {footerServices.map((service) => (
-                <li key={service.slug}>
+                <li key={service.href}>
                   <Link href={service.href} className={linkClassName}>
                     {service.label}
                   </Link>
