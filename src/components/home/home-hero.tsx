@@ -20,7 +20,7 @@ const features = [
   { label: "Dedicated Support", icon: Headset },
 ];
 
-const rotatingHeroTerms = ["run", "grow", "get paid"] as const;
+const rotatingHeroTerms = ["run,", "grow,", "get paid."] as const;
 
 type HomeHeroProps = {
   heroImage?: string;
@@ -58,20 +58,28 @@ export function HomeHero({ heroImage }: HomeHeroProps) {
             <span aria-hidden="true">
               <span className="block">Everything your</span>
               <span className="block">practice needs to</span>
-              <span className="relative mt-1 block h-[1.3em] overflow-hidden whitespace-nowrap leading-[1.1] text-brand-accent">
+              <span className="relative mt-1 grid h-[1.25em] grid-cols-1 overflow-hidden leading-[1.1] text-brand-accent">
+                <span
+                  aria-hidden="true"
+                  className="invisible col-start-1 row-start-1 flex items-center whitespace-nowrap"
+                >
+                  get paid.
+                </span>
                 {reducedMotion ? (
-                  <span className="flex h-full items-center">run.</span>
+                  <span className="col-start-1 row-start-1 flex items-center whitespace-nowrap">
+                    run,
+                  </span>
                 ) : (
                   <AnimatePresence mode="wait" initial={false}>
                     <motion.span
                       key={rotatingHeroTerms[activeHeroTerm]}
-                      initial={{ y: "0.16em", opacity: 0 }}
+                      initial={{ y: "0.22em", opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
-                      exit={{ y: "-0.16em", opacity: 0 }}
-                      transition={{ duration: 0.36, ease: [0.22, 1, 0.36, 1] }}
-                      className="absolute inset-0 flex items-center whitespace-nowrap will-change-transform"
+                      exit={{ y: "-0.22em", opacity: 0 }}
+                      transition={{ duration: 0.38, ease: [0.22, 1, 0.36, 1] }}
+                      className="col-start-1 row-start-1 flex items-center whitespace-nowrap will-change-transform"
                     >
-                      {rotatingHeroTerms[activeHeroTerm]}.
+                      {rotatingHeroTerms[activeHeroTerm]}
                     </motion.span>
                   </AnimatePresence>
                 )}
