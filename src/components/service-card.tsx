@@ -32,14 +32,14 @@ export function ServiceCard({
         className="flex h-full flex-col rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-accent-ink"
         aria-label={"Learn more about " + title}
       >
-        <div className={`relative overflow-hidden bg-brand-background-wash ${compact ? "aspect-[16/9]" : "aspect-[16/10]"}`}>
+        <div className={`relative overflow-hidden bg-brand-background-wash ${compact ? "aspect-[16/9]" : "aspect-[4/3]"}`}>
           {/* Service illustration */}
           <Image
             src={imageSrc}
             alt={imageAlt}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover transition-transform duration-700 ease-brand-out group-hover:scale-[1.04] motion-reduce:transition-none"
+            className={`${compact ? "object-cover" : "object-contain"} transition-transform duration-700 ease-brand-out group-hover:scale-[1.04] motion-reduce:transition-none`}
           />
           <span
             className={`absolute bottom-3 right-4 z-10 grid place-items-center rounded-full border border-[#d7e6fb] bg-[#eaf2ff] text-brand-accent-ink shadow-md ring-2 ring-brand-background transition-transform duration-300 group-hover:rotate-6 group-hover:scale-105 motion-reduce:transition-none ${compact ? "size-10" : "size-12"}`}

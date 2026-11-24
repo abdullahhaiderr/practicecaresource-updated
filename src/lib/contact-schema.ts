@@ -14,6 +14,8 @@ export const specialtyOptions = [
 
 export const serviceOptions = [
   "Medical Billing",
+  "Revenue Cycle Management",
+  "Medical Coding",
   "Credentialing",
   "Virtual Assistant (VA) Services",
   "AR Recovery",

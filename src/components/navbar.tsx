@@ -14,7 +14,7 @@ const serviceMenuGroups = [
   {
     title: "Revenue cycle",
     services: serviceNavLinks.filter((service) =>
-      ["medical-billing", "ar-recovery", "denial-management"].includes(service.slug),
+      ["revenue-cycle-management", "medical-billing", "medical-coding", "ar-recovery", "denial-management"].includes(service.slug),
     ),
   },
   {

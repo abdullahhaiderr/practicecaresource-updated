@@ -1,5 +1,7 @@
 import {
   BadgeCheck,
+  BookType,
+  ChartColumnIncreasing,
   ClipboardCheck,
   Headset,
   Laptop,
@@ -26,6 +28,8 @@ export type ServiceContent = {
   icon: LucideIcon;
   imageSrc: string;
   imageAlt: string;
+  homeCardImageSrc: string;
+  homeCardImageAlt: string;
   overview: string;
   whatsIncluded: string[];
   howWeWork: ServiceStep[];
@@ -43,9 +47,10 @@ export const serviceCatalog: ServiceContent[] = [
     description:
       "Support for claim submission, payment posting, and day-to-day billing workflows.",
     icon: ClipboardCheck,
-    imageSrc:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85",
+    imageSrc: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Healthcare professional reviewing information at a clinic",
+    homeCardImageSrc: "/services/cards/01-medical-billing.png",
+    homeCardImageAlt: "Practice team reviewing a claim form beside billing reports",
     overview:
       "We help keep the billing work moving from charge review through claim follow-up and payment posting. Work is organized around the practice's documented workflows, billing system, and review preferences.",
     whatsIncluded: [
@@ -105,15 +110,154 @@ export const serviceCatalog: ServiceContent[] = [
     relatedServices: ["denial-management", "ar-recovery"],
   },
   {
+    slug: "revenue-cycle-management",
+    title: "Revenue Cycle Management",
+    shortTitle: "Revenue Cycle Management",
+    description:
+      "Coordinated support for the administrative workflows that move from intake through billing and follow-up.",
+    icon: ChartColumnIncreasing,
+    imageSrc: "/services/cards/02-revenue-cycle-management.png",
+    imageAlt: "Healthcare revenue cycle diagram and performance charts on a monitor",
+    homeCardImageSrc: "/services/cards/02-revenue-cycle-management.png",
+    homeCardImageAlt: "Healthcare revenue cycle diagram and performance charts on a monitor",
+    overview:
+      "Revenue cycle management connects many administrative steps across a practice. We help organize agreed workflows, clarify handoffs, and keep follow-up visible so your team can review the work and make the decisions that belong to the practice.",
+    whatsIncluded: [
+      "Review of the practice's existing administrative workflow and priorities",
+      "Coordination of agreed billing, payment, and follow-up work queues",
+      "Identification of missing information that needs practice review",
+      "Organization of open items and next steps across the agreed scope",
+      "Status notes for claims, payments, denials, and outstanding accounts",
+      "Periodic workflow review with the practice team",
+    ],
+    howWeWork: [
+      {
+        title: "Map the workflow",
+        description:
+          "We discuss the steps your team uses and identify where responsibilities and handoffs should be clear.",
+      },
+      {
+        title: "Agree on the scope",
+        description:
+          "Your practice confirms which administrative tasks are included and which decisions remain with your team.",
+      },
+      {
+        title: "Coordinate the work",
+        description:
+          "We follow the approved processes and keep open tasks, requests, and responses organized.",
+      },
+      {
+        title: "Review and refine",
+        description:
+          "We share status and discuss practical adjustments with your team as needs change.",
+      },
+    ],
+    whoItsFor:
+      "Practices that want clearer coordination across billing, payment posting, denials, and accounts receivable follow-up.",
+    whyItMatters: [
+      "A shared workflow can make it easier to see where administrative work stands.",
+      "Clear handoffs help teams know which items need a practice decision.",
+      "Organized status notes give the team useful context for routine reviews.",
+    ],
+    faqs: [
+      {
+        question: "Does revenue cycle management include every billing task?",
+        answer:
+          "The scope is agreed with your practice. We review your workflow first and confirm which administrative tasks and handoffs are included.",
+      },
+      {
+        question: "Can you work with our current systems?",
+        answer:
+          "We can discuss your existing tools and processes, then confirm what coordination and access would be needed before work begins.",
+      },
+      {
+        question: "Can we start with only part of the revenue cycle?",
+        answer:
+          "Yes. Your practice can discuss a defined service mix and expand or adjust the scope by agreement.",
+      },
+    ],
+    relatedServices: ["medical-billing", "ar-recovery", "denial-management"],
+  },
+  {
+    slug: "medical-coding",
+    title: "Medical Coding",
+    shortTitle: "Medical Coding",
+    description:
+      "Coding workflow support guided by the clinical documentation and review process approved by your practice.",
+    icon: BookType,
+    imageSrc: "/services/cards/03-medical-coding.png",
+    imageAlt: "Medical code reference book and coding work on a laptop",
+    homeCardImageSrc: "/services/cards/03-medical-coding.png",
+    homeCardImageAlt: "Medical code reference book and coding work on a laptop",
+    overview:
+      "We help organize coding-related administrative work around the documentation and review process your practice approves. Your clinicians and authorized staff retain responsibility for clinical documentation, code validation, and final decisions.",
+    whatsIncluded: [
+      "Organization of coding work queues using practice-defined priorities",
+      "Review of documentation supplied for the agreed coding workflow",
+      "Identification of missing or unclear information for practice review",
+      "Coding support aligned with the references and process selected by your team",
+      "Clear notes on items that need clarification or approval",
+      "Coordination of coding handoffs with the billing workflow when agreed",
+    ],
+    howWeWork: [
+      {
+        title: "Understand your process",
+        description:
+          "We learn how your team receives documentation, reviews coding, and routes questions.",
+      },
+      {
+        title: "Organize the work",
+        description:
+          "Items are handled within the agreed queue and practice-approved workflow.",
+      },
+      {
+        title: "Flag questions for review",
+        description:
+          "Missing or unclear details are routed to the appropriate practice team member.",
+      },
+      {
+        title: "Coordinate next steps",
+        description:
+          "Approved coding information can be handed off to billing using the process your team selects.",
+      },
+    ],
+    whoItsFor:
+      "Provider groups and practice teams that want organized administrative support around coding queues and billing handoffs.",
+    whyItMatters: [
+      "A consistent review path helps teams manage coding questions with clear ownership.",
+      "Documented handoffs keep unresolved items visible to the right reviewer.",
+      "Practice-approved workflows keep coding work aligned with your team's process.",
+    ],
+    faqs: [
+      {
+        question: "Who makes the final coding decisions?",
+        answer:
+          "Your practice retains responsibility for clinical documentation, code validation, and final decisions. We work within the review process your team approves.",
+      },
+      {
+        question: "What if documentation needs clarification?",
+        answer:
+          "We note what needs attention and route the question to the appropriate practice team member for review.",
+      },
+      {
+        question: "Can coding support connect with billing?",
+        answer:
+          "Yes. The handoff can be coordinated with billing when the tasks and review responsibilities are agreed with your practice.",
+      },
+    ],
+    relatedServices: ["medical-billing", "revenue-cycle-management", "denial-management"],
+  },
+  {
     slug: "credentialing",
     title: "Credentialing & Enrollment",
     shortTitle: "Credentialing",
     description:
       "Application and follow-up support for provider enrollment with health plans.",
     icon: BadgeCheck,
-    imageSrc:
-      "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=85",
+    imageSrc: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Clinician working at a desk in a healthcare office",
+    homeCardImageSrc: "/services/cards/07-credentialing.png",
+    homeCardImageAlt: "Provider credential documents and a framed professional certificate",
     overview:
       "We help organize provider information, prepare enrollment materials, and track application follow-up. Your practice remains involved in reviewing and approving information submitted on its behalf.",
     whatsIncluded: [
@@ -179,9 +323,10 @@ export const serviceCatalog: ServiceContent[] = [
     description:
       "Remote administrative help for scheduling, calls, and routine practice tasks.",
     icon: Headset,
-    imageSrc:
-      "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85",
+    imageSrc: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Team member coordinating work in a professional office",
+    homeCardImageSrc: "/services/cards/08-virtual-assistant.png",
+    homeCardImageAlt: "Virtual assistant coordinating a telehealth appointment at a computer",
     overview:
       "A virtual assistant can take on agreed administrative tasks so your in-office team has a clearer routine for day-to-day coordination. Responsibilities and escalation points are set with your practice before the work begins.",
     whatsIncluded: [
@@ -247,9 +392,10 @@ export const serviceCatalog: ServiceContent[] = [
     description:
       "Structured follow-up on outstanding claims and aged accounts receivable.",
     icon: RefreshCw,
-    imageSrc:
-      "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=85",
+    imageSrc: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Office team reviewing documents and account information",
+    homeCardImageSrc: "/services/cards/05-ar-recovery.png",
+    homeCardImageAlt: "Accounts receivable aging chart and organized claims on a desk",
     overview:
       "We help practices organize outstanding account work, review available claim history, and document follow-up. The goal is a clear queue of next steps, questions, and items that need the practice's input.",
     whatsIncluded: [
@@ -315,9 +461,10 @@ export const serviceCatalog: ServiceContent[] = [
     description:
       "Denial tracking and appeal workflow support to help teams address claim issues.",
     icon: ClipboardCheck,
-    imageSrc:
-      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=85",
+    imageSrc: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Medical professional reviewing information in a clinical setting",
+    homeCardImageSrc: "/services/cards/04-denial-management.png",
+    homeCardImageAlt: "Claim forms marked for review by a practice billing team",
     overview:
       "We help teams record denial reasons, organize supporting information, and move appeal work through a defined process. Practice review remains part of decisions about corrections, documentation, and appeal content.",
     whatsIncluded: [
@@ -383,9 +530,10 @@ export const serviceCatalog: ServiceContent[] = [
     description:
       "Website planning and development for healthcare practices and their patients.",
     icon: Laptop,
-    imageSrc:
-      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85",
+    imageSrc: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Bright modern workspace with a laptop and desk",
+    homeCardImageSrc: "/services/cards/06-website-development.png",
+    homeCardImageAlt: "Digital healthcare workflow displayed across laptop and phone screens",
     overview:
       "We plan and build clear, responsive websites that help a practice explain its services, location, and next steps. Content and features are shaped around the information your team approves and the needs of your audience.",
     whatsIncluded: [

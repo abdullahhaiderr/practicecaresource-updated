@@ -53,7 +53,7 @@ const faqs = [
   {
     question: "Which services can I ask about?",
     answer:
-      "CareSource offers medical billing, credentialing, virtual assistant support, AR recovery, denial management, and website development. We can discuss one service or a combination that fits your practice.",
+      "CareSource offers revenue cycle management, medical billing and coding, credentialing, virtual assistant support, AR recovery, denial management, and website development. We can discuss one service or a combination that fits your practice.",
   },
   {
     question: "How is pricing determined?",
@@ -105,14 +105,14 @@ function ServicesSection() {
             className="mb-7 sm:mb-9"
           />
         </ScrollReveal>
-        <div className="grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {services.map((service) => (
             <ServiceCard
               key={service.slug}
               title={service.shortTitle}
               description={service.description}
-              imageSrc={service.imageSrc}
-              imageAlt={service.imageAlt}
+              imageSrc={service.homeCardImageSrc}
+              imageAlt={service.homeCardImageAlt}
               icon={service.icon}
               href={`/services/${service.slug}`}
             />
