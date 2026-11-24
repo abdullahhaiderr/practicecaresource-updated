@@ -75,7 +75,9 @@ export const contactFormSimpleSchema = z.object({
   website: z.string().max(200).optional(),
 });
 
-export const contactFormCompactSchema = contactFormSchema.extend({
+export const contactFormCompactSchema = contactFormSchema.omit({
+  practiceName: true,
+}).extend({
   consent: z.boolean(),
 });
 

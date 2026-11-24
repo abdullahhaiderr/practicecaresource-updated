@@ -1,7 +1,11 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { z } from "zod";
 import { Resend } from "resend";
-import { contactFormSchema, contactFormSimpleSchema } from "@/lib/contact-schema";
+import {
+  contactFormCompactSchema,
+  contactFormSchema,
+  contactFormSimpleSchema,
+} from "@/lib/contact-schema";
 
 export const runtime = "nodejs";
 
@@ -138,7 +142,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true });
   }
 
-  const parsed = z.union([contactFormSchema, contactFormSimpleSchema]).safeParse(body);
+  const parsed = z
+    .union([contactFormSchema, contactFormCompactSchema, contactFormSimpleSchema])
+    .safeParse(body);
   if (!parsed.success) {
     const errors = Object.fromEntries(
       parsed.error.issues

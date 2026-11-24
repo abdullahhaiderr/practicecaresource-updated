@@ -45,7 +45,7 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
     resolver: simple
       ? (zodResolver(contactFormSimpleSchema) as never)
       : compact
-        ? zodResolver(contactFormCompactSchema)
+        ? (zodResolver(contactFormCompactSchema) as never)
         : zodResolver(contactFormWithConsentSchema),
     mode: "onBlur",
     defaultValues: {
@@ -132,7 +132,7 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
           <FieldError id="fullName-error" message={errors.fullName?.message} />
         </div>
 
-        {!simple ? (
+        {!simple && !compact ? (
         <div>
           <label className={labelClass} htmlFor="practiceName">
             Practice name <span aria-hidden="true">*</span>
@@ -154,7 +154,7 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
 
         <div>
           <label className={labelClass} htmlFor="email">
-            Work email <span aria-hidden="true">*</span>
+            {compact ? "Email" : "Work email"} <span aria-hidden="true">*</span>
           </label>
           <input
             id="email"
