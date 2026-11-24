@@ -77,16 +77,6 @@ export const preferredTimeOptions = [
   "4:00 PM – 7:00 PM",
 ] as const;
 
-export const usTimeZoneOptions = [
-  { label: "Eastern Time (ET)", value: "America/New_York" },
-  { label: "Central Time (CT)", value: "America/Chicago" },
-  { label: "Mountain Time (MT)", value: "America/Denver" },
-  { label: "Mountain Time – Arizona (MST)", value: "America/Phoenix" },
-  { label: "Pacific Time (PT)", value: "America/Los_Angeles" },
-  { label: "Alaska Time (AKT)", value: "America/Anchorage" },
-  { label: "Hawaii Time (HT)", value: "Pacific/Honolulu" },
-] as const;
-
 export const contactFormSimpleSchema = z.object({
   fullName: z.string().trim().min(2, "Enter your full name.").max(100, "Name must be 100 characters or fewer."),
   email: z.string().trim().email("Enter a valid email address.").max(254, "Email address is too long."),
@@ -97,10 +87,6 @@ export const contactFormSimpleSchema = z.object({
     "Choose a preferred time.",
   ),
   preferredDate: z.string().min(1, "Choose a preferred date.").regex(/^\d{4}-\d{2}-\d{2}$/, "Choose a valid date."),
-  timeZone: z.string().refine(
-    (value) => usTimeZoneOptions.some((zone) => zone.value === value),
-    "Choose a U.S. time zone.",
-  ),
   message: z.string().trim().min(10, "Add a little more detail so we can understand your request.").max(2000, "Message must be 2,000 characters or fewer."),
   website: z.string().max(200).optional(),
 });
@@ -120,5 +106,4 @@ export const contactFormWithConsentSchema = contactFormSchema.extend({
 export type ContactFormValues = z.infer<typeof contactFormWithConsentSchema> & {
   preferredTime?: string;
   preferredDate?: string;
-  timeZone?: string;
 };

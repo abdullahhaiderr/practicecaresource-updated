@@ -5,7 +5,6 @@ import {
   contactFormCompactSchema,
   contactFormSchema,
   contactFormSimpleSchema,
-  usTimeZoneOptions,
 } from "@/lib/contact-schema";
 
 export const runtime = "nodejs";
@@ -162,15 +161,6 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const submittedTimeZone =
-    "timeZone" in parsed.data && typeof parsed.data.timeZone === "string"
-      ? parsed.data.timeZone
-      : undefined;
-  const submittedTimeZoneLabel = submittedTimeZone
-    ? usTimeZoneOptions.find((zone) => zone.value === submittedTimeZone)?.label ??
-      submittedTimeZone
-    : undefined;
-
   const apiKey = process.env.RESEND_API_KEY;
   const recipient = process.env.CONTACT_TO_EMAIL;
   const sender = process.env.CONTACT_FROM_EMAIL;
@@ -196,9 +186,8 @@ export async function POST(request: NextRequest) {
       `Email: ${parsed.data.email}`,
       `Phone: ${parsed.data.phone}`,
       ...("preferredDate" in parsed.data ? [`Preferred date: ${parsed.data.preferredDate}`] : []),
-      ...("preferredTime" in parsed.data ? [`Preferred time: ${parsed.data.preferredTime}`] : []),
-      ...(submittedTimeZoneLabel
-        ? [`U.S. time zone: ${submittedTimeZoneLabel}`]
+      ...("preferredTime" in parsed.data
+        ? [`Preferred time: ${parsed.data.preferredTime} (Eastern Time, ET)`]
         : []),
       ...("specialty" in parsed.data ? [`Specialty: ${parsed.data.specialty}`] : []),
       ...("serviceInterestedIn" in parsed.data ? [`Service of interest: ${parsed.data.serviceInterestedIn}`] : []),

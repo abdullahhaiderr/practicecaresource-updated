@@ -12,7 +12,6 @@ import {
   preferredTimeOptions,
   serviceOptions,
   specialtyOptions,
-  usTimeZoneOptions,
   type ContactFormValues,
 } from "@/lib/contact-schema";
 
@@ -60,7 +59,6 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
       message: "",
       preferredTime: "",
       preferredDate: "",
-      timeZone: "America/New_York",
       consent: false,
       website: "",
     },
@@ -240,26 +238,9 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
               <FieldError id="preferredDate-error" message={errors.preferredDate?.message} />
             </div>
 
-            <div className="sm:col-span-2">
-              <label className={labelClass} htmlFor="timeZone">
-                U.S. time zone <span aria-hidden="true">*</span>
-              </label>
-              <select
-                id="timeZone"
-                className={fieldClass}
-                aria-invalid={Boolean(errors.timeZone)}
-                aria-describedby={errors.timeZone ? "timeZone-error" : "timeZone-hint"}
-                {...register("timeZone")}
-              >
-                {usTimeZoneOptions.map((zone) => (
-                  <option key={zone.value} value={zone.value}>{zone.label}</option>
-                ))}
-              </select>
-              <p id="timeZone-hint" className="mt-2 text-xs leading-relaxed text-brand-slate">
-                Preferred times are interpreted in the U.S. time zone selected here.
-              </p>
-              <FieldError id="timeZone-error" message={errors.timeZone?.message} />
-            </div>
+            <p className="sm:col-span-2 -mt-2 text-xs leading-relaxed text-brand-slate">
+              All preferred appointment times are shown in Eastern Time (ET).
+            </p>
           </>
         ) : null}
 

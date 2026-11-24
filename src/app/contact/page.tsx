@@ -122,7 +122,7 @@ export default function ContactPage() {
                 </span>
                 <span>
                   <span className="block text-sm font-bold text-brand-dark">Hours</span>
-                  <span className="mt-1 block text-sm leading-relaxed text-brand-slate">Mon–Fri · 8:00 AM–7:00 PM PT</span>
+                  <span className="mt-1 block text-sm leading-relaxed text-brand-slate">Mon–Fri · 8:00 AM–7:00 PM Eastern Time (ET)</span>
                 </span>
               </div>
               <div className="flex items-center justify-between gap-4 rounded-2xl border border-brand-border bg-brand-background-wash/55 p-4">
