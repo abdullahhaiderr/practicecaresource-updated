@@ -50,7 +50,7 @@ export const serviceCatalog: ServiceContent[] = [
     icon: ClipboardCheck,
     imageSrc: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Healthcare professional reviewing information at a clinic",
-    homeCardImageSrc: "/services/cards/landscape/medical-billing.webp",
+    homeCardImageSrc: "/Services%20Cards/medical-billing.png",
     homeCardImageFit: "cover",
     homeCardImageAlt: "Practice team reviewing a claim form beside billing reports",
     overview:
@@ -120,7 +120,7 @@ export const serviceCatalog: ServiceContent[] = [
     icon: ChartColumnIncreasing,
     imageSrc: "/services/cards/02-revenue-cycle-management.png",
     imageAlt: "Healthcare revenue cycle diagram and performance charts on a monitor",
-    homeCardImageSrc: "/services/cards/landscape/revenue-cycle-management.webp",
+    homeCardImageSrc: "/Services%20Cards/revenue-cycle-management.png",
     homeCardImageFit: "cover",
     homeCardImageAlt: "Healthcare revenue cycle diagram and performance charts on a monitor",
     overview:
@@ -190,7 +190,7 @@ export const serviceCatalog: ServiceContent[] = [
     icon: BookType,
     imageSrc: "/services/cards/03-medical-coding.png",
     imageAlt: "Medical code reference book and coding work on a laptop",
-    homeCardImageSrc: "/services/cards/landscape/medical-coding.webp",
+    homeCardImageSrc: "/Services%20Cards/medical-coding.png",
     homeCardImageFit: "cover",
     homeCardImageAlt: "Medical code reference book and coding work on a laptop",
     overview:
@@ -260,7 +260,7 @@ export const serviceCatalog: ServiceContent[] = [
     icon: BadgeCheck,
     imageSrc: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Clinician working at a desk in a healthcare office",
-    homeCardImageSrc: "/services/cards/landscape/credentialing.webp",
+    homeCardImageSrc: "/Services%20Cards/credentialing.png",
     homeCardImageFit: "cover",
     homeCardImageAlt: "Provider credential documents and a framed professional certificate",
     overview:
@@ -330,7 +330,7 @@ export const serviceCatalog: ServiceContent[] = [
     icon: Headset,
     imageSrc: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Team member coordinating work in a professional office",
-    homeCardImageSrc: "/services/cards/08-virtual-assistant.png",
+    homeCardImageSrc: "/Services%20Cards/virtual-assistant.png",
     homeCardImageAlt: "Virtual assistant coordinating a telehealth appointment at a computer",
     overview:
       "A virtual assistant can take on agreed administrative tasks so your in-office team has a clearer routine for day-to-day coordination. Responsibilities and escalation points are set with your practice before the work begins.",
@@ -399,7 +399,7 @@ export const serviceCatalog: ServiceContent[] = [
     icon: RefreshCw,
     imageSrc: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Office team reviewing documents and account information",
-    homeCardImageSrc: "/services/cards/05-ar-recovery.png",
+    homeCardImageSrc: "/Services%20Cards/ar-recovery.png",
     homeCardImageAlt: "Accounts receivable aging chart and organized claims on a desk",
     overview:
       "We help practices organize outstanding account work, review available claim history, and document follow-up. The goal is a clear queue of next steps, questions, and items that need the practice's input.",
@@ -468,7 +468,7 @@ export const serviceCatalog: ServiceContent[] = [
     icon: ClipboardCheck,
     imageSrc: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Medical professional reviewing information in a clinical setting",
-    homeCardImageSrc: "/services/cards/04-denial-management.png",
+    homeCardImageSrc: "/Services%20Cards/denial-management.png",
     homeCardImageAlt: "Claim forms marked for review by a practice billing team",
     overview:
       "We help teams record denial reasons, organize supporting information, and move appeal work through a defined process. Practice review remains part of decisions about corrections, documentation, and appeal content.",
@@ -537,7 +537,7 @@ export const serviceCatalog: ServiceContent[] = [
     icon: Laptop,
     imageSrc: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Bright modern workspace with a laptop and desk",
-    homeCardImageSrc: "/services/cards/06-website-development.png",
+    homeCardImageSrc: "/Services%20Cards/website-development.png",
     homeCardImageAlt: "Digital healthcare workflow displayed across laptop and phone screens",
     overview:
       "We plan and build clear, responsive websites that help a practice explain its services, location, and next steps. Content and features are shaped around the information your team approves and the needs of your audience.",
