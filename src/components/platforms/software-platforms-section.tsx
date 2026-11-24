@@ -1,4 +1,3 @@
-import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { SectionHeading } from "@/components/section-heading";
@@ -26,7 +25,6 @@ function PlatformMarqueeRow({
           className="flex h-[4.8rem] w-[11.5rem] shrink-0 items-center justify-center rounded-xl border border-brand-accent/20 bg-brand-background px-4 shadow-sm sm:w-[12.5rem]"
         >
           <PlatformLogo platform={platform} compact />
-          {!clone ? <span className="sr-only">{platform.name}</span> : null}
         </li>
       ))}
     </ul>
@@ -56,7 +54,7 @@ export function SoftwarePlatformsSection() {
   return (
     <section
       className="overflow-hidden border-y border-brand-border/70 bg-brand-background-wash/35 py-12 sm:py-14 lg:py-16"
-      aria-labelledby="software-platforms-home-heading"
+      aria-label="EHR, EMR, and revenue cycle software platforms"
     >
       <Container>
         <SectionHeading
