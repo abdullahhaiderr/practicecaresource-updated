@@ -7,12 +7,12 @@ import { CookieSettingsButton } from "@/components/cookie-consent";
 import { footerContact, footerQuickLinks } from "@/lib/site";
 
 const footerServices = [
-  { label: "View all", href: "/services" },
+  { label: "Medical Billing", href: "/services/medical-billing" },
   { label: "Revenue Cycle Management", href: "/services/revenue-cycle-management" },
   { label: "Credentialing & Enrollment", href: "/services/credentialing" },
   { label: "Accounts Receivable Recovery", href: "/services/ar-recovery" },
   { label: "Denial Management", href: "/services/denial-management" },
-  { label: "Medical Coding", href: "/services/medical-coding" },
+  { label: "View all", href: "/services" },
 ];
 
 const linkClassName =

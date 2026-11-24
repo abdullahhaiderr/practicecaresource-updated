@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   CircleDollarSign,
   BadgeCheck,
@@ -19,12 +20,25 @@ const features = [
   { label: "Dedicated Support", icon: Headset },
 ];
 
+const rotatingHeroTerms = ["run", "grow", "get paid"] as const;
+
 type HomeHeroProps = {
   heroImage?: string;
 };
 
 export function HomeHero({ heroImage }: HomeHeroProps) {
   const reducedMotion = useReducedMotion();
+  const [activeHeroTerm, setActiveHeroTerm] = useState(0);
+
+  useEffect(() => {
+    if (reducedMotion) return;
+
+    const intervalId = window.setInterval(() => {
+      setActiveHeroTerm((current) => (current + 1) % rotatingHeroTerms.length);
+    }, 2400);
+
+    return () => window.clearInterval(intervalId);
+  }, [reducedMotion]);
 
   return (
     <section className="relative isolate overflow-hidden border-b border-brand-border/70 bg-brand-background">
@@ -39,11 +53,33 @@ export function HomeHero({ heroImage }: HomeHeroProps) {
             initial={reducedMotion ? false : { opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: reducedMotion ? 0 : 0.62, delay: reducedMotion ? 0 : 0.08, ease: "easeOut" }}
-            className="mt-1 text-balance font-display text-[clamp(3rem,5.2vw,5.2rem)] font-semibold leading-[0.9] tracking-[-0.045em] text-brand-dark"
+            className="mt-1 max-w-2xl text-balance font-display text-[clamp(2.75rem,4.35vw,4.5rem)] font-semibold leading-[0.96] tracking-[-0.045em] text-brand-dark"
           >
-            <span className="block">The Source of</span>
-            <span className="block">Care</span>
-            <span className="block text-brand-accent">For Your Practice</span>
+            <span aria-hidden="true">
+              <span className="block">Everything your</span>
+              <span className="block">practice needs to</span>
+              <span className="relative mt-1 block h-[1em] overflow-hidden text-brand-accent">
+                {reducedMotion ? (
+                  <span className="block">run.</span>
+                ) : (
+                  <AnimatePresence mode="wait" initial={false}>
+                    <motion.span
+                      key={rotatingHeroTerms[activeHeroTerm]}
+                      initial={{ y: "110%", opacity: 0, filter: "blur(6px)" }}
+                      animate={{ y: "0%", opacity: 1, filter: "blur(0px)" }}
+                      exit={{ y: "-110%", opacity: 0, filter: "blur(6px)" }}
+                      transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
+                      className="absolute inset-0 block"
+                    >
+                      {rotatingHeroTerms[activeHeroTerm]}.
+                    </motion.span>
+                  </AnimatePresence>
+                )}
+              </span>
+            </span>
+            <span className="sr-only">
+              Everything your practice needs to run, grow and get paid.
+            </span>
           </motion.h1>
 
           <motion.p

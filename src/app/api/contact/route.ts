@@ -5,6 +5,7 @@ import {
   contactFormCompactSchema,
   contactFormSchema,
   contactFormSimpleSchema,
+  usTimeZoneOptions,
 } from "@/lib/contact-schema";
 
 export const runtime = "nodejs";
@@ -185,6 +186,11 @@ export async function POST(request: NextRequest) {
       ...("practiceName" in parsed.data ? [`Practice: ${parsed.data.practiceName}`] : []),
       `Email: ${parsed.data.email}`,
       `Phone: ${parsed.data.phone}`,
+      ...("preferredDate" in parsed.data ? [`Preferred date: ${parsed.data.preferredDate}`] : []),
+      ...("preferredTime" in parsed.data ? [`Preferred time: ${parsed.data.preferredTime}`] : []),
+      ...("timeZone" in parsed.data
+        ? [`U.S. time zone: ${usTimeZoneOptions.find((zone) => zone.value === parsed.data.timeZone)?.label ?? parsed.data.timeZone}`]
+        : []),
       ...("specialty" in parsed.data ? [`Specialty: ${parsed.data.specialty}`] : []),
       ...("serviceInterestedIn" in parsed.data ? [`Service of interest: ${parsed.data.serviceInterestedIn}`] : []),
       ...("consent" in parsed.data && parsed.data.consent ? ["Contact permission: Yes"] : []),

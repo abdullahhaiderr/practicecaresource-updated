@@ -9,8 +9,10 @@ import {
   contactFormCompactSchema,
   contactFormSimpleSchema,
   contactFormWithConsentSchema,
+  preferredTimeOptions,
   serviceOptions,
   specialtyOptions,
+  usTimeZoneOptions,
   type ContactFormValues,
 } from "@/lib/contact-schema";
 
@@ -56,6 +58,9 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
       specialty: "",
       serviceInterestedIn: "",
       message: "",
+      preferredTime: "",
+      preferredDate: "",
+      timeZone: "America/New_York",
       consent: false,
       website: "",
     },
@@ -154,7 +159,7 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
 
         <div>
           <label className={labelClass} htmlFor="email">
-            {compact ? "Email" : "Work email"} <span aria-hidden="true">*</span>
+            {compact || simple ? "Email" : "Work email"} <span aria-hidden="true">*</span>
           </label>
           <input
             id="email"
@@ -183,6 +188,80 @@ export function ContactForm({ compact = false, simple = false }: { compact?: boo
           />
           <FieldError id="phone-error" message={errors.phone?.message} />
         </div>
+
+        {simple ? (
+          <>
+            <div>
+              <label className={labelClass} htmlFor="practiceName">
+                Practice name <span aria-hidden="true">*</span>
+              </label>
+              <input
+                id="practiceName"
+                autoComplete="organization"
+                className={fieldClass}
+                aria-invalid={Boolean(errors.practiceName)}
+                aria-describedby={errors.practiceName ? "practiceName-error" : undefined}
+                {...register("practiceName")}
+              />
+              <FieldError id="practiceName-error" message={errors.practiceName?.message} />
+            </div>
+
+            <div>
+              <label className={labelClass} htmlFor="preferredTime">
+                Preferred time <span aria-hidden="true">*</span>
+              </label>
+              <select
+                id="preferredTime"
+                className={fieldClass}
+                aria-invalid={Boolean(errors.preferredTime)}
+                aria-describedby={errors.preferredTime ? "preferredTime-error" : undefined}
+                {...register("preferredTime")}
+              >
+                <option value="">Choose a preferred time</option>
+                {preferredTimeOptions.map((time) => (
+                  <option key={time} value={time}>{time}</option>
+                ))}
+              </select>
+              <FieldError id="preferredTime-error" message={errors.preferredTime?.message} />
+            </div>
+
+            <div>
+              <label className={labelClass} htmlFor="preferredDate">
+                Date <span aria-hidden="true">*</span>
+              </label>
+              <input
+                id="preferredDate"
+                type="date"
+                className={fieldClass}
+                aria-invalid={Boolean(errors.preferredDate)}
+                aria-describedby={errors.preferredDate ? "preferredDate-error" : undefined}
+                {...register("preferredDate")}
+              />
+              <FieldError id="preferredDate-error" message={errors.preferredDate?.message} />
+            </div>
+
+            <div className="sm:col-span-2">
+              <label className={labelClass} htmlFor="timeZone">
+                U.S. time zone <span aria-hidden="true">*</span>
+              </label>
+              <select
+                id="timeZone"
+                className={fieldClass}
+                aria-invalid={Boolean(errors.timeZone)}
+                aria-describedby={errors.timeZone ? "timeZone-error" : "timeZone-hint"}
+                {...register("timeZone")}
+              >
+                {usTimeZoneOptions.map((zone) => (
+                  <option key={zone.value} value={zone.value}>{zone.label}</option>
+                ))}
+              </select>
+              <p id="timeZone-hint" className="mt-2 text-xs leading-relaxed text-brand-slate">
+                Preferred times are interpreted in the U.S. time zone selected here.
+              </p>
+              <FieldError id="timeZone-error" message={errors.timeZone?.message} />
+            </div>
+          </>
+        ) : null}
 
         {!simple ? (
         <>
