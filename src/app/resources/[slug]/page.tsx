@@ -9,7 +9,7 @@ import { ArticleReadingProgress } from "@/components/resources/article-reading-p
 import { type ResourceCardData } from "@/components/resources/resource-card";
 import { RelatedResourcesCarousel } from "@/components/resources/related-resources-carousel";
 import { ScrollReveal } from "@/components/scroll-reveal";
-import { getReadingMinutes, getResourceArticle, resourceArticles, type ResourceArticle } from "@/data/resources/articles";
+import { formatPublishedDate, getReadingMinutes, getResourceArticle, resourceArticles, type ResourceArticle } from "@/data/resources/articles";
 
 type ArticlePageProps = {
   params: Promise<{ slug: string }>;
@@ -182,7 +182,7 @@ export default async function ResourceArticlePage({ params }: ArticlePageProps) 
         title={article.title}
         description={article.description}
         category={article.category}
-        publishedAt={article.publishedAt}
+        publishedAt={formatPublishedDate(article.publishedAt)}
         readingMinutes={getReadingMinutes(article)}
         coverImage={article.coverImage}
         coverAlt={article.coverAlt}

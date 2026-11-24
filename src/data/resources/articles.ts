@@ -10,7 +10,7 @@ export type ResourceArticle = {
   description: string;
   excerpt: string;
   category: ResourceCategory;
-  publishedAt: "[PUBLISH DATE]" | string;
+  publishedAt: string;
   coverImage: string;
   coverAlt: string;
   introduction: string;
@@ -41,7 +41,7 @@ export const resourceArticles: ResourceArticle[] = [
     excerpt:
       "Medical billing covers a connected set of administrative tasks from charge review through payment posting and follow-up. Here is what the work can include and how a practice can stay involved.",
     category: "Billing",
-    publishedAt: "[PUBLISH DATE]",
+    publishedAt: "2026-11-12",
     coverImage:
       "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=85",
     coverAlt: "Healthcare professional reviewing information at a desk",
@@ -118,7 +118,7 @@ export const resourceArticles: ResourceArticle[] = [
     excerpt:
       "Denials can have different causes, and the next step depends on the reason and the information available. A consistent review process can help a practice understand recurring issues without assuming every denial is preventable.",
     category: "Denials and AR",
-    publishedAt: "[PUBLISH DATE]",
+    publishedAt: "2026-10-27",
     coverImage:
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1400&q=85",
     coverAlt: "Medical professional reviewing healthcare information",
@@ -195,7 +195,7 @@ export const resourceArticles: ResourceArticle[] = [
     excerpt:
       "Credentialing and enrollment involve provider information, application materials, review, and follow-up. The steps vary, so a clear checklist and realistic expectations help teams coordinate the work.",
     category: "Credentialing",
-    publishedAt: "[PUBLISH DATE]",
+    publishedAt: "2026-10-08",
     coverImage:
       "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1400&q=85",
     coverAlt: "Clinician working at a desk in a healthcare office",
@@ -267,7 +267,7 @@ export const resourceArticles: ResourceArticle[] = [
     excerpt:
       "An aged claim is an open account that has remained unresolved over time. A consistent review process helps teams understand the history, identify the next step, and keep practice decisions in view.",
     category: "Denials and AR",
-    publishedAt: "[PUBLISH DATE]",
+    publishedAt: "2026-09-16",
     coverImage:
       "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1400&q=85",
     coverAlt: "Office team reviewing documents and account information",
@@ -332,6 +332,20 @@ export const resourceArticles: ResourceArticle[] = [
     closingNote: "rules vary by payer and state; verify current requirements",
   },
 ];
+
+export function formatPublishedDate(value: string) {
+  if (!/^\\d{4}-\\d{2}-\\d{2}$/.test(value)) return value;
+
+  const [year, month, day] = value.split("-").map(Number);
+  const date = new Date(Date.UTC(year, month - 1, day));
+
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(date);
+}
 
 export function getResourceArticle(slug: string) {
   return resourceArticles.find((article) => article.slug === slug);

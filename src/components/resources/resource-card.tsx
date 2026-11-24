@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, BookOpenText, Clock3 } from "lucide-react";
+import { formatPublishedDate } from "@/data/resources/articles";
 
 export type ResourceCardData = {
   slug: string;
@@ -60,7 +61,7 @@ export function ResourceCard({ article, featured = false, compact = false, dupli
           <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-bold text-brand-slate">
             <span className="text-brand-accent-ink">{article.category}</span>
             <span aria-hidden="true">·</span>
-            <span>{article.publishedAt}</span>
+            <span>{formatPublishedDate(article.publishedAt)}</span>
           </div>
           <h3 className={[
             "mt-3 line-clamp-2 min-h-[3rem] font-display font-semibold leading-tight text-brand-dark sm:min-h-[3.5rem]",
