@@ -25,5 +25,9 @@ export const footerContact = {
   tagline: "The source of care for your practice.",
 };
 
-export const footerQuickLinks = navigationLinks;
-
+export const footerQuickLinks: SiteLink[] = [
+  { label: "About us", href: "/about" },
+  { label: "How it works", href: "/how-it-works" },
+  { label: "FAQs", href: "/faqs" },
+  { label: "HIPAA & Security", href: "/hipaa-security" },
+];

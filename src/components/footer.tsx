@@ -4,31 +4,70 @@ import { ArrowUpRight, Mail, Phone } from "lucide-react";
 import { Container } from "@/components/container";
 import { SocialIcons } from "@/components/social-icons";
 import { CookieSettingsButton } from "@/components/cookie-consent";
-import { footerContact, footerQuickLinks, services } from "@/lib/site";
+import { footerContact, footerQuickLinks } from "@/lib/site";
+
+const footerServices = [
+  { label: "Medical Billing", slug: "medical-billing" },
+  { label: "Revenue Cycle Management", slug: "revenue-cycle-management" },
+  { label: "Credentialing & Enrollment", slug: "credentialing" },
+  { label: "Accounts Receivable Recovery", slug: "ar-recovery" },
+  { label: "Denial Management", slug: "denial-management" },
+  { label: "Medical Coding", slug: "medical-coding" },
+];
+
+const linkClassName =
+  "text-sm leading-relaxed text-brand-slate transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink sm:text-base";
+
+const headingClassName =
+  "font-display text-lg font-semibold uppercase tracking-[0.08em] text-brand-dark";
 
 export function Footer() {
   return (
     <footer className="border-t border-brand-border bg-brand-background-wash text-brand-dark">
       <Container className="py-10 sm:py-14 lg:py-16">
-        <div className="grid gap-10 border-b border-brand-border pb-10 sm:gap-12 md:grid-cols-[1.25fr_0.75fr_0.9fr_1fr] md:gap-8 lg:pb-12">
+        <div className="grid gap-10 border-b border-brand-border pb-10 sm:gap-12 md:grid-cols-2 md:gap-9 xl:grid-cols-[1.3fr_1.1fr_0.85fr_1fr] xl:gap-8 lg:pb-12">
           <div className="max-w-sm">
-            <Link href="/" aria-label="CareSource home" className="inline-block rounded-md">
-              <Image src="/logo.png" alt="Practice Care Source" width={219} height={60} className="h-auto w-[194px]" />
+            <Link href="/" aria-label="Practice Care Source home" className="inline-block rounded-md">
+              <Image
+                src="/logo.png"
+                alt="Practice Care Source"
+                width={219}
+                height={60}
+                className="h-auto w-[194px]"
+              />
             </Link>
-            <div className="mt-4">
+            <p className="mt-5 max-w-sm text-base leading-relaxed text-brand-slate">
+              The source of care for your practice. Medical billing, coding,
+              credentialing, and revenue cycle support for healthcare practices
+              across the United States.
+            </p>
+            <span className="mt-5 inline-flex rounded-full border border-brand-accent/25 bg-brand-accent/5 px-3.5 py-2 text-sm font-semibold text-brand-accent-ink">
+              Serving U.S. healthcare practices
+            </span>
+            <div className="mt-5">
               <SocialIcons />
             </div>
-            <p className="mt-5 max-w-xs text-base leading-relaxed text-brand-slate">
-              {footerContact.tagline}
-            </p>
           </div>
 
-          <div>
-            <h2 className="font-display text-xl font-semibold text-brand-dark">Quick links</h2>
-            <ul className="mt-4 space-y-2.5">
+          <div className="min-w-0">
+            <h2 className={headingClassName}>Main services</h2>
+            <ul className="mt-5 space-y-3">
+              {footerServices.map((service) => (
+                <li key={service.slug}>
+                  <Link href={"/services/" + service.slug} className={linkClassName}>
+                    {service.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="min-w-0">
+            <h2 className={headingClassName}>Company</h2>
+            <ul className="mt-5 space-y-3">
               {footerQuickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-brand-slate transition-colors hover:text-brand-accent-ink focus-visible:outline-none">
+                  <Link href={link.href} className={linkClassName}>
                     {link.label}
                   </Link>
                 </li>
@@ -36,55 +75,67 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
-            <h2 className="font-display text-xl font-semibold text-brand-dark">Services</h2>
-            <ul className="mt-4 space-y-2.5">
-              {services.map((service) => (
-                <li key={service.slug}>
-                  <Link href={"/services/" + service.slug} className="text-sm text-brand-slate transition-colors hover:text-brand-accent-ink focus-visible:outline-none">
-                    {service.shortTitle}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="font-display text-xl font-semibold text-brand-dark">Contact</h2>
-            <ul className="mt-4 space-y-3">
+          <div className="min-w-0">
+            <h2 className={headingClassName}>Get in touch</h2>
+            <ul className="mt-5 space-y-4">
               <li>
-                <a href={"mailto:" + footerContact.email} className="inline-flex items-start gap-2.5 text-sm text-brand-slate transition-colors hover:text-brand-accent-ink focus-visible:outline-none">
-                  <Mail size={17} className="mt-0.5 shrink-0 text-brand-accent-ink" aria-hidden="true" />
-                  <span>{footerContact.email}</span>
+                <a
+                  href={"mailto:" + footerContact.email}
+                  className="inline-flex min-w-0 items-start gap-2.5 text-sm leading-relaxed text-brand-slate transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink sm:text-base"
+                >
+                  <Mail size={19} className="mt-0.5 shrink-0 text-brand-accent-ink" aria-hidden="true" />
+                  <span className="break-all">{footerContact.email}</span>
                 </a>
               </li>
               <li>
-                <a href={"tel:" + footerContact.phoneHref} className="inline-flex items-center gap-2.5 text-sm text-brand-slate transition-colors hover:text-brand-accent-ink focus-visible:outline-none">
-                  <Phone size={17} className="shrink-0 text-brand-accent-ink" aria-hidden="true" />
+                <a
+                  href={"tel:" + footerContact.phoneHref}
+                  className="inline-flex items-center gap-2.5 text-sm leading-relaxed text-brand-slate transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink sm:text-base"
+                >
+                  <Phone size={19} className="shrink-0 text-brand-accent-ink" aria-hidden="true" />
                   <span>{footerContact.phoneDisplay}</span>
                 </a>
               </li>
               <li>
                 <Link
                   href="/contact"
-                  className="inline-flex min-h-11 items-center gap-2 rounded-pill bg-brand-accent px-4 text-sm font-bold text-brand-background shadow-card transition-[transform,box-shadow] hover:-translate-y-0.5 hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink"
+                  className="inline-flex min-h-12 items-center gap-2 rounded-xl bg-brand-accent px-5 text-sm font-bold text-brand-background shadow-card transition-[transform,box-shadow] hover:-translate-y-0.5 hover:shadow-card-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink"
                 >
-                  Book a Free Audit <ArrowUpRight size={15} aria-hidden="true" />
+                  Schedule a Consultation
+                  <ArrowUpRight size={17} aria-hidden="true" />
                 </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 pt-5 text-sm text-brand-slate sm:flex-row sm:items-center xl:justify-between">
-          <p className="shrink-0">© {new Date().getFullYear()} CareSource. All rights reserved.</p>
-          <nav aria-label="Legal and privacy links" className="flex flex-wrap items-center gap-x-5 gap-y-2 sm:ml-auto xl:flex-nowrap">
-            <Link href="/privacy-policy" className="shrink-0 transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Privacy policy</Link>
-            <Link href="/cookies-policy" className="shrink-0 transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Cookie policy</Link>
-            <Link href="/terms-of-service" className="shrink-0 transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">Terms of service</Link>
+        <div className="flex flex-col gap-4 pt-5 text-sm text-brand-slate sm:flex-row sm:items-center sm:justify-between">
+          <p className="shrink-0">© {new Date().getFullYear()} Practice Care Source. All rights reserved.</p>
+          <nav
+            aria-label="Legal and privacy links"
+            className="flex flex-wrap items-center gap-x-5 gap-y-2 sm:ml-auto sm:justify-end"
+          >
+            <Link href="/privacy-policy" className="shrink-0 transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
+              Privacy Policy
+            </Link>
+            <Link href="/terms-of-service" className="shrink-0 transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
+              Terms and Conditions
+            </Link>
+            <Link href="/cookies-policy" className="shrink-0 transition-colors hover:text-brand-accent-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent-ink">
+              Cookie Policy
+            </Link>
             <CookieSettingsButton />
           </nav>
         </div>
+
+        <p className="mt-5 max-w-6xl text-xs leading-relaxed text-brand-slate sm:text-sm">
+          Practice Care Source provides medical billing and revenue cycle
+          management services. This website is for business inquiries and is
+          not intended to collect patient health information. Please do not
+          submit patient details or protected health information through
+          website forms. Practice Care Source does not claim to be HIPAA
+          certified.
+        </p>
       </Container>
     </footer>
   );

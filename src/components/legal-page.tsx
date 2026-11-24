@@ -11,9 +11,15 @@ type LegalPageProps = {
   title: string;
   description: string;
   sections: LegalSection[];
+  lastUpdated?: string;
 };
 
-export function LegalPage({ title, description, sections }: LegalPageProps) {
+export function LegalPage({
+  title,
+  description,
+  sections,
+  lastUpdated = "November 22, 2026",
+}: LegalPageProps) {
   return (
     <main id="main-content">
       <section className="border-b border-brand-border bg-brand-background-wash/50 py-12 sm:py-16 lg:py-20">
@@ -26,7 +32,7 @@ export function LegalPage({ title, description, sections }: LegalPageProps) {
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.15em] text-brand-accent-ink">Practice Care Source</p>
           <h1 className="font-display text-4xl font-semibold leading-tight text-brand-dark sm:text-5xl lg:text-6xl">{title}</h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-brand-slate sm:text-lg">{description}</p>
-          <p className="mt-4 text-sm font-semibold text-brand-slate">Last updated November 22, 2026</p>
+          <p className="mt-4 text-sm font-semibold text-brand-slate">Last updated {lastUpdated}</p>
         </Container>
       </section>
 
