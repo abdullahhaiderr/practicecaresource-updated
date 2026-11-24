@@ -30,4 +30,5 @@ export const footerQuickLinks: SiteLink[] = [
   { label: "How it works", href: "/how-it-works" },
   { label: "FAQs", href: "/faqs" },
   { label: "HIPAA & Security", href: "/hipaa-security" },
+  { label: "Software platforms", href: "/software-platforms" },
 ];

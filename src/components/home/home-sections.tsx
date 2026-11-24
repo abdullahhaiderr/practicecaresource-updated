@@ -13,6 +13,7 @@ import { Container } from "@/components/container";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
+import { SoftwarePlatformsSection } from "@/components/platforms/software-platforms-section";
 import { ReviewSubmissionForm } from "@/components/home/review-submission-form";
 import { footerContact, services } from "@/lib/site";
 
@@ -377,6 +378,7 @@ export function HomeSections() {
     <>
       <ServicesSection />
       <OneRoofSection />
+      <SoftwarePlatformsSection />
       <ProcessSection />
       <TestimonialsSection />
       <FaqSection />

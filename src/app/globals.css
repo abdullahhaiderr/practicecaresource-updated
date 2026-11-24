@@ -414,3 +414,57 @@ img {
     filter: none;
   }
 }
+
+
+@keyframes software-platform-marquee-forward {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes software-platform-marquee-reverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.software-platform-marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 3%, #000 97%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 3%, #000 97%, transparent 100%);
+}
+
+.software-platform-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: software-platform-marquee-forward 48s linear infinite;
+  will-change: transform;
+}
+
+.software-platform-marquee__track--reverse {
+  animation-name: software-platform-marquee-reverse;
+  animation-duration: 52s;
+}
+
+.software-platform-marquee:hover .software-platform-marquee__track,
+.software-platform-marquee:focus-within .software-platform-marquee__track {
+  animation-play-state: paused;
+}
+
+.software-platform-marquee__clone {
+  display: flex;
+  flex: 0 0 auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .software-platform-marquee {
+    overflow-x: auto;
+  }
+
+  .software-platform-marquee__track {
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+
+  .software-platform-marquee__clone {
+    display: none;
+  }
+}
