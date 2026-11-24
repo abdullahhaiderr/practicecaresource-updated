@@ -16,7 +16,7 @@ const faqs = [
   {
     question: "Which services can I ask about?",
     answer:
-      "Practice Care Source offers revenue cycle management, medical billing and coding, credentialing, virtual assistant support, AR recovery, denial management, and website development. We can discuss one service or a combination that fits your practice.",
+      "Practice Care Source offers medical billing, revenue cycle management, medical coding, credentialing, eligibility verification, prior authorization, virtual assistant support, AR recovery, denial management, and website development. We can discuss one service or a combination that fits your practice.",
   },
   {
     question: "How is pricing determined?",

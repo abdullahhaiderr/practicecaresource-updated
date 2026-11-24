@@ -20,6 +20,8 @@ export const serviceOptions = [
   "Virtual Assistant (VA) Services",
   "AR Recovery",
   "Denial Management",
+  "Eligibility Verification",
+  "Prior Authorization",
   "Website Development",
 ] as const;
 

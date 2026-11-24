@@ -10,18 +10,32 @@ import { Button } from "@/components/button";
 import { Container } from "@/components/container";
 import { navigationLinks, serviceNavLinks } from "@/lib/site";
 
+const getServicesInOrder = (slugs: string[]) =>
+  slugs.flatMap((slug) => {
+    const service = serviceNavLinks.find((item) => item.slug === slug);
+    return service ? [service] : [];
+  });
+
 const serviceMenuGroups = [
   {
     title: "Revenue cycle",
-    services: serviceNavLinks.filter((service) =>
-      ["revenue-cycle-management", "medical-billing", "medical-coding", "ar-recovery", "denial-management"].includes(service.slug),
-    ),
+    services: getServicesInOrder([
+      "revenue-cycle-management",
+      "medical-billing",
+      "medical-coding",
+      "ar-recovery",
+      "denial-management",
+    ]),
   },
   {
     title: "Practice operations",
-    services: serviceNavLinks.filter((service) =>
-      ["credentialing", "virtual-assistant", "website-development"].includes(service.slug),
-    ),
+    services: getServicesInOrder([
+      "credentialing",
+      "virtual-assistant",
+      "eligibility-verification",
+      "prior-authorization",
+      "website-development",
+    ]),
   },
 ];
 
@@ -225,7 +239,7 @@ export function Navbar() {
                               <LayoutGrid size={16} aria-hidden="true" /> All services
                               <ArrowRight size={14} className="ml-auto" aria-hidden="true" />
                             </Link>
-                            {serviceNavLinks.map((service) => (
+                            {serviceMenuGroups.flatMap((group) => group.services).map((service) => (
                               <Link key={service.href} href={service.href} className="flex min-h-10 items-center gap-2 rounded-lg px-3 text-sm text-brand-slate hover:bg-brand-background-wash/60 hover:text-brand-accent-ink">
                                 <service.icon size={15} aria-hidden="true" /> {service.label}
                               </Link>

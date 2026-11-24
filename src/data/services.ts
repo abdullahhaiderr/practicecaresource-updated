@@ -597,6 +597,146 @@ export const serviceCatalog: ServiceContent[] = [
     ],
     relatedServices: ["virtual-assistant"],
   },
+  {
+    slug: "eligibility-verification",
+    title: "Eligibility Verification",
+    shortTitle: "Eligibility Verification",
+    description:
+      "Pre-visit insurance eligibility checks and coverage detail follow-up using your practice's approved workflow.",
+    icon: ClipboardCheck,
+    imageSrc: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=85",
+    imageAlt: "Healthcare office team reviewing patient coverage information",
+    homeCardImageSrc: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=85",
+    homeCardImageAlt: "Healthcare office team reviewing insurance eligibility details",
+    homeCardImageFit: "cover",
+    overview:
+      "We help verify coverage information ahead of scheduled visits using the payer portals, clearinghouse tools, and workflow available to your practice. We record the information returned, flag missing or conflicting details, and route exceptions to your team. An eligibility response is not a guarantee of payment or coverage for a particular service.",
+    whatsIncluded: [
+      "Review of upcoming appointments and verification work queues",
+      "Eligibility checks using the payer and clearinghouse process selected by your practice",
+      "Recording of coverage status, effective dates, and plan details returned",
+      "Documentation of copay, deductible, and benefit information when available",
+      "Identification of inactive coverage, data mismatches, and missing information",
+      "Follow-up notes and escalation of items that need practice review",
+    ],
+    howWeWork: [
+      {
+        title: "Agree on the verification workflow",
+        description:
+          "We confirm the appointment details, systems, timing, and information your practice wants checked.",
+      },
+      {
+        title: "Review coverage information",
+        description:
+          "We use the approved payer or clearinghouse workflow and record the response available at the time of the check.",
+      },
+      {
+        title: "Document the result",
+        description:
+          "Coverage details and unresolved items are recorded in the format your team selects.",
+      },
+      {
+        title: "Route exceptions",
+        description:
+          "Conflicting information, inactive coverage, or questions that need a decision are sent to the appropriate practice contact.",
+      },
+    ],
+    whoItsFor:
+      "Medical practices that want a consistent pre-visit process for checking insurance information and identifying coverage questions before appointments.",
+    whyItMatters: [
+      "A defined verification queue makes it easier to see which upcoming visits have been checked.",
+      "Recorded payer responses give the practice useful information to review before the visit.",
+      "Clear exception notes help staff follow up on missing or conflicting details.",
+    ],
+    faqs: [
+      {
+        question: "Does an eligibility response guarantee payment?",
+        answer:
+          "No. An eligibility response reflects the information returned by the payer at the time of the check. It is not a guarantee of payment or coverage for a particular service.",
+      },
+      {
+        question: "Can you check coverage before scheduled appointments?",
+        answer:
+          "Yes. We can discuss a pre-visit schedule and verification queue that fits your practice's approved workflow and available systems.",
+      },
+      {
+        question: "What happens when coverage information does not match?",
+        answer:
+          "We document the mismatch or missing detail and route it to your practice for review and any required patient or payer follow-up.",
+      },
+    ],
+    relatedServices: ["medical-billing", "virtual-assistant", "prior-authorization"],
+  },
+  {
+    slug: "prior-authorization",
+    title: "Prior Authorization",
+    shortTitle: "Prior Authorization",
+    description:
+      "Administrative coordination for authorization requests, payer follow-up, and status tracking.",
+    icon: BadgeCheck,
+    imageSrc: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=85",
+    imageAlt: "Healthcare administrator organizing documents for a provider office",
+    homeCardImageSrc: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=85",
+    homeCardImageAlt: "Healthcare administrator preparing authorization paperwork for review",
+    homeCardImageFit: "cover",
+    overview:
+      "We help organize prior authorization requests around the payer requirements and review process selected by your practice. Work can include preparing request information from practice-approved documentation, coordinating submission through authorized channels, and tracking payer responses. Clinical decisions and final approval of the information submitted remain with the appropriate provider and practice team.",
+    whatsIncluded: [
+      "Organization of authorization work queues and requested service details",
+      "Review of payer-specific submission requirements identified by your practice",
+      "Preparation of request packets using documentation approved by your team",
+      "Submission coordination through the channels authorized by your practice",
+      "Status checks, pending request follow-up, and tracking of payer questions",
+      "Recording of authorization decisions, reference numbers, and expiration details when provided",
+    ],
+    howWeWork: [
+      {
+        title: "Identify the request requirements",
+        description:
+          "We confirm the payer, requested service, required information, and the practice's review steps.",
+      },
+      {
+        title: "Prepare for practice review",
+        description:
+          "We organize the forms and supporting documents your team provides and flag anything that appears to be missing.",
+      },
+      {
+        title: "Coordinate submission and follow-up",
+        description:
+          "Requests are sent only through the process and permissions approved by your practice, then tracked for updates.",
+      },
+      {
+        title: "Record the outcome",
+        description:
+          "We document payer responses, additional requests, and dates that your team may need to monitor.",
+      },
+    ],
+    whoItsFor:
+      "Provider offices and administrative teams that want a consistent way to organize authorization requests and monitor payer responses for scheduled services.",
+    whyItMatters: [
+      "A visible request queue helps staff track what has been prepared, submitted, or returned for more information.",
+      "Documented payer questions make it easier to route missing items to the right reviewer.",
+      "Recorded decisions and dates help the practice monitor the next administrative step.",
+    ],
+    faqs: [
+      {
+        question: "Can you guarantee that a prior authorization will be approved?",
+        answer:
+          "No. Payer decisions depend on the plan's requirements and the information reviewed. We provide administrative coordination and follow-up, not a guarantee of approval.",
+      },
+      {
+        question: "Who reviews the clinical information?",
+        answer:
+          "Your provider and authorized practice staff retain responsibility for clinical documentation, medical necessity decisions, and approval of information submitted.",
+      },
+      {
+        question: "Can you track pending requests and payer questions?",
+        answer:
+          "Yes. Within the agreed workflow, we can record submission details, check status, document payer questions, and route requests for additional information to your team.",
+      },
+    ],
+    relatedServices: ["eligibility-verification", "medical-billing", "denial-management"],
+  },
 
 ];
 

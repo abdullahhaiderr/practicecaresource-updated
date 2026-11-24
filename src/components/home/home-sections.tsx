@@ -54,7 +54,7 @@ const faqs = [
   {
     question: "Which services can I ask about?",
     answer:
-      "CareSource offers revenue cycle management, medical billing and coding, credentialing, virtual assistant support, AR recovery, denial management, and website development. We can discuss one service or a combination that fits your practice.",
+      "CareSource offers medical billing, revenue cycle management, medical coding, credentialing, eligibility verification, prior authorization, virtual assistant support, AR recovery, denial management, and website development. We can discuss one service or a combination that fits your practice.",
   },
   {
     question: "How is pricing determined?",
@@ -107,17 +107,27 @@ function ServicesSection() {
           />
         </ScrollReveal>
         <div className="grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {services.map((service) => (
-            <ServiceCard
+          {services.map((service, index) => (
+            <ScrollReveal
               key={service.slug}
-              title={service.shortTitle}
-              description={service.description}
-              imageSrc={service.homeCardImageSrc}
-              imageAlt={service.homeCardImageAlt}
-              imageFit={service.homeCardImageFit ?? "contain"}
-              icon={service.icon}
-              href={`/services/${service.slug}`}
-            />
+              className={
+                index === 8
+                  ? "xl:col-start-2"
+                  : index === 9
+                    ? "xl:col-start-3"
+                    : undefined
+              }
+            >
+              <ServiceCard
+                title={service.shortTitle}
+                description={service.description}
+                imageSrc={service.homeCardImageSrc}
+                imageAlt={service.homeCardImageAlt}
+                imageFit={service.homeCardImageFit ?? "contain"}
+                icon={service.icon}
+                href={`/services/${service.slug}`}
+              />
+            </ScrollReveal>
           ))}
         </div>
         <ScrollReveal>

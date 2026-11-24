@@ -13,7 +13,7 @@ import { ServiceExplorer } from "./service-explorer";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Explore revenue cycle management, medical billing and coding, credentialing, virtual assistant, AR recovery, denial management, and website development support from CareSource.",
+    "Explore medical billing, revenue cycle management, coding, credentialing, eligibility verification, prior authorization, and practice operations support from CareSource.",
 };
 
 export default function ServicesPage() {
@@ -47,7 +47,17 @@ export default function ServicesPage() {
           </ScrollReveal>
           <div className="mt-8 grid auto-rows-fr gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {serviceCatalog.map((service, index) => (
-              <ScrollReveal key={service.slug} delay={index * 0.035}>
+              <ScrollReveal
+                key={service.slug}
+                delay={index * 0.035}
+                className={
+                  index === 8
+                    ? "xl:col-start-2"
+                    : index === 9
+                      ? "xl:col-start-3"
+                      : undefined
+                }
+              >
                 <ServiceOverviewCard
                   title={service.title}
                   description={service.description}
