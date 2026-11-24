@@ -8,6 +8,7 @@ export type ServiceCardProps = {
   description: string;
   imageSrc: string;
   imageAlt: string;
+  imageFit?: "cover" | "contain";
   icon: LucideIcon;
   href?: string;
   compact?: boolean;
@@ -19,6 +20,7 @@ export function ServiceCard({
   description,
   imageSrc,
   imageAlt,
+  imageFit = "contain",
   icon: Icon,
   href = "/services",
   compact = false,
@@ -31,11 +33,10 @@ export function ServiceCard({
       : "hover:-translate-y-1.5");
 
   const mediaClassName =
-    "relative shrink-0 overflow-hidden bg-brand-background-wash " +
-    (compact ? "aspect-[16/9]" : "h-52 sm:h-56");
+    "relative aspect-[16/9] shrink-0 overflow-hidden bg-brand-background-wash";
 
   const imageClassName =
-    (compact ? "object-cover" : "object-contain p-3 sm:p-4") +
+    (compact || imageFit === "cover" ? "object-cover" : "object-contain p-3 sm:p-4") +
     " object-center transition-transform duration-700 ease-brand-out group-hover:scale-[1.04] motion-reduce:transition-none";
 
   const contentClassName =

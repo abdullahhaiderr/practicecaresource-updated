@@ -114,6 +114,7 @@ function ServicesSection() {
               description={service.description}
               imageSrc={service.homeCardImageSrc}
               imageAlt={service.homeCardImageAlt}
+              imageFit={service.homeCardImageFit ?? "contain"}
               icon={service.icon}
               href={`/services/${service.slug}`}
             />

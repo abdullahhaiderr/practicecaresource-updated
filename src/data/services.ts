@@ -30,6 +30,7 @@ export type ServiceContent = {
   imageAlt: string;
   homeCardImageSrc: string;
   homeCardImageAlt: string;
+  homeCardImageFit?: "cover" | "contain";
   overview: string;
   whatsIncluded: string[];
   howWeWork: ServiceStep[];
@@ -49,7 +50,8 @@ export const serviceCatalog: ServiceContent[] = [
     icon: ClipboardCheck,
     imageSrc: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Healthcare professional reviewing information at a clinic",
-    homeCardImageSrc: "/services/cards/01-medical-billing.png",
+    homeCardImageSrc: "/services/cards/landscape/medical-billing.webp",
+    homeCardImageFit: "cover",
     homeCardImageAlt: "Practice team reviewing a claim form beside billing reports",
     overview:
       "We help keep the billing work moving from charge review through claim follow-up and payment posting. Work is organized around the practice's documented workflows, billing system, and review preferences.",
@@ -118,7 +120,8 @@ export const serviceCatalog: ServiceContent[] = [
     icon: ChartColumnIncreasing,
     imageSrc: "/services/cards/02-revenue-cycle-management.png",
     imageAlt: "Healthcare revenue cycle diagram and performance charts on a monitor",
-    homeCardImageSrc: "/services/cards/02-revenue-cycle-management.png",
+    homeCardImageSrc: "/services/cards/landscape/revenue-cycle-management.webp",
+    homeCardImageFit: "cover",
     homeCardImageAlt: "Healthcare revenue cycle diagram and performance charts on a monitor",
     overview:
       "Revenue cycle management connects many administrative steps across a practice. We help organize agreed workflows, clarify handoffs, and keep follow-up visible so your team can review the work and make the decisions that belong to the practice.",
@@ -187,7 +190,8 @@ export const serviceCatalog: ServiceContent[] = [
     icon: BookType,
     imageSrc: "/services/cards/03-medical-coding.png",
     imageAlt: "Medical code reference book and coding work on a laptop",
-    homeCardImageSrc: "/services/cards/03-medical-coding.png",
+    homeCardImageSrc: "/services/cards/landscape/medical-coding.webp",
+    homeCardImageFit: "cover",
     homeCardImageAlt: "Medical code reference book and coding work on a laptop",
     overview:
       "We help organize coding-related administrative work around the documentation and review process your practice approves. Your clinicians and authorized staff retain responsibility for clinical documentation, code validation, and final decisions.",
@@ -256,7 +260,8 @@ export const serviceCatalog: ServiceContent[] = [
     icon: BadgeCheck,
     imageSrc: "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Clinician working at a desk in a healthcare office",
-    homeCardImageSrc: "/services/cards/07-credentialing.png",
+    homeCardImageSrc: "/services/cards/landscape/credentialing.webp",
+    homeCardImageFit: "cover",
     homeCardImageAlt: "Provider credential documents and a framed professional certificate",
     overview:
       "We help organize provider information, prepare enrollment materials, and track application follow-up. Your practice remains involved in reviewing and approving information submitted on its behalf.",
