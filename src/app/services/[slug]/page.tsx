@@ -41,9 +41,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   const service = getServiceBySlug(slug);
   if (!service) notFound();
 
-  const relatedServices = services.filter(
-    (relatedService) => relatedService.slug !== service.slug,
-  );
+  const relatedServices = services;
 
   return (
     <main id="main-content">
