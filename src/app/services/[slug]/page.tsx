@@ -8,7 +8,8 @@ import { ScrollReveal } from "@/components/scroll-reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { RelatedServicesCarousel } from "@/components/related-services-carousel";
 import { ServiceSpotlight } from "@/components/service-spotlight";
-import { getServiceBySlug, serviceCatalog, type ServiceContent } from "@/data/services";
+import { getServiceBySlug, serviceCatalog } from "@/data/services";
+import { services } from "@/lib/site";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -40,9 +41,9 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   const service = getServiceBySlug(slug);
   if (!service) notFound();
 
-  const relatedServices = service.relatedServices
-    .map((relatedSlug) => getServiceBySlug(relatedSlug))
-    .filter((related): related is ServiceContent => Boolean(related));
+  const relatedServices = services.filter(
+    (relatedService) => relatedService.slug !== service.slug,
+  );
 
   return (
     <main id="main-content">

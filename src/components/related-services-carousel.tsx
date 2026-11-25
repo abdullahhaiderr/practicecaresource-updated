@@ -15,8 +15,9 @@ function Cards({ services, clone = false }: RelatedServicesCarouselProps & { clo
             duplicate={clone}
             title={service.title}
             description={service.description}
-            imageSrc={service.imageSrc}
-            imageAlt={service.imageAlt}
+            imageSrc={service.homeCardImageSrc}
+            imageAlt={service.homeCardImageAlt}
+            imageFit={service.homeCardImageFit ?? "cover"}
             icon={service.icon}
             href={`/services/${service.slug}`}
           />
@@ -32,7 +33,7 @@ export function RelatedServicesCarousel({ services }: RelatedServicesCarouselPro
   const repeatedGroups = Array.from({ length: 7 }, (_, index) => index);
 
   return (
-    <div className="related-services-marquee mt-5 overflow-hidden" role="region" aria-label="Related services carousel">
+    <div className="related-services-marquee mx-auto mt-5 max-w-[60rem] overflow-hidden" role="region" aria-label="Related services carousel">
       <div className="related-services-track flex w-max items-stretch py-3">
         <Cards services={services} />
         {repeatedGroups.map((group) => (
