@@ -5,7 +5,7 @@ type RelatedServicesCarouselProps = {
   services: ServiceContent[];
 };
 
-function Cards({ services }: RelatedServicesCarouselProps) {
+function Cards({ services, clone = false }: RelatedServicesCarouselProps & { clone?: boolean }) {
   return (
     <div className="flex shrink-0 items-stretch gap-4 px-2 md:gap-5">
       {services.map((service) => (
@@ -15,6 +15,7 @@ function Cards({ services }: RelatedServicesCarouselProps) {
             description={service.description}
             icon={service.icon}
             href={`/services/${service.slug}`}
+            duplicate={clone}
           />
         </div>
       ))}
@@ -41,7 +42,7 @@ export function RelatedServicesCarousel({ services }: RelatedServicesCarouselPro
             aria-hidden="true"
             className="related-services-clone flex shrink-0"
           >
-            <Cards services={services} />
+            <Cards services={services} clone />
           </div>
         ))}
       </div>
