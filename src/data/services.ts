@@ -399,8 +399,8 @@ export const serviceCatalog: ServiceContent[] = [
     icon: RefreshCw,
     imageSrc: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=85",
     imageAlt: "Office team reviewing documents and account information",
-    homeCardImageSrc: "/services/cards/05-ar-recovery.png",
-    homeCardImageAlt: "Accounts receivable aging chart and organized claims on a desk",
+    homeCardImageSrc: "/Services%20Cards/ar-recovery.png",
+    homeCardImageAlt: "Healthcare revenue specialist reviewing accounts receivable and claim follow-up data",
     overview:
       "We help practices organize outstanding account work, review available claim history, and document follow-up. The goal is a clear queue of next steps, questions, and items that need the practice's input.",
     whatsIncluded: [
